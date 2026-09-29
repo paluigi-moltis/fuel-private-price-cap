@@ -60,7 +60,11 @@ output/figures/ # all charts (PNG + HTML)
   fuel × Bandiera × Tipo Impianto × top-1-Gestore flag. Bandiera columns use
   the **seven-brand view** (see below). All compliance files carry OLAP
   margin rows aggregated over their dimensions, marked with the sentinel
-  `"Tutte"` (e.g. `group="Tutte"` = all groups pooled).
+  `"Tutte"` (e.g. `group="Tutte"` = all groups pooled); margin rows sort
+  after the detail rows of their cell. In the by-Bandiera files,
+  `n_top1_obs` / `share_top1_pct` are cell-level statistics (observations
+  run by the brand's top-1 Gestore within that date × fuel × Bandiera ×
+  Tipo Impianto cell), repeated on every row of the cell.
 - `output/tables/cap_compliance_top1_gestore.csv`: per fuel × Bandiera
   (seven-brand view), how many stations run by the brand's top-1 Gestore
   comply with the cap versus stations run by other operators (counts,
@@ -68,10 +72,10 @@ output/figures/ # all charts (PNG + HTML)
 - `output/tables/net_price_stats_by_group.csv`, `net_price_stats_by_region.csv`:
   net-price stats (mean/sd/min/max) with pre/post-cap deltas.
 - `output/tables/station_counts_by_*.csv`, `weekly_station_counts.csv`,
-  `brand_concentration.csv` (n Gestori, top-1 Gestore with station count and
-  share, top-3 Gestore share, HHI in [0, 1]). Station counts by Bandiera use
-  the seven-brand view; `brand_concentration.csv` covers the six grouped
-  brands.
+  `brand_concentration.csv` (n Gestori, names of the top-1/top-2/top-3
+  Gestori, top-1 Gestore station count and share, top-3 Gestore share, HHI
+  in [0, 1]). Station counts by Bandiera use the seven-brand view;
+  `brand_concentration.csv` covers the six grouped brands.
 - `output/tables/outliers_removed.csv`, `bandiera_values_audit.csv`: audits
   (`bandiera_values_audit.csv` is the only table still listing every raw
   Bandiera value).
@@ -174,3 +178,10 @@ output/figures/ # all charts (PNG + HTML)
   "Pompe Bianche" is the largest independent operator overall.
   `bandiera_values_audit.csv` remains the only table with every raw
   Bandiera value.
+- 2026-09-29 — By-Bandiera compliance files: `n_top1_obs` and
+  `share_top1_pct` are now cell-level columns filled on every row (they
+  previously appeared only on the "Tutte" rows, which also sorted to the
+  file bottom, leaving the trailing columns apparently empty); "Tutte"
+  margin rows now sort directly after the detail rows of their cell.
+  `brand_concentration.csv` additionally names the top-2 and top-3 Gestori
+  per brand.

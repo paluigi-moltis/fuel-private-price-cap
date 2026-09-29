@@ -103,14 +103,19 @@ class StationStats:
         counts = gestori.group_by("canonical_name", "gestore_normalized").agg(
             n_stations=pl.len()
         )
+        # gestori ranked by station count (ties broken alphabetically);
+        # slice().first() yields null when the brand has fewer operators
+        ranked_gestori = pl.col("gestore_normalized").sort_by(
+            ["n_stations", "gestore_normalized"], descending=[True, False]
+        )
         return (
             counts.group_by("canonical_name")
             .agg(
                 n_gestori=pl.len(),
                 n_stations=pl.col("n_stations").sum(),
-                top1_gestore=pl.col("gestore_normalized")
-                .sort_by(["n_stations", "gestore_normalized"], descending=[True, False])
-                .first(),
+                top1_gestore=ranked_gestori.first(),
+                top2_gestore=ranked_gestori.slice(1, 1).first(),
+                top3_gestore=ranked_gestori.slice(2, 1).first(),
                 n_stations_top1=pl.col("n_stations").max(),
                 top3_gestore_share=(
                     pl.col("n_stations").sort(descending=True).head(3).sum()
@@ -132,6 +137,8 @@ class StationStats:
                 "n_stations",
                 "n_gestori",
                 "top1_gestore",
+                "top2_gestore",
+                "top3_gestore",
                 "n_stations_top1",
                 "top1_gestore_share",
                 "top3_gestore_share",
@@ -230,9 +237,8 @@ class CapCompliance:
         daily_mean = daily_frame.group_by("fuel", *dims).agg(
             pct_below_daily_mean=pl.col("pct_below").mean()
         )
-        return pooled.join(daily_mean, on=["fuel", *dims], how="left").sort(
-            "fuel", *dims
-        )
+        joined = pooled.join(daily_mean, on=["fuel", *dims], how="left")
+        return _sort_details_first(joined, keys=("fuel",), dims=dims)
 
 
 def _dim_subsets(dims: Sequence[str]) -> list[tuple[str, ...]]:
@@ -247,7 +253,8 @@ def _dim_subsets(dims: Sequence[str]) -> list[tuple[str, ...]]:
 def _add_aggregate_rows(daily: pl.DataFrame, dims: Sequence[str]) -> pl.DataFrame:
     """Append OLAP margin rows to a daily compliance frame: for each subset
     of ``dims``, rows pooled over that subset with the dimension set to
-    ``"Tutte"`` (counts summed, ``pct_below`` recomputed)."""
+    ``"Tutte"`` (counts summed, ``pct_below`` recomputed). Margin rows sort
+    after the detail rows of their cell."""
     frames = [daily]
     for subset in _dim_subsets(dims):
         keep = [d for d in dims if d not in subset]
@@ -262,7 +269,23 @@ def _add_aggregate_rows(daily: pl.DataFrame, dims: Sequence[str]) -> pl.DataFram
             .select(daily.columns)
         )
         frames.append(margins)
-    return pl.concat(frames).sort("date", "fuel", *dims)
+    return _sort_details_first(pl.concat(frames), keys=("date", "fuel"), dims=dims)
+
+
+def _sort_details_first(
+    frame: pl.DataFrame, keys: Sequence[str], dims: Sequence[str]
+) -> pl.DataFrame:
+    """Sort by the key and dimension columns with ``"Tutte"`` margins last
+    within each cell (instead of scattered or block-appended at file level)."""
+    helpers = [
+        pl.when(pl.col(d) == config.AGG_SENTINEL)
+        .then(pl.lit("\uffff"))
+        .otherwise(pl.col(d))
+        .alias(f"__sort_{d}")
+        for d in dims
+    ]
+    helper_names = [f"__sort_{d}" for d in dims]
+    return frame.with_columns(helpers).sort(*keys, *helper_names).drop(helper_names)
 
 
 def _olap_sum(
@@ -293,14 +316,17 @@ def _olap_sum(
 def attach_top1_share(
     frame: pl.DataFrame, keys: Sequence[str], dims: Sequence[str]
 ) -> pl.DataFrame:
-    """Add ``n_top1_obs`` and ``share_top1_pct`` to the ``gestore_top1="Tutte"``
-    rows of a compliance frame (daily or period grain): the number and share
-    of observations in each cell whose Gestore is the brand's top-1 operator.
+    """Add cell-level ``n_top1_obs`` and ``share_top1_pct`` columns to a
+    compliance frame (daily or period grain): the number and share of
+    observations in each cell whose Gestore is the brand's top-1 operator.
 
-    ``keys`` are the non-dimension key columns (("date", "fuel") for daily
-    frames, ("fuel",) for period frames); ``dims`` are the bandiera
-    dimensions. Top-1 counts are OLAP-summed so they align with every margin
-    cell, including the pooled ``canonical_name="Tutte"`` rows.
+    The two values describe the cell (keys x dims), so they are repeated on
+    every row of the cell — including the "top1"/"altri" detail rows and the
+    margins — and no row is left with empty trailing columns. ``keys`` are
+    the non-dimension key columns (("date", "fuel") for daily frames,
+    ("fuel",) for period frames); ``dims`` are the bandiera dimensions.
+    Top-1 counts are OLAP-summed so they align with every margin cell,
+    including the pooled ``canonical_name="Tutte"`` rows.
     """
     # only detailed-grain rows: the frame already carries margin rows, and
     # _olap_sum rebuilds the margins itself from the detail
@@ -315,19 +341,18 @@ def attach_top1_share(
         value_col="n_obs",
         out_name="n_top1_obs",
     )
-    tutte = (
-        frame.filter(pl.col("gestore_top1") == config.AGG_SENTINEL)
-        .join(top1_counts, on=[*keys, *dims], how="left")
-        .with_columns(
-            n_top1_obs=pl.col("n_top1_obs").fill_null(0),
-            share_top1_pct=pl.col("n_top1_obs") / pl.col("n_obs") * 100,
-        )
+    cell_totals = frame.filter(pl.col("gestore_top1") == config.AGG_SENTINEL).select(
+        *keys, *dims, "n_obs"
     )
-    others = frame.filter(pl.col("gestore_top1") != config.AGG_SENTINEL).with_columns(
-        pl.lit(None, dtype=top1_counts.schema["n_top1_obs"]).alias("n_top1_obs"),
-        pl.lit(None, dtype=pl.Float64).alias("share_top1_pct"),
+    cell_stats = (
+        cell_totals.join(top1_counts, on=[*keys, *dims], how="left")
+        # two separate with_columns: the share must see the zero-filled count
+        .with_columns(n_top1_obs=pl.col("n_top1_obs").fill_null(0))
+        .with_columns(share_top1_pct=pl.col("n_top1_obs") / pl.col("n_obs") * 100)
+        .select(*keys, *dims, "n_top1_obs", "share_top1_pct")
     )
-    return pl.concat([others, tutte])
+    # left join keeps the frame's existing (sentinel-aware) row order
+    return frame.join(cell_stats, on=[*keys, *dims], how="left")
 
 
 def top1_compliance_report(period_bandiera: pl.DataFrame) -> pl.DataFrame:
