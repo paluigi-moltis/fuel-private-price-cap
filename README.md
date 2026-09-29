@@ -80,9 +80,10 @@ output/figures/ # all charts (PNG + HTML)
   snapshots while prices are *daily*; each price is matched to the latest
   snapshot of the same station up to that day (backward as-of join). Prices
   predating a station's first snapshot (0.07% of rows) use the earliest
-  snapshot as fallback; 0.16% of rows reference a station never seen in the
-  snapshots and keep null attributes (grouped as Pompe Bianche / Tipo
-  Impianto "Altro", excluded from regional outputs).
+  snapshot as fallback. Prices with no station record at all, or whose
+  station has no Tipo Impianto, are **dropped** (5,649 rows, 0.16% of clean
+  prices, all of the first kind: the source only carries
+  Stradale/Autostradale).
 - **Groups**: Majors = Agip Eni, Api-Ip, Q8; Large = Esso, Tamoil, Shell;
   Pompe Bianche = everything else (including the literal "Pompe Bianche"
   label and null Bandiere). Matching is exact on a normalized form of the
@@ -118,3 +119,8 @@ output/figures/ # all charts (PNG + HTML)
   validation checklist. Added `plotly`, `kaleido`, `numpy` (via
   `plotly[express]`) and dev `ruff`/`black`; console script
   `fuel-price-cap`.
+- 2026-09-29 — Prices with no matching station, or whose station lacks a
+  Tipo Impianto, are now dropped instead of being bucketed as Pompe
+  Bianche / "Altro" (5,649 rows, 0.16% of clean prices). The "Altro"
+  bucket no longer exists; station tables likewise exclude untyped
+  stations.

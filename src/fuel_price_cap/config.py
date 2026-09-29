@@ -50,7 +50,6 @@ BRAND_GROUPS: dict[str, tuple[str, str]] = {
 TIPO_STRADALE = "Stradale"
 TIPO_AUTOSTRADALE = "Autostradale"
 TIPO_MAIN: tuple[str, ...] = (TIPO_STRADALE, TIPO_AUTOSTRADALE)
-TIPO_ALTRO = "Altro"
 
 # --- Deliverable paths -----------------------------------------------------
 PRICES_RAW_PATH = DATA_DIR / "prices_raw.parquet"

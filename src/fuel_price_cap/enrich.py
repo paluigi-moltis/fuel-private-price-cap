@@ -279,7 +279,11 @@ class RegionMapper:
 class StationTimeline:
     """Time-consistent attribution: joins weekly station snapshots onto daily
     prices with a backward as-of join, so each price carries the attributes
-    (Gestore, Bandiera, Tipo Impianto, Provincia) in force that day."""
+    (Gestore, Bandiera, Tipo Impianto, Provincia) in force that day.
+
+    Prices with no station record at all, or whose station has no Tipo
+    Impianto, are dropped from the output (both causes are reported in the
+    returned metadata)."""
 
     _ATTRS = ("gestore", "bandiera", "tipo_impianto", "provincia")
 
@@ -309,31 +313,34 @@ class StationTimeline:
                 & pl.col("bandiera__earliest").is_not_null()
             ).sum()
         ).item()
-        unmatched = merged.select(
+
+        filled = merged.with_columns(
+            pl.col(c).fill_null(pl.col(f"{c}__earliest")) for c in self._ATTRS
+        ).drop("__row", *(f"{c}__earliest" for c in self._ATTRS))
+        no_station = filled.select(
+            pl.all_horizontal(pl.col(c).is_null() for c in self._ATTRS).sum()
+        ).item()
+        missing_tipo = filled.select(
             (
-                pl.col("bandiera").is_null() & pl.col("bandiera__earliest").is_null()
+                pl.col("tipo_impianto").is_null()
+                & pl.any_horizontal(pl.col(c).is_not_null() for c in self._ATTRS)
             ).sum()
         ).item()
-
-        filled = (
-            merged.with_columns(
-                pl.col(c).fill_null(pl.col(f"{c}__earliest")) for c in self._ATTRS
-            )
-            # prices with no station record at all keep a null Tipo Impianto:
-            # route them to the Altro bucket per the analysis conventions
-            .with_columns(pl.col("tipo_impianto").fill_null(config.TIPO_ALTRO)).drop(
-                "__row", *(f"{c}__earliest" for c in self._ATTRS)
-            )
-        )
+        kept = filled.filter(pl.col("tipo_impianto").is_not_null())
 
         meta = {
             "total_rows": float(total),
             "fallback_rows": float(fallback),
             "fallback_share_pct": fallback / total * 100 if total else 0.0,
-            "unmatched_rows": float(unmatched),
-            "unmatched_share_pct": unmatched / total * 100 if total else 0.0,
+            "no_station_rows": float(no_station),
+            "no_station_share_pct": no_station / total * 100 if total else 0.0,
+            "missing_tipo_rows": float(missing_tipo),
+            "dropped_rows": float(no_station + missing_tipo),
+            "dropped_share_pct": (
+                (no_station + missing_tipo) / total * 100 if total else 0.0
+            ),
         }
-        return filled, meta
+        return kept, meta
 
 
 class NetPriceCalculator:

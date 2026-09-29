@@ -14,12 +14,17 @@ _SLICE_ALL = "Tutti"
 
 class StationStats:
     """Station counts and Gestore concentration on the latest snapshot
-    (plus weekly counts across all snapshots as a bonus)."""
+    (plus weekly counts across all snapshots as a bonus).
+
+    Stations without a Tipo Impianto are excluded, mirroring the price-level
+    convention of dropping prices that cannot be attributed to a typed
+    station (none exist in the current data: the source only carries
+    Stradale/Autostradale)."""
 
     def __init__(self, stations: pl.DataFrame) -> None:
-        self._stations = stations
-        self._latest_date = stations["date"].max()
-        self._latest = stations.filter(pl.col("date") == self._latest_date)
+        self._stations = stations.filter(pl.col("tipo_impianto").is_not_null())
+        self._latest_date = self._stations["date"].max()
+        self._latest = self._stations.filter(pl.col("date") == self._latest_date)
 
     @property
     def latest_date(self) -> object:

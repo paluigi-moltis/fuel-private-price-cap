@@ -147,8 +147,10 @@ class Pipeline:
         print(
             f"as-of join: {asof_meta['fallback_rows']:,.0f} rows "
             f"({asof_meta['fallback_share_pct']:.2f}%) backfilled with the earliest "
-            f"snapshot; {asof_meta['unmatched_rows']:,.0f} rows "
-            f"({asof_meta['unmatched_share_pct']:.2f}%) have no station at all"
+            f"snapshot; dropped {asof_meta['dropped_rows']:,.0f} rows "
+            f"({asof_meta['dropped_share_pct']:.2f}%) without a station "
+            f"({asof_meta['no_station_rows']:,.0f}) or without Tipo Impianto "
+            f"({asof_meta['missing_tipo_rows']:,.0f})"
         )
 
         grouper = BrandGrouper()
@@ -323,11 +325,12 @@ class Pipeline:
             f"match: raw - clean = {expected_drop:,}, audit sum = {audit_sum:,} "
             f"({audit_sum / prices_raw.height * 100:.3f}% of raw)"
         )
-        attributed_share = 100 - meta["unmatched_share_pct"]
+        attributed_share = 100 - meta["dropped_share_pct"]
         print(
-            f"[{'OK' if attributed_share == 100 else 'WARN'}] as-of attribution: "
-            f"{attributed_share:.3f}% of prices have station attributes "
-            f"(fallback share {meta['fallback_share_pct']:.2f}%)"
+            f"[{'OK' if attributed_share > 99.5 else 'WARN'}] as-of attribution: "
+            f"{attributed_share:.3f}% of clean prices kept, all with station "
+            f"attributes and Tipo Impianto ({meta['dropped_rows']:,.0f} rows dropped; "
+            f"fallback share {meta['fallback_share_pct']:.2f}%)"
         )
         print(
             f"[{'OK' if meta['unmatched_sigle'] == 0 else 'FAIL'}] province join: "

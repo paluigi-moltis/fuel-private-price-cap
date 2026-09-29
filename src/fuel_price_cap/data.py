@@ -161,13 +161,15 @@ class FuelDataRepository:
 
     @staticmethod
     def _tipo_impianto_expression() -> pl.Expr:
+        # missing or unrecognized Tipo Impianto stays null: prices attributed
+        # to such stations are dropped downstream by the analysis conventions
         tipo = (
             pl.col("Tipo Impianto").cast(pl.String).str.strip_chars().str.to_titlecase()
         )
         return (
             pl.when(tipo.is_in(list(config.TIPO_MAIN)))
             .then(tipo)
-            .otherwise(pl.lit(config.TIPO_ALTRO))
+            .otherwise(pl.lit(None, dtype=pl.String))
             .alias("tipo_impianto")
         )
 
