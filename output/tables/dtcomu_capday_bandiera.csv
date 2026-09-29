@@ -1,0 +1,15 @@
+fuel,canonical_name,n_obs,n_compliant,n_comu_capday,n_comu_recent,n_comu_older,n_comu_missing
+Benzina,Agip Eni,3835,956,932,3364,471,0
+Benzina,Api-Ip,3484,16,256,2610,874,0
+Benzina,Esso,1968,13,438,1449,519,0
+Benzina,Pompe Bianche,6522,99,445,3563,2959,0
+Benzina,Q8,2649,4,155,2236,413,0
+Benzina,Shell,154,0,88,135,19,0
+Benzina,Tamoil,1450,7,379,1191,259,0
+Gasolio,Agip Eni,3834,971,966,3686,148,0
+Gasolio,Api-Ip,3483,24,236,2714,769,0
+Gasolio,Esso,1972,19,436,1516,456,0
+Gasolio,Pompe Bianche,6553,146,446,3785,2768,0
+Gasolio,Q8,2665,13,146,2261,404,0
+Gasolio,Shell,153,0,88,134,19,0
+Gasolio,Tamoil,1425,9,219,1284,141,0

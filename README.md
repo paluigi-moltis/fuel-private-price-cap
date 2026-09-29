@@ -6,9 +6,9 @@ station-level fuel price data stored in MongoDB.
 
 The pipeline downloads self-service prices (`isSelf = 1`, Benzina / Gasolio,
 from 2026-07-01), weekly station snapshots and the excise history; cleans,
-enriches and aggregates them; and produces CSV tables plus Plotly charts
-(PNG + HTML) covering cap compliance, price dynamics (gross and net of taxes)
-by market group, Tipo Impianto and region.
+enriches and aggregates them; and produces CSV tables plus static Plotly
+charts (PNG only) covering cap compliance, price dynamics (gross and net of
+taxes) by market group, Tipo Impianto, region and individual Bandiera.
 
 ## Usage
 
@@ -32,12 +32,13 @@ src/fuel_price_cap/
   data.py       # FuelDataRepository (MongoDB -> Polars -> parquet), PriceCleaner
   enrich.py     # BrandGrouper, RegionMapper, StationTimeline, NetPriceCalculator
   analysis.py   # StationStats, CapCompliance, DailyPriceStats
-  plots.py      # PriceChartBuilder (Plotly, PNG via kaleido + HTML)
+  comu.py       # dtComu parsing/freshness, BrandPriceBreak (per-brand prices)
+  plots.py      # PriceChartBuilder (Plotly, static PNG via kaleido)
   main.py       # Pipeline orchestrator (run() executes all stages)
 
 data/           # parquet extracts + static reference CSVs (see below)
 output/tables/  # all CSV deliverables
-output/figures/ # all charts (PNG + HTML)
+output/figures/ # all charts (static PNG; no HTML)
 ```
 
 ### Data files
@@ -55,8 +56,8 @@ output/figures/ # all charts (PNG + HTML)
 ### Main outputs
 
 - `output/tables/cap_compliance_daily.csv`, `cap_compliance_period.csv`
-  (+ `_region` and `_bandiera` variants): share of observations strictly
-  below the cap threshold, by fuel × group × Tipo Impianto (× region), and by
+  (+ `_region` and `_bandiera` variants): share of observations at or below
+  the cap threshold, by fuel × group × Tipo Impianto (× region), and by
   fuel × Bandiera × Tipo Impianto × top-1-Gestore flag. Bandiera columns use
   the **seven-brand view** (see below). All compliance files carry OLAP
   margin rows aggregated over their dimensions, marked with the sentinel
@@ -68,22 +69,38 @@ output/figures/ # all charts (PNG + HTML)
 - `output/tables/cap_compliance_top1_gestore.csv`: per fuel × Bandiera
   (seven-brand view), how many stations run by the brand's top-1 Gestore
   comply with the cap versus stations run by other operators (counts,
-  below-cap shares and their difference in percentage points).
-- `output/tables/net_price_stats_by_group.csv`, `net_price_stats_by_region.csv`:
-  net-price stats (mean/sd/min/max) with pre/post-cap deltas.
+  at-or-below-cap shares and their difference in percentage points).
+- `output/tables/net_price_stats_by_group.csv`: net-price stats
+  (mean/sd/min/max) with pre/post-cap deltas.
 - `output/tables/station_counts_by_*.csv`, `weekly_station_counts.csv`,
   `brand_concentration.csv` (n Gestori, names of the top-1/top-2/top-3
   Gestori, top-1 Gestore station count and share, top-3 Gestore share, HHI
   in [0, 1]). Station counts by Bandiera use the seven-brand view;
   `brand_concentration.csv` covers the six grouped brands.
+- `output/tables/dtcomu_capday_agip_eni.csv`: Agip Eni price observations on
+  the cap day, cross-tabulated by compliance (≤ cap) and dtComu recency
+  bucket (on cap day / within 2 days before / older / missing) — answers
+  whether apparent non-compliance is just a stale price communication.
+- `output/tables/dtcomu_capday_bandiera.csv`: the same cap-day counts
+  (observations, compliant, communication recency) for every brand of the
+  seven-brand view.
+- `output/tables/cap_compliance_capday_region.csv`: cap-day compliance
+  (at-or-below share) per region × fuel × Tipo Impianto, sorted by share.
+- `output/tables/brand_daily_prices.csv`: daily mean/sd gross price per
+  fuel × brand (seven-brand view), full window (2026-07-01 onward).
+- `output/tables/brand_price_break.csv`: per fuel × brand, mean gross price
+  over the 7 days before the cap vs the cap day, the jump in EUR/l and basis
+  points, the distance of the cap-day mean from the threshold, and what
+  fraction of the distance to the cap the jump covers.
 - `output/tables/outliers_removed.csv`, `bandiera_values_audit.csv`: audits
   (`bandiera_values_audit.csv` is the only table still listing every raw
   Bandiera value).
 - `output/figures/`: daily mean ± 1 sd per group (aggregate dotted line),
-  one chart per fuel × Tipo Impianto × gross/net × full/zoom window; regional
-  facet grids; daily below-cap share by Bandiera (seven-brand view), full
-  window and zoom. All charts mark the cap date; gross price charts also
-  mark the threshold.
+  one chart per fuel × Tipo Impianto × gross/net × full/zoom window; daily
+  at-or-below-cap share by Bandiera and daily brand mean gross price
+  (seven-brand view), full window and zoom; ranked horizontal bars of
+  cap-day compliance by region (fuel × Tipo Impianto). All charts are static
+  PNG; all mark the cap date, and gross price charts also mark the threshold.
 
 ## Methodology
 
@@ -120,9 +137,12 @@ output/figures/ # all charts (PNG + HTML)
   EUR/1000 l rescaled to EUR/l and carried forward over a full daily
   calendar (last `application_date ≤ day`). The gasolio excise changed twice
   in the two weeks before the cap (2026-09-18 and 2026-09-26).
-- **Cap compliance** (from 2026-09-28, on clean prices): `prezzo < 2.0`
-  (Benzina) and `prezzo < 2.2` (Gasolio), strict inequality. The post-cap
-  period in the current extract covers a single day (2026-09-28). Compliance
+- **Cap compliance** (from 2026-09-28, on clean prices): `prezzo <= 2.0`
+  (Benzina) and `prezzo <= 2.2` (Gasolio) — a price exactly at the cap does
+  not violate a self-imposed cap (in the 2026-09-28 extract no station
+  prices exactly at the threshold, so the two definitions coincide). The
+  post-cap period in the current extract covers a single day (2026-09-28).
+  Compliance
   tables are reported by group and by Bandiera, both sliced by Tipo
   Impianto, together with OLAP margin rows aggregated over any subset of the
   dimensions: an aggregated dimension carries the sentinel value `"Tutte"`
@@ -148,6 +168,26 @@ output/figures/ # all charts (PNG + HTML)
 
 ## Change Log
 
+- 2026-09-29 — Compliance is now **at or below** the cap (`prezzo <=`
+  threshold): a station pricing exactly at the cap does not violate a
+  self-imposed cap (no station does in the current extract, so all
+  pre-existing counts are unchanged).
+- 2026-09-29 — New detailed outputs: dtComu is parsed per price row and
+  cap-day observations are split by communication recency
+  (`dtcomu_capday_agip_eni.csv` crosstab + `dtcomu_capday_bandiera.csv` for
+  all seven brands); new readable regional compliance table
+  (`cap_compliance_capday_region.csv`, region × fuel × Tipo Impianto on the
+  cap day) with ranked horizontal-bar charts replacing the regional facet
+  grids; per-brand daily gross mean prices (`brand_daily_prices.csv`, full
+  window + zoom charts by Bandiera) and a pre/post break table
+  (`brand_price_break.csv`: 7-day pre-cap mean vs cap day, jump in EUR/l and
+  bp, distance to the cap).
+- 2026-09-29 — All HTML chart exports removed: figures are static PNG only
+  (for print/Web notes); the regional facet-grid price charts are dropped
+  with them. `net_price_stats_by_region.csv` is no longer produced (the new
+  regional compliance table replaces its role). Rendering needs a Chrome/
+  Chromium binary: set `BROWSER_PATH` when kaleido cannot find one (e.g.
+  snap-confined Chromium on Ubuntu).
 - 2026-09-29 — Implemented the full analysis pipeline (`src/fuel_price_cap/`):
   MongoDB repository with parquet persistence, 4-sd outlier cleaning with
   audit, as-of station attribution, brand grouping with a full Bandiera

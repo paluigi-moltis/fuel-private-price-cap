@@ -17,6 +17,11 @@ from fuel_price_cap.analysis import (
     attach_top1_share,
     top1_compliance_report,
 )
+from fuel_price_cap.comu import (
+    BrandPriceBreak,
+    ComuFreshness,
+    parse_dt_comu,
+)
 from fuel_price_cap.data import FuelDataRepository, PriceCleaner
 from fuel_price_cap.enrich import (
     BrandGrouper,
@@ -50,6 +55,7 @@ class Pipeline:
         self._compliance_tables(enriched, stations_enriched)
         self._national_charts(enriched)
         self._regional_outputs(enriched)
+        self._comu_and_brand_outputs(enriched)
         self._validation(prices_raw, prices_clean, outlier_audit, enriched, enrich_meta)
 
         print(
@@ -60,7 +66,7 @@ class Pipeline:
     # Stage 1: raw data
     # ------------------------------------------------------------------ #
     def _load_raw(self) -> tuple[pl.DataFrame, pl.DataFrame, pl.DataFrame]:
-        _banner("Stage 1/8 — raw data (MongoDB -> parquet)")
+        _banner("Stage 1/9 — raw data (MongoDB -> parquet)")
         if self.use_cache:
             paths = (
                 config.PRICES_RAW_PATH,
@@ -111,7 +117,7 @@ class Pipeline:
 
     @staticmethod
     def _write_reference_tables() -> None:
-        _banner("Stage 2/8 — reference tables")
+        _banner("Stage 2/9 — reference tables")
         RegionMapper.write_reference_csv(str(config.PROVINCE_REGION_PATH))
         BrandGrouper.write_reference_csv(str(config.BRAND_GROUPS_PATH))
         print(
@@ -124,7 +130,7 @@ class Pipeline:
     # ------------------------------------------------------------------ #
     @staticmethod
     def _clean(prices_raw: pl.DataFrame) -> tuple[pl.DataFrame, pl.DataFrame]:
-        _banner("Stage 3/8 — outlier filter (|prezzo - mean| > 4 sd per date x fuel)")
+        _banner("Stage 3/9 — outlier filter (|prezzo - mean| > 4 sd per date x fuel)")
         clean, audit = PriceCleaner().clean(prices_raw)
         clean.write_parquet(config.PRICES_CLEAN_PATH)
         audit.write_csv(config.TABLES["outliers"])
@@ -148,7 +154,7 @@ class Pipeline:
     def _enrich(
         prices_clean: pl.DataFrame, stations: pl.DataFrame, tax: pl.DataFrame
     ) -> tuple[pl.DataFrame, pl.DataFrame, dict[str, float]]:
-        _banner("Stage 4/8 — enrichment (as-of join, region, group, net price)")
+        _banner("Stage 4/9 — enrichment (as-of join, region, group, net price)")
 
         attributed, asof_meta = StationTimeline().attribute(prices_clean, stations)
         print(
@@ -199,7 +205,7 @@ class Pipeline:
     # ------------------------------------------------------------------ #
     @staticmethod
     def _station_tables(stations_enriched: pl.DataFrame) -> None:
-        _banner("Stage 5/8 — station counts and Gestore concentration")
+        _banner("Stage 5/9 — station counts and Gestore concentration")
         stats = StationStats(stations_enriched)
         print(f"Latest snapshot used for counts: {stats.latest_date}")
 
@@ -228,7 +234,7 @@ class Pipeline:
     def _compliance_tables(
         enriched: pl.DataFrame, stations_enriched: pl.DataFrame
     ) -> None:
-        _banner("Stage 6/8 — cap compliance (from 2026-09-28, clean prices)")
+        _banner("Stage 6/9 — cap compliance (from 2026-09-28, clean prices)")
         # seven-brand view everywhere in this stage (six named brands plus
         # all remaining independents as a single "Pompe Bianche" brand)
         comp_prices = brand_view(enriched)
@@ -293,7 +299,7 @@ class Pipeline:
     # ------------------------------------------------------------------ #
     @staticmethod
     def _national_charts(enriched: pl.DataFrame) -> None:
-        _banner("Stage 7/8 — daily price stats and charts (fuel x Tipo Impianto)")
+        _banner("Stage 7/9 — daily price stats and charts (fuel x Tipo Impianto)")
         by_group = DailyPriceStats.daily(enriched, ("tipo_impianto", "group"))
         overall = DailyPriceStats.daily(enriched, ("tipo_impianto",))
         net_stats = DailyPriceStats.net_summary(enriched, ("group",))
@@ -320,7 +326,7 @@ class Pipeline:
                             zoom=zoom,
                         )
                         n_charts += 1
-        print(f"Written {n_charts} national charts (PNG + HTML) per group")
+        print(f"Written {n_charts} national charts per group (PNG)")
         print("Net price stats by group (pre = before cap, post = from cap date):")
         print(net_stats)
 
@@ -329,28 +335,114 @@ class Pipeline:
     # ------------------------------------------------------------------ #
     @staticmethod
     def _regional_outputs(enriched: pl.DataFrame) -> None:
-        _banner("Stage 8/8 — regional extension")
-        regional_prices = enriched.filter(pl.col("regione").is_not_null())
-        by_region = DailyPriceStats.daily(regional_prices, ("regione",))
-        net_stats_region = DailyPriceStats.net_summary(
-            regional_prices, ("group", "regione", "tipo_impianto")
+        _banner("Stage 8/9 — regional extension (cap-day compliance by region)")
+        regional_prices = brand_view(enriched.filter(pl.col("regione").is_not_null()))
+        capday = regional_prices.filter(pl.col("date") == config.CAP_DATE)
+        by_region = (
+            capday.group_by("regione", "fuel", "tipo_impianto")
+            .agg(
+                n_obs=pl.len(),
+                n_at_or_below=(
+                    pl.col("prezzo")
+                    <= pl.col("fuel").replace_strict(
+                        config.THRESHOLDS, return_dtype=pl.Float64
+                    )
+                ).sum(),
+            )
+            .with_columns(
+                pct_at_or_below=pl.col("n_at_or_below") / pl.col("n_obs") * 100
+            )
+            .sort("fuel", "tipo_impianto", "pct_at_or_below")
         )
-        net_stats_region.write_csv(config.TABLES["net_stats_region"])
+        by_region.write_csv(config.TABLES["compliance_region_capday"])
 
         builder = PriceChartBuilder(config.FIGURES_DIR)
         n_charts = 0
         for fuel in config.FUELS:
-            region_slice = by_region.filter(pl.col("fuel") == fuel).sort("date")
-            for value_col in ("prezzo", "net_price"):
-                builder.regional_price_chart(
-                    region_slice, fuel=fuel, value_col=value_col
+            for tipo in config.TIPO_MAIN:
+                builder.regional_compliance_chart(
+                    by_region.filter(
+                        (pl.col("fuel") == fuel) & (pl.col("tipo_impianto") == tipo)
+                    ),
+                    fuel=fuel,
+                    tipo=tipo,
                 )
                 n_charts += 1
-        regions = by_region["regione"].n_unique()
         print(
-            f"Written {n_charts} regional facet charts ({regions} regions) and "
-            f"{config.TABLES['net_stats_region'].name} "
-            f"({net_stats_region.height:,} rows)"
+            f"Written {n_charts} ranked regional compliance bars and "
+            f"{config.TABLES['compliance_region_capday'].name} "
+            f"({by_region.height} rows)"
+        )
+
+    # ------------------------------------------------------------------ #
+    # Stage 9: dtComu freshness + brand price break
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def _comu_and_brand_outputs(enriched: pl.DataFrame) -> None:
+        _banner("Stage 9/9 — dtComu freshness and brand price break")
+        prices = parse_dt_comu(brand_view(enriched))
+        unparsed = prices.filter(
+            pl.col("dt_comu").is_not_null() & pl.col("comu_date").is_null()
+        ).height
+        if unparsed:
+            print(f"WARNING: {unparsed} rows with unparsable dt_comu")
+
+        fresh = ComuFreshness(prices)
+        by_brand = fresh.by_brand()
+        by_brand.write_csv(config.TABLES["dtcomu_capday_bandiera"])
+        crosstab = fresh.agip_eni_crosstab()
+        crosstab.write_csv(config.TABLES["dtcomu_capday"])
+        agip = by_brand.filter(pl.col("canonical_name") == "Agip Eni")
+        print("Agip Eni on cap day (compliance = at or below the cap):")
+        print(
+            agip.select(
+                "fuel",
+                "n_obs",
+                "n_compliant",
+                "n_comu_capday",
+                "n_comu_recent",
+                "n_comu_older",
+            )
+        )
+
+        brands = (
+            "Agip Eni",
+            "Api-Ip",
+            "Q8",
+            "Esso",
+            "Tamoil",
+            "Shell",
+            config.GROUP_WHITE,
+        )
+        brk = BrandPriceBreak(prices, pre_days=7, brands=brands)
+        daily = brk.daily()
+        daily.write_csv(config.TABLES["brand_prices_daily"])
+        break_table = brk.break_table()
+        break_table.write_csv(config.TABLES["brand_prices_break"])
+
+        builder = PriceChartBuilder(config.FIGURES_DIR)
+        n_charts = 0
+        for fuel in config.FUELS:
+            fuel_slice = daily.filter(pl.col("fuel") == fuel)
+            for zoom in (False, True):
+                builder.brand_price_chart(fuel_slice, fuel=fuel, zoom=zoom)
+                n_charts += 1
+        print(f"Break table (pre = {config.CAP_WEEK_FROM}..cap-1 mean, cap day):")
+        print(
+            break_table.select(
+                "fuel",
+                "canonical_name",
+                "mean_price_pre",
+                "mean_price_capday",
+                "jump_eur",
+                "jump_bp",
+                "distance_to_cap_eur",
+            )
+        )
+        print(
+            f"Written {n_charts} brand price charts, "
+            f"{config.TABLES['brand_prices_daily'].name} and "
+            f"{config.TABLES['brand_prices_break'].name}"
         )
 
     # ------------------------------------------------------------------ #

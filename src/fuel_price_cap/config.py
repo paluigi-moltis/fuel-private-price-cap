@@ -20,6 +20,14 @@ PRICES_FROM = dt.date(2026, 7, 1)
 TAX_FROM = dt.date(2026, 5, 1)
 CAP_DATE = dt.date(2026, 9, 28)  # self-imposed cap, effective date included
 ZOOM_FROM = dt.date(2026, 9, 14)  # pre/post-cap focus window for charts
+CAP_WEEK_FROM = dt.date(2026, 9, 21)  # week before the cap (brand comparison)
+
+# --- Compliance rule --------------------------------------------------------
+# A station complies when its price is at or below the self-imposed cap:
+# pricing exactly at the cap does not violate it. From the cap date (included).
+COMPLIANCE_FROM = CAP_DATE
+# days before the cap date whose dtComu still counts as 'recent'
+COMU_RECENT_DAYS = 2
 
 FUELS: tuple[str, ...] = ("Benzina", "Gasolio")
 
@@ -79,4 +87,9 @@ TABLES = {
     "compliance_period_region": TABLES_DIR / "cap_compliance_period_region.csv",
     "net_stats_group": TABLES_DIR / "net_price_stats_by_group.csv",
     "net_stats_region": TABLES_DIR / "net_price_stats_by_region.csv",
+    "dtcomu_capday": TABLES_DIR / "dtcomu_capday_agip_eni.csv",
+    "dtcomu_capday_bandiera": TABLES_DIR / "dtcomu_capday_bandiera.csv",
+    "compliance_region_capday": TABLES_DIR / "cap_compliance_capday_region.csv",
+    "brand_prices_daily": TABLES_DIR / "brand_daily_prices.csv",
+    "brand_prices_break": TABLES_DIR / "brand_price_break.csv",
 }

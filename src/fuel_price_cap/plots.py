@@ -2,8 +2,9 @@
 
 Each national chart shows the aggregate line (all stations) plus one line/band
 per market group; a vertical line marks the cap date and a horizontal line the
-cap threshold (gross charts only). Regional charts are facet grids of the
-aggregate mean ± 1 sd per region.
+cap threshold (gross charts only). Regional charts are ranked horizontal bars
+of cap-day compliance by region; brand charts are daily brand mean lines.
+Exports are PNG only (static images; no HTML is produced).
 """
 
 from __future__ import annotations
@@ -11,7 +12,6 @@ from __future__ import annotations
 import datetime
 from pathlib import Path
 
-import plotly.express as px
 import plotly.graph_objects as go
 import polars as pl
 
@@ -84,7 +84,7 @@ class PriceChartBuilder:
         tipo: str,
         value_col: str,
         zoom: bool = False,
-    ) -> tuple[Path, Path]:
+    ) -> Path:
         """by_group: daily stats for one (fuel, tipo) with a ``group`` column;
         overall: the same without the group dimension (all stations)."""
         if zoom:
@@ -136,7 +136,7 @@ class PriceChartBuilder:
         fig.update_xaxes(
             tickformat="%d %b",
             tickangle=0,
-            range=[overall["date"].min(), last_date + datetime.timedelta(days=8)],
+            range=[overall["date"].min(), last_date + datetime.timedelta(days=2)],
         )
         fig.update_yaxes(tickformat=".2f")
         fig.add_vline(
@@ -200,14 +200,14 @@ class PriceChartBuilder:
             )
         )
 
-    # ------------------------------------------------------------------ #
+    # ------------------------------------------------------------------
     # Compliance-share chart: one line per Bandiera
-    # ------------------------------------------------------------------ #
+    # ------------------------------------------------------------------
     def compliance_share_chart(
         self, daily: pl.DataFrame, *, fuel: str, zoom: bool = False
-    ) -> tuple[Path, Path]:
+    ) -> Path:
         """daily: one row per date x plot_bandiera for a single fuel, with
-        ``pct_below`` = share of stations priced below the cap threshold."""
+        ``pct_below`` = share of stations priced at or below the cap."""
         if zoom:
             daily = daily.filter(pl.col("date") >= config.ZOOM_FROM)
 
@@ -231,10 +231,10 @@ class PriceChartBuilder:
         threshold = config.THRESHOLDS[fuel]
         fig.update_layout(
             title=(
-                f"{fuel}: daily share of stations priced below the "
-                f"{threshold:.1f} EUR/l cap, by Bandiera{window_label}"
+                f"{fuel}: daily share of stations priced at or below the "
+                f"{threshold:.2f} EUR/l cap, by Bandiera{window_label}"
             ),
-            yaxis_title="% of stations below the cap",
+            yaxis_title="% of stations at or below the cap",
             template="plotly_white",
             hovermode="x unified",
             width=1250,
@@ -248,7 +248,7 @@ class PriceChartBuilder:
             tickangle=0,
             range=[
                 daily["date"].min(),
-                daily["date"].max() + datetime.timedelta(days=8),
+                daily["date"].max() + datetime.timedelta(days=2),
             ],
         )
         fig.update_yaxes(tickformat=".0f", ticksuffix="%")
@@ -266,57 +266,112 @@ class PriceChartBuilder:
 
     # ------------------------------------------------------------------ #
     # Regional facet charts: aggregate mean ± 1 sd per region
-    # ------------------------------------------------------------------ #
-    def regional_price_chart(
-        self,
-        by_region: pl.DataFrame,
-        *,
-        fuel: str,
-        value_col: str,
-    ) -> tuple[Path, Path]:
-        """by_region: daily stats for one fuel with a ``regione`` column."""
-        mean_col = f"mean_{value_col}"
-        sd_col = f"sd_{value_col}"
-        fig = px.line(
-            by_region,
-            x="date",
-            y=mean_col,
-            error_y=sd_col,
-            facet_col="regione",
-            facet_col_wrap=5,
-            facet_col_spacing=0.03,
-            facet_row_spacing=0.06,
-            title=(
-                f"{fuel}: daily mean {value_col.replace('_', ' ')} by region "
-                "(mean ± 1 sd, all groups)"
-            ),
-            labels={mean_col: _value_label(value_col)},
-        )
-        fig.for_each_trace(
-            lambda trace: trace.update(line_color=_AGG_COLOR, line_width=1.6)
-        )
+    # ------------------------------------------------------------------
+    # Brand daily price chart: one line per Bandiera
+    # ------------------------------------------------------------------
+    def brand_price_chart(
+        self, daily: pl.DataFrame, *, fuel: str, zoom: bool = False
+    ) -> Path:
+        """daily: one row per date x canonical_name for a single fuel, with
+        ``mean_price`` = daily mean gross price of the brand."""
+        if zoom:
+            daily = daily.filter(pl.col("date") >= config.ZOOM_FROM)
+
+        fig = go.Figure()
+        for brand in self.BRAND_LINE_ORDER:
+            series = daily.filter(pl.col("canonical_name") == brand).sort("date")
+            if not series.height:
+                continue
+            fig.add_trace(
+                go.Scatter(
+                    x=series["date"].to_list(),
+                    y=series["mean_price"].to_list(),
+                    mode="lines",
+                    name=brand,
+                    line={"color": self.BRAND_LINE_COLORS[brand], "width": 2},
+                    hovertemplate="%{y:.3f} EUR/l<extra>%{fullData.name}</extra>",
+                )
+            )
+
+        window_label = f" — zoom from {config.ZOOM_FROM.isoformat()}" if zoom else ""
         fig.update_layout(
+            title=(f"{fuel}: daily mean gross price by Bandiera{window_label}"),
+            yaxis_title="gross price (EUR/l)",
             template="plotly_white",
-            width=1650,
-            height=1050,
+            hovermode="x unified",
+            width=1250,
+            height=520,
+            legend={"orientation": "h", "yanchor": "bottom", "y": 1.0},
             margin={"l": 60, "r": 30, "t": 80, "b": 50},
-            showlegend=False,
         )
-        fig.update_xaxes(tickformat="%d %b", tickangle=0, matches=None)
-        fig.update_yaxes(tickformat=".2f", matches=None)
+        fig.update_xaxes(
+            tickformat="%d %b",
+            tickangle=0,
+            range=[
+                daily["date"].min(),
+                daily["date"].max() + datetime.timedelta(days=2),
+            ],
+        )
+        fig.update_yaxes(tickformat=".3f")
         fig.add_vline(
             x=config.CAP_DATE.isoformat(),
             line_dash="dash",
             line_color="black",
-            line_width=1,
+            annotation_text=f"cap {config.CAP_DATE.isoformat()}",
+            annotation_position="top left",
         )
-        stem = f"{_value_prefix(value_col)}_regions_{fuel.lower()}"
+        threshold = config.THRESHOLDS[fuel]
+        fig.add_hline(
+            y=threshold,
+            line_dash="dot",
+            line_color="firebrick",
+            annotation_text=f"cap {threshold:.2f} EUR/l",
+            annotation_position="bottom left",
+        )
+        stem = f"brand_mean_price_{fuel.lower()}"
+        if zoom:
+            stem = f"{stem}_zoom"
         return self._export(fig, stem)
 
-    # ------------------------------------------------------------------ #
-    def _export(self, fig: go.Figure, stem: str) -> tuple[Path, Path]:
+    # ------------------------------------------------------------------
+    # Regional compliance chart: ranked horizontal bars per region
+    # ------------------------------------------------------------------
+    def regional_compliance_chart(
+        self,
+        by_region: pl.DataFrame,
+        *,
+        fuel: str,
+        tipo: str,
+    ) -> Path:
+        """by_region: one row per region for a single (fuel, tipo), with
+        ``pct_at_or_below`` and ``n_obs`` — cap-day compliance ranked."""
+        frame = by_region.sort("pct_at_or_below")
+        fig = go.Figure()
+        fig.add_bar(
+            x=frame["pct_at_or_below"].to_list(),
+            y=frame["regione"].to_list(),
+            orientation="h",
+            marker_color=_AGG_COLOR,
+            customdata=frame["n_obs"].to_list(),
+            hovertemplate="%{y}: %{x:.1f}%<br>n=%{customdata}<extra></extra>",
+        )
+        fig.update_layout(
+            title=(
+                f"{fuel} · {tipo}: stations at or below the cap on "
+                f"{config.CAP_DATE.isoformat()}, by region"
+            ),
+            xaxis_title="% of stations at or below the cap",
+            template="plotly_white",
+            width=900,
+            height=900,
+            margin={"l": 140, "r": 40, "t": 80, "b": 60},
+        )
+        fig.update_xaxes(tickformat=".0f", ticksuffix="%")
+        stem = f"cap_compliance_capday_region_{fuel.lower()}_{tipo.lower()}"
+        return self._export(fig, stem)
+
+    # ------------------------------------------------------------------
+    def _export(self, fig: go.Figure, stem: str) -> Path:
         png_path = self._out_dir / f"{stem}.png"
-        html_path = self._out_dir / f"{stem}.html"
         fig.write_image(png_path, scale=2)
-        fig.write_html(html_path, include_plotlyjs="cdn")
-        return png_path, html_path
+        return png_path

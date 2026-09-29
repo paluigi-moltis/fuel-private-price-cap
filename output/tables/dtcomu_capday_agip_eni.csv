@@ -1,0 +1,13 @@
+fuel,compliant,comu_bucket,n_stations,share_pct
+Benzina,false,older,457,15.873567210837097
+Benzina,false,on cap day,52,1.806182702327197
+Benzina,false,within 2d before,2370,82.32025008683571
+Benzina,true,older,14,1.4644351464435146
+Benzina,true,on cap day,880,92.05020920502092
+Benzina,true,within 2d before,62,6.485355648535565
+Gasolio,false,older,127,4.435906391896612
+Gasolio,false,on cap day,81,2.829200139713587
+Gasolio,false,within 2d before,2655,92.7348934683898
+Gasolio,true,older,21,2.1627188465499483
+Gasolio,true,on cap day,885,91.14315139031926
+Gasolio,true,within 2d before,65,6.694129763130793
