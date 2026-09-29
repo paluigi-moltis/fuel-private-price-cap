@@ -1,2 +1,120 @@
 # fuel-private-price-cap
- Analysis of the private price cap in Italy announced by oil companies in September 2026
+
+Analysis of the private (self-imposed) price cap announced by Italian oil
+companies in September 2026, effective **2026-09-28** (included), based on
+station-level fuel price data stored in MongoDB.
+
+The pipeline downloads self-service prices (`isSelf = 1`, Benzina / Gasolio,
+from 2026-07-01), weekly station snapshots and the excise history; cleans,
+enriches and aggregates them; and produces CSV tables plus Plotly charts
+(PNG + HTML) covering cap compliance, price dynamics (gross and net of taxes)
+by market group, Tipo Impianto and region.
+
+## Usage
+
+```bash
+uv sync                     # install dependencies
+uv run fuel-price-cap       # full pipeline: download from MongoDB + analyze
+uv run fuel-price-cap --cache   # reuse the parquet files already in data/
+```
+
+`MONGO_URI` must be defined in `.env` (unless `--cache` is used). The
+`fuels` MongoDB database must contain the `prices`, `stations` and `tax`
+collections.
+
+Quality checks: `uv run ruff check src/` and `uv run black --check src/`.
+
+## Folder layout
+
+```
+src/fuel_price_cap/
+  config.py     # constants: window, VAT, thresholds, brand groups, paths
+  data.py       # FuelDataRepository (MongoDB -> Polars -> parquet), PriceCleaner
+  enrich.py     # BrandGrouper, RegionMapper, StationTimeline, NetPriceCalculator
+  analysis.py   # StationStats, CapCompliance, DailyPriceStats
+  plots.py      # PriceChartBuilder (Plotly, PNG via kaleido + HTML)
+  main.py       # Pipeline orchestrator (run() executes all stages)
+
+data/           # parquet extracts + static reference CSVs (see below)
+output/tables/  # all CSV deliverables
+output/figures/ # all charts (PNG + HTML)
+```
+
+### Data files
+
+| File | Content |
+|---|---|
+| `data/prices_raw.parquet` | prices as downloaded (date ≥ 2026-07-01, `isSelf=1`, Benzina/Gasolio) |
+| `data/prices_clean.parquet` | raw minus 4-sd outliers |
+| `data/prices_enriched.parquet` | clean + station attributes (as-of), region, group, net price |
+| `data/stations.parquet` | all weekly station snapshots |
+| `data/tax.parquet` | excise change dates (EUR per 1000 l) |
+| `data/province_region.csv` | 107 province sigle → province name → region |
+| `data/brand_groups.csv` | the six explicit brand → group mappings |
+
+### Main outputs
+
+- `output/tables/cap_compliance_daily.csv`, `cap_compliance_period.csv`
+  (+ `_region` variants): share of observations strictly below the cap
+  threshold, by fuel × group × Tipo Impianto (× region).
+- `output/tables/net_price_stats_by_group.csv`, `net_price_stats_by_region.csv`:
+  net-price stats (mean/sd/min/max) with pre/post-cap deltas.
+- `output/tables/station_counts_by_*.csv`, `weekly_station_counts.csv`,
+  `brand_concentration.csv` (n Gestori, top-3 Gestore share, HHI in [0, 1]).
+- `output/tables/outliers_removed.csv`, `bandiera_values_audit.csv`: audits.
+- `output/figures/`: daily mean ± 1 sd per group (aggregate dotted line),
+  one chart per fuel × Tipo Impianto × gross/net × full/zoom window, plus
+  regional facet grids; vertical line at the cap date, horizontal line at the
+  threshold on gross charts.
+
+## Methodology
+
+- **Price field**: `prezzo`, EUR/litre, self-service only. Each (date ×
+  fuel × station) appears at most once in the source, so observations are
+  stations.
+- **Outliers**: one pass per (date × fuel) cell; observations with
+  `|prezzo − mean| > 4 sd` (ddof=1) are dropped. Cells with fewer than 2
+  observations are kept untouched. The audit CSV lists every cell with
+  removals. Removal rate: **0.97%**.
+- **Time-consistent attribution**: station attributes come from *weekly*
+  snapshots while prices are *daily*; each price is matched to the latest
+  snapshot of the same station up to that day (backward as-of join). Prices
+  predating a station's first snapshot (0.07% of rows) use the earliest
+  snapshot as fallback; 0.16% of rows reference a station never seen in the
+  snapshots and keep null attributes (grouped as Pompe Bianche / Tipo
+  Impianto "Altro", excluded from regional outputs).
+- **Groups**: Majors = Agip Eni, Api-Ip, Q8; Large = Esso, Tamoil, Shell;
+  Pompe Bianche = everything else (including the literal "Pompe Bianche"
+  label and null Bandiere). Matching is exact on a normalized form of the
+  label (lowercase, accents/punctuation stripped); every distinct raw
+  `Bandiera` value is listed with its assignment in
+  `bandiera_values_audit.csv` for review.
+- **Regions**: static sigla → region table (107 sigle; Aosta → Valle
+  d'Aosta, Bolzano + Trento → Trentino-Alto Adige/Südtirol). The source
+  stores the Napoli sigla "NA" as a missing value: null `Provincia` is
+  restored to "NA". Unmatched sigle after the join: 0.
+- **Net price**: `net = prezzo / 1.22 − excise(fuel, day)`, with excises in
+  EUR/1000 l rescaled to EUR/l and carried forward over a full daily
+  calendar (last `application_date ≤ day`). The gasolio excise changed twice
+  in the two weeks before the cap (2026-09-18 and 2026-09-26).
+- **Cap compliance** (from 2026-09-28, on clean prices): `prezzo < 2.0`
+  (Benzina) and `prezzo < 2.2` (Gasolio), strict inequality. The post-cap
+  period in the current extract covers a single day (2026-09-28).
+- **Concentration**: computed on the latest snapshot for the six grouped
+  brands only; Gestore labels are normalized before counting. HHI uses
+  shares as fractions, so it ranges in [0, 1].
+- **Known caveats**: `data_download.py` (the original exploratory script)
+  projects `Latitude`/`Longitude`, but the real field names are
+  `Latitudine`/`Longitudine`; it is kept untouched for provenance.
+
+## Change Log
+
+- 2026-09-29 — Implemented the full analysis pipeline (`src/fuel_price_cap/`):
+  MongoDB repository with parquet persistence, 4-sd outlier cleaning with
+  audit, as-of station attribution, brand grouping with a full Bandiera
+  audit, province → region mapping (with the Napoli "NA" restore), daily
+  excise calendar and net prices, station counts and Gestore concentration,
+  cap compliance tables, national and regional Plotly charts, console
+  validation checklist. Added `plotly`, `kaleido`, `numpy` (via
+  `plotly[express]`) and dev `ruff`/`black`; console script
+  `fuel-price-cap`.
