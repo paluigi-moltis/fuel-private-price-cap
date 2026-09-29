@@ -185,3 +185,6 @@ output/figures/ # all charts (PNG + HTML)
   margin rows now sort directly after the detail rows of their cell.
   `brand_concentration.csv` additionally names the top-2 and top-3 Gestori
   per brand.
+- 2026-09-29 — The generated tables and figures under `output/` are now
+  committed to the repository (the raw parquet extracts in `data/` remain
+  gitignored and regenerable).

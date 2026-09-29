@@ -1,0 +1,14 @@
+group,canonical_name,tipo_impianto,n_stations
+Large,Esso,Autostradale,69
+Large,Tamoil,Autostradale,52
+Majors,Agip Eni,Autostradale,118
+Majors,Q8,Autostradale,99
+Majors,Api-Ip,Autostradale,97
+Pompe Bianche,Pompe Bianche,Autostradale,108
+Large,Esso,Stradale,2276
+Large,Tamoil,Stradale,1535
+Large,Shell,Stradale,169
+Majors,Agip Eni,Stradale,4333
+Majors,Api-Ip,Stradale,4023
+Majors,Q8,Stradale,2805
+Pompe Bianche,Pompe Bianche,Stradale,8167

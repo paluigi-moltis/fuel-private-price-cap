@@ -1,0 +1,18 @@
+canonical_name,tipo_impianto_slice,n_stations,n_gestori,top1_gestore,top2_gestore,top3_gestore,n_stations_top1,top1_gestore_share,top3_gestore_share,hhi
+Agip Eni,Autostradale,118,68,enimoov s p a,sarni s r l,maenza c s r l,31,0.2627,0.4237,0.0954
+Agip Eni,Stradale,4333,2699,enimoov s p a,gestioni innovative italia s r l,servizi e gestioni zenit s r l in sigla zenit s r l,741,0.171,0.2317,0.0322
+Agip Eni,Tutti,4451,2758,enimoov s p a,gestioni innovative italia s r l,servizi e gestioni zenit s r l in sigla zenit s r l,772,0.1734,0.2325,0.0329
+Api-Ip,Autostradale,97,61,ip services s r l,nuova sidap s r l,autobar di ginetti giancarlo c s r l,18,0.1856,0.3402,0.0571
+Api-Ip,Stradale,4023,2404,ip services s r l,engy s societa a responsabilita limitata,economy s r l,727,0.1807,0.2033,0.0336
+Api-Ip,Tutti,4120,2458,ip services s r l,engy s societa a responsabilita limitata,economy s r l,745,0.1808,0.2029,0.0336
+Esso,Autostradale,69,34,sarni s r l,nuova sidap s r l,tiger s r l,16,0.2319,0.5072,0.1086
+Esso,Stradale,2276,1424,egi 2go s r l,pad multienergy s p a,vega carburanti s p a,145,0.0637,0.1736,0.0127
+Esso,Tutti,2345,1453,egi 2go s r l,pad multienergy s p a,vega carburanti s p a,145,0.0618,0.1684,0.0121
+Q8,Autostradale,99,46,sarni s r l,nuova sidap s r l,sife s r l,23,0.2323,0.5152,0.1052
+Q8,Stradale,2805,1047,servizi gestioni italia s r l,eos services s r l a socio unico,easy service s r l,1438,0.5127,0.5583,0.2647
+Q8,Tutti,2904,1086,servizi gestioni italia s r l,eos services s r l a socio unico,nuova sidap s r l,1440,0.4959,0.5413,0.2478
+Shell,Stradale,169,81,pad multienergy s p a,goldengas societa per azioni,bergas societa a responsabilita limitata,75,0.4438,0.5325,0.2058
+Shell,Tutti,169,81,pad multienergy s p a,goldengas societa per azioni,bergas societa a responsabilita limitata,75,0.4438,0.5325,0.2058
+Tamoil,Autostradale,52,13,nuova sidap s r l,sarni s r l,t d m s r l,15,0.2885,0.6923,0.1827
+Tamoil,Stradale,1535,634,t d m s r l,pad multienergy s p a,acema s p a,624,0.4065,0.4593,0.1678
+Tamoil,Tutti,1587,644,t d m s r l,pad multienergy s p a,acema s p a,632,0.3982,0.4493,0.1611

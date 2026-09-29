@@ -159,8 +159,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# Generated analysis artifacts (regenerable via `uv run fuel-price-cap`)
+# Raw data extracts (regenerable via `uv run fuel-price-cap`); output
+# tables and figures are committed
 data/*.parquet
-output/
 /.kilo
 /.zcode
