@@ -49,10 +49,10 @@ class StationStats:
         )
 
     def counts_by_bandiera_tipo(self) -> pl.DataFrame:
+        # seven-brand view (see enrich.brand_view); the raw Bandiera detail
+        # lives in bandiera_values_audit.csv
         return (
-            self._latest.group_by(
-                "group", "canonical_name", "bandiera", "tipo_impianto"
-            )
+            self._latest.group_by("group", "canonical_name", "tipo_impianto")
             .agg(n_stations=pl.len())
             .sort(
                 "tipo_impianto", "group", "n_stations", descending=[False, False, True]

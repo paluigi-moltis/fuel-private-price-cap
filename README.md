@@ -57,24 +57,29 @@ output/figures/ # all charts (PNG + HTML)
 - `output/tables/cap_compliance_daily.csv`, `cap_compliance_period.csv`
   (+ `_region` and `_bandiera` variants): share of observations strictly
   below the cap threshold, by fuel × group × Tipo Impianto (× region), and by
-  fuel × Bandiera × Tipo Impianto × top-1-Gestore flag. All compliance files
-  carry OLAP margin rows aggregated over their dimensions, marked with the
-  sentinel `"Tutte"` (e.g. `group="Tutte"` = all groups pooled).
-- `output/tables/cap_compliance_top1_gestore.csv`: per fuel × Bandiera, how
-  many stations run by the brand's top-1 Gestore comply with the cap versus
-  stations run by other operators (counts, below-cap shares and their
-  difference in percentage points).
+  fuel × Bandiera × Tipo Impianto × top-1-Gestore flag. Bandiera columns use
+  the **seven-brand view** (see below). All compliance files carry OLAP
+  margin rows aggregated over their dimensions, marked with the sentinel
+  `"Tutte"` (e.g. `group="Tutte"` = all groups pooled).
+- `output/tables/cap_compliance_top1_gestore.csv`: per fuel × Bandiera
+  (seven-brand view), how many stations run by the brand's top-1 Gestore
+  comply with the cap versus stations run by other operators (counts,
+  below-cap shares and their difference in percentage points).
 - `output/tables/net_price_stats_by_group.csv`, `net_price_stats_by_region.csv`:
   net-price stats (mean/sd/min/max) with pre/post-cap deltas.
 - `output/tables/station_counts_by_*.csv`, `weekly_station_counts.csv`,
   `brand_concentration.csv` (n Gestori, top-1 Gestore with station count and
-  share, top-3 Gestore share, HHI in [0, 1]).
-- `output/tables/outliers_removed.csv`, `bandiera_values_audit.csv`: audits.
+  share, top-3 Gestore share, HHI in [0, 1]). Station counts by Bandiera use
+  the seven-brand view; `brand_concentration.csv` covers the six grouped
+  brands.
+- `output/tables/outliers_removed.csv`, `bandiera_values_audit.csv`: audits
+  (`bandiera_values_audit.csv` is the only table still listing every raw
+  Bandiera value).
 - `output/figures/`: daily mean ± 1 sd per group (aggregate dotted line),
   one chart per fuel × Tipo Impianto × gross/net × full/zoom window; regional
-  facet grids; daily below-cap share by Bandiera (six grouped brands plus
-  Pompe Bianche = all independents pooled), full window and zoom. All charts
-  mark the cap date; gross price charts also mark the threshold.
+  facet grids; daily below-cap share by Bandiera (seven-brand view), full
+  window and zoom. All charts mark the cap date; gross price charts also
+  mark the threshold.
 
 ## Methodology
 
@@ -99,6 +104,10 @@ output/figures/ # all charts (PNG + HTML)
   label (lowercase, accents/punctuation stripped); every distinct raw
   `Bandiera` value is listed with its assignment in
   `bandiera_values_audit.csv` for review.
+- **Seven-brand view**: Bandiera-level tables, reports and charts show the
+  six named brands (Agip Eni, Api-Ip, Q8, Esso, Tamoil, Shell) plus a
+  single "Pompe Bianche" brand pooling every other Bandiera, including the
+  literal "Pompe Bianche" label.
 - **Regions**: static sigla → region table (107 sigle; Aosta → Valle
   d'Aosta, Bolzano + Trento → Trentino-Alto Adige/Südtirol). The source
   stores the Napoli sigla "NA" as a missing value: null `Provincia` is
@@ -119,11 +128,13 @@ output/figures/ # all charts (PNG + HTML)
   `cap_compliance_top1_gestore.csv` report compares compliance of top-1
   operator stations vs the rest (hypothesis: stations directly run by the
   brand's main operator comply faster than independently-operated ones).
-- **Top-1 Gestore**: per Bandiera, the largest Gestore by station count on
-  the latest snapshot (normalized labels, ties broken alphabetically) —
-  reported in `brand_concentration.csv` with its station count and share,
-  and used to flag each price row (`gestore_top1` = "top1"/"altri") by
-  comparing the as-of Gestore against that anchor.
+- **Top-1 Gestore**: per Bandiera in the seven-brand view, the largest
+  Gestore by station count on the latest snapshot (normalized labels, ties
+  broken alphabetically); for the merged "Pompe Bianche" brand this is the
+  largest independent operator overall. Reported in `brand_concentration.csv`
+  (six grouped brands) with its station count and share, and used to flag
+  each price row (`gestore_top1` = "top1"/"altri") by comparing the as-of
+  Gestore against that anchor.
 - **Concentration**: computed on the latest snapshot for the six grouped
   brands only; Gestore labels are normalized before counting. HHI uses
   shares as fractions, so it ranges in [0, 1].
@@ -156,3 +167,10 @@ output/figures/ # all charts (PNG + HTML)
   now reports the top-1 Gestore name, station count and share; new daily
   below-cap share charts by Bandiera (six grouped brands + Pompe Bianche
   pooled, full window + zoom).
+- 2026-09-29 — Bandiera-level outputs switched to the seven-brand view
+  (six named brands + all remaining independents as a single "Pompe
+  Bianche" brand) for readability: compliance tables, the top-1 Gestore
+  report, station counts by Bandiera and the charts. The top-1 anchor for
+  "Pompe Bianche" is the largest independent operator overall.
+  `bandiera_values_audit.csv` remains the only table with every raw
+  Bandiera value.

@@ -23,6 +23,7 @@ from fuel_price_cap.enrich import (
     NetPriceCalculator,
     RegionMapper,
     StationTimeline,
+    brand_view,
 )
 from fuel_price_cap.plots import PriceChartBuilder
 
@@ -187,7 +188,9 @@ class Pipeline:
             f"{config.TABLES['bandiera_audit'].name}"
         )
 
-        stations_enriched = mapper.assign(grouper.assign(stations))
+        # seven-brand view for every station-level table downstream: the raw
+        # Bandiera detail is preserved in bandiera_values_audit.csv only
+        stations_enriched = brand_view(mapper.assign(grouper.assign(stations)))
         meta = {**asof_meta, "unmatched_sigle": float(unmatched_sigle)}
         return enriched, stations_enriched, meta
 
@@ -226,9 +229,12 @@ class Pipeline:
         enriched: pl.DataFrame, stations_enriched: pl.DataFrame
     ) -> None:
         _banner("Stage 6/8 — cap compliance (from 2026-09-28, clean prices)")
+        # seven-brand view everywhere in this stage (six named brands plus
+        # all remaining independents as a single "Pompe Bianche" brand)
+        comp_prices = brand_view(enriched)
         top1_gestori = StationStats(stations_enriched).top1_gestori()
 
-        compliance = CapCompliance(enriched)
+        compliance = CapCompliance(comp_prices)
         daily = compliance.daily_with_aggregates(("group", "tipo_impianto"))
         daily.write_csv(config.TABLES["compliance_daily"])
         period = compliance.period(("group", "tipo_impianto"))
@@ -236,7 +242,7 @@ class Pipeline:
 
         _print_compliance_summary(daily, period)
 
-        compliance_bandiera = CapCompliance(enriched, top1_gestori=top1_gestori)
+        compliance_bandiera = CapCompliance(comp_prices, top1_gestori=top1_gestori)
         dims_bandiera = ("canonical_name", "tipo_impianto", "gestore_top1")
         daily_bandiera = compliance_bandiera.daily_with_aggregates(dims_bandiera)
         daily_bandiera = attach_top1_share(
@@ -256,9 +262,9 @@ class Pipeline:
             f"rows -> {config.TABLES['compliance_top1'].name}"
         )
         _print_top1_hypothesis(top1_report)
-        _check_aggregate_rows(daily, enriched)
+        _check_aggregate_rows(daily, comp_prices)
 
-        enriched_with_region = enriched.filter(pl.col("regione").is_not_null())
+        enriched_with_region = comp_prices.filter(pl.col("regione").is_not_null())
         compliance_region = CapCompliance(enriched_with_region)
         daily_region = compliance_region.daily_with_aggregates(
             ("regione", "group", "tipo_impianto")
@@ -267,14 +273,9 @@ class Pipeline:
         period_region = compliance_region.period(("regione", "group", "tipo_impianto"))
         period_region.write_csv(config.TABLES["compliance_period_region"])
 
-        plot_prices = enriched.with_columns(
-            plot_bandiera=pl.when(pl.col("group").is_in(config.GROUPED_BRANDS))
-            .then(pl.col("canonical_name"))
-            .otherwise(pl.lit(config.GROUP_WHITE))
-        )
-        daily_plot = CapCompliance(plot_prices, from_date=None).daily(
-            ("plot_bandiera",)
-        )
+        daily_plot = CapCompliance(
+            brand_view(enriched, name="plot_bandiera"), from_date=None
+        ).daily(("plot_bandiera",))
         builder = PriceChartBuilder(config.FIGURES_DIR)
         n_charts = 0
         for fuel in config.FUELS:
@@ -425,23 +426,9 @@ def _print_compliance_summary(daily: pl.DataFrame, period: pl.DataFrame) -> None
 
 def _print_top1_hypothesis(top1_report: pl.DataFrame) -> None:
     """Lag hypothesis at a glance: post-cap compliance of stations run by the
-    brand's top-1 Gestore vs any other operator (six grouped brands)."""
-    grouped_brands = [canonical for canonical, _ in config.BRAND_GROUPS.values()]
-    view = (
-        top1_report.filter(pl.col("canonical_name").is_in(grouped_brands))
-        .select(
-            "fuel",
-            "canonical_name",
-            "n_top1_obs",
-            "pct_below_top1",
-            "n_altri_obs",
-            "pct_below_altri",
-            "delta_top1_altri_pp",
-        )
-        .sort("fuel", "canonical_name")
-    )
+    brand's top-1 Gestore vs any other operator (seven-brand view)."""
     print("Top-1 Gestore vs other operators (post-cap pooled, all Tipo Impianto):")
-    print(view)
+    print(top1_report)
 
 
 def _check_aggregate_rows(daily: pl.DataFrame, enriched: pl.DataFrame) -> None:

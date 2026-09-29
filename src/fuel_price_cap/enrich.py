@@ -135,6 +135,21 @@ def normalize_text(value: str | None) -> str | None:
     return collapsed or None
 
 
+def brand_view(frame: pl.DataFrame, name: str = "canonical_name") -> pl.DataFrame:
+    """Collapse Bandiera to the seven-brand view: the six grouped brands keep
+    their canonical name; every other value — including the literal
+    "Pompe Bianche" label — becomes the single "Pompe Bianche" brand.
+
+    The frame must already carry ``group`` and ``canonical_name`` (see
+    ``BrandGrouper.assign``)."""
+    return frame.with_columns(
+        pl.when(pl.col("group").is_in(config.GROUPED_BRANDS))
+        .then(pl.col("canonical_name"))
+        .otherwise(pl.lit(config.GROUP_WHITE))
+        .alias(name)
+    )
+
+
 def normalized_mapping(frame: pl.DataFrame, column: str) -> pl.DataFrame:
     """Distinct values of ``column`` with their normalized form (Python-side,
     computed once per distinct value rather than per row)."""
