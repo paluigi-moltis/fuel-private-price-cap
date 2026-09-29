@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+import datetime as dt
 from collections.abc import Sequence
+from itertools import combinations
 
 import polars as pl
 
 from fuel_price_cap import config
-from fuel_price_cap.enrich import normalize_text
+from fuel_price_cap.enrich import normalize_text, normalized_mapping
 
 _SLICE_ALL = "Tutti"
 
@@ -64,9 +66,24 @@ class StationStats:
             .sort("date", "group")
         )
 
+    def top1_gestori(self) -> pl.DataFrame:
+        """Largest Gestore (normalized label) per brand on the latest
+        snapshot, with its station count. Anchors the ``gestore_top1``
+        compliance split."""
+        gestori = _normalized_gestori(self._latest)
+        counts = gestori.group_by("canonical_name", "gestore_normalized").agg(
+            n_stations=pl.len()
+        )
+        return counts.group_by("canonical_name").agg(
+            top1_gestore=pl.col("gestore_normalized")
+            .sort_by(["n_stations", "gestore_normalized"], descending=[True, False])
+            .first(),
+            n_stations_top1=pl.col("n_stations").max(),
+        )
+
     def concentration(self) -> pl.DataFrame:
         """For the six grouped brands only (Majors/Large): number of distinct
-        Gestori, top-3 Gestore cumulative share, and HHI over Gestore shares.
+        Gestori, top-1 and top-3 Gestore shares, and HHI over Gestore shares.
 
         Shares are fractions in [0, 1], so HHI is in [0, 1] as well.
         Computed on the latest snapshot, overall and per Tipo Impianto.
@@ -91,6 +108,10 @@ class StationStats:
             .agg(
                 n_gestori=pl.len(),
                 n_stations=pl.col("n_stations").sum(),
+                top1_gestore=pl.col("gestore_normalized")
+                .sort_by(["n_stations", "gestore_normalized"], descending=[True, False])
+                .first(),
+                n_stations_top1=pl.col("n_stations").max(),
                 top3_gestore_share=(
                     pl.col("n_stations").sort(descending=True).head(3).sum()
                     / pl.col("n_stations").sum()
@@ -99,6 +120,9 @@ class StationStats:
             )
             .with_columns(
                 tipo_impianto_slice=pl.lit(slice_label),
+                top1_gestore_share=(
+                    pl.col("n_stations_top1") / pl.col("n_stations")
+                ).round(4),
                 top3_gestore_share=pl.col("top3_gestore_share").round(4),
                 hhi=pl.col("hhi").round(4),
             )
@@ -107,6 +131,9 @@ class StationStats:
                 "tipo_impianto_slice",
                 "n_stations",
                 "n_gestori",
+                "top1_gestore",
+                "n_stations_top1",
+                "top1_gestore_share",
                 "top3_gestore_share",
                 "hhi",
             )
@@ -130,17 +157,51 @@ def _normalized_gestori(frame: pl.DataFrame) -> pl.DataFrame:
 
 class CapCompliance:
     """Share of price observations strictly below the cap threshold
-    (Benzina < 2.0 EUR/l, Gasolio < 2.2 EUR/l) from the cap date onward."""
+    (Benzina < 2.0 EUR/l, Gasolio < 2.2 EUR/l).
 
-    def __init__(self, prices: pl.DataFrame) -> None:
-        self._df = (
-            prices.filter(pl.col("date") >= config.CAP_DATE)
-            .with_columns(
-                threshold=pl.col("fuel").replace_strict(
-                    config.THRESHOLDS, return_dtype=pl.Float64
-                )
+    ``from_date`` bounds the window (default: the cap date, included);
+    ``None`` keeps the full period. When ``top1_gestori`` (from
+    ``StationStats.top1_gestori``) is given, rows carry a ``gestore_top1``
+    flag: "top1" when the station's Gestore is the brand's largest operator,
+    "altri" otherwise.
+    """
+
+    def __init__(
+        self,
+        prices: pl.DataFrame,
+        from_date: dt.date | None = config.CAP_DATE,
+        top1_gestori: pl.DataFrame | None = None,
+    ) -> None:
+        base = (
+            prices if from_date is None else prices.filter(pl.col("date") >= from_date)
+        )
+        flagged = base.with_columns(
+            threshold=pl.col("fuel").replace_strict(
+                config.THRESHOLDS, return_dtype=pl.Float64
             )
-            .with_columns(is_below=pl.col("prezzo") < pl.col("threshold"))
+        ).with_columns(is_below=pl.col("prezzo") < pl.col("threshold"))
+        if top1_gestori is not None:
+            flagged = self._flag_gestore_top1(flagged, top1_gestori)
+        self._df = flagged
+
+    @staticmethod
+    def _flag_gestore_top1(
+        frame: pl.DataFrame, top1_gestori: pl.DataFrame
+    ) -> pl.DataFrame:
+        normalized = normalized_mapping(frame, "gestore")
+        return (
+            frame.join(normalized, left_on="gestore", right_on="raw", how="left")
+            .join(
+                top1_gestori.select("canonical_name", "top1_gestore"),
+                on="canonical_name",
+                how="left",
+            )
+            .with_columns(
+                gestore_top1=pl.when(pl.col("normalized") == pl.col("top1_gestore"))
+                .then(pl.lit("top1"))
+                .otherwise(pl.lit("altri"))
+            )
+            .drop("normalized", "top1_gestore")
         )
 
     def daily(self, dims: Sequence[str] = ()) -> pl.DataFrame:
@@ -151,21 +212,166 @@ class CapCompliance:
             .sort("date", "fuel", *dims)
         )
 
+    def daily_with_aggregates(self, dims: Sequence[str] = ()) -> pl.DataFrame:
+        """Daily shares plus OLAP margins: for every subset of ``dims``,
+        additional rows aggregated over that subset, with the aggregated
+        dimensions set to ``"Tutte"``."""
+        return _add_aggregate_rows(self.daily(dims), dims)
+
     def period(self, dims: Sequence[str] = ()) -> pl.DataFrame:
-        """Pooled share over the whole post-cap period plus the mean of daily shares."""
+        """Pooled share over the window plus the mean of daily shares,
+        computed on the daily frame including its aggregate rows."""
+        daily_frame = self.daily_with_aggregates(dims)
         pooled = (
-            self._df.group_by("fuel", *dims)
-            .agg(n_obs=pl.len(), n_below=pl.col("is_below").sum())
+            daily_frame.group_by("fuel", *dims)
+            .agg(n_obs=pl.col("n_obs").sum(), n_below=pl.col("n_below").sum())
             .with_columns(pct_below_pooled=pl.col("n_below") / pl.col("n_obs") * 100)
         )
-        daily_mean = (
-            self.daily(dims)
-            .group_by("fuel", *dims)
-            .agg(pct_below_daily_mean=pl.col("pct_below").mean())
+        daily_mean = daily_frame.group_by("fuel", *dims).agg(
+            pct_below_daily_mean=pl.col("pct_below").mean()
         )
         return pooled.join(daily_mean, on=["fuel", *dims], how="left").sort(
             "fuel", *dims
         )
+
+
+def _dim_subsets(dims: Sequence[str]) -> list[tuple[str, ...]]:
+    """All non-empty subsets of ``dims``, in a deterministic order."""
+    return [
+        subset
+        for size in range(1, len(dims) + 1)
+        for subset in combinations(dims, size)
+    ]
+
+
+def _add_aggregate_rows(daily: pl.DataFrame, dims: Sequence[str]) -> pl.DataFrame:
+    """Append OLAP margin rows to a daily compliance frame: for each subset
+    of ``dims``, rows pooled over that subset with the dimension set to
+    ``"Tutte"`` (counts summed, ``pct_below`` recomputed)."""
+    frames = [daily]
+    for subset in _dim_subsets(dims):
+        keep = [d for d in dims if d not in subset]
+        margins = (
+            daily.group_by("date", "fuel", *keep)
+            .agg(
+                n_obs=pl.col("n_obs").sum(),
+                n_below=pl.col("n_below").sum(),
+            )
+            .with_columns(pct_below=pl.col("n_below") / pl.col("n_obs") * 100)
+            .with_columns(pl.lit(config.AGG_SENTINEL).alias(d) for d in subset)
+            .select(daily.columns)
+        )
+        frames.append(margins)
+    return pl.concat(frames).sort("date", "fuel", *dims)
+
+
+def _olap_sum(
+    frame: pl.DataFrame,
+    *,
+    keys: Sequence[str],
+    dims: Sequence[str],
+    value_col: str,
+    out_name: str,
+) -> pl.DataFrame:
+    """``frame`` at the most detailed grain (``keys`` + ``dims``, one row per
+    cell with ``value_col``), plus margin rows over every subset of ``dims``
+    with the value summed and the dimension set to ``"Tutte"``."""
+    base = frame.select(*keys, *dims, pl.col(value_col).alias(out_name))
+    frames = [base]
+    for subset in _dim_subsets(dims):
+        keep = [d for d in dims if d not in subset]
+        margins = (
+            frame.group_by(*keys, *keep)
+            .agg(pl.col(value_col).sum().alias(out_name))
+            .with_columns(pl.lit(config.AGG_SENTINEL).alias(d) for d in subset)
+            .select(*base.columns)
+        )
+        frames.append(margins)
+    return pl.concat(frames)
+
+
+def attach_top1_share(
+    frame: pl.DataFrame, keys: Sequence[str], dims: Sequence[str]
+) -> pl.DataFrame:
+    """Add ``n_top1_obs`` and ``share_top1_pct`` to the ``gestore_top1="Tutte"``
+    rows of a compliance frame (daily or period grain): the number and share
+    of observations in each cell whose Gestore is the brand's top-1 operator.
+
+    ``keys`` are the non-dimension key columns (("date", "fuel") for daily
+    frames, ("fuel",) for period frames); ``dims`` are the bandiera
+    dimensions. Top-1 counts are OLAP-summed so they align with every margin
+    cell, including the pooled ``canonical_name="Tutte"`` rows.
+    """
+    # only detailed-grain rows: the frame already carries margin rows, and
+    # _olap_sum rebuilds the margins itself from the detail
+    detailed_top1 = frame.filter(
+        (pl.col("gestore_top1") == "top1")
+        & ~pl.any_horizontal([pl.col(d) == config.AGG_SENTINEL for d in dims])
+    )
+    top1_counts = _olap_sum(
+        detailed_top1,
+        keys=keys,
+        dims=dims,
+        value_col="n_obs",
+        out_name="n_top1_obs",
+    )
+    tutte = (
+        frame.filter(pl.col("gestore_top1") == config.AGG_SENTINEL)
+        .join(top1_counts, on=[*keys, *dims], how="left")
+        .with_columns(
+            n_top1_obs=pl.col("n_top1_obs").fill_null(0),
+            share_top1_pct=pl.col("n_top1_obs") / pl.col("n_obs") * 100,
+        )
+    )
+    others = frame.filter(pl.col("gestore_top1") != config.AGG_SENTINEL).with_columns(
+        pl.lit(None, dtype=top1_counts.schema["n_top1_obs"]).alias("n_top1_obs"),
+        pl.lit(None, dtype=pl.Float64).alias("share_top1_pct"),
+    )
+    return pl.concat([others, tutte])
+
+
+def top1_compliance_report(period_bandiera: pl.DataFrame) -> pl.DataFrame:
+    """Wide per-Bandiera comparison of post-cap compliance between stations
+    run by the brand's top-1 Gestore and stations run by any other operator.
+
+    Input: a period-grain bandiera compliance frame with the ``gestore_top1``
+    split (all Tipo Impianto pooled). Output: one row per fuel x brand with
+    observation counts, below-cap counts and shares for both operator
+    classes, plus the share difference in percentage points.
+    """
+    detail = period_bandiera.filter(
+        (pl.col("tipo_impianto") == config.AGG_SENTINEL)
+        & (pl.col("gestore_top1") != config.AGG_SENTINEL)
+        & (pl.col("canonical_name") != config.AGG_SENTINEL)
+    )
+    top1 = detail.filter(pl.col("gestore_top1") == "top1").select(
+        "fuel",
+        "canonical_name",
+        n_top1_obs=pl.col("n_obs"),
+        n_top1_below=pl.col("n_below"),
+        pct_below_top1=pl.col("pct_below_pooled"),
+    )
+    altri = detail.filter(pl.col("gestore_top1") == "altri").select(
+        "fuel",
+        "canonical_name",
+        n_altri_obs=pl.col("n_obs"),
+        n_altri_below=pl.col("n_below"),
+        pct_below_altri=pl.col("pct_below_pooled"),
+    )
+    return (
+        top1.join(altri, on=["fuel", "canonical_name"], how="full", coalesce=True)
+        .with_columns(
+            # null when the brand has no station of that operator class
+            delta_top1_altri_pp=pl.col("pct_below_top1")
+            - pl.col("pct_below_altri")
+        )
+        .sort(
+            "fuel",
+            "delta_top1_altri_pp",
+            descending=[False, True],
+            nulls_last=True,
+        )
+    )
 
 
 class DailyPriceStats:

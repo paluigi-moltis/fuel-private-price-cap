@@ -47,6 +47,27 @@ class PriceChartBuilder:
         config.GROUP_WHITE: "#7F7F7F",
     }
 
+    # compliance-share chart: the six grouped brands, then Pompe Bianche
+    # (all independents pooled) in gray
+    BRAND_LINE_ORDER: tuple[str, ...] = (
+        "Agip Eni",
+        "Api-Ip",
+        "Q8",
+        "Esso",
+        "Tamoil",
+        "Shell",
+        config.GROUP_WHITE,
+    )
+    BRAND_LINE_COLORS: dict[str, str] = {
+        "Agip Eni": "#D62728",
+        "Api-Ip": "#FF7F0E",
+        "Q8": "#9467BD",
+        "Esso": "#1F77B4",
+        "Tamoil": "#8C564B",
+        "Shell": "#17BECF",
+        config.GROUP_WHITE: "#7F7F7F",
+    }
+
     def __init__(self, out_dir: Path) -> None:
         self._out_dir = Path(out_dir)
         self._out_dir.mkdir(parents=True, exist_ok=True)
@@ -178,6 +199,70 @@ class PriceChartBuilder:
                 hovertemplate="%{y:.3f} EUR/l<extra>%{fullData.name}</extra>",
             )
         )
+
+    # ------------------------------------------------------------------ #
+    # Compliance-share chart: one line per Bandiera
+    # ------------------------------------------------------------------ #
+    def compliance_share_chart(
+        self, daily: pl.DataFrame, *, fuel: str, zoom: bool = False
+    ) -> tuple[Path, Path]:
+        """daily: one row per date x plot_bandiera for a single fuel, with
+        ``pct_below`` = share of stations priced below the cap threshold."""
+        if zoom:
+            daily = daily.filter(pl.col("date") >= config.ZOOM_FROM)
+
+        fig = go.Figure()
+        for brand in self.BRAND_LINE_ORDER:
+            series = daily.filter(pl.col("plot_bandiera") == brand).sort("date")
+            if not series.height:
+                continue
+            fig.add_trace(
+                go.Scatter(
+                    x=series["date"].to_list(),
+                    y=series["pct_below"].to_list(),
+                    mode="lines",
+                    name=brand,
+                    line={"color": self.BRAND_LINE_COLORS[brand], "width": 2},
+                    hovertemplate="%{y:.1f}%<extra>%{fullData.name}</extra>",
+                )
+            )
+
+        window_label = f" — zoom from {config.ZOOM_FROM.isoformat()}" if zoom else ""
+        threshold = config.THRESHOLDS[fuel]
+        fig.update_layout(
+            title=(
+                f"{fuel}: daily share of stations priced below the "
+                f"{threshold:.1f} EUR/l cap, by Bandiera{window_label}"
+            ),
+            yaxis_title="% of stations below the cap",
+            template="plotly_white",
+            hovermode="x unified",
+            width=1250,
+            height=520,
+            legend={"orientation": "h", "yanchor": "bottom", "y": 1.0},
+            margin={"l": 60, "r": 30, "t": 80, "b": 50},
+        )
+        # right padding keeps the cap line clear of its own annotation
+        fig.update_xaxes(
+            tickformat="%d %b",
+            tickangle=0,
+            range=[
+                daily["date"].min(),
+                daily["date"].max() + datetime.timedelta(days=8),
+            ],
+        )
+        fig.update_yaxes(tickformat=".0f", ticksuffix="%")
+        fig.add_vline(
+            x=config.CAP_DATE.isoformat(),
+            line_dash="dash",
+            line_color="black",
+            annotation_text=f"cap {config.CAP_DATE.isoformat()}",
+            annotation_position="top left",
+        )
+        stem = f"compliance_share_by_bandiera_{fuel.lower()}"
+        if zoom:
+            stem = f"{stem}_zoom"
+        return self._export(fig, stem)
 
     # ------------------------------------------------------------------ #
     # Regional facet charts: aggregate mean ± 1 sd per region

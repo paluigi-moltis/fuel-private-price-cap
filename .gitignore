@@ -162,3 +162,5 @@ cython_debug/
 # Generated analysis artifacts (regenerable via `uv run fuel-price-cap`)
 data/*.parquet
 output/
+/.kilo
+/.zcode

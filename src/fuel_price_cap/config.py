@@ -12,6 +12,9 @@ FIGURES_DIR = PROJECT_ROOT / "output" / "figures"
 
 DB_NAME = "fuels"
 
+# value used in compliance tables for rows that aggregate over a dimension
+AGG_SENTINEL = "Tutte"
+
 # --- Analysis window -------------------------------------------------------
 PRICES_FROM = dt.date(2026, 7, 1)
 TAX_FROM = dt.date(2026, 5, 1)
@@ -69,6 +72,9 @@ TABLES = {
     "concentration": TABLES_DIR / "brand_concentration.csv",
     "compliance_daily": TABLES_DIR / "cap_compliance_daily.csv",
     "compliance_period": TABLES_DIR / "cap_compliance_period.csv",
+    "compliance_daily_bandiera": TABLES_DIR / "cap_compliance_daily_bandiera.csv",
+    "compliance_period_bandiera": TABLES_DIR / "cap_compliance_period_bandiera.csv",
+    "compliance_top1": TABLES_DIR / "cap_compliance_top1_gestore.csv",
     "compliance_daily_region": TABLES_DIR / "cap_compliance_daily_region.csv",
     "compliance_period_region": TABLES_DIR / "cap_compliance_period_region.csv",
     "net_stats_group": TABLES_DIR / "net_price_stats_by_group.csv",

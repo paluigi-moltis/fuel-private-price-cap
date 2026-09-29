@@ -10,7 +10,13 @@ import polars as pl
 from dotenv import load_dotenv
 
 from fuel_price_cap import config
-from fuel_price_cap.analysis import CapCompliance, DailyPriceStats, StationStats
+from fuel_price_cap.analysis import (
+    CapCompliance,
+    DailyPriceStats,
+    StationStats,
+    attach_top1_share,
+    top1_compliance_report,
+)
 from fuel_price_cap.data import FuelDataRepository, PriceCleaner
 from fuel_price_cap.enrich import (
     BrandGrouper,
@@ -40,7 +46,7 @@ class Pipeline:
         )
 
         self._station_tables(stations_enriched)
-        self._compliance_tables(enriched)
+        self._compliance_tables(enriched, stations_enriched)
         self._national_charts(enriched)
         self._regional_outputs(enriched)
         self._validation(prices_raw, prices_clean, outlier_audit, enriched, enrich_meta)
@@ -216,30 +222,70 @@ class Pipeline:
     # Stage 6: cap compliance
     # ------------------------------------------------------------------ #
     @staticmethod
-    def _compliance_tables(enriched: pl.DataFrame) -> None:
+    def _compliance_tables(
+        enriched: pl.DataFrame, stations_enriched: pl.DataFrame
+    ) -> None:
         _banner("Stage 6/8 — cap compliance (from 2026-09-28, clean prices)")
+        top1_gestori = StationStats(stations_enriched).top1_gestori()
+
         compliance = CapCompliance(enriched)
-        daily = compliance.daily(("group", "tipo_impianto"))
+        daily = compliance.daily_with_aggregates(("group", "tipo_impianto"))
         daily.write_csv(config.TABLES["compliance_daily"])
         period = compliance.period(("group", "tipo_impianto"))
         period.write_csv(config.TABLES["compliance_period"])
 
+        _print_compliance_summary(daily, period)
+
+        compliance_bandiera = CapCompliance(enriched, top1_gestori=top1_gestori)
+        dims_bandiera = ("canonical_name", "tipo_impianto", "gestore_top1")
+        daily_bandiera = compliance_bandiera.daily_with_aggregates(dims_bandiera)
+        daily_bandiera = attach_top1_share(
+            daily_bandiera, keys=("date", "fuel"), dims=dims_bandiera[:2]
+        )
+        daily_bandiera.write_csv(config.TABLES["compliance_daily_bandiera"])
+        period_bandiera = compliance_bandiera.period(dims_bandiera)
+        period_bandiera = attach_top1_share(
+            period_bandiera, keys=("fuel",), dims=dims_bandiera[:2]
+        )
+        period_bandiera.write_csv(config.TABLES["compliance_period_bandiera"])
+
+        top1_report = top1_compliance_report(period_bandiera)
+        top1_report.write_csv(config.TABLES["compliance_top1"])
+        print(
+            f"Top-1 Gestore compliance report: {top1_report.height} fuel x brand "
+            f"rows -> {config.TABLES['compliance_top1'].name}"
+        )
+        _print_top1_hypothesis(top1_report)
+        _check_aggregate_rows(daily, enriched)
+
         enriched_with_region = enriched.filter(pl.col("regione").is_not_null())
         compliance_region = CapCompliance(enriched_with_region)
-        daily_region = compliance_region.daily(("regione", "group", "tipo_impianto"))
+        daily_region = compliance_region.daily_with_aggregates(
+            ("regione", "group", "tipo_impianto")
+        )
         daily_region.write_csv(config.TABLES["compliance_daily_region"])
         period_region = compliance_region.period(("regione", "group", "tipo_impianto"))
         period_region.write_csv(config.TABLES["compliance_period_region"])
 
-        post_cap_days = daily["date"].unique().sort().to_list()
-        print(f"Post-cap days: {daily['date'].n_unique()} ({post_cap_days})")
-        summary = (
-            period.group_by("fuel", "group")
-            .agg(n_obs=pl.col("n_obs").sum(), n_below=pl.col("n_below").sum())
-            .with_columns(pct_below=pl.col("n_below") / pl.col("n_obs") * 100)
-            .sort("fuel", "group")
+        plot_prices = enriched.with_columns(
+            plot_bandiera=pl.when(pl.col("group").is_in(config.GROUPED_BRANDS))
+            .then(pl.col("canonical_name"))
+            .otherwise(pl.lit(config.GROUP_WHITE))
         )
-        print(f"Period summary by fuel x group (all Tipo Impianto):\n{summary}")
+        daily_plot = CapCompliance(plot_prices, from_date=None).daily(
+            ("plot_bandiera",)
+        )
+        builder = PriceChartBuilder(config.FIGURES_DIR)
+        n_charts = 0
+        for fuel in config.FUELS:
+            fuel_slice = daily_plot.filter(pl.col("fuel") == fuel)
+            for zoom in (False, True):
+                builder.compliance_share_chart(fuel_slice, fuel=fuel, zoom=zoom)
+                n_charts += 1
+        print(
+            f"Written {n_charts} compliance-share charts by Bandiera "
+            "(full window + zoom)"
+        )
 
     # ------------------------------------------------------------------ #
     # Stage 7: national charts + net stats
@@ -359,6 +405,63 @@ class Pipeline:
 
 def _banner(title: str) -> None:
     print(f"\n{'=' * 74}\n{title}\n{'=' * 74}", flush=True)
+
+
+def _print_compliance_summary(daily: pl.DataFrame, period: pl.DataFrame) -> None:
+    post_cap_days = daily["date"].unique().sort().to_list()
+    print(f"Post-cap days: {daily['date'].n_unique()} ({post_cap_days})")
+    detail = period.filter(
+        (pl.col("group") != config.AGG_SENTINEL)
+        & (pl.col("tipo_impianto") != config.AGG_SENTINEL)
+    )
+    summary = (
+        detail.group_by("fuel", "group")
+        .agg(n_obs=pl.col("n_obs").sum(), n_below=pl.col("n_below").sum())
+        .with_columns(pct_below=pl.col("n_below") / pl.col("n_obs") * 100)
+        .sort("fuel", "group")
+    )
+    print(f"Period summary by fuel x group (all Tipo Impianto):\n{summary}")
+
+
+def _print_top1_hypothesis(top1_report: pl.DataFrame) -> None:
+    """Lag hypothesis at a glance: post-cap compliance of stations run by the
+    brand's top-1 Gestore vs any other operator (six grouped brands)."""
+    grouped_brands = [canonical for canonical, _ in config.BRAND_GROUPS.values()]
+    view = (
+        top1_report.filter(pl.col("canonical_name").is_in(grouped_brands))
+        .select(
+            "fuel",
+            "canonical_name",
+            "n_top1_obs",
+            "pct_below_top1",
+            "n_altri_obs",
+            "pct_below_altri",
+            "delta_top1_altri_pp",
+        )
+        .sort("fuel", "canonical_name")
+    )
+    print("Top-1 Gestore vs other operators (post-cap pooled, all Tipo Impianto):")
+    print(view)
+
+
+def _check_aggregate_rows(daily: pl.DataFrame, enriched: pl.DataFrame) -> None:
+    """Integrity check: a 'Tutte' margin row must equal the pooled detail."""
+    margin = daily.filter(
+        (pl.col("group") == config.AGG_SENTINEL)
+        & (pl.col("tipo_impianto") == config.TIPO_STRADALE)
+        & (pl.col("fuel") == config.FUELS[0])
+    )
+    direct = enriched.filter(
+        (pl.col("date") >= config.CAP_DATE)
+        & (pl.col("tipo_impianto") == config.TIPO_STRADALE)
+        & (pl.col("fuel") == config.FUELS[0])
+    ).height
+    margin_n = margin["n_obs"][0] if margin.height else None
+    ok = margin_n == direct
+    print(
+        f"[{'OK' if ok else 'FAIL'}] aggregate rows: 'Tutte' margin n_obs == "
+        f"pooled detail ({margin_n} vs {direct})"
+    )
 
 
 def main() -> None:
