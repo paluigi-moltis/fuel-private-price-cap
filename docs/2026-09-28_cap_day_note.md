@@ -1,10 +1,10 @@
 # The 2026-09-28 private price cap: day-one compliance
 
-*Italy's major oil companies self-imposed a pump-price cap effective 2026-09-28 (included): 2.00 €/l for Benzina, 2.20 €/l for Gasolio (self-service). This note measures day-one compliance on the MIMIT station-level extract of 2026-09-28 (~24k stations, self-service only, 4-sd outlier-cleaned). A station complies when its price is at or below the cap.*
+*Italy's major oil companies self-imposed a pump-price cap effective 2026-09-28 (included): 2.00 €/l for Benzina, 2.20 €/l for Gasolio (self-service). This note measures day-one compliance on the MIMIT station-level extract of 2026-09-28 (20.2k stations with prices that day, out of ~23.9k in the registry; self-service only, 4-sd outlier-cleaned). A station complies when its price is at or below the cap.*
 
 ## 1. Compliance is low — but communication, not refusal, is the bottleneck
 
-On the cap day, **Agip Eni complied on 24.9% of Benzina and 25.3% of Gasolio price observations** (956/3,835 and 971/3,834). But compliance tracks almost perfectly with *when the price was last communicated* (`dtComu`):
+On the cap day, **Agip Eni complied on 24.9% of Benzina and 25.3% of Gasolio price observations** (956/3,835 and 971/3,834; n are per-fuel station observations). But compliance tracks almost perfectly with *when the price was last communicated* (`dtComu`):
 
 | Last communication | Benzina: n | compliant | Gasolio: n | compliant |
 |---|---|---|---|---|
@@ -13,7 +13,7 @@ On the cap day, **Agip Eni complied on 24.9% of Benzina and 25.3% of Gasolio pri
 
 Same-day communications cluster at **00:00–07:00** (mean ~06:20) — a coordinated early-morning update. Stations that did not re-communicate kept their pre-cap price, which was set under the old (higher) level and is almost never compliant. In other words: the ~25% compliance rate is essentially the *share of stations reached by the same-morning update*, not the share willing to comply. Had all stations communicated on the 28th at the same-day cohort's observed compliance rate (~94%), day-one compliance would have been ≈ 94%, not 25%.
 
-The 133 same-day communicators that were nevertheless non-compliant (52 Benzina + 81 Gasolio) are **laggards of the same rollout, not holdouts**: they also communicated in the early-morning window (00–07 h), but transmitted old-level prices (mean 2.15 €/l Benzina vs 2.00 for the compliant cohort), scattered across regions and mostly *Stradale* — consistent with price files that reached a small share of stations after their automated morning communication.
+The 133 same-day non-compliant observations (52 Benzina + 81 Gasolio, on 107 distinct stations) are **laggards of the same rollout, not holdouts**: they also communicated in the early-morning window (00–08 h), but transmitted old-level prices (mean 2.15 €/l Benzina vs 1.99 for the compliant cohort; 2.40 vs 2.19 Gasolio), scattered across regions and mostly *Stradale* — consistent with price files that reached a small share of stations after their automated morning communication.
 
 ## 2. Compliance differs sharply by region
 
@@ -27,7 +27,7 @@ Daily brand means over the week before the cap show a clean break on 09-28, and 
 
 ![Daily mean Benzina price by brand](output/figures/brand_mean_price_benzina_zoom.png)
 
-Agip Eni Benzina dropped **−3.8 c/l (−179 bp)** against its 7-day pre-cap mean (2.149 → 2.111 €/l), closing ~26% of the distance to the cap; Gasolio shows the analogous move once the 09-26 excise hike (+5 c/l) is accounted for. Every other brand (Api-Ip, Q8, Esso, Tamoil, Shell, Pompe Bianche) was flat or drifted *away* from the cap (Benzina ±0.4 c/l; Gasolio +3.4…+4.0 c/l, pure excise pass-through). Note also the frozen 09-26/27 prices: stations barely communicated over the weekend before the cap.
+Agip Eni Benzina dropped **−3.8 c/l (−179 bp)** against its 7-day pre-cap mean (2.149 → 2.111 €/l), closing ~26% of the distance to the cap. Gasolio: Agip Eni is the *only* brand whose cap-day mean fell at all (−0.2 c/l, 2.349 → 2.346) while every competitor rose by +2.1…+4.0 c/l — a pass-through of the 09-26 excise hike (+5 c/l) that Agip Eni largely did not pass on, absorbing roughly half of it. Every other brand's Benzina moved little (Api-Ip −0.005 c/l…Q8 +1.0 c/l), none downward materially. Note also the 09-26/27 extract rows: their prices are a copy of the 09-25 vintage plus the excise jump for Gasolio — virtually no station communicated over the weekend before the cap.
 
 ## Data & method
 
