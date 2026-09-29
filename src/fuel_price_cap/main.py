@@ -392,6 +392,10 @@ class Pipeline:
         by_brand.write_csv(config.TABLES["dtcomu_capday_bandiera"])
         crosstab = fresh.agip_eni_crosstab()
         crosstab.write_csv(config.TABLES["dtcomu_capday"])
+        detail = fresh.agip_eni_capday_detail()
+        detail.write_csv(config.TABLES["dtcomu_capday_detail"])
+        summary = fresh.agip_eni_capday_summary()
+        summary.write_csv(config.TABLES["dtcomu_capday_summary"])
         agip = by_brand.filter(pl.col("canonical_name") == "Agip Eni")
         print("Agip Eni on cap day (compliance = at or below the cap):")
         print(
@@ -403,6 +407,13 @@ class Pipeline:
                 "n_comu_recent",
                 "n_comu_older",
             )
+        )
+        print("Agip Eni cap day, by communication day (cap day vs earlier):")
+        print(summary)
+        n_detail = detail.height
+        print(
+            f"Station-level detail: {n_detail:,} rows -> "
+            f"{config.TABLES['dtcomu_capday_detail'].name}"
         )
 
         brands = (

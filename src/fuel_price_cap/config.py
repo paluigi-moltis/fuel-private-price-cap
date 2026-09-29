@@ -89,6 +89,8 @@ TABLES = {
     "net_stats_region": TABLES_DIR / "net_price_stats_by_region.csv",
     "dtcomu_capday": TABLES_DIR / "dtcomu_capday_agip_eni.csv",
     "dtcomu_capday_bandiera": TABLES_DIR / "dtcomu_capday_bandiera.csv",
+    "dtcomu_capday_detail": TABLES_DIR / "dtcomu_capday_agip_eni_detail.csv",
+    "dtcomu_capday_summary": TABLES_DIR / "dtcomu_capday_agip_eni_by_comu_day.csv",
     "compliance_region_capday": TABLES_DIR / "cap_compliance_capday_region.csv",
     "brand_prices_daily": TABLES_DIR / "brand_daily_prices.csv",
     "brand_prices_break": TABLES_DIR / "brand_price_break.csv",

@@ -388,8 +388,7 @@ def top1_compliance_report(period_bandiera: pl.DataFrame) -> pl.DataFrame:
         top1.join(altri, on=["fuel", "canonical_name"], how="full", coalesce=True)
         .with_columns(
             # null when the brand has no station of that operator class
-            delta_top1_altri_pp=pl.col("pct_below_top1")
-            - pl.col("pct_below_altri")
+            delta_top1_altri_pp=pl.col("pct_below_top1") - pl.col("pct_below_altri")
         )
         .sort(
             "fuel",

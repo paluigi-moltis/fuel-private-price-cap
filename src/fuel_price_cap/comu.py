@@ -56,30 +56,33 @@ class ComuFreshness:
             "fuel", "canonical_name"
         )
 
+    @staticmethod
+    def _with_buckets(frame: pl.DataFrame) -> pl.DataFrame:
+        """Flag compliance and the dtComu recency bucket on cap-day rows."""
+        recent_from = config.CAP_DATE - dt.timedelta(days=config.COMU_RECENT_DAYS)
+        return frame.with_columns(
+            threshold=pl.col("fuel").replace_strict(
+                config.THRESHOLDS, return_dtype=pl.Float64
+            )
+        ).with_columns(
+            compliant=pl.col("prezzo") <= pl.col("threshold"),
+            comu_bucket=pl.when(pl.col("comu_date") == config.CAP_DATE)
+            .then(pl.lit("on cap day"))
+            .when(
+                pl.col("comu_date").is_not_null() & (pl.col("comu_date") >= recent_from)
+            )
+            .then(pl.lit(f"within {config.COMU_RECENT_DAYS}d before"))
+            .when(pl.col("comu_date").is_not_null())
+            .then(pl.lit("older"))
+            .otherwise(pl.lit("missing")),
+        )
+
     def agip_eni_crosstab(self) -> pl.DataFrame:
         """Agip Eni only: the compliance x communication-recency crosstab
         that answers 'is the low compliance just missing communications?'."""
         frame = self._capday.filter(pl.col("canonical_name") == "Agip Eni")
-        recent_from = config.CAP_DATE - dt.timedelta(days=config.COMU_RECENT_DAYS)
-        flagged = frame.with_columns(
-            threshold=pl.col("fuel").replace_strict(
-                config.THRESHOLDS, return_dtype=pl.Float64
-            )
-        )
         return (
-            flagged.with_columns(
-                compliant=pl.col("prezzo") <= pl.col("threshold"),
-                comu_bucket=pl.when(pl.col("comu_date") == config.CAP_DATE)
-                .then(pl.lit("on cap day"))
-                .when(
-                    pl.col("comu_date").is_not_null()
-                    & (pl.col("comu_date") >= recent_from)
-                )
-                .then(pl.lit(f"within {config.COMU_RECENT_DAYS}d before"))
-                .when(pl.col("comu_date").is_not_null())
-                .then(pl.lit("older"))
-                .otherwise(pl.lit("missing")),
-            )
+            self._with_buckets(frame)
             .group_by("fuel", "compliant", "comu_bucket")
             .agg(n_stations=pl.len())
             .with_columns(
@@ -88,6 +91,68 @@ class ComuFreshness:
                 * 100
             )
             .sort("fuel", "compliant", "comu_bucket")
+        )
+
+    def agip_eni_capday_detail(self) -> pl.DataFrame:
+        """Agip Eni only: one row per fuel x station observed on the cap day,
+        with compliance flag, communication recency bucket, raw dtComu
+        timestamp and the gap in days between communication and the cap day."""
+        frame = self._capday.filter(pl.col("canonical_name") == "Agip Eni")
+        return (
+            self._with_buckets(frame)
+            .with_columns(
+                comu_lag_days=(
+                    (pl.lit(config.CAP_DATE) - pl.col("comu_date")).dt.total_days()
+                ),
+                expected_compliant=pl.col("comu_date") >= config.CAP_DATE,
+            )
+            .select(
+                "fuel",
+                "id_impianto",
+                "compliant",
+                "comu_bucket",
+                "comu_lag_days",
+                "expected_compliant",
+                "dt_comu",
+                "comu_date",
+                "prezzo",
+                "threshold",
+                "regione",
+                "provincia",
+                "tipo_impianto",
+                "gestore",
+            )
+            .sort("fuel", "compliant", "comu_lag_days", "id_impianto")
+        )
+
+    def agip_eni_capday_summary(self) -> pl.DataFrame:
+        """Agip Eni only: compliance by whether the price was communicated
+        on the cap day vs earlier.
+
+        Rationale: the cap was drastically lower than the previous day's
+        level, so a communication on 2026-09-27 or earlier is expected to be
+        non-compliant (it predates the cap decision); only same-day
+        communications can be expected to comply.
+        """
+        frame = self._capday.filter(pl.col("canonical_name") == "Agip Eni")
+        return (
+            self._with_buckets(frame)
+            .with_columns(comu_on_capday=pl.col("comu_date") == config.CAP_DATE)
+            .group_by("fuel", "comu_on_capday")
+            .agg(
+                n_obs=pl.len(),
+                n_compliant=(pl.col("prezzo") <= pl.col("threshold")).sum(),
+                n_non_compliant=(pl.col("prezzo") > pl.col("threshold")).sum(),
+                mean_prezzo=pl.col("prezzo").mean(),
+                mean_comu_hour=(
+                    pl.col("dt_comu")
+                    .str.slice(11, 2)
+                    .cast(pl.Int32, strict=False)
+                    .mean()
+                ),
+            )
+            .with_columns(pct_compliant=pl.col("n_compliant") / pl.col("n_obs") * 100)
+            .sort("fuel", "comu_on_capday")
         )
 
 
