@@ -11,7 +11,9 @@ On the cap day, **Agip Eni complied on 24.9% of Benzina and 25.3% of Gasolio pri
 | on 09-28 (same day) | 932 | **94.4%** | 966 | **91.6%** |
 | 09-27 or earlier | 2,903 | **2.6%** | 2,868 | **3.0%** |
 
-Same-day communications cluster at **06:20–06:40** — a coordinated early-morning update. Stations that did not re-communicate kept their pre-cap price, which was set under the old (higher) level and is almost never compliant. In other words: the ~25% compliance rate is essentially the *share of stations reached by the same-morning update*, not the share willing to comply. Even perfect coverage would cap compliance near 47–48%; the residual non-compliance among same-day communicators (52 + 81 stations) is mostly motorway service areas (*Autostradale*), which the cap does not cover.
+Same-day communications cluster at **00:00–07:00** (mean ~06:20) — a coordinated early-morning update. Stations that did not re-communicate kept their pre-cap price, which was set under the old (higher) level and is almost never compliant. In other words: the ~25% compliance rate is essentially the *share of stations reached by the same-morning update*, not the share willing to comply. Had all stations communicated on the 28th at the same-day cohort's observed compliance rate (~94%), day-one compliance would have been ≈ 94%, not 25%.
+
+The 133 same-day communicators that were nevertheless non-compliant (52 Benzina + 81 Gasolio) are **laggards of the same rollout, not holdouts**: they also communicated in the early-morning window (00–07 h), but transmitted old-level prices (mean 2.15 €/l Benzina vs 2.00 for the compliant cohort), scattered across regions and mostly *Stradale* — consistent with price files that reached a small share of stations after their automated morning communication.
 
 ## 2. Compliance differs sharply by region
 
