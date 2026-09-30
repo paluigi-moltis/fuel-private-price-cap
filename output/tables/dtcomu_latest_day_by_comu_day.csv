@@ -1,0 +1,5 @@
+fuel,comu_28,n_obs,n_compliant,n_comu_same,pct
+Benzina,false,9996,322,2206,3.221288515406162
+Benzina,true,10133,3941,0,38.89272673443205
+Gasolio,false,9820,386,2477,3.930753564154786
+Gasolio,true,10325,3974,0,38.48910411622276

@@ -335,11 +335,11 @@ class Pipeline:
     # ------------------------------------------------------------------ #
     @staticmethod
     def _regional_outputs(enriched: pl.DataFrame) -> None:
-        _banner("Stage 8/9 — regional extension (cap-day compliance by region)")
+        _banner("Stage 8/9 — regional extension (post-cap compliance by region)")
         regional_prices = brand_view(enriched.filter(pl.col("regione").is_not_null()))
-        capday = regional_prices.filter(pl.col("date") == config.CAP_DATE)
+        post_cap = regional_prices.filter(pl.col("date") >= config.CAP_DATE)
         by_region = (
-            capday.group_by("regione", "fuel", "tipo_impianto")
+            post_cap.group_by("regione", "fuel", "tipo_impianto")
             .agg(
                 n_obs=pl.len(),
                 n_at_or_below=(
@@ -415,6 +415,57 @@ class Pipeline:
             f"Station-level detail: {n_detail:,} rows -> "
             f"{config.TABLES['dtcomu_capday_detail'].name}"
         )
+
+        post_cap = prices.filter(pl.col("date") >= config.CAP_DATE)
+        n_post_days = post_cap["date"].n_unique()
+        if n_post_days > 1:
+            latest = post_cap["date"].max()
+            latest_rows = post_cap.filter(pl.col("date") == latest)
+            thr = pl.col("fuel").replace_strict(
+                config.THRESHOLDS, return_dtype=pl.Float64
+            )
+            latest_flags = latest_rows.with_columns(
+                compliant=pl.col("prezzo") <= thr,
+                comu_28=pl.col("comu_date") == config.CAP_DATE,
+                comu_same=pl.col("comu_date") == latest,
+            )
+            compliance_by_day = (
+                post_cap.with_columns(compliant=pl.col("prezzo") <= thr)
+                .group_by("date", "fuel", "canonical_name")
+                .agg(
+                    n_obs=pl.len(),
+                    n_compliant=pl.col("compliant").sum(),
+                )
+                .with_columns(pct=pl.col("n_compliant") / pl.col("n_obs") * 100)
+                .sort("date", "fuel", "canonical_name")
+            )
+            compliance_by_day.write_csv(config.TABLES["postcap_daily"])
+            print(
+                f"Post-cap daily compliance by brand -> "
+                f"{config.TABLES['postcap_daily'].name}"
+            )
+            print(
+                compliance_by_day.filter(
+                    (pl.col("canonical_name") == "Agip Eni")
+                    & (pl.col("date") == latest)
+                )
+            )
+            by_comu_day = (
+                latest_flags.group_by("fuel", "comu_28")
+                .agg(
+                    n_obs=pl.len(),
+                    n_compliant=pl.col("compliant").sum(),
+                    n_comu_same=pl.col("comu_same").sum(),
+                )
+                .with_columns(pct=pl.col("n_compliant") / pl.col("n_obs") * 100)
+                .sort("fuel", "comu_28")
+            )
+            by_comu_day.write_csv(config.TABLES["dtcomu_day2"])
+            print(
+                f"Latest post-cap day by communication day -> "
+                f"{config.TABLES['dtcomu_day2'].name}"
+            )
+            print(by_comu_day)
 
         brands = (
             "Agip Eni",
@@ -535,14 +586,21 @@ def _print_top1_hypothesis(top1_report: pl.DataFrame) -> None:
 
 
 def _check_aggregate_rows(daily: pl.DataFrame, enriched: pl.DataFrame) -> None:
-    """Integrity check: a 'Tutte' margin row must equal the pooled detail."""
+    """Integrity check: a 'Tutte' margin row must equal the pooled detail.
+
+    Both sides are compared per single day: the 'Tutte' margin row of a
+    (date, fuel, tipo) cell pools over the remaining dimensions only, so
+    the direct count must be taken for that same day — summing over all
+    post-cap days would double-count once more than one day exists.
+    """
     margin = daily.filter(
         (pl.col("group") == config.AGG_SENTINEL)
         & (pl.col("tipo_impianto") == config.TIPO_STRADALE)
         & (pl.col("fuel") == config.FUELS[0])
+        & (pl.col("date") == config.CAP_DATE)
     )
     direct = enriched.filter(
-        (pl.col("date") >= config.CAP_DATE)
+        (pl.col("date") == config.CAP_DATE)
         & (pl.col("tipo_impianto") == config.TIPO_STRADALE)
         & (pl.col("fuel") == config.FUELS[0])
     ).height

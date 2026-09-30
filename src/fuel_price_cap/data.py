@@ -127,8 +127,9 @@ class FuelDataRepository:
                 pl.col("Longitudine").cast(pl.Float64).alias("longitude"),
             )
             # one row per (station, snapshot): keep the last if duplicated
-            .unique(subset=["id_impianto", "date"], keep="last")
-            .sort("date", "id_impianto")
+            .unique(subset=["id_impianto", "date"], keep="last").sort(
+                "date", "id_impianto"
+            )
         )
 
     @staticmethod
@@ -141,8 +142,7 @@ class FuelDataRepository:
                 pl.col("gasolio_tax").cast(pl.Float64),
             )
             # tax values are EUR per 1000 litres
-            .unique(subset=["application_date"], keep="last")
-            .sort("application_date")
+            .unique(subset=["application_date"], keep="last").sort("application_date")
         )
 
     @staticmethod
