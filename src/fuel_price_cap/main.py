@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import os
 import warnings
 
@@ -466,6 +467,65 @@ class Pipeline:
                 f"{config.TABLES['dtcomu_day2'].name}"
             )
             print(by_comu_day)
+
+            # Reference-day cutoff analysis (ISTAT 1/11/21 inflation days).
+            # The daily extract snapshot predates that day's morning price
+            # communications: rows dated Oct 1 never carry dtComu = Oct 1.
+            # Counterfactual: replace each station's recorded price with its
+            # post-cutoff communication (dtComu = reference day, first
+            # visible in the next day's data).
+            ref_day = dt.date(2026, 10, 1)
+            ref_next = dt.date(2026, 10, 2)
+            stradale = prices.filter(pl.col("tipo_impianto") == config.TIPO_STRADALE)
+            ref_rows = []
+            for fuel in config.FUELS:
+                d_ref = stradale.filter(pl.col("date") == ref_day).filter(fuel=fuel)
+                d_next = stradale.filter(pl.col("date") == ref_next).filter(fuel=fuel)
+                ref_prev = ref_day - dt.timedelta(days=1)
+                d_prev = stradale.filter(pl.col("date") == ref_prev).filter(fuel=fuel)
+                late = d_next.filter(pl.col("comu_date") == ref_day).select(
+                    "id_impianto", pl.col("prezzo").alias("p_new")
+                )
+                prev = d_ref.select("id_impianto", pl.col("prezzo").alias("p_prev"))
+                prev0 = (
+                    d_prev.select("id_impianto", pl.col("prezzo").alias("p_prev0"))
+                    .join(late, on="id_impianto", how="semi")
+                    .join(prev, on="id_impianto", how="anti")
+                )
+                late = (
+                    late.join(prev, on="id_impianto", how="left")
+                    .join(prev0, on="id_impianto", how="left")
+                    .with_columns(
+                        p_old=pl.coalesce("p_prev", "p_prev0"),
+                        in_ref_data=pl.col("p_prev").is_not_null(),
+                    )
+                )
+                changed = late.filter(pl.col("p_new") != pl.col("p_old"))
+                hyp = d_ref.join(
+                    late.select("id_impianto", "p_new"), on="id_impianto", how="left"
+                ).with_columns(p=pl.coalesce("p_new", "prezzo"))
+                ref_rows.append(
+                    {
+                        "fuel": fuel,
+                        "n_ref_rows": d_ref.height,
+                        "mean_recorded": d_ref["prezzo"].mean(),
+                        "n_comu_ref_day": late.height,
+                        "n_comu_ref_day_in_data": late.filter("in_ref_data").height,
+                        "n_comu_absent": late.filter(~pl.col("in_ref_data")).height,
+                        "n_changed_price": changed.height,
+                        "mean_hypothetical": hyp["p"].mean(),
+                        "delta_eur_l": hyp["p"].mean() - d_ref["prezzo"].mean(),
+                        "mean_old_price_changers": changed["p_old"].mean(),
+                        "mean_new_price_changers": changed["p_new"].mean(),
+                    }
+                )
+            ref_table = pl.DataFrame(ref_rows)
+            ref_table.write_csv(config.TABLES["reference_day"])
+            print(
+                f"Reference-day cutoff analysis ({ref_day}) -> "
+                f"{config.TABLES['reference_day'].name}"
+            )
+            print(ref_table)
 
         brands = (
             "Agip Eni",

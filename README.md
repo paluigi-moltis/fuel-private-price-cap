@@ -84,6 +84,18 @@ output/figures/ # all charts (static PNG; no HTML)
 - `output/tables/dtcomu_capday_bandiera.csv`: the same cap-day counts
   (observations, compliant, communication recency) for every brand of the
   seven-brand view.
+- `output/tables/postcap_daily_compliance_by_brand.csv`: daily compliance
+  per post-cap day × brand, plus the station-level transition counts
+  between consecutive post-cap days.
+- `output/tables/dtcomu_latest_day_by_comu_day.csv`: observations on the
+  latest available day split by whether dtComu is the cap day.
+- `output/tables/reference_day_cutoff_benzina_gasolio.csv`: Oct 1 (ISTAT
+  inflation reference day) cutoff analysis. The daily extract snapshot
+  predates the day's morning communications (zero Oct-1 rows carry
+  dtComu = Oct 1), so the table reports the recorded average vs the
+  hypothetical average including all same-day communications (visible in
+  the Oct-2 data), the number of stations concerned, and their price
+  changes — Stradale only, per fuel.
 - `output/tables/cap_compliance_capday_region.csv`: cap-day compliance
   (at-or-below share) per region × fuel × Tipo Impianto, sorted by share.
 - `output/tables/brand_daily_prices.csv`: daily mean/sd gross price per

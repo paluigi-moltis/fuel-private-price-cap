@@ -1,485 +1,485 @@
 fuel,regione,group,tipo_impianto,n_obs,n_below,pct_below_pooled,pct_below_daily_mean
-Benzina,Abruzzo,Large,Autostradale,8,0,0.0,0.0
-Benzina,Abruzzo,Large,Stradale,132,0,0.0,0.0
-Benzina,Abruzzo,Large,Tutte,140,0,0.0,0.0
-Benzina,Abruzzo,Majors,Autostradale,24,8,33.33333333333333,33.33333333333333
-Benzina,Abruzzo,Majors,Stradale,585,177,30.256410256410255,30.227570246388332
-Benzina,Abruzzo,Majors,Tutte,609,185,30.377668308702795,30.34997842968076
-Benzina,Abruzzo,Pompe Bianche,Autostradale,6,0,0.0,0.0
-Benzina,Abruzzo,Pompe Bianche,Stradale,381,17,4.4619422572178475,4.465417470377514
-Benzina,Abruzzo,Pompe Bianche,Tutte,387,17,4.3927648578811365,4.396132685219807
-Benzina,Abruzzo,Tutte,Autostradale,38,8,21.052631578947366,21.052631578947366
-Benzina,Abruzzo,Tutte,Stradale,1098,194,17.66848816029144,17.66848816029144
-Benzina,Abruzzo,Tutte,Tutte,1136,202,17.781690140845072,17.781690140845072
-Benzina,Basilicata,Large,Stradale,64,0,0.0,0.0
-Benzina,Basilicata,Large,Tutte,64,0,0.0,0.0
-Benzina,Basilicata,Majors,Autostradale,4,0,0.0,0.0
-Benzina,Basilicata,Majors,Stradale,204,46,22.54901960784314,22.549019607843135
-Benzina,Basilicata,Majors,Tutte,208,46,22.115384615384613,22.115384615384617
-Benzina,Basilicata,Pompe Bianche,Stradale,170,0,0.0,0.0
-Benzina,Basilicata,Pompe Bianche,Tutte,170,0,0.0,0.0
-Benzina,Basilicata,Tutte,Autostradale,4,0,0.0,0.0
-Benzina,Basilicata,Tutte,Stradale,438,46,10.50228310502283,10.50228310502283
-Benzina,Basilicata,Tutte,Tutte,442,46,10.407239819004525,10.407239819004525
-Benzina,Calabria,Large,Autostradale,4,0,0.0,0.0
-Benzina,Calabria,Large,Stradale,374,2,0.53475935828877,0.53475935828877
-Benzina,Calabria,Large,Tutte,378,2,0.5291005291005291,0.5291005291005291
-Benzina,Calabria,Majors,Autostradale,20,11,55.00000000000001,55.0
-Benzina,Calabria,Majors,Stradale,650,149,22.923076923076923,22.923076923076923
-Benzina,Calabria,Majors,Tutte,670,160,23.88059701492537,23.88059701492537
-Benzina,Calabria,Pompe Bianche,Autostradale,6,0,0.0,0.0
-Benzina,Calabria,Pompe Bianche,Stradale,334,2,0.5988023952095809,0.5988023952095809
-Benzina,Calabria,Pompe Bianche,Tutte,340,2,0.5882352941176471,0.5882352941176471
-Benzina,Calabria,Tutte,Autostradale,30,11,36.666666666666664,36.666666666666664
-Benzina,Calabria,Tutte,Stradale,1358,153,11.26656848306333,11.266568483063327
-Benzina,Calabria,Tutte,Tutte,1388,164,11.815561959654179,11.815561959654179
-Benzina,Campania,Large,Autostradale,24,0,0.0,0.0
-Benzina,Campania,Large,Stradale,482,5,1.0373443983402488,1.037344398340249
-Benzina,Campania,Large,Tutte,506,5,0.9881422924901186,0.9881422924901185
-Benzina,Campania,Majors,Autostradale,39,16,41.02564102564102,40.78947368421053
-Benzina,Campania,Majors,Stradale,1234,217,17.58508914100486,17.55506521139525
-Benzina,Campania,Majors,Tutte,1273,233,18.3032207384132,18.26678613567137
-Benzina,Campania,Pompe Bianche,Autostradale,10,0,0.0,0.0
-Benzina,Campania,Pompe Bianche,Stradale,1485,29,1.9528619528619526,1.9513734708980888
-Benzina,Campania,Pompe Bianche,Tutte,1495,29,1.939799331103679,1.9383306428231386
-Benzina,Campania,Tutte,Autostradale,73,16,21.91780821917808,21.846846846846844
-Benzina,Campania,Tutte,Stradale,3201,251,7.841299593876913,7.832524199832292
-Benzina,Campania,Tutte,Tutte,3274,267,8.155161881490532,8.1452842855293
-Benzina,Emilia-Romagna,Large,Autostradale,14,0,0.0,0.0
-Benzina,Emilia-Romagna,Large,Stradale,485,5,1.0309278350515463,1.0313573444886577
-Benzina,Emilia-Romagna,Large,Tutte,499,5,1.002004008016032,1.002409638554217
-Benzina,Emilia-Romagna,Majors,Autostradale,56,18,32.142857142857146,32.14285714285714
-Benzina,Emilia-Romagna,Majors,Stradale,1550,396,25.548387096774196,25.52728495697808
-Benzina,Emilia-Romagna,Majors,Tutte,1606,414,25.77833125778331,25.75852036575229
-Benzina,Emilia-Romagna,Pompe Bianche,Autostradale,10,1,10.0,10.0
-Benzina,Emilia-Romagna,Pompe Bianche,Stradale,1160,12,1.0344827586206897,1.0332967696098976
-Benzina,Emilia-Romagna,Pompe Bianche,Tutte,1170,13,1.1111111111111112,1.1097994296133527
-Benzina,Emilia-Romagna,Tutte,Autostradale,80,19,23.75,23.75
-Benzina,Emilia-Romagna,Tutte,Stradale,3195,413,12.926447574334897,12.918729751207287
-Benzina,Emilia-Romagna,Tutte,Tutte,3275,432,13.19083969465649,13.183410631146966
-Benzina,Friuli-Venezia Giulia,Large,Autostradale,5,0,0.0,0.0
-Benzina,Friuli-Venezia Giulia,Large,Stradale,138,0,0.0,0.0
-Benzina,Friuli-Venezia Giulia,Large,Tutte,143,0,0.0,0.0
-Benzina,Friuli-Venezia Giulia,Majors,Autostradale,4,3,75.0,75.0
-Benzina,Friuli-Venezia Giulia,Majors,Stradale,485,167,34.43298969072165,34.46076930925416
-Benzina,Friuli-Venezia Giulia,Majors,Tutte,489,170,34.76482617586912,34.792572766811645
-Benzina,Friuli-Venezia Giulia,Pompe Bianche,Autostradale,8,0,0.0,0.0
-Benzina,Friuli-Venezia Giulia,Pompe Bianche,Stradale,167,0,0.0,0.0
-Benzina,Friuli-Venezia Giulia,Pompe Bianche,Tutte,175,0,0.0,0.0
-Benzina,Friuli-Venezia Giulia,Tutte,Autostradale,17,3,17.647058823529413,18.055555555555557
-Benzina,Friuli-Venezia Giulia,Tutte,Stradale,790,167,21.139240506329113,21.139240506329113
-Benzina,Friuli-Venezia Giulia,Tutte,Tutte,807,170,21.065675340768276,21.075842075522687
-Benzina,Lazio,Large,Autostradale,10,0,0.0,0.0
-Benzina,Lazio,Large,Stradale,475,5,1.0526315789473684,1.0513065985888026
-Benzina,Lazio,Large,Tutte,485,5,1.0309278350515463,1.0296568377376458
-Benzina,Lazio,Majors,Autostradale,68,29,42.64705882352941,42.647058823529406
-Benzina,Lazio,Majors,Stradale,2087,499,23.90991854336368,23.85577786716774
-Benzina,Lazio,Majors,Tutte,2155,528,24.501160092807424,24.44968715976902
-Benzina,Lazio,Pompe Bianche,Autostradale,2,0,0.0,0.0
-Benzina,Lazio,Pompe Bianche,Stradale,1132,59,5.212014134275619,5.196708569145333
-Benzina,Lazio,Pompe Bianche,Tutte,1134,59,5.2028218694885355,5.187569988801791
-Benzina,Lazio,Tutte,Autostradale,80,29,36.25,36.25
-Benzina,Lazio,Tutte,Stradale,3694,563,15.240931239848402,15.207919027428613
-Benzina,Lazio,Tutte,Tutte,3774,592,15.686274509803921,15.654278049635352
-Benzina,Liguria,Large,Autostradale,24,1,4.166666666666666,4.166666666666666
-Benzina,Liguria,Large,Stradale,136,0,0.0,0.0
-Benzina,Liguria,Large,Tutte,160,1,0.625,0.625
-Benzina,Liguria,Majors,Autostradale,32,13,40.625,40.625
-Benzina,Liguria,Majors,Stradale,529,130,24.574669187145556,24.53902229845626
-Benzina,Liguria,Majors,Tutte,561,143,25.49019607843137,25.457549567869854
-Benzina,Liguria,Pompe Bianche,Autostradale,4,0,0.0,0.0
-Benzina,Liguria,Pompe Bianche,Stradale,205,5,2.4390243902439024,2.4367028364743955
-Benzina,Liguria,Pompe Bianche,Tutte,209,5,2.3923444976076556,2.39010989010989
-Benzina,Liguria,Tutte,Autostradale,60,14,23.333333333333332,23.333333333333332
-Benzina,Liguria,Tutte,Stradale,870,135,15.517241379310345,15.490635437365238
-Benzina,Liguria,Tutte,Tutte,930,149,16.021505376344088,15.9972990972325
-Benzina,Lombardia,Large,Autostradale,26,0,0.0,0.0
-Benzina,Lombardia,Large,Stradale,1236,14,1.132686084142395,1.132686084142395
-Benzina,Lombardia,Large,Tutte,1262,14,1.109350237717908,1.109350237717908
-Benzina,Lombardia,Majors,Autostradale,83,16,19.27710843373494,19.192799070847855
-Benzina,Lombardia,Majors,Stradale,2658,549,20.654627539503387,20.62339488810077
-Benzina,Lombardia,Majors,Tutte,2741,565,20.612914994527546,20.57811014248309
-Benzina,Lombardia,Pompe Bianche,Autostradale,4,0,0.0,0.0
-Benzina,Lombardia,Pompe Bianche,Stradale,1325,37,2.7924528301886795,2.7920557021321195
-Benzina,Lombardia,Pompe Bianche,Tutte,1329,37,2.784048156508653,2.7836534106350213
-Benzina,Lombardia,Tutte,Autostradale,113,16,14.15929203539823,14.113408521303256
-Benzina,Lombardia,Tutte,Stradale,5219,600,11.49645525962828,11.486812939259073
-Benzina,Lombardia,Tutte,Tutte,5332,616,11.552888222055515,11.542165081026628
-Benzina,Marche,Large,Stradale,308,4,1.2987012987012987,1.2987012987012987
-Benzina,Marche,Large,Tutte,308,4,1.2987012987012987,1.2987012987012987
-Benzina,Marche,Majors,Autostradale,20,6,30.0,30.0
-Benzina,Marche,Majors,Stradale,618,166,26.860841423948216,26.86084142394822
-Benzina,Marche,Majors,Tutte,638,172,26.959247648902824,26.95924764890282
-Benzina,Marche,Pompe Bianche,Autostradale,4,0,0.0,0.0
-Benzina,Marche,Pompe Bianche,Stradale,401,54,13.466334164588527,13.44776119402985
-Benzina,Marche,Pompe Bianche,Tutte,405,54,13.333333333333334,13.315124615909866
-Benzina,Marche,Tutte,Autostradale,24,6,25.0,25.0
-Benzina,Marche,Tutte,Stradale,1327,224,16.88018085908063,16.871331479765217
-Benzina,Marche,Tutte,Tutte,1351,230,17.024426350851222,17.015669515669515
-Benzina,Molise,Large,Autostradale,4,0,0.0,0.0
-Benzina,Molise,Large,Stradale,64,0,0.0,0.0
-Benzina,Molise,Large,Tutte,68,0,0.0,0.0
-Benzina,Molise,Majors,Autostradale,2,2,100.0,100.0
-Benzina,Molise,Majors,Stradale,108,32,29.629629629629626,29.629629629629626
-Benzina,Molise,Majors,Tutte,110,34,30.909090909090907,30.90909090909091
-Benzina,Molise,Pompe Bianche,Stradale,102,5,4.901960784313726,4.846153846153847
-Benzina,Molise,Pompe Bianche,Tutte,102,5,4.901960784313726,4.846153846153847
-Benzina,Molise,Tutte,Autostradale,6,2,33.33333333333333,33.33333333333333
-Benzina,Molise,Tutte,Stradale,274,37,13.503649635036496,13.443094629156011
-Benzina,Molise,Tutte,Tutte,280,39,13.928571428571429,13.870605643145058
-Benzina,Piemonte,Large,Autostradale,25,0,0.0,0.0
-Benzina,Piemonte,Large,Stradale,646,2,0.30959752321981426,0.30959752321981426
-Benzina,Piemonte,Large,Tutte,671,2,0.29806259314456035,0.2980632551528074
-Benzina,Piemonte,Majors,Autostradale,66,18,27.27272727272727,27.272727272727273
-Benzina,Piemonte,Majors,Stradale,1590,341,21.446540880503147,21.42798374745263
-Benzina,Piemonte,Majors,Tutte,1656,359,21.678743961352655,21.6611993004494
-Benzina,Piemonte,Pompe Bianche,Autostradale,20,0,0.0,0.0
-Benzina,Piemonte,Pompe Bianche,Stradale,857,41,4.784130688448075,4.7788791460160125
-Benzina,Piemonte,Pompe Bianche,Tutte,877,41,4.67502850627138,4.670012481797379
-Benzina,Piemonte,Tutte,Autostradale,111,18,16.216216216216218,16.16883116883117
-Benzina,Piemonte,Tutte,Stradale,3093,384,12.415130940834143,12.40220165441853
-Benzina,Piemonte,Tutte,Tutte,3204,402,12.54681647940075,12.532014752210785
-Benzina,Puglia,Large,Autostradale,12,0,0.0,0.0
-Benzina,Puglia,Large,Stradale,255,2,0.7843137254901961,0.7843257874015748
-Benzina,Puglia,Large,Tutte,267,2,0.7490636704119851,0.749074177982269
-Benzina,Puglia,Majors,Autostradale,10,4,40.0,40.0
-Benzina,Puglia,Majors,Stradale,1477,342,23.155044008124577,23.1103862289503
-Benzina,Puglia,Majors,Tutte,1487,346,23.268325487558844,23.22426761893391
-Benzina,Puglia,Pompe Bianche,Autostradale,14,0,0.0,0.0
-Benzina,Puglia,Pompe Bianche,Stradale,982,24,2.4439918533604885,2.443991853360489
-Benzina,Puglia,Pompe Bianche,Tutte,996,24,2.4096385542168677,2.4096385542168672
-Benzina,Puglia,Tutte,Autostradale,36,4,11.11111111111111,11.11111111111111
-Benzina,Puglia,Tutte,Stradale,2714,368,13.559322033898304,13.548381841434308
-Benzina,Puglia,Tutte,Tutte,2750,372,13.527272727272727,13.516617026892222
-Benzina,Sardegna,Large,Stradale,344,2,0.5813953488372093,0.5813953488372093
-Benzina,Sardegna,Large,Tutte,344,2,0.5813953488372093,0.5813953488372093
-Benzina,Sardegna,Majors,Stradale,614,141,22.964169381107492,22.964169381107492
-Benzina,Sardegna,Majors,Tutte,614,141,22.964169381107492,22.964169381107492
-Benzina,Sardegna,Pompe Bianche,Stradale,234,2,0.8547008547008548,0.8547008547008548
-Benzina,Sardegna,Pompe Bianche,Tutte,234,2,0.8547008547008548,0.8547008547008548
-Benzina,Sardegna,Tutte,Stradale,1192,145,12.164429530201343,12.164429530201343
-Benzina,Sardegna,Tutte,Tutte,1192,145,12.164429530201343,12.164429530201343
-Benzina,Sicilia,Large,Autostradale,8,0,0.0,0.0
-Benzina,Sicilia,Large,Stradale,482,3,0.6224066390041494,0.6224066390041494
-Benzina,Sicilia,Large,Tutte,490,3,0.6122448979591837,0.6122448979591837
-Benzina,Sicilia,Majors,Autostradale,26,8,30.76923076923077,30.769230769230774
-Benzina,Sicilia,Majors,Stradale,1370,409,29.854014598540147,29.854014598540147
-Benzina,Sicilia,Majors,Tutte,1396,417,29.871060171919773,29.871060171919773
-Benzina,Sicilia,Pompe Bianche,Autostradale,2,0,0.0,0.0
-Benzina,Sicilia,Pompe Bianche,Stradale,1234,14,1.1345218800648298,1.1334830634251416
-Benzina,Sicilia,Pompe Bianche,Tutte,1236,14,1.132686084142395,1.131650607457059
-Benzina,Sicilia,Tutte,Autostradale,36,8,22.22222222222222,22.22222222222222
-Benzina,Sicilia,Tutte,Stradale,3086,426,13.804277381723914,13.793800100384528
-Benzina,Sicilia,Tutte,Tutte,3122,434,13.901345291479823,13.891026327636734
-Benzina,Toscana,Large,Autostradale,8,0,0.0,0.0
-Benzina,Toscana,Large,Stradale,488,0,0.0,0.0
-Benzina,Toscana,Large,Tutte,496,0,0.0,0.0
-Benzina,Toscana,Majors,Autostradale,46,9,19.565217391304348,19.565217391304348
-Benzina,Toscana,Majors,Stradale,1442,354,24.549237170596395,24.472906631373213
-Benzina,Toscana,Majors,Tutte,1488,363,24.39516129032258,24.32157780921256
-Benzina,Toscana,Pompe Bianche,Autostradale,8,0,0.0,0.0
-Benzina,Toscana,Pompe Bianche,Stradale,839,13,1.5494636471990464,1.549039663598136
-Benzina,Toscana,Pompe Bianche,Tutte,847,13,1.5348288075560803,1.5344127748784513
-Benzina,Toscana,Tutte,Autostradale,62,9,14.516129032258066,14.516129032258064
-Benzina,Toscana,Tutte,Stradale,2769,367,13.253882267966773,13.222446552101918
-Benzina,Toscana,Tutte,Tutte,2831,376,13.2815259625574,13.250666294007846
-Benzina,Trentino-Alto Adige/Südtirol,Large,Autostradale,12,0,0.0,0.0
-Benzina,Trentino-Alto Adige/Südtirol,Large,Stradale,138,2,1.4492753623188406,1.4492753623188406
-Benzina,Trentino-Alto Adige/Südtirol,Large,Tutte,150,2,1.3333333333333335,1.3333333333333335
-Benzina,Trentino-Alto Adige/Südtirol,Majors,Autostradale,12,4,33.33333333333333,33.33333333333333
-Benzina,Trentino-Alto Adige/Südtirol,Majors,Stradale,378,106,28.04232804232804,28.04232804232804
-Benzina,Trentino-Alto Adige/Südtirol,Majors,Tutte,390,110,28.205128205128204,28.205128205128204
-Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Autostradale,4,1,25.0,25.0
-Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Stradale,168,1,0.5952380952380952,0.5952380952380952
-Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Tutte,172,2,1.1627906976744187,1.1627906976744187
-Benzina,Trentino-Alto Adige/Südtirol,Tutte,Autostradale,28,5,17.857142857142858,17.857142857142854
-Benzina,Trentino-Alto Adige/Südtirol,Tutte,Stradale,684,109,15.935672514619883,15.935672514619885
-Benzina,Trentino-Alto Adige/Südtirol,Tutte,Tutte,712,114,16.01123595505618,16.01123595505618
-Benzina,Umbria,Large,Autostradale,2,0,0.0,0.0
-Benzina,Umbria,Large,Stradale,134,0,0.0,0.0
-Benzina,Umbria,Large,Tutte,136,0,0.0,0.0
-Benzina,Umbria,Majors,Autostradale,6,3,50.0,49.99999999999999
-Benzina,Umbria,Majors,Stradale,442,83,18.778280542986426,18.72850122850123
-Benzina,Umbria,Majors,Tutte,448,86,19.196428571428573,19.146985550572992
-Benzina,Umbria,Pompe Bianche,Stradale,228,10,4.385964912280701,4.385964912280701
-Benzina,Umbria,Pompe Bianche,Tutte,228,10,4.385964912280701,4.385964912280701
-Benzina,Umbria,Tutte,Autostradale,8,3,37.5,37.5
-Benzina,Umbria,Tutte,Stradale,804,93,11.567164179104477,11.548981145152007
-Benzina,Umbria,Tutte,Tutte,812,96,11.822660098522167,11.804531804531806
-Benzina,Valle d'Aosta,Large,Stradale,28,0,0.0,0.0
-Benzina,Valle d'Aosta,Large,Tutte,28,0,0.0,0.0
-Benzina,Valle d'Aosta,Majors,Autostradale,6,3,50.0,49.99999999999999
-Benzina,Valle d'Aosta,Majors,Stradale,46,15,32.608695652173914,32.608695652173914
-Benzina,Valle d'Aosta,Majors,Tutte,52,18,34.61538461538461,34.61538461538461
-Benzina,Valle d'Aosta,Pompe Bianche,Autostradale,2,0,0.0,0.0
-Benzina,Valle d'Aosta,Pompe Bianche,Stradale,52,0,0.0,0.0
-Benzina,Valle d'Aosta,Pompe Bianche,Tutte,54,0,0.0,0.0
-Benzina,Valle d'Aosta,Tutte,Autostradale,8,3,37.5,37.5
-Benzina,Valle d'Aosta,Tutte,Stradale,126,15,11.904761904761903,11.904761904761905
-Benzina,Valle d'Aosta,Tutte,Tutte,134,18,13.432835820895523,13.432835820895521
-Benzina,Veneto,Large,Autostradale,18,5,27.77777777777778,27.777777777777775
-Benzina,Veneto,Large,Stradale,532,10,1.8796992481203008,1.8796992481203008
-Benzina,Veneto,Large,Tutte,550,15,2.727272727272727,2.7272727272727275
-Benzina,Veneto,Majors,Autostradale,40,17,42.5,42.5
-Benzina,Veneto,Majors,Stradale,1347,441,32.73942093541203,32.72395183442754
-Benzina,Veneto,Majors,Tutte,1387,458,33.02090843547224,33.00616290529835
-Benzina,Veneto,Pompe Bianche,Autostradale,8,0,0.0,0.0
-Benzina,Veneto,Pompe Bianche,Stradale,1500,21,1.4000000000000001,1.4
-Benzina,Veneto,Pompe Bianche,Tutte,1508,21,1.3925729442970822,1.392572944297082
-Benzina,Veneto,Tutte,Autostradale,66,22,33.33333333333333,33.33333333333333
-Benzina,Veneto,Tutte,Stradale,3379,472,13.968629772121929,13.965985965576074
-Benzina,Veneto,Tutte,Tutte,3445,494,14.339622641509434,14.337045492998666
-Benzina,Tutte,Large,Autostradale,204,6,2.941176470588235,2.941176470588235
-Benzina,Tutte,Large,Stradale,6941,56,0.8068001728857512,0.8067586764604542
-Benzina,Tutte,Large,Tutte,7145,62,0.867739678096571,0.8676966009535871
-Benzina,Tutte,Majors,Autostradale,564,188,33.33333333333333,33.30357255133735
-Benzina,Tutte,Majors,Stradale,19414,4760,24.518388791593697,24.48720621113729
-Benzina,Tutte,Majors,Tutte,19978,4948,24.7672439683652,24.73582597178103
-Benzina,Tutte,Pompe Bianche,Autostradale,112,2,1.7857142857142856,1.7857142857142856
-Benzina,Tutte,Pompe Bianche,Stradale,12956,346,2.670577338684779,2.668470420361669
-Benzina,Tutte,Pompe Bianche,Tutte,13068,348,2.6629935720844813,2.6608944808110517
-Benzina,Tutte,Tutte,Autostradale,880,196,22.272727272727273,22.25941249696538
-Benzina,Tutte,Tutte,Stradale,39311,5162,13.131184655694335,13.118114144637385
-Benzina,Tutte,Tutte,Tutte,40191,5358,13.331342837948796,13.318239638253115
-Gasolio,Abruzzo,Large,Autostradale,8,0,0.0,0.0
-Gasolio,Abruzzo,Large,Stradale,132,2,1.5151515151515151,1.5151515151515151
-Gasolio,Abruzzo,Large,Tutte,140,2,1.4285714285714286,1.4285714285714286
-Gasolio,Abruzzo,Majors,Autostradale,32,8,25.0,25.0
-Gasolio,Abruzzo,Majors,Stradale,584,176,30.136986301369863,30.136986301369866
-Gasolio,Abruzzo,Majors,Tutte,616,184,29.87012987012987,29.870129870129873
-Gasolio,Abruzzo,Pompe Bianche,Autostradale,12,0,0.0,0.0
-Gasolio,Abruzzo,Pompe Bianche,Stradale,380,19,5.0,5.0
-Gasolio,Abruzzo,Pompe Bianche,Tutte,392,19,4.846938775510204,4.846938775510203
-Gasolio,Abruzzo,Tutte,Autostradale,52,8,15.384615384615385,15.384615384615385
-Gasolio,Abruzzo,Tutte,Stradale,1096,197,17.974452554744524,17.974452554744527
-Gasolio,Abruzzo,Tutte,Tutte,1148,205,17.857142857142858,17.857142857142858
-Gasolio,Basilicata,Large,Stradale,64,0,0.0,0.0
-Gasolio,Basilicata,Large,Tutte,64,0,0.0,0.0
-Gasolio,Basilicata,Majors,Autostradale,8,0,0.0,0.0
-Gasolio,Basilicata,Majors,Stradale,202,48,23.762376237623762,23.762376237623762
-Gasolio,Basilicata,Majors,Tutte,210,48,22.857142857142858,22.857142857142854
-Gasolio,Basilicata,Pompe Bianche,Stradale,170,0,0.0,0.0
-Gasolio,Basilicata,Pompe Bianche,Tutte,170,0,0.0,0.0
-Gasolio,Basilicata,Tutte,Autostradale,8,0,0.0,0.0
-Gasolio,Basilicata,Tutte,Stradale,436,48,11.009174311926607,11.009174311926607
-Gasolio,Basilicata,Tutte,Tutte,444,48,10.81081081081081,10.81081081081081
-Gasolio,Calabria,Large,Autostradale,4,0,0.0,0.0
-Gasolio,Calabria,Large,Stradale,374,4,1.06951871657754,1.06951871657754
-Gasolio,Calabria,Large,Tutte,378,4,1.0582010582010581,1.0582010582010581
-Gasolio,Calabria,Majors,Autostradale,20,11,55.00000000000001,55.0
-Gasolio,Calabria,Majors,Stradale,651,148,22.734254992319507,22.71401604530439
-Gasolio,Calabria,Majors,Tutte,671,159,23.69597615499255,23.676705756929636
-Gasolio,Calabria,Pompe Bianche,Autostradale,6,0,0.0,0.0
-Gasolio,Calabria,Pompe Bianche,Stradale,334,2,0.5988023952095809,0.5988023952095809
-Gasolio,Calabria,Pompe Bianche,Tutte,340,2,0.5882352941176471,0.5882352941176471
-Gasolio,Calabria,Tutte,Autostradale,30,11,36.666666666666664,36.666666666666664
-Gasolio,Calabria,Tutte,Stradale,1359,154,11.33186166298749,11.32721129688989
-Gasolio,Calabria,Tutte,Tutte,1389,165,11.879049676025918,11.874546472332222
-Gasolio,Campania,Large,Autostradale,28,0,0.0,0.0
-Gasolio,Campania,Large,Stradale,480,5,1.0416666666666665,1.0416666666666667
-Gasolio,Campania,Large,Tutte,508,5,0.984251968503937,0.9842519685039369
-Gasolio,Campania,Majors,Autostradale,41,16,39.02439024390244,38.80952380952381
-Gasolio,Campania,Majors,Stradale,1234,224,18.152350081037277,18.137687555163282
-Gasolio,Campania,Majors,Tutte,1275,240,18.823529411764707,18.802226356039803
-Gasolio,Campania,Pompe Bianche,Autostradale,18,3,16.666666666666664,16.666666666666664
-Gasolio,Campania,Pompe Bianche,Stradale,1485,36,2.4242424242424243,2.4223477428061466
-Gasolio,Campania,Pompe Bianche,Tutte,1503,39,2.5948103792415167,2.5925630810092963
-Gasolio,Campania,Tutte,Autostradale,87,19,21.839080459770116,21.749471458773783
-Gasolio,Campania,Tutte,Stradale,3199,265,8.283838699593623,8.277556154368718
-Gasolio,Campania,Tutte,Tutte,3286,284,8.642726719415702,8.635198411522389
-Gasolio,Emilia-Romagna,Large,Autostradale,14,0,0.0,0.0
-Gasolio,Emilia-Romagna,Large,Stradale,477,11,2.3060796645702304,2.305650293590239
-Gasolio,Emilia-Romagna,Large,Tutte,491,11,2.240325865580448,2.2399203583872573
-Gasolio,Emilia-Romagna,Majors,Autostradale,56,18,32.142857142857146,32.14285714285714
-Gasolio,Emilia-Romagna,Majors,Stradale,1547,394,25.46864899806076,25.437405983620256
-Gasolio,Emilia-Romagna,Majors,Tutte,1603,412,25.701809107922646,25.672478206724783
-Gasolio,Emilia-Romagna,Pompe Bianche,Autostradale,18,0,0.0,0.0
-Gasolio,Emilia-Romagna,Pompe Bianche,Stradale,1154,18,1.559792027729636,1.5597920277296362
-Gasolio,Emilia-Romagna,Pompe Bianche,Tutte,1172,18,1.5358361774744027,1.535836177474403
-Gasolio,Emilia-Romagna,Tutte,Autostradale,88,18,20.454545454545457,20.454545454545453
-Gasolio,Emilia-Romagna,Tutte,Stradale,3178,423,13.310258023914411,13.300021347236365
-Gasolio,Emilia-Romagna,Tutte,Tutte,3266,441,13.50275566442131,13.492988485704162
-Gasolio,Friuli-Venezia Giulia,Large,Autostradale,7,0,0.0,0.0
-Gasolio,Friuli-Venezia Giulia,Large,Stradale,136,0,0.0,0.0
-Gasolio,Friuli-Venezia Giulia,Large,Tutte,143,0,0.0,0.0
-Gasolio,Friuli-Venezia Giulia,Majors,Autostradale,6,5,83.33333333333334,83.33333333333333
-Gasolio,Friuli-Venezia Giulia,Majors,Stradale,485,167,34.43298969072165,34.46076930925416
-Gasolio,Friuli-Venezia Giulia,Majors,Tutte,491,172,35.03054989816701,35.05807200929152
-Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Autostradale,18,0,0.0,0.0
-Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Stradale,167,0,0.0,0.0
-Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Tutte,185,0,0.0,0.0
-Gasolio,Friuli-Venezia Giulia,Tutte,Autostradale,31,5,16.129032258064516,16.25
-Gasolio,Friuli-Venezia Giulia,Tutte,Stradale,788,167,21.19289340101523,21.19289340101523
-Gasolio,Friuli-Venezia Giulia,Tutte,Tutte,819,172,21.001221001221,21.011091895760035
-Gasolio,Lazio,Large,Autostradale,12,0,0.0,0.0
-Gasolio,Lazio,Large,Stradale,465,5,1.0752688172043012,1.0738863400917567
-Gasolio,Lazio,Large,Tutte,477,5,1.0482180293501049,1.0469041172954536
-Gasolio,Lazio,Majors,Autostradale,68,29,42.64705882352941,42.647058823529406
-Gasolio,Lazio,Majors,Stradale,2085,508,24.364508393285373,24.31052949273815
-Gasolio,Lazio,Majors,Tutte,2153,537,24.941941477008825,24.890621683054
-Gasolio,Lazio,Pompe Bianche,Autostradale,4,0,0.0,0.0
-Gasolio,Lazio,Pompe Bianche,Stradale,1150,104,9.043478260869566,9.034513839108829
-Gasolio,Lazio,Pompe Bianche,Tutte,1154,104,9.01213171577123,9.003228955470451
-Gasolio,Lazio,Tutte,Autostradale,84,29,34.523809523809526,34.523809523809526
-Gasolio,Lazio,Tutte,Stradale,3700,617,16.675675675675674,16.64688543481894
-Gasolio,Lazio,Tutte,Tutte,3784,646,17.071881606765327,17.044027265616272
-Gasolio,Liguria,Large,Autostradale,26,0,0.0,0.0
-Gasolio,Liguria,Large,Stradale,136,0,0.0,0.0
-Gasolio,Liguria,Large,Tutte,162,0,0.0,0.0
-Gasolio,Liguria,Majors,Autostradale,34,15,44.11764705882353,44.117647058823536
-Gasolio,Liguria,Majors,Stradale,528,130,24.62121212121212,24.62121212121212
-Gasolio,Liguria,Majors,Tutte,562,145,25.800711743772244,25.800711743772244
-Gasolio,Liguria,Pompe Bianche,Autostradale,6,0,0.0,0.0
-Gasolio,Liguria,Pompe Bianche,Stradale,201,3,1.4925373134328357,1.49009900990099
-Gasolio,Liguria,Pompe Bianche,Tutte,207,3,1.4492753623188406,1.446975354742345
-Gasolio,Liguria,Tutte,Autostradale,66,15,22.727272727272727,22.727272727272727
-Gasolio,Liguria,Tutte,Stradale,865,133,15.375722543352602,15.36224446155162
-Gasolio,Liguria,Tutte,Tutte,931,148,15.896885069817401,15.884904702570493
-Gasolio,Lombardia,Large,Autostradale,28,0,0.0,0.0
-Gasolio,Lombardia,Large,Stradale,1207,15,1.2427506213753108,1.242682833075242
-Gasolio,Lombardia,Large,Tutte,1235,15,1.214574898785425,1.2145101309709263
-Gasolio,Lombardia,Majors,Autostradale,87,16,18.39080459770115,18.313953488372093
-Gasolio,Lombardia,Majors,Stradale,2650,556,20.9811320754717,20.960332554691472
-Gasolio,Lombardia,Majors,Tutte,2737,572,20.898794300328827,20.874034726872157
-Gasolio,Lombardia,Pompe Bianche,Autostradale,6,0,0.0,0.0
-Gasolio,Lombardia,Pompe Bianche,Stradale,1316,51,3.875379939209726,3.875379939209726
-Gasolio,Lombardia,Pompe Bianche,Tutte,1322,51,3.8577912254160367,3.8577912254160367
-Gasolio,Lombardia,Tutte,Autostradale,121,16,13.223140495867769,13.183060109289617
-Gasolio,Lombardia,Tutte,Stradale,5173,622,12.023970616663444,12.016993782937337
-Gasolio,Lombardia,Tutte,Tutte,5294,638,12.051378919531546,12.04325921274227
-Gasolio,Marche,Large,Stradale,306,4,1.3071895424836601,1.3071895424836601
-Gasolio,Marche,Large,Tutte,306,4,1.3071895424836601,1.3071895424836601
-Gasolio,Marche,Majors,Autostradale,20,6,30.0,30.0
-Gasolio,Marche,Majors,Stradale,618,167,27.02265372168285,27.022653721682847
-Gasolio,Marche,Majors,Tutte,638,173,27.11598746081505,27.11598746081505
-Gasolio,Marche,Pompe Bianche,Autostradale,8,0,0.0,0.0
-Gasolio,Marche,Pompe Bianche,Stradale,402,57,14.17910447761194,14.17910447761194
-Gasolio,Marche,Pompe Bianche,Tutte,410,57,13.902439024390246,13.902439024390244
-Gasolio,Marche,Tutte,Autostradale,28,6,21.428571428571427,21.42857142857143
-Gasolio,Marche,Tutte,Stradale,1326,228,17.194570135746606,17.19457013574661
-Gasolio,Marche,Tutte,Tutte,1354,234,17.2821270310192,17.2821270310192
-Gasolio,Molise,Large,Autostradale,6,0,0.0,0.0
-Gasolio,Molise,Large,Stradale,64,0,0.0,0.0
-Gasolio,Molise,Large,Tutte,70,0,0.0,0.0
-Gasolio,Molise,Majors,Autostradale,4,3,75.0,75.0
-Gasolio,Molise,Majors,Stradale,108,32,29.629629629629626,29.629629629629626
-Gasolio,Molise,Majors,Tutte,112,35,31.25,31.25
-Gasolio,Molise,Pompe Bianche,Stradale,103,4,3.8834951456310676,3.8650075414781297
-Gasolio,Molise,Pompe Bianche,Tutte,103,4,3.8834951456310676,3.8650075414781297
-Gasolio,Molise,Tutte,Autostradale,10,3,30.0,30.0
-Gasolio,Molise,Tutte,Stradale,275,36,13.090909090909092,13.061990902359039
-Gasolio,Molise,Tutte,Tutte,285,39,13.684210526315791,13.656062247611542
-Gasolio,Piemonte,Large,Autostradale,30,0,0.0,0.0
-Gasolio,Piemonte,Large,Stradale,645,3,0.46511627906976744,0.4648770263254043
-Gasolio,Piemonte,Large,Tutte,675,3,0.4444444444444444,0.4442259406879357
-Gasolio,Piemonte,Majors,Autostradale,68,18,26.47058823529412,26.47058823529412
-Gasolio,Piemonte,Majors,Stradale,1590,345,21.69811320754717,21.67955647253902
-Gasolio,Piemonte,Majors,Tutte,1658,363,21.89384800965018,21.876345963564404
-Gasolio,Piemonte,Pompe Bianche,Autostradale,36,0,0.0,0.0
-Gasolio,Piemonte,Pompe Bianche,Stradale,855,46,5.380116959064328,5.373616993335303
-Gasolio,Piemonte,Pompe Bianche,Tutte,891,46,5.16273849607183,5.156750710441986
-Gasolio,Piemonte,Tutte,Autostradale,134,18,13.432835820895523,13.432835820895521
-Gasolio,Piemonte,Tutte,Stradale,3090,394,12.750809061488674,12.735021466131773
-Gasolio,Piemonte,Tutte,Tutte,3224,412,12.779156327543426,12.764307581002374
-Gasolio,Puglia,Large,Autostradale,24,0,0.0,0.0
-Gasolio,Puglia,Large,Stradale,255,10,3.9215686274509802,3.921628937007874
-Gasolio,Puglia,Large,Tutte,279,10,3.584229390681003,3.584275436793422
-Gasolio,Puglia,Majors,Autostradale,14,5,35.714285714285715,35.71428571428571
-Gasolio,Puglia,Majors,Stradale,1472,346,23.505434782608695,23.469794643450523
-Gasolio,Puglia,Majors,Tutte,1486,351,23.620457604306864,23.585305545743555
-Gasolio,Puglia,Pompe Bianche,Autostradale,28,0,0.0,0.0
-Gasolio,Puglia,Pompe Bianche,Stradale,986,29,2.941176470588235,2.9411764705882355
-Gasolio,Puglia,Pompe Bianche,Tutte,1014,29,2.8599605522682445,2.8599605522682445
-Gasolio,Puglia,Tutte,Autostradale,66,5,7.575757575757576,7.575757575757576
-Gasolio,Puglia,Tutte,Stradale,2713,385,14.190932546995946,14.18275736512888
-Gasolio,Puglia,Tutte,Tutte,2779,390,14.033825116948542,14.025994609231432
-Gasolio,Sardegna,Large,Stradale,344,4,1.1627906976744187,1.1627906976744187
-Gasolio,Sardegna,Large,Tutte,344,4,1.1627906976744187,1.1627906976744187
-Gasolio,Sardegna,Majors,Stradale,614,141,22.964169381107492,22.964169381107492
-Gasolio,Sardegna,Majors,Tutte,614,141,22.964169381107492,22.964169381107492
-Gasolio,Sardegna,Pompe Bianche,Stradale,232,2,0.8620689655172413,0.8620689655172413
-Gasolio,Sardegna,Pompe Bianche,Tutte,232,2,0.8620689655172413,0.8620689655172413
-Gasolio,Sardegna,Tutte,Stradale,1190,147,12.352941176470589,12.352941176470589
-Gasolio,Sardegna,Tutte,Tutte,1190,147,12.352941176470589,12.352941176470589
-Gasolio,Sicilia,Large,Autostradale,10,0,0.0,0.0
-Gasolio,Sicilia,Large,Stradale,484,2,0.4132231404958678,0.4132231404958678
-Gasolio,Sicilia,Large,Tutte,494,2,0.4048582995951417,0.4048582995951417
-Gasolio,Sicilia,Majors,Autostradale,32,10,31.25,31.25
-Gasolio,Sicilia,Majors,Stradale,1368,406,29.678362573099413,29.65192206987208
-Gasolio,Sicilia,Majors,Tutte,1400,416,29.714285714285715,29.688836099665508
-Gasolio,Sicilia,Pompe Bianche,Autostradale,4,0,0.0,0.0
-Gasolio,Sicilia,Pompe Bianche,Stradale,1235,14,1.1336032388663968,1.1309992132179385
-Gasolio,Sicilia,Pompe Bianche,Tutte,1239,14,1.1299435028248588,1.1273562044328174
-Gasolio,Sicilia,Tutte,Autostradale,46,10,21.73913043478261,21.73913043478261
-Gasolio,Sicilia,Tutte,Stradale,3087,422,13.670229996760607,13.65149556326027
-Gasolio,Sicilia,Tutte,Tutte,3133,432,13.788700925630387,13.770370551487218
-Gasolio,Toscana,Large,Autostradale,8,0,0.0,0.0
-Gasolio,Toscana,Large,Stradale,488,0,0.0,0.0
-Gasolio,Toscana,Large,Tutte,496,0,0.0,0.0
-Gasolio,Toscana,Majors,Autostradale,47,9,19.148936170212767,19.474637681159418
-Gasolio,Toscana,Majors,Stradale,1444,360,24.930747922437675,24.879910988336402
-Gasolio,Toscana,Majors,Tutte,1491,369,24.748490945674046,24.711750226713306
-Gasolio,Toscana,Pompe Bianche,Autostradale,16,0,0.0,0.0
-Gasolio,Toscana,Pompe Bianche,Stradale,839,15,1.7878426698450536,1.787419024889192
-Gasolio,Toscana,Pompe Bianche,Tutte,855,15,1.7543859649122806,1.7539779815710563
-Gasolio,Toscana,Tutte,Autostradale,71,9,12.676056338028168,12.817460317460318
-Gasolio,Toscana,Tutte,Stradale,2771,375,13.533020570191267,13.508583568017887
-Gasolio,Toscana,Tutte,Tutte,2842,384,13.511611541168191,13.491168919668468
-Gasolio,Trentino-Alto Adige/Südtirol,Large,Autostradale,12,0,0.0,0.0
-Gasolio,Trentino-Alto Adige/Südtirol,Large,Stradale,136,0,0.0,0.0
-Gasolio,Trentino-Alto Adige/Südtirol,Large,Tutte,148,0,0.0,0.0
-Gasolio,Trentino-Alto Adige/Südtirol,Majors,Autostradale,14,6,42.857142857142854,42.857142857142854
-Gasolio,Trentino-Alto Adige/Südtirol,Majors,Stradale,378,108,28.57142857142857,28.57142857142857
-Gasolio,Trentino-Alto Adige/Südtirol,Majors,Tutte,392,114,29.081632653061224,29.081632653061224
-Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Autostradale,6,1,16.666666666666664,16.666666666666664
-Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Stradale,168,1,0.5952380952380952,0.5952380952380952
-Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Tutte,174,2,1.1494252873563218,1.1494252873563218
-Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Autostradale,32,7,21.875,21.875
-Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Stradale,682,109,15.982404692082111,15.98240469208211
-Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Tutte,714,116,16.246498599439775,16.246498599439775
-Gasolio,Umbria,Large,Autostradale,2,0,0.0,0.0
-Gasolio,Umbria,Large,Stradale,134,0,0.0,0.0
-Gasolio,Umbria,Large,Tutte,136,0,0.0,0.0
-Gasolio,Umbria,Majors,Autostradale,6,3,50.0,49.99999999999999
-Gasolio,Umbria,Majors,Stradale,444,90,20.27027027027027,20.27027027027027
-Gasolio,Umbria,Majors,Tutte,450,93,20.666666666666668,20.666666666666664
-Gasolio,Umbria,Pompe Bianche,Stradale,226,20,8.849557522123893,8.849557522123895
-Gasolio,Umbria,Pompe Bianche,Tutte,226,20,8.849557522123893,8.849557522123895
-Gasolio,Umbria,Tutte,Autostradale,8,3,37.5,37.5
-Gasolio,Umbria,Tutte,Stradale,804,110,13.681592039800993,13.681592039800993
-Gasolio,Umbria,Tutte,Tutte,812,113,13.916256157635468,13.916256157635468
-Gasolio,Valle d'Aosta,Large,Stradale,28,0,0.0,0.0
-Gasolio,Valle d'Aosta,Large,Tutte,28,0,0.0,0.0
-Gasolio,Valle d'Aosta,Majors,Autostradale,6,3,50.0,49.99999999999999
-Gasolio,Valle d'Aosta,Majors,Stradale,46,15,32.608695652173914,32.608695652173914
-Gasolio,Valle d'Aosta,Majors,Tutte,52,18,34.61538461538461,34.61538461538461
-Gasolio,Valle d'Aosta,Pompe Bianche,Autostradale,2,0,0.0,0.0
-Gasolio,Valle d'Aosta,Pompe Bianche,Stradale,52,0,0.0,0.0
-Gasolio,Valle d'Aosta,Pompe Bianche,Tutte,54,0,0.0,0.0
-Gasolio,Valle d'Aosta,Tutte,Autostradale,8,3,37.5,37.5
-Gasolio,Valle d'Aosta,Tutte,Stradale,126,15,11.904761904761903,11.904761904761905
-Gasolio,Valle d'Aosta,Tutte,Tutte,134,18,13.432835820895523,13.432835820895521
-Gasolio,Veneto,Large,Autostradale,18,5,27.77777777777778,27.777777777777775
-Gasolio,Veneto,Large,Stradale,513,9,1.7543859649122806,1.7509727626459144
-Gasolio,Veneto,Large,Tutte,531,14,2.6365348399246704,2.632997588310398
-Gasolio,Veneto,Majors,Autostradale,42,19,45.23809523809524,45.23809523809524
-Gasolio,Veneto,Majors,Stradale,1345,443,32.9368029739777,32.921287943111864
-Gasolio,Veneto,Majors,Tutte,1387,462,33.30930064888248,33.294555268618666
-Gasolio,Veneto,Pompe Bianche,Autostradale,12,0,0.0,0.0
-Gasolio,Veneto,Pompe Bianche,Stradale,1472,34,2.309782608695652,2.307756209675186
-Gasolio,Veneto,Pompe Bianche,Tutte,1484,34,2.2911051212938007,2.289111327858937
-Gasolio,Veneto,Tutte,Autostradale,72,24,33.33333333333333,33.333333333333336
-Gasolio,Veneto,Tutte,Stradale,3330,486,14.594594594594595,14.583361138956816
-Gasolio,Veneto,Tutte,Tutte,3402,510,14.991181657848324,14.980280963863581
-Gasolio,Tutte,Large,Autostradale,237,5,2.109704641350211,2.111522575131748
-Gasolio,Tutte,Large,Stradale,6868,74,1.0774606872451953,1.0771816670591527
-Gasolio,Tutte,Large,Tutte,7105,79,1.111893033075299,1.1116657752421704
-Gasolio,Tutte,Majors,Autostradale,605,200,33.057851239669425,33.04428124931698
-Gasolio,Tutte,Majors,Stradale,19393,4804,24.77182488526788,24.746116966015556
-Gasolio,Tutte,Majors,Tutte,19998,5004,25.02250225022502,24.997171426138934
-Gasolio,Tutte,Pompe Bianche,Autostradale,200,4,2.0,2.0
-Gasolio,Tutte,Pompe Bianche,Stradale,12927,455,3.5197648332946545,3.5177257325263582
-Gasolio,Tutte,Pompe Bianche,Tutte,13127,459,3.4966100403748,3.4945837945550893
-Gasolio,Tutte,Tutte,Autostradale,1042,209,20.057581573896353,20.057581573896353
-Gasolio,Tutte,Tutte,Stradale,39188,5333,13.608757782994793,13.596588049149402
-Gasolio,Tutte,Tutte,Tutte,40230,5542,13.775789212030823,13.764038206201455
+Benzina,Abruzzo,Large,Autostradale,28,0,0.0,0.0
+Benzina,Abruzzo,Large,Stradale,457,43,9.409190371991247,9.45054945054945
+Benzina,Abruzzo,Large,Tutte,485,43,8.8659793814433,8.902691511387163
+Benzina,Abruzzo,Majors,Autostradale,83,44,53.01204819277109,53.246753246753244
+Benzina,Abruzzo,Majors,Stradale,2050,1070,52.19512195121951,52.17618535562338
+Benzina,Abruzzo,Majors,Tutte,2133,1114,52.22691045475856,52.21573400714902
+Benzina,Abruzzo,Pompe Bianche,Autostradale,21,4,19.047619047619047,19.047619047619044
+Benzina,Abruzzo,Pompe Bianche,Stradale,1335,328,24.56928838951311,24.567177105066328
+Benzina,Abruzzo,Pompe Bianche,Tutte,1356,332,24.48377581120944,24.482056056224106
+Benzina,Abruzzo,Tutte,Autostradale,132,48,36.36363636363637,36.507936507936506
+Benzina,Abruzzo,Tutte,Stradale,3842,1441,37.5065070275898,37.51047026444896
+Benzina,Abruzzo,Tutte,Tutte,3974,1489,37.46854554604932,37.47627105388515
+Benzina,Basilicata,Large,Stradale,224,82,36.607142857142854,36.607142857142854
+Benzina,Basilicata,Large,Tutte,224,82,36.607142857142854,36.607142857142854
+Benzina,Basilicata,Majors,Autostradale,14,0,0.0,0.0
+Benzina,Basilicata,Majors,Stradale,711,351,49.36708860759494,49.46889646947888
+Benzina,Basilicata,Majors,Tutte,725,351,48.41379310344828,48.51168249226502
+Benzina,Basilicata,Pompe Bianche,Stradale,595,36,6.050420168067227,6.050420168067227
+Benzina,Basilicata,Pompe Bianche,Tutte,595,36,6.050420168067227,6.050420168067227
+Benzina,Basilicata,Tutte,Autostradale,14,0,0.0,0.0
+Benzina,Basilicata,Tutte,Stradale,1530,469,30.65359477124183,30.687265480529273
+Benzina,Basilicata,Tutte,Tutte,1544,469,30.375647668393785,30.408708938120704
+Benzina,Calabria,Large,Autostradale,14,0,0.0,0.0
+Benzina,Calabria,Large,Stradale,1309,241,18.41100076394194,18.41100076394194
+Benzina,Calabria,Large,Tutte,1323,241,18.2161753590325,18.2161753590325
+Benzina,Calabria,Majors,Autostradale,70,55,78.57142857142857,78.57142857142857
+Benzina,Calabria,Majors,Stradale,2275,1177,51.73626373626373,51.736263736263744
+Benzina,Calabria,Majors,Tutte,2345,1232,52.537313432835816,52.53731343283582
+Benzina,Calabria,Pompe Bianche,Autostradale,21,0,0.0,0.0
+Benzina,Calabria,Pompe Bianche,Stradale,1169,121,10.350727117194184,10.350727117194182
+Benzina,Calabria,Pompe Bianche,Tutte,1190,121,10.168067226890756,10.168067226890756
+Benzina,Calabria,Tutte,Autostradale,105,55,52.38095238095239,52.38095238095237
+Benzina,Calabria,Tutte,Stradale,4753,1539,32.379549758047546,32.37954975804755
+Benzina,Calabria,Tutte,Tutte,4858,1594,32.81185673116509,32.811856731165086
+Benzina,Campania,Large,Autostradale,84,2,2.380952380952381,2.3809523809523805
+Benzina,Campania,Large,Stradale,1684,615,36.52019002375297,36.52810709345979
+Benzina,Campania,Large,Tutte,1768,617,34.89819004524887,34.90539825943553
+Benzina,Campania,Majors,Autostradale,139,95,68.34532374100719,68.0827067669173
+Benzina,Campania,Majors,Stradale,4321,1819,42.096736866466095,42.11004891573902
+Benzina,Campania,Majors,Tutte,4460,1914,42.91479820627803,42.92015730250862
+Benzina,Campania,Pompe Bianche,Autostradale,35,8,22.857142857142858,22.857142857142858
+Benzina,Campania,Pompe Bianche,Stradale,5199,781,15.022119638391999,15.034824859050428
+Benzina,Campania,Pompe Bianche,Tutte,5234,789,15.07451280091708,15.087503050135682
+Benzina,Campania,Tutte,Autostradale,258,105,40.69767441860465,40.604890604890606
+Benzina,Campania,Tutte,Stradale,11204,3215,28.69510888968226,28.710015533754863
+Benzina,Campania,Tutte,Tutte,11462,3320,28.965276566044317,28.977749992895323
+Benzina,Emilia-Romagna,Large,Autostradale,49,0,0.0,0.0
+Benzina,Emilia-Romagna,Large,Stradale,1693,192,11.340815121086829,11.363762868436156
+Benzina,Emilia-Romagna,Large,Tutte,1742,192,11.021814006888633,11.043486387948105
+Benzina,Emilia-Romagna,Majors,Autostradale,196,136,69.38775510204081,69.38775510204081
+Benzina,Emilia-Romagna,Majors,Stradale,5439,2804,51.55359441073727,51.52225686059739
+Benzina,Emilia-Romagna,Majors,Tutte,5635,2940,52.17391304347826,52.143484984581505
+Benzina,Emilia-Romagna,Pompe Bianche,Autostradale,35,11,31.428571428571427,31.428571428571427
+Benzina,Emilia-Romagna,Pompe Bianche,Stradale,4057,382,9.415824500862707,9.415887525775199
+Benzina,Emilia-Romagna,Pompe Bianche,Tutte,4092,393,9.604105571847507,9.604221550782867
+Benzina,Emilia-Romagna,Tutte,Autostradale,280,147,52.5,52.5
+Benzina,Emilia-Romagna,Tutte,Stradale,11189,3378,30.190365537581553,30.184978844584982
+Benzina,Emilia-Romagna,Tutte,Tutte,11469,3525,30.73502484959456,30.72973848565932
+Benzina,Friuli-Venezia Giulia,Large,Autostradale,20,0,0.0,0.0
+Benzina,Friuli-Venezia Giulia,Large,Stradale,483,25,5.175983436853002,5.175983436853002
+Benzina,Friuli-Venezia Giulia,Large,Tutte,503,25,4.970178926441352,4.9603174603174605
+Benzina,Friuli-Venezia Giulia,Majors,Autostradale,14,13,92.85714285714286,92.85714285714286
+Benzina,Friuli-Venezia Giulia,Majors,Stradale,1695,946,55.81120943952802,55.83176643782705
+Benzina,Friuli-Venezia Giulia,Majors,Tutte,1709,959,56.11468695143359,56.1351144673326
+Benzina,Friuli-Venezia Giulia,Pompe Bianche,Autostradale,28,4,14.285714285714285,14.285714285714286
+Benzina,Friuli-Venezia Giulia,Pompe Bianche,Stradale,587,53,9.028960817717206,9.013605442176871
+Benzina,Friuli-Venezia Giulia,Pompe Bianche,Tutte,615,57,9.268292682926829,9.253246753246753
+Benzina,Friuli-Venezia Giulia,Tutte,Autostradale,62,17,27.419354838709676,27.38095238095238
+Benzina,Friuli-Venezia Giulia,Tutte,Stradale,2765,1024,37.034358047016276,37.034358047016276
+Benzina,Friuli-Venezia Giulia,Tutte,Tutte,2827,1041,36.82348779625044,36.820820508140855
+Benzina,Lazio,Large,Autostradale,35,2,5.714285714285714,5.714285714285714
+Benzina,Lazio,Large,Stradale,1662,530,31.889290012033694,31.87046970687009
+Benzina,Lazio,Large,Tutte,1697,532,31.34944018856806,31.33110809878487
+Benzina,Lazio,Majors,Autostradale,238,168,70.58823529411765,70.58823529411765
+Benzina,Lazio,Majors,Stradale,7326,3690,50.368550368550366,50.333130962184136
+Benzina,Lazio,Majors,Tutte,7564,3858,51.004759386567954,50.97072245594205
+Benzina,Lazio,Pompe Bianche,Autostradale,7,2,28.57142857142857,28.571428571428573
+Benzina,Lazio,Pompe Bianche,Stradale,4030,975,24.193548387096776,24.044456319244357
+Benzina,Lazio,Pompe Bianche,Tutte,4037,977,24.201139459995048,24.052111119275825
+Benzina,Lazio,Tutte,Autostradale,280,172,61.42857142857143,61.42857142857143
+Benzina,Lazio,Tutte,Stradale,13018,5195,39.90628360731295,39.82589868969319
+Benzina,Lazio,Tutte,Tutte,13298,5367,40.35945254925552,40.280809821629404
+Benzina,Liguria,Large,Autostradale,84,4,4.761904761904762,4.761904761904761
+Benzina,Liguria,Large,Stradale,476,60,12.605042016806722,12.605042016806722
+Benzina,Liguria,Large,Tutte,560,64,11.428571428571429,11.428571428571429
+Benzina,Liguria,Majors,Autostradale,112,81,72.32142857142857,72.32142857142857
+Benzina,Liguria,Majors,Stradale,1854,1035,55.8252427184466,55.79821122273953
+Benzina,Liguria,Majors,Tutte,1966,1116,56.76500508646999,56.73977776163846
+Benzina,Liguria,Pompe Bianche,Autostradale,14,5,35.714285714285715,35.714285714285715
+Benzina,Liguria,Pompe Bianche,Stradale,720,149,20.694444444444443,20.668461559381033
+Benzina,Liguria,Pompe Bianche,Tutte,734,154,20.98092643051771,20.95499738356881
+Benzina,Liguria,Tutte,Autostradale,210,90,42.857142857142854,42.857142857142854
+Benzina,Liguria,Tutte,Stradale,3050,1244,40.78688524590164,40.762724148552586
+Benzina,Liguria,Tutte,Tutte,3260,1334,40.920245398773005,40.89806338400389
+Benzina,Lombardia,Large,Autostradale,90,0,0.0,0.0
+Benzina,Lombardia,Large,Stradale,4323,772,17.85796900300717,17.87338403127297
+Benzina,Lombardia,Large,Tutte,4413,772,17.493768411511443,17.51363951300027
+Benzina,Lombardia,Majors,Autostradale,292,173,59.24657534246576,59.183673469387756
+Benzina,Lombardia,Majors,Stradale,9311,4397,47.22371388680055,47.215132193187806
+Benzina,Lombardia,Majors,Tutte,9603,4570,47.58929501197542,47.57899472754921
+Benzina,Lombardia,Pompe Bianche,Autostradale,14,2,14.285714285714285,14.285714285714286
+Benzina,Lombardia,Pompe Bianche,Stradale,4641,335,7.218271924154276,7.2163588198047695
+Benzina,Lombardia,Pompe Bianche,Tutte,4655,337,7.23952738990333,7.237625762628027
+Benzina,Lombardia,Tutte,Autostradale,396,175,44.19191919191919,44.213211600429645
+Benzina,Lombardia,Tutte,Stradale,18275,5504,30.117647058823525,30.11687016227179
+Benzina,Lombardia,Tutte,Tutte,18671,5679,30.416153392962347,30.415876430509652
+Benzina,Marche,Large,Stradale,1070,99,9.25233644859813,9.262772094483726
+Benzina,Marche,Large,Tutte,1070,99,9.25233644859813,9.262772094483726
+Benzina,Marche,Majors,Autostradale,70,47,67.14285714285714,67.14285714285714
+Benzina,Marche,Majors,Stradale,2166,1121,51.75438596491229,51.73355405425559
+Benzina,Marche,Majors,Tutte,2236,1168,52.23613595706619,52.21562919838782
+Benzina,Marche,Pompe Bianche,Autostradale,14,4,28.57142857142857,28.571428571428573
+Benzina,Marche,Pompe Bianche,Stradale,1421,443,31.175228712174523,31.083113842551946
+Benzina,Marche,Pompe Bianche,Tutte,1435,447,31.149825783972123,31.058135465849425
+Benzina,Marche,Tutte,Autostradale,84,51,60.71428571428571,60.714285714285715
+Benzina,Marche,Tutte,Stradale,4657,1663,35.709684346145586,35.68141205655563
+Benzina,Marche,Tutte,Tutte,4741,1714,36.15271039865007,36.12445399710504
+Benzina,Molise,Large,Autostradale,14,2,14.285714285714285,14.285714285714286
+Benzina,Molise,Large,Stradale,220,6,2.727272727272727,2.6785714285714284
+Benzina,Molise,Large,Tutte,234,8,3.418803418803419,3.361344537815126
+Benzina,Molise,Majors,Autostradale,7,7,100.0,100.0
+Benzina,Molise,Majors,Stradale,378,198,52.38095238095239,52.38095238095237
+Benzina,Molise,Majors,Tutte,385,205,53.246753246753244,53.24675324675325
+Benzina,Molise,Pompe Bianche,Stradale,367,56,15.258855585831062,15.13124611237819
+Benzina,Molise,Pompe Bianche,Tutte,367,56,15.258855585831062,15.13124611237819
+Benzina,Molise,Tutte,Autostradale,21,9,42.857142857142854,42.85714285714285
+Benzina,Molise,Tutte,Stradale,965,260,26.94300518134715,26.87071891468208
+Benzina,Molise,Tutte,Tutte,986,269,27.281947261663287,27.21108997105093
+Benzina,Piemonte,Large,Autostradale,90,2,2.2222222222222223,2.197802197802198
+Benzina,Piemonte,Large,Stradale,2260,347,15.353982300884955,15.363399364322389
+Benzina,Piemonte,Large,Tutte,2350,349,14.851063829787234,14.85366534673571
+Benzina,Piemonte,Majors,Autostradale,229,154,67.24890829694323,67.23484848484848
+Benzina,Piemonte,Majors,Stradale,5565,2563,46.05570530098832,46.061151433637
+Benzina,Piemonte,Majors,Tutte,5794,2717,46.89333793579565,46.896164807305425
+Benzina,Piemonte,Pompe Bianche,Autostradale,70,9,12.857142857142856,12.857142857142858
+Benzina,Piemonte,Pompe Bianche,Stradale,3012,523,17.363877822045154,17.341529275394695
+Benzina,Piemonte,Pompe Bianche,Tutte,3082,532,17.2615184944841,17.23969906347434
+Benzina,Piemonte,Tutte,Autostradale,389,165,42.41645244215938,42.31447124304267
+Benzina,Piemonte,Tutte,Stradale,10837,3433,31.678508812401958,31.673603428000288
+Benzina,Piemonte,Tutte,Tutte,11226,3598,32.050596828790304,32.04164483437002
+Benzina,Puglia,Large,Autostradale,42,4,9.523809523809524,9.523809523809522
+Benzina,Puglia,Large,Stradale,890,187,21.01123595505618,21.033991844769407
+Benzina,Puglia,Large,Tutte,932,191,20.493562231759658,20.514773073408467
+Benzina,Puglia,Majors,Autostradale,35,20,57.14285714285714,57.142857142857146
+Benzina,Puglia,Majors,Stradale,5177,2575,49.739231214989374,49.711075602093906
+Benzina,Puglia,Majors,Tutte,5212,2595,49.78894858019954,49.7611042669629
+Benzina,Puglia,Pompe Bianche,Autostradale,49,4,8.16326530612245,8.16326530612245
+Benzina,Puglia,Pompe Bianche,Stradale,3440,357,10.377906976744185,10.371530759241255
+Benzina,Puglia,Pompe Bianche,Tutte,3489,361,10.346804241903124,10.340474408369234
+Benzina,Puglia,Tutte,Autostradale,126,28,22.22222222222222,22.22222222222222
+Benzina,Puglia,Tutte,Stradale,9507,3119,32.80740506994846,32.79498572417336
+Benzina,Puglia,Tutte,Tutte,9633,3147,32.668950482715665,32.656763394732714
+Benzina,Sardegna,Large,Stradale,1179,128,10.856658184902459,10.942181234274969
+Benzina,Sardegna,Large,Tutte,1179,128,10.856658184902459,10.942181234274969
+Benzina,Sardegna,Majors,Stradale,2150,1203,55.95348837209302,55.94231474052458
+Benzina,Sardegna,Majors,Tutte,2150,1203,55.95348837209302,55.94231474052458
+Benzina,Sardegna,Pompe Bianche,Stradale,816,26,3.1862745098039214,3.185129047198013
+Benzina,Sardegna,Pompe Bianche,Tutte,816,26,3.1862745098039214,3.185129047198013
+Benzina,Sardegna,Tutte,Stradale,4145,1357,32.73823884197829,32.78288274400059
+Benzina,Sardegna,Tutte,Tutte,4145,1357,32.73823884197829,32.78288274400059
+Benzina,Sicilia,Large,Autostradale,28,0,0.0,0.0
+Benzina,Sicilia,Large,Stradale,1685,259,15.370919881305639,15.36652835408022
+Benzina,Sicilia,Large,Tutte,1713,259,15.119673088149446,15.115423218467713
+Benzina,Sicilia,Majors,Autostradale,91,47,51.64835164835166,51.64835164835165
+Benzina,Sicilia,Majors,Stradale,4795,2767,57.705943691345155,57.705943691345155
+Benzina,Sicilia,Majors,Tutte,4886,2814,57.59312320916905,57.59312320916906
+Benzina,Sicilia,Pompe Bianche,Autostradale,7,0,0.0,0.0
+Benzina,Sicilia,Pompe Bianche,Stradale,4320,389,9.00462962962963,9.01826486104545
+Benzina,Sicilia,Pompe Bianche,Tutte,4327,389,8.990062398890686,9.0036534916062
+Benzina,Sicilia,Tutte,Autostradale,126,47,37.301587301587304,37.3015873015873
+Benzina,Sicilia,Tutte,Stradale,10800,3415,31.62037037037037,31.62358734383719
+Benzina,Sicilia,Tutte,Tutte,10926,3462,31.685886875343215,31.68905527255362
+Benzina,Toscana,Large,Autostradale,28,0,0.0,0.0
+Benzina,Toscana,Large,Stradale,1713,192,11.208406304728546,11.19533527696793
+Benzina,Toscana,Large,Tutte,1741,192,11.028144744399771,11.015490533562822
+Benzina,Toscana,Majors,Autostradale,157,109,69.42675159235668,69.90400903444382
+Benzina,Toscana,Majors,Stradale,5062,2804,55.39312524693797,55.346836036780346
+Benzina,Toscana,Majors,Tutte,5219,2913,55.8152902854953,55.776852864138654
+Benzina,Toscana,Pompe Bianche,Autostradale,28,2,7.142857142857142,7.142857142857143
+Benzina,Toscana,Pompe Bianche,Stradale,2927,194,6.627946703108985,6.6372715759364675
+Benzina,Toscana,Pompe Bianche,Tutte,2955,196,6.6328257191201345,6.642158130785192
+Benzina,Toscana,Tutte,Autostradale,213,111,52.112676056338024,52.365591397849464
+Benzina,Toscana,Tutte,Stradale,9702,3190,32.87981859410431,32.86940736419034
+Benzina,Toscana,Tutte,Tutte,9915,3301,33.292990418557736,33.28471179396194
+Benzina,Trentino-Alto Adige/Südtirol,Large,Autostradale,41,0,0.0,0.0
+Benzina,Trentino-Alto Adige/Südtirol,Large,Stradale,483,56,11.594202898550725,11.594202898550725
+Benzina,Trentino-Alto Adige/Südtirol,Large,Tutte,524,56,10.687022900763358,10.702702702702705
+Benzina,Trentino-Alto Adige/Südtirol,Majors,Autostradale,42,28,66.66666666666666,66.66666666666666
+Benzina,Trentino-Alto Adige/Südtirol,Majors,Stradale,1323,701,52.98563869992441,52.985638699924415
+Benzina,Trentino-Alto Adige/Südtirol,Majors,Tutte,1365,729,53.40659340659341,53.4065934065934
+Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Autostradale,14,6,42.857142857142854,42.857142857142854
+Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Stradale,588,6,1.0204081632653061,1.0204081632653061
+Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Tutte,602,12,1.9933554817275747,1.9933554817275747
+Benzina,Trentino-Alto Adige/Südtirol,Tutte,Autostradale,97,34,35.051546391752574,35.243328100470954
+Benzina,Trentino-Alto Adige/Südtirol,Tutte,Stradale,2394,763,31.871345029239766,31.871345029239766
+Benzina,Trentino-Alto Adige/Südtirol,Tutte,Tutte,2491,797,31.995182657567238,31.998281825786176
+Benzina,Umbria,Large,Autostradale,7,0,0.0,0.0
+Benzina,Umbria,Large,Stradale,467,117,25.053533190578158,25.02422950184144
+Benzina,Umbria,Large,Tutte,474,117,24.68354430379747,24.655085914963
+Benzina,Umbria,Majors,Autostradale,21,18,85.71428571428571,85.71428571428571
+Benzina,Umbria,Majors,Stradale,1552,639,41.17268041237113,41.12963612963613
+Benzina,Umbria,Majors,Tutte,1573,657,41.76732358550541,41.72453555413197
+Benzina,Umbria,Pompe Bianche,Stradale,798,146,18.295739348370926,18.295739348370926
+Benzina,Umbria,Pompe Bianche,Tutte,798,146,18.295739348370926,18.295739348370926
+Benzina,Umbria,Tutte,Autostradale,28,18,64.28571428571429,64.28571428571429
+Benzina,Umbria,Tutte,Stradale,2817,902,32.019879304224354,31.99670601159656
+Benzina,Umbria,Tutte,Tutte,2845,920,32.33743409490334,32.31451783175921
+Benzina,Valle d'Aosta,Large,Stradale,98,14,14.285714285714285,14.285714285714286
+Benzina,Valle d'Aosta,Large,Tutte,98,14,14.285714285714285,14.285714285714286
+Benzina,Valle d'Aosta,Majors,Autostradale,21,18,85.71428571428571,85.71428571428571
+Benzina,Valle d'Aosta,Majors,Stradale,161,110,68.32298136645963,68.32298136645963
+Benzina,Valle d'Aosta,Majors,Tutte,182,128,70.32967032967034,70.32967032967032
+Benzina,Valle d'Aosta,Pompe Bianche,Autostradale,7,0,0.0,0.0
+Benzina,Valle d'Aosta,Pompe Bianche,Stradale,182,27,14.835164835164836,14.835164835164834
+Benzina,Valle d'Aosta,Pompe Bianche,Tutte,189,27,14.285714285714285,14.285714285714283
+Benzina,Valle d'Aosta,Tutte,Autostradale,28,18,64.28571428571429,64.28571428571429
+Benzina,Valle d'Aosta,Tutte,Stradale,441,151,34.24036281179138,34.240362811791385
+Benzina,Valle d'Aosta,Tutte,Tutte,469,169,36.034115138592746,36.03411513859275
+Benzina,Veneto,Large,Autostradale,63,18,28.57142857142857,28.571428571428566
+Benzina,Veneto,Large,Stradale,1862,382,20.515574650912995,20.515574650913
+Benzina,Veneto,Large,Tutte,1925,400,20.77922077922078,20.779220779220783
+Benzina,Veneto,Majors,Autostradale,140,98,70.0,70.0
+Benzina,Veneto,Majors,Stradale,4716,2976,63.104325699745544,63.11011940192588
+Benzina,Veneto,Majors,Tutte,4856,3074,63.303130148270185,63.308951070471785
+Benzina,Veneto,Pompe Bianche,Autostradale,28,0,0.0,0.0
+Benzina,Veneto,Pompe Bianche,Stradale,5253,597,11.364934323243862,11.35537742222033
+Benzina,Veneto,Pompe Bianche,Tutte,5281,597,11.30467714448021,11.295220863933668
+Benzina,Veneto,Tutte,Autostradale,231,116,50.21645021645021,50.21645021645021
+Benzina,Veneto,Tutte,Stradale,11831,3955,33.42912687008706,33.42325465579886
+Benzina,Veneto,Tutte,Tutte,12062,4071,33.750621787431605,33.74490310648681
+Benzina,Tutte,Large,Autostradale,717,34,4.741980474198047,4.7401484865790975
+Benzina,Tutte,Large,Stradale,24238,4347,17.934648073273372,17.943658146495544
+Benzina,Tutte,Large,Tutte,24955,4381,17.55560008014426,17.564218535772877
+Benzina,Tutte,Majors,Autostradale,1971,1311,66.5144596651446,66.51412020361883
+Benzina,Tutte,Majors,Stradale,68027,34946,51.370779249415676,51.3559691106809
+Benzina,Tutte,Majors,Tutte,69998,36257,51.79719420554873,51.782503627966705
+Benzina,Tutte,Pompe Bianche,Autostradale,392,61,15.561224489795919,15.561224489795919
+Benzina,Tutte,Pompe Bianche,Stradale,45457,5924,13.032096266801593,13.021440175018947
+Benzina,Tutte,Pompe Bianche,Tutte,45849,5985,13.053719819407183,13.04312771128261
+Benzina,Tutte,Tutte,Autostradale,3080,1406,45.64935064935065,45.643278384434076
+Benzina,Tutte,Tutte,Stradale,137722,45217,32.83208202030177,32.822472724758256
+Benzina,Tutte,Tutte,Tutte,140802,46623,33.11245578898027,33.10290149210696
+Gasolio,Abruzzo,Large,Autostradale,28,0,0.0,0.0
+Gasolio,Abruzzo,Large,Stradale,457,41,8.971553610503284,9.004329004329005
+Gasolio,Abruzzo,Large,Tutte,485,41,8.45360824742268,8.482697426796806
+Gasolio,Abruzzo,Majors,Autostradale,112,44,39.285714285714285,39.285714285714285
+Gasolio,Abruzzo,Majors,Stradale,2044,1065,52.10371819960861,52.103718199608615
+Gasolio,Abruzzo,Majors,Tutte,2156,1109,51.4378478664193,51.4378478664193
+Gasolio,Abruzzo,Pompe Bianche,Autostradale,42,6,14.285714285714285,14.285714285714286
+Gasolio,Abruzzo,Pompe Bianche,Stradale,1335,346,25.91760299625468,25.88631264023934
+Gasolio,Abruzzo,Pompe Bianche,Tutte,1377,352,25.562817719680464,25.532772935134894
+Gasolio,Abruzzo,Tutte,Autostradale,182,50,27.472527472527474,27.472527472527474
+Gasolio,Abruzzo,Tutte,Stradale,3836,1452,37.851929092805,37.85192909280501
+Gasolio,Abruzzo,Tutte,Tutte,4018,1502,37.38178198108512,37.38178198108512
+Gasolio,Basilicata,Large,Stradale,224,87,38.839285714285715,38.839285714285715
+Gasolio,Basilicata,Large,Tutte,224,87,38.839285714285715,38.839285714285715
+Gasolio,Basilicata,Majors,Autostradale,28,0,0.0,0.0
+Gasolio,Basilicata,Majors,Stradale,704,358,50.85227272727273,50.95615275813295
+Gasolio,Basilicata,Majors,Tutte,732,358,48.90710382513661,49.00313971742543
+Gasolio,Basilicata,Pompe Bianche,Stradale,593,39,6.57672849915683,6.5966386554621845
+Gasolio,Basilicata,Pompe Bianche,Tutte,593,39,6.57672849915683,6.5966386554621845
+Gasolio,Basilicata,Tutte,Autostradale,28,0,0.0,0.0
+Gasolio,Basilicata,Tutte,Stradale,1521,484,31.821170282708742,31.88210685938247
+Gasolio,Basilicata,Tutte,Tutte,1549,484,31.245965138799225,31.30470748117807
+Gasolio,Calabria,Large,Autostradale,14,0,0.0,0.0
+Gasolio,Calabria,Large,Stradale,1309,246,18.792971734148207,18.792971734148207
+Gasolio,Calabria,Large,Tutte,1323,246,18.594104308390023,18.594104308390023
+Gasolio,Calabria,Majors,Autostradale,70,54,77.14285714285715,77.14285714285714
+Gasolio,Calabria,Majors,Stradale,2281,1172,51.380973257343264,51.362637362637365
+Gasolio,Calabria,Majors,Tutte,2351,1226,52.14802211824755,52.13041933191187
+Gasolio,Calabria,Pompe Bianche,Autostradale,21,0,0.0,0.0
+Gasolio,Calabria,Pompe Bianche,Stradale,1169,123,10.52181351582549,10.52181351582549
+Gasolio,Calabria,Pompe Bianche,Tutte,1190,123,10.336134453781511,10.336134453781513
+Gasolio,Calabria,Tutte,Autostradale,105,54,51.42857142857142,51.42857142857143
+Gasolio,Calabria,Tutte,Stradale,4759,1541,32.38075225887791,32.37500154701056
+Gasolio,Calabria,Tutte,Tutte,4864,1595,32.791940789473685,32.78635551830253
+Gasolio,Campania,Large,Autostradale,98,4,4.081632653061225,4.081632653061225
+Gasolio,Campania,Large,Stradale,1680,572,34.04761904761905,34.04761904761905
+Gasolio,Campania,Large,Tutte,1778,576,32.39595050618673,32.39595050618673
+Gasolio,Campania,Majors,Autostradale,146,95,65.06849315068493,64.82993197278913
+Gasolio,Campania,Majors,Stradale,4313,1839,42.63853466264781,42.66719843026332
+Gasolio,Campania,Majors,Tutte,4459,1934,43.37295357703521,43.39322806842303
+Gasolio,Campania,Pompe Bianche,Autostradale,63,23,36.507936507936506,36.5079365079365
+Gasolio,Campania,Pompe Bianche,Stradale,5202,923,17.74317570165321,17.74170520011727
+Gasolio,Campania,Pompe Bianche,Tutte,5265,946,17.967711301044634,17.96613162345552
+Gasolio,Campania,Tutte,Autostradale,307,122,39.73941368078176,39.65569314406524
+Gasolio,Campania,Tutte,Stradale,11195,3334,29.78115230013399,29.789337268335736
+Gasolio,Campania,Tutte,Tutte,11502,3456,30.046948356807512,30.052624054667774
+Gasolio,Emilia-Romagna,Large,Autostradale,49,0,0.0,0.0
+Gasolio,Emilia-Romagna,Large,Stradale,1670,194,11.616766467065869,11.626826462802695
+Gasolio,Emilia-Romagna,Large,Tutte,1719,194,11.28563118091914,11.295124321505606
+Gasolio,Emilia-Romagna,Majors,Autostradale,196,136,69.38775510204081,69.38775510204081
+Gasolio,Emilia-Romagna,Majors,Stradale,5431,2791,51.3901675566194,51.35188909263367
+Gasolio,Emilia-Romagna,Majors,Tutte,5627,2927,52.017060600675315,51.97989261543057
+Gasolio,Emilia-Romagna,Pompe Bianche,Autostradale,63,10,15.873015873015872,15.873015873015873
+Gasolio,Emilia-Romagna,Pompe Bianche,Stradale,4034,438,10.857709469509173,10.862321531732277
+Gasolio,Emilia-Romagna,Pompe Bianche,Tutte,4097,448,10.934830363680742,10.93942083703176
+Gasolio,Emilia-Romagna,Tutte,Autostradale,308,146,47.4025974025974,47.40259740259741
+Gasolio,Emilia-Romagna,Tutte,Stradale,11135,3423,30.740907049842836,30.732932957047012
+Gasolio,Emilia-Romagna,Tutte,Tutte,11443,3569,31.18937341606222,31.181600209537084
+Gasolio,Friuli-Venezia Giulia,Large,Autostradale,27,0,0.0,0.0
+Gasolio,Friuli-Venezia Giulia,Large,Stradale,476,22,4.621848739495799,4.621848739495798
+Gasolio,Friuli-Venezia Giulia,Large,Tutte,503,22,4.3737574552683895,4.365079365079366
+Gasolio,Friuli-Venezia Giulia,Majors,Autostradale,21,20,95.23809523809523,95.23809523809523
+Gasolio,Friuli-Venezia Giulia,Majors,Stradale,1695,947,55.87020648967551,55.89079831504073
+Gasolio,Friuli-Venezia Giulia,Majors,Tutte,1716,967,56.35198135198135,56.372277133850055
+Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Autostradale,54,6,11.11111111111111,14.285714285714286
+Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Stradale,587,53,9.028960817717206,9.013605442176871
+Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Tutte,641,59,9.204368174726989,9.293394777265746
+Gasolio,Friuli-Venezia Giulia,Tutte,Autostradale,102,26,25.49019607843137,26.483516483516485
+Gasolio,Friuli-Venezia Giulia,Tutte,Stradale,2758,1022,37.055837563451774,37.05583756345178
+Gasolio,Friuli-Venezia Giulia,Tutte,Tutte,2860,1048,36.64335664335665,36.682483207022536
+Gasolio,Lazio,Large,Autostradale,42,2,4.761904761904762,4.761904761904761
+Gasolio,Lazio,Large,Stradale,1624,522,32.142857142857146,32.17698652644423
+Gasolio,Lazio,Large,Tutte,1666,524,31.45258103241296,31.48500754043474
+Gasolio,Lazio,Majors,Autostradale,238,168,70.58823529411765,70.58823529411765
+Gasolio,Lazio,Majors,Stradale,7324,3692,50.40961223375204,50.35844593866984
+Gasolio,Lazio,Majors,Tutte,7562,3860,51.04469717006083,50.995339117588514
+Gasolio,Lazio,Pompe Bianche,Autostradale,14,4,28.57142857142857,28.571428571428573
+Gasolio,Lazio,Pompe Bianche,Stradale,4041,1113,27.542687453600596,27.51027985628471
+Gasolio,Lazio,Pompe Bianche,Tutte,4055,1117,27.546239210850803,27.513933080737672
+Gasolio,Lazio,Tutte,Autostradale,294,174,59.183673469387756,59.18367346938775
+Gasolio,Lazio,Tutte,Stradale,12989,5327,41.011625221341134,40.97531794050138
+Gasolio,Lazio,Tutte,Tutte,13283,5501,41.41383723556425,41.3784148188061
+Gasolio,Liguria,Large,Autostradale,91,0,0.0,0.0
+Gasolio,Liguria,Large,Stradale,476,60,12.605042016806722,12.605042016806722
+Gasolio,Liguria,Large,Tutte,567,60,10.582010582010582,10.582010582010582
+Gasolio,Liguria,Majors,Autostradale,119,87,73.10924369747899,73.10924369747899
+Gasolio,Liguria,Majors,Stradale,1851,1023,55.26742301458671,55.22951890876419
+Gasolio,Liguria,Majors,Tutte,1970,1110,56.34517766497462,56.30978521491129
+Gasolio,Liguria,Pompe Bianche,Autostradale,21,7,33.33333333333333,33.33333333333333
+Gasolio,Liguria,Pompe Bianche,Stradale,711,150,21.09704641350211,21.01397786837507
+Gasolio,Liguria,Pompe Bianche,Tutte,732,157,21.44808743169399,21.365802482307338
+Gasolio,Liguria,Tutte,Autostradale,231,94,40.692640692640694,40.692640692640694
+Gasolio,Liguria,Tutte,Stradale,3038,1233,40.585911784068465,40.53489233221543
+Gasolio,Liguria,Tutte,Tutte,3269,1327,40.59345365555216,40.54716441706342
+Gasolio,Lombardia,Large,Autostradale,97,0,0.0,0.0
+Gasolio,Lombardia,Large,Stradale,4227,705,16.678495386799145,16.674825180310997
+Gasolio,Lombardia,Large,Tutte,4324,705,16.304347826086957,16.305576848290574
+Gasolio,Lombardia,Majors,Autostradale,306,173,56.5359477124183,56.47840531561462
+Gasolio,Lombardia,Majors,Stradale,9286,4386,47.23239284945079,47.22613034797404
+Gasolio,Lombardia,Majors,Tutte,9592,4559,47.529190992493746,47.52113515867172
+Gasolio,Lombardia,Pompe Bianche,Autostradale,21,4,19.047619047619047,19.047619047619044
+Gasolio,Lombardia,Pompe Bianche,Stradale,4606,384,8.336951801997394,8.336951801997396
+Gasolio,Lombardia,Pompe Bianche,Tutte,4627,388,8.385562999783877,8.385562999783877
+Gasolio,Lombardia,Tutte,Autostradale,424,177,41.74528301886792,41.76424668227947
+Gasolio,Lombardia,Tutte,Stradale,18119,5475,30.21689938738341,30.214666081650936
+Gasolio,Lombardia,Tutte,Tutte,18543,5652,30.4805047726905,30.478754717462326
+Gasolio,Marche,Large,Stradale,1063,105,9.877704609595485,9.887126106397016
+Gasolio,Marche,Large,Tutte,1063,105,9.877704609595485,9.887126106397016
+Gasolio,Marche,Majors,Autostradale,70,47,67.14285714285714,67.14285714285714
+Gasolio,Marche,Majors,Stradale,2163,1123,51.91863153028201,51.91863153028201
+Gasolio,Marche,Majors,Tutte,2233,1170,52.39587998208688,52.395879982086875
+Gasolio,Marche,Pompe Bianche,Autostradale,28,8,28.57142857142857,28.571428571428573
+Gasolio,Marche,Pompe Bianche,Stradale,1404,454,32.33618233618233,32.35785358919687
+Gasolio,Marche,Pompe Bianche,Tutte,1432,462,32.262569832402235,32.284962765594045
+Gasolio,Marche,Tutte,Autostradale,98,55,56.12244897959183,56.122448979591844
+Gasolio,Marche,Tutte,Stradale,4630,1682,36.328293736501074,36.34687255137553
+Gasolio,Marche,Tutte,Tutte,4728,1737,36.73857868020304,36.75703998415033
+Gasolio,Molise,Large,Autostradale,21,4,19.047619047619047,19.047619047619044
+Gasolio,Molise,Large,Stradale,220,6,2.727272727272727,2.6785714285714284
+Gasolio,Molise,Large,Tutte,241,10,4.149377593360995,4.081632653061225
+Gasolio,Molise,Majors,Autostradale,14,13,92.85714285714286,92.85714285714286
+Gasolio,Molise,Majors,Stradale,378,198,52.38095238095239,52.38095238095237
+Gasolio,Molise,Majors,Tutte,392,211,53.826530612244895,53.826530612244895
+Gasolio,Molise,Pompe Bianche,Stradale,363,46,12.672176308539946,12.64274940745529
+Gasolio,Molise,Pompe Bianche,Tutte,363,46,12.672176308539946,12.64274940745529
+Gasolio,Molise,Tutte,Autostradale,35,17,48.57142857142857,48.57142857142857
+Gasolio,Molise,Tutte,Stradale,961,250,26.014568158168572,25.991770875281247
+Gasolio,Molise,Tutte,Tutte,996,267,26.80722891566265,26.783814527296695
+Gasolio,Piemonte,Large,Autostradale,105,4,3.8095238095238098,3.8095238095238098
+Gasolio,Piemonte,Large,Stradale,2260,334,14.778761061946902,14.772362034058476
+Gasolio,Piemonte,Large,Tutte,2365,338,14.291754756871036,14.285839702411263
+Gasolio,Piemonte,Majors,Autostradale,238,156,65.54621848739495,65.54621848739495
+Gasolio,Piemonte,Majors,Stradale,5567,2565,46.075085324232084,46.07230082440601
+Gasolio,Piemonte,Majors,Tutte,5805,2721,46.8733850129199,46.8707118117757
+Gasolio,Piemonte,Pompe Bianche,Autostradale,126,16,12.698412698412698,12.698412698412698
+Gasolio,Piemonte,Pompe Bianche,Stradale,3000,563,18.76666666666667,18.75143635707016
+Gasolio,Piemonte,Pompe Bianche,Tutte,3126,579,18.52207293666027,18.507553574667668
+Gasolio,Piemonte,Tutte,Autostradale,469,176,37.52665245202559,37.52665245202559
+Gasolio,Piemonte,Tutte,Stradale,10827,3462,31.975616514269884,31.96577009648795
+Gasolio,Piemonte,Tutte,Tutte,11296,3638,32.20609065155807,32.19662668410767
+Gasolio,Puglia,Large,Autostradale,84,8,9.523809523809524,9.523809523809522
+Gasolio,Puglia,Large,Stradale,890,216,24.269662921348313,24.292568897637796
+Gasolio,Puglia,Large,Tutte,974,224,22.99794661190965,23.017912200851562
+Gasolio,Puglia,Majors,Autostradale,49,26,53.06122448979592,53.06122448979592
+Gasolio,Puglia,Majors,Stradale,5157,2580,50.02908667830134,50.00862130343983
+Gasolio,Puglia,Majors,Tutte,5206,2606,50.057625816365736,50.03742984870706
+Gasolio,Puglia,Pompe Bianche,Autostradale,98,10,10.204081632653061,10.204081632653061
+Gasolio,Puglia,Pompe Bianche,Stradale,3446,439,12.73940800928613,12.745098039215687
+Gasolio,Puglia,Pompe Bianche,Tutte,3544,449,12.669300225733634,12.674839096243778
+Gasolio,Puglia,Tutte,Autostradale,231,44,19.047619047619047,19.047619047619044
+Gasolio,Puglia,Tutte,Stradale,9493,3235,34.07774149373222,34.077500840100036
+Gasolio,Puglia,Tutte,Tutte,9724,3279,33.720691073632246,33.72047855851537
+Gasolio,Sardegna,Large,Stradale,1179,135,11.450381679389313,11.536065416415225
+Gasolio,Sardegna,Large,Tutte,1179,135,11.450381679389313,11.536065416415225
+Gasolio,Sardegna,Majors,Stradale,2147,1198,55.798789007918025,55.82558414512278
+Gasolio,Sardegna,Majors,Tutte,2147,1198,55.798789007918025,55.82558414512278
+Gasolio,Sardegna,Pompe Bianche,Stradale,810,26,3.2098765432098766,3.204112229599486
+Gasolio,Sardegna,Pompe Bianche,Tutte,810,26,3.2098765432098766,3.204112229599486
+Gasolio,Sardegna,Tutte,Stradale,4136,1359,32.857833655705996,32.91138352104102
+Gasolio,Sardegna,Tutte,Tutte,4136,1359,32.857833655705996,32.91138352104102
+Gasolio,Sicilia,Large,Autostradale,35,0,0.0,0.0
+Gasolio,Sicilia,Large,Stradale,1691,264,15.612063867534005,15.634384476330911
+Gasolio,Sicilia,Large,Tutte,1726,264,15.295480880648899,15.31690389200017
+Gasolio,Sicilia,Majors,Autostradale,112,54,48.214285714285715,48.214285714285715
+Gasolio,Sicilia,Majors,Stradale,4793,2758,57.54224911329021,57.52307262476012
+Gasolio,Sicilia,Majors,Tutte,4905,2812,57.32925586136596,57.31072920556981
+Gasolio,Sicilia,Pompe Bianche,Autostradale,14,0,0.0,0.0
+Gasolio,Sicilia,Pompe Bianche,Stradale,4328,386,8.918669131238447,8.9346574891593
+Gasolio,Sicilia,Pompe Bianche,Tutte,4342,386,8.889912482726855,8.905797597216264
+Gasolio,Sicilia,Tutte,Autostradale,161,54,33.54037267080746,33.54037267080746
+Gasolio,Sicilia,Tutte,Stradale,10812,3408,31.520532741398444,31.524635295375422
+Gasolio,Sicilia,Tutte,Tutte,10973,3462,31.55016859564385,31.554168550390255
+Gasolio,Toscana,Large,Autostradale,28,0,0.0,0.0
+Gasolio,Toscana,Large,Stradale,1713,194,11.325160537069468,11.31195335276968
+Gasolio,Toscana,Large,Tutte,1741,194,11.143021252153934,11.13023522662077
+Gasolio,Toscana,Majors,Autostradale,163,109,66.87116564417178,67.10662525879917
+Gasolio,Toscana,Majors,Stradale,5060,2798,55.29644268774704,55.27717633604006
+Gasolio,Toscana,Majors,Tutte,5223,2907,55.65766800689259,55.64323903803069
+Gasolio,Toscana,Pompe Bianche,Autostradale,56,4,7.142857142857142,7.142857142857143
+Gasolio,Toscana,Pompe Bianche,Stradale,2928,198,6.762295081967213,6.775897366036628
+Gasolio,Toscana,Pompe Bianche,Tutte,2984,202,6.769436997319035,6.783096095900654
+Gasolio,Toscana,Tutte,Autostradale,247,113,45.74898785425101,45.83900226757369
+Gasolio,Toscana,Tutte,Stradale,9701,3190,32.883207916709615,32.884243303053
+Gasolio,Toscana,Tutte,Tutte,9948,3303,33.20265379975875,33.204620764861595
+Gasolio,Trentino-Alto Adige/Südtirol,Large,Autostradale,41,0,0.0,0.0
+Gasolio,Trentino-Alto Adige/Südtirol,Large,Stradale,476,50,10.504201680672269,10.504201680672269
+Gasolio,Trentino-Alto Adige/Südtirol,Large,Tutte,517,50,9.671179883945841,9.68953297720421
+Gasolio,Trentino-Alto Adige/Südtirol,Majors,Autostradale,49,35,71.42857142857143,71.42857142857143
+Gasolio,Trentino-Alto Adige/Südtirol,Majors,Stradale,1323,705,53.28798185941043,53.28798185941043
+Gasolio,Trentino-Alto Adige/Südtirol,Majors,Tutte,1372,740,53.93586005830904,53.93586005830904
+Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Autostradale,21,7,33.33333333333333,33.33333333333333
+Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Stradale,588,6,1.0204081632653061,1.0204081632653061
+Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Tutte,609,13,2.134646962233169,2.134646962233169
+Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Autostradale,111,42,37.83783783783784,37.91666666666667
+Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Stradale,2387,761,31.88102220360285,31.881022203602846
+Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Tutte,2498,803,32.14571657325861,32.14881458201258
+Gasolio,Umbria,Large,Autostradale,7,0,0.0,0.0
+Gasolio,Umbria,Large,Stradale,467,117,25.053533190578158,25.01776830135039
+Gasolio,Umbria,Large,Tutte,474,117,24.68354430379747,24.64881474978051
+Gasolio,Umbria,Majors,Autostradale,21,18,85.71428571428571,85.71428571428571
+Gasolio,Umbria,Majors,Stradale,1551,673,43.391360412637006,43.42843166372578
+Gasolio,Umbria,Majors,Tutte,1572,691,43.95674300254453,43.993197278911566
+Gasolio,Umbria,Pompe Bianche,Stradale,788,183,23.223350253807105,23.269595448798988
+Gasolio,Umbria,Pompe Bianche,Tutte,788,183,23.223350253807105,23.269595448798988
+Gasolio,Umbria,Tutte,Autostradale,28,18,64.28571428571429,64.28571428571429
+Gasolio,Umbria,Tutte,Stradale,2806,973,34.675694939415536,34.70961411325985
+Gasolio,Umbria,Tutte,Tutte,2834,991,34.968242766407904,35.00179480767687
+Gasolio,Valle d'Aosta,Large,Stradale,98,14,14.285714285714285,14.285714285714286
+Gasolio,Valle d'Aosta,Large,Tutte,98,14,14.285714285714285,14.285714285714286
+Gasolio,Valle d'Aosta,Majors,Autostradale,21,18,85.71428571428571,85.71428571428571
+Gasolio,Valle d'Aosta,Majors,Stradale,161,110,68.32298136645963,68.32298136645963
+Gasolio,Valle d'Aosta,Majors,Tutte,182,128,70.32967032967034,70.32967032967032
+Gasolio,Valle d'Aosta,Pompe Bianche,Autostradale,7,0,0.0,0.0
+Gasolio,Valle d'Aosta,Pompe Bianche,Stradale,182,27,14.835164835164836,14.835164835164834
+Gasolio,Valle d'Aosta,Pompe Bianche,Tutte,189,27,14.285714285714285,14.285714285714283
+Gasolio,Valle d'Aosta,Tutte,Autostradale,28,18,64.28571428571429,64.28571428571429
+Gasolio,Valle d'Aosta,Tutte,Stradale,441,151,34.24036281179138,34.240362811791385
+Gasolio,Valle d'Aosta,Tutte,Tutte,469,169,36.034115138592746,36.03411513859275
+Gasolio,Veneto,Large,Autostradale,63,11,17.46031746031746,17.46031746031746
+Gasolio,Veneto,Large,Stradale,1798,371,20.63403781979978,20.622568093385212
+Gasolio,Veneto,Large,Tutte,1861,382,20.526598602901664,20.51597997689642
+Gasolio,Veneto,Majors,Autostradale,147,105,71.42857142857143,71.42857142857143
+Gasolio,Veneto,Majors,Stradale,4709,2973,63.134423444468034,63.140135237828886
+Gasolio,Veneto,Majors,Tutte,4856,3078,63.38550247116969,63.39123024507364
+Gasolio,Veneto,Pompe Bianche,Autostradale,42,0,0.0,0.0
+Gasolio,Veneto,Pompe Bianche,Stradale,5155,660,12.803103782735208,12.793582797980735
+Gasolio,Veneto,Pompe Bianche,Tutte,5197,660,12.699634404464113,12.690265914133752
+Gasolio,Veneto,Tutte,Autostradale,252,116,46.03174603174603,46.03174603174603
+Gasolio,Veneto,Tutte,Stradale,11662,4004,34.33373349339736,34.32379368850295
+Gasolio,Veneto,Tutte,Tutte,11914,4120,34.581165015947626,34.57152317949054
+Gasolio,Tutte,Large,Autostradale,830,33,3.975903614457831,3.9758276191832667
+Gasolio,Tutte,Large,Stradale,23998,4255,17.730644220351696,17.738536727753477
+Gasolio,Tutte,Large,Tutte,24828,4288,17.27082326405671,17.27893850002034
+Gasolio,Tutte,Majors,Autostradale,2120,1358,64.05660377358491,64.03807141780752
+Gasolio,Tutte,Majors,Stradale,67938,34954,51.449851335040776,51.43864807024079
+Gasolio,Tutte,Majors,Tutte,70058,36312,51.83133974706672,51.81986268957003
+Gasolio,Tutte,Pompe Bianche,Autostradale,691,105,15.195369030390736,15.410898379970545
+Gasolio,Tutte,Pompe Bianche,Stradale,45270,6557,14.484205875855977,14.483534681293376
+Gasolio,Tutte,Pompe Bianche,Tutte,45961,6662,14.494897848175627,14.496301205412363
+Gasolio,Tutte,Tutte,Autostradale,3641,1496,41.08761329305136,41.124229429016566
+Gasolio,Tutte,Tutte,Stradale,137206,45766,33.35568415375421,33.35277563269988
+Gasolio,Tutte,Tutte,Tutte,140847,47262,33.55556028882404,33.553789602604
