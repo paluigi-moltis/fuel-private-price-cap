@@ -1,0 +1,171 @@
+
+
+==================================================
+SAMPLE: S1_universe 
+==================================================
+
+--- LPM: VIF on continuous covariates (1/(1-R2) aux regressions) ---
+VIF(nn_dist_km) = 1.57  (R2aux = 0.362)
+VIF(cap_dist_km_d0) = 1.57  (R2aux = 0.364)
+VIF(pop_density_cell) = 1.13  (R2aux = 0.116)
+VIF(pre_gap_vs_cap) = 1.02  (R2aux = 0.016)
+VIF(n_stations_gestore) = 1.02  (R2aux = 0.019)
+
+--- LPM: residual checks ---
+mean residual: 0.0000 | sd: 0.3675
+
+	RESET test
+
+data:  m
+RESET = 488.1, df1 = 2, df2 = 39281, p-value < 2.2e-16
+
+
+--- LPM: Breaugh calibration (mean pred vs actual) ---
+mean predicted: 0.5350 | actual share: 0.5350
+
+--- Cox (m_a): PH test (scaled Schoenfeld, cox.zph) ---
+                      chisq df       p
+nn_dist_km            7.961  1 0.00478
+cap_dist_km_d0       64.337  1   1e-15
+pop_density_cell     12.479  1 0.00041
+pre_gap_vs_cap       12.680  1 0.00037
+n_stations_gestore 1972.496  1 < 2e-16
+fuel                  0.297  1 0.58590
+GLOBAL             2060.568  6 < 2e-16
+
+--- Cox (m_a): martingale-residual functional form check ---
+cor(martingale, nn_dist_km) = -0.000
+cor(martingale, cap_dist_km_d0) = -0.000
+cor(martingale, pop_density_cell) = 0.000
+cor(martingale, pre_gap_vs_cap) = 0.000
+cor(martingale, n_stations_gestore) = 0.000
+
+condition number of covariate correlation matrix: 4.5
+
+--- covariate correlation matrix ---
+                   nn_dist_km cap_dist_km_d0 pop_density_cell pre_gap_vs_cap
+nn_dist_km              1.000          0.585           -0.298          0.101
+cap_dist_km_d0          0.585          1.000           -0.301          0.115
+pop_density_cell       -0.298         -0.301            1.000         -0.020
+pre_gap_vs_cap          0.101          0.115           -0.020          1.000
+n_stations_gestore     -0.114         -0.116            0.079         -0.046
+                   n_stations_gestore
+nn_dist_km                     -0.114
+cap_dist_km_d0                 -0.116
+pop_density_cell                0.079
+pre_gap_vs_cap                 -0.046
+n_stations_gestore              1.000
+
+
+==================================================
+SAMPLE: S2_excl_agip_q8 
+==================================================
+
+--- LPM: VIF on continuous covariates (1/(1-R2) aux regressions) ---
+VIF(nn_dist_km) = 1.63  (R2aux = 0.388)
+VIF(cap_dist_km_d0) = 1.64  (R2aux = 0.391)
+VIF(pop_density_cell) = 1.13  (R2aux = 0.114)
+VIF(pre_gap_vs_cap) = 1.02  (R2aux = 0.022)
+VIF(n_stations_gestore) = 1.02  (R2aux = 0.017)
+
+--- LPM: residual checks ---
+mean residual: -0.0000 | sd: 0.4164
+
+	RESET test
+
+data:  m
+RESET = 174.54, df1 = 2, df2 = 26607, p-value < 2.2e-16
+
+
+--- LPM: Breaugh calibration (mean pred vs actual) ---
+mean predicted: 0.3415 | actual share: 0.3414
+
+--- Cox (m_a): PH test (scaled Schoenfeld, cox.zph) ---
+                      chisq df      p
+nn_dist_km           0.1683  1 0.6816
+cap_dist_km_d0      10.4338  1 0.0012
+pop_density_cell     0.0785  1 0.7794
+pre_gap_vs_cap       2.1878  1 0.1391
+n_stations_gestore 202.2513  1 <2e-16
+fuel                 1.2768  1 0.2585
+GLOBAL             226.4485  6 <2e-16
+
+--- Cox (m_a): martingale-residual functional form check ---
+cor(martingale, nn_dist_km) = -0.000
+cor(martingale, cap_dist_km_d0) = -0.000
+cor(martingale, pop_density_cell) = 0.000
+cor(martingale, pre_gap_vs_cap) = 0.000
+cor(martingale, n_stations_gestore) = 0.000
+
+condition number of covariate correlation matrix: 4.8
+
+--- covariate correlation matrix ---
+                   nn_dist_km cap_dist_km_d0 pop_density_cell pre_gap_vs_cap
+nn_dist_km              1.000          0.610           -0.293          0.101
+cap_dist_km_d0          0.610          1.000           -0.302          0.108
+pop_density_cell       -0.293         -0.302            1.000         -0.010
+pre_gap_vs_cap          0.101          0.108           -0.010          1.000
+n_stations_gestore     -0.077         -0.083            0.056         -0.097
+                   n_stations_gestore
+nn_dist_km                     -0.077
+cap_dist_km_d0                 -0.083
+pop_density_cell                0.056
+pre_gap_vs_cap                 -0.097
+n_stations_gestore              1.000
+
+
+==================================================
+SAMPLE: S3_pompe_bianche 
+==================================================
+
+--- LPM: VIF on continuous covariates (1/(1-R2) aux regressions) ---
+VIF(nn_dist_km) = 1.81  (R2aux = 0.448)
+VIF(cap_dist_km_d0) = 1.83  (R2aux = 0.454)
+VIF(pop_density_cell) = 1.12  (R2aux = 0.106)
+VIF(pre_gap_vs_cap) = 1.58  (R2aux = 0.366)
+VIF(n_stations_gestore) = 1.55  (R2aux = 0.357)
+
+--- LPM: residual checks ---
+mean residual: 0.0000 | sd: 0.3667
+
+	RESET test
+
+data:  m
+RESET = 103.5, df1 = 2, df2 = 5151, p-value < 2.2e-16
+
+
+--- LPM: Breaugh calibration (mean pred vs actual) ---
+mean predicted: 0.2361 | actual share: 0.2362
+
+--- Cox (m_a): PH test (scaled Schoenfeld, cox.zph) ---
+                     chisq df       p
+nn_dist_km          49.649  1 1.8e-12
+cap_dist_km_d0      12.495  1 0.00041
+pop_density_cell     1.035  1 0.30898
+pre_gap_vs_cap      88.774  1 < 2e-16
+n_stations_gestore   0.158  1 0.69076
+fuel                23.029  1 1.6e-06
+GLOBAL             147.842  6 < 2e-16
+
+--- Cox (m_a): martingale-residual functional form check ---
+cor(martingale, nn_dist_km) = 0.000
+cor(martingale, cap_dist_km_d0) = 0.000
+cor(martingale, pop_density_cell) = -0.000
+cor(martingale, pre_gap_vs_cap) = 0.000
+cor(martingale, n_stations_gestore) = -0.000
+
+condition number of covariate correlation matrix: 5.7
+
+--- covariate correlation matrix ---
+                   nn_dist_km cap_dist_km_d0 pop_density_cell pre_gap_vs_cap
+nn_dist_km              1.000          0.662           -0.268          0.127
+cap_dist_km_d0          0.662          1.000           -0.297          0.124
+pop_density_cell       -0.268         -0.297            1.000         -0.033
+pre_gap_vs_cap          0.127          0.124           -0.033          1.000
+n_stations_gestore     -0.031         -0.024            0.055         -0.588
+                   n_stations_gestore
+nn_dist_km                     -0.031
+cap_dist_km_d0                 -0.024
+pop_density_cell                0.055
+pre_gap_vs_cap                 -0.588
+n_stations_gestore              1.000

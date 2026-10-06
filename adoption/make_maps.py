@@ -122,36 +122,35 @@ prov = prov.with_columns(
 ).filter(pl.col("fid").is_not_null())
 print("matched provinces:", prov.height)
 
-for tag, col, label, fname in [
-    ("all", "share_all",
-     "Stations adopting the cap (%)<br><sup>All stations, at or below cap on any day 28 Sep – 5 Oct 2026; station×fuel units</sup>",
-     "map_adoption_share.png"),
-    ("pb", "share_pb",
-     "Pompe Bianche stations adopting the cap (%)<br><sup>Independent stations only (bandiera = Pompe Bianche); station×fuel units</sup>",
-     "map_pb_adoption_share.png"),
+for tag, col, fname in [
+    ("all", "share_all", "map_adoption_share.png"),
+    ("pb", "share_pb", "map_pb_adoption_share.png"),
 ]:
     sub = prov.filter(pl.col(col).is_not_null())
     sub_pd = sub.with_columns(
         (pl.col(col) * 100).alias("pct")
     ).to_pandas()
+    # scale cut to the true min/max of the plotted variable
+    zmin, zmax = float(sub_pd["pct"].min()), float(sub_pd["pct"].max())
     fig = go.Figure(go.Choroplethmap(
         geojson=geojson,
         locations=sub_pd["fid"],
         z=sub_pd["pct"],
         featureidkey="id",
         colorscale="Viridis",
-        zmin=0, zmax=100,
-        marker_line_width=0.5, marker_line_color="white",
+        zmin=zmin, zmax=zmax,
+        marker_line_width=0.4, marker_line_color="white",
         text=sub_pd["provincia_istat"],
         hovertemplate="%{text}<br>adopting: %{z:.1f}%<extra></extra>",
-        colorbar=dict(title="% adopting", thickness=15),
+        colorbar=dict(title=dict(text="%", side="right"),
+                      thickness=12, len=0.75, tickfont=dict(size=15)),
     ))
+    # plain white base (no other countries, no place labels), Italy bbox
     fig.update_layout(
-        title=dict(text=label, font=dict(size=18)),
-        margin=dict(l=0, r=0, t=60, b=0), width=1200, height=1000,
-        map=dict(style="carto-positron", center=dict(lat=42.5, lon=12.5),
-                 zoom=4.6),
+        margin=dict(l=0, r=0, t=0, b=0), width=1000, height=1150,
+        map=dict(style="white-bg", center=dict(lat=41.4, lon=12.6),
+                 zoom=4.3),
     )
     fig.write_image(os.path.join(FIG, fname), scale=2)
     print("saved", fname, "| provinces plotted:", sub.height,
-          "| z range:", round(sub_pd['pct'].min(),1), "-", round(sub_pd['pct'].max(),1))
+          "| z:", round(zmin, 1), "-", round(zmax, 1))

@@ -280,26 +280,37 @@ lowest in the Po-valley fringes and parts of the South
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{output/figures/map_adoption_share.png}
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\includegraphics[width=\textwidth]{output/figures/map_adoption_share.png}
 \caption{Share of stations adopting the cap by province (all stations;
 station--fuel units, any day 28 Sep -- 5 Oct 2026).}
 \label{fig:mapall}
-\end{figure}
-
-\begin{figure}[htbp]
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\textwidth}
 \centering
-\includegraphics[width=0.9\textwidth]{output/figures/map_pb_adoption_share.png}
+\includegraphics[width=\textwidth]{output/figures/map_pb_adoption_share.png}
 \caption{Share of Pompe Bianche (independent) stations adopting the cap,
 by province.}
 \label{fig:mappb}
+\end{minipage}
 \end{figure}
 
+The overall map (\cref{fig:mapall}) shows a clear geography: adoption
+was highest around Rome, along the Tyrrhenian corridor and in parts of
+the North-West (up to 69\% of units), and lowest in Alpine provinces
+and parts of the South and the islands (down to 31\%). The range is
+wide --- a 38-percentage-point gap between the extremes --- and the
+north--south gradient is not monotone: some southern provinces
+(Abruzzo's corridor, coastal Puglia) match northern adoption levels.
 The independents' map is strikingly different (\cref{fig:mappb}):
 independent adoption rates are low almost everywhere (national mean
-23\%) with pockets of convergence in Lazio, Umbria and the Adriatic
-coast --- independents followed where the leader's network and its early
-followers were dense, and ignored the cap where they faced little local
-pressure.
+23\%, and exactly zero in the darkest provinces) with a sharp pocket of
+convergence along the central Adriatic axis --- from Umbria through the
+Marche -- Abruzzo corridor --- where independents followed the leader's
+network, and near-zero adoption in the Alpine arc and the islands.
+Independents responded to local pressure, not to the national
+announcement.
 
 \section{Who adopts? Survival analysis}
 \label{sec:survival}
@@ -337,8 +348,8 @@ while brand-level headquarters decided for the organised brands.
 
 Robustness. A Weibull AFT model gives the same signs and significance
 per sample; gestore-clustered standard errors leave all conclusions
-unchanged; the PH assumption is satisfied for the continuous
-specification.
+unchanged; the PH assumption is examined in \cref{app:diag} and the
+reported coefficients should be read as window-averaged effects.
 
 \section{Market dynamics: panel event study and adoption probabilities}
 \label{sec:panel}
@@ -360,18 +371,25 @@ not an artefact of composition. Its coefficients are reported in
 \cref{app:es} and mirror \cref{fig:rawshares}: no pre-cap movement, a
 jump at day 0, and a plateau from day 5.
 
-To trace diffusion, we split stations by the distance to the nearest
-day-0 adopter (terciles) and interact: by day 4, adoption reaches 58\%
-in the near tercile versus 35\% in the far tercile
-(\cref{fig:capdist}). The gradient is present on every post day and
-widens over the first week --- adoption diffused outward from early
-adopters, consistent with local strategic complementarities rather than
-purely national, brand-level rollouts.
+To trace diffusion, we split station--fuel units into terciles by their
+distance to the nearest station that adopted on day 0 (cut points:
+0.43 and 1.12~km) and plot the exact daily at-cap share of each tercile
+in \cref{fig:capdist}. The three curves never cross. At every point in
+time, stations near a day-0 adopter adopt earlier and more often: at
+day 4, 58.6\% of the near tercile is at the cap versus 41.6\% of the
+far tercile --- a 17-percentage-point gradient --- and even by day 7
+the far tercile has not caught up (43 vs 61\%). Note that the far
+tercile's curve is not flat either: it rises from 16\% to 43\%, so
+diffusion eventually reached remote stations too, but with a lag of
+several days. This ordering is exactly what local strategic
+complementarities predict, and it is invisible in the aggregate series
+of \cref{fig:rawshares}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.85\textwidth]{output/figures/event_study_by_capdist.png}
-\caption{Adoption by distance to nearest day-0 adopter (terciles).}
+\caption{Stations at or below the cap by distance to the nearest day-0
+adopter (terciles; exact daily shares). Cut points: 0.43 and 1.12~km.}
 \label{fig:capdist}
 \end{figure}
 
@@ -395,10 +413,12 @@ the core coefficients for the same three samples as
 \cref{tab:cox-samples}; the full brand and region coefficients appear in
 \cref{app:lpm-s1,app:lpm-s2}.
 
+\input{paper_tables_s6}
+
 The LPM confirms and sharpens the survival results. The pre-cap gap is
 by far the strongest predictor in every sample: $-1.24$ probability
 points per cent/litre of pre-cap excess in the universe sample, $-1.56$
-excluding the leader brands, $-1.18$ for independents. Distance to the
+excluding the leader brands, $-1.17$ for independents. Distance to the
 nearest day-0 adopter retains a significant negative coefficient in all
 three samples ($-0.008$ to $-0.011$ per km), while distance to the
 nearest station (competitor) is small and insignificant outside the
@@ -406,10 +426,10 @@ universe sample --- it is proximity to \emph{adopters}, not to
 competitors, that predicts adoption. Chain size is positive and
 significant in every sample and roughly ten times larger for Pompe
 Bianche, echoing the gestore-coordination reading of
-\cref{sec:survival}. Population and employment densities are
-economically negligible once brand and region are controlled. Fit is
-moderate ($R^2 = 0.23$--$0.46$), as expected for individual adoption
-decisions.
+\cref{sec:survival}. Population density is economically negligible once
+brand and region are controlled. Fit is moderate (adjusted
+$R^2 = 0.25$--$0.46$), as expected for individual adoption decisions;
+diagnostics are in \cref{app:diag}.
 
 \section{Dispersion and competitiveness}
 \label{sec:dispersion}
@@ -420,22 +440,49 @@ We compute, for each province $\times$ fuel $\times$ phase (pre:
 within-province standard deviation and interquartile range of effective
 prices, and compare phases. The IQR widened in \textbf{100\% of the 222
 province--fuel cells}: on average $+12.7$~c/l for petrol and $+12.1$~c/l
-for diesel. The cap did not compress the distribution --- it split it. A
-mass of adopters sits exactly at the threshold while a non-adopter tail
-holds prices above it, producing a bimodal distribution unlike the smooth
-equilibrium-dispersion benchmarks \parencite{reinganum1979,
-stiglitz1982}.
+for diesel. \Cref{fig:disp} makes the universality of the shift
+visible: every one of the 222 points lies well above the 45-degree
+line, with post-cap IQRs of 100--270~c/l against pre-cap values of
+30--100~c/l --- roughly a tripling, not a marginal increase. There is
+no fuel asymmetry (petrol and diesel interleave) and no province
+escape: nowhere did dispersion stay flat. The cap did not compress the
+distribution --- it split it. A mass of adopters sits exactly at the
+threshold while a non-adopter tail holds prices above it, producing a
+bimodal distribution unlike the smooth equilibrium-dispersion benchmarks
+\parencite{reinganum1979, stiglitz1982}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{output/figures/dispersion_scatter.png}
+\caption{Province--fuel IQR of effective prices, post-cap vs pre-cap.
+Each point is one province--fuel cell (222 cells); the dashed line is
+the 45-degree line. All points lie above it.}
+\label{fig:disp}
+\end{figure}
 
 \paragraph{Non-adopters' competitiveness.}
 For each station we compute the pre- and post-cap average gap between
 its price and the provincial mean of the same fuel and day.
-Non-adopters (18{,}328 units) moved from $+1.1$~c/l above the provincial
-mean before the cap to $+5.9$~c/l after --- a $+4.8$~c/l deterioration.
-Adopters had priced $-1.0$~c/l below their provincial mean already
-before the cap. The relative price of non-adopters thus worsened
-mechanically with every neighbour adopting, and their competitive
-position deteriorated through no action of their own --- a term-of-trade
-shock within local markets.
+\Cref{fig:comp} plots the two unit-level gap distributions before and
+after the cap, separately for eventual adopters and non-adopters. The
+two groups swap places. Before the cap the distributions overlap
+heavily around zero --- both mass points sit near the provincial mean
+(adoption itself is priced in, weakly: adopters averaged $-9.7$~c/l,
+non-adopters $+11.2$~c/l). After the cap the distributions separate
+completely: adopters mass at $-50$~c/l (the cap itself, below a mean
+inflated by non-adopters) and non-adopters at $+59$~c/l. The overlap
+that existed pre-cap vanishes; the bimodality of \cref{fig:disp} is
+this figure seen province by province. Non-adopters' relative position
+worsened through no action of their own --- a term-of-trade shock
+within local markets.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{output/figures/competitiveness_gap.png}
+\caption{Distribution of the station-level gap to the provincial daily
+mean (c/l), pre- vs post-cap, for adopters and non-adopters.}
+\label{fig:comp}
+\end{figure}
 
 The consumer reading is correspondingly uneven: where adoption was high,
 prices fell to the cap for most of the market; where the non-adopter
@@ -473,7 +520,15 @@ entire communication wave in October 2026, overstating reference-day
 averages by 3.5--4.1~c/l. Communication-time reconstruction, as
 implemented here, is the robust alternative.
 
+\printbibliography
+
 \appendix
+
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+
+\renewcommand{\thesection}{\Alph{section}}
+\setcounter{section}{0}
 
 \section{Event-study coefficients}
 \label{app:es}
@@ -484,20 +539,45 @@ implemented here, is the robust alternative.
 \label{app:lpm-full}
 
 Brand and region fixed-effect estimates for the linear probability
-models of \cref{sec:lpm} are reported in
-\cref{app:lpm-s1,app:lpm-s2} (tables generated with the main results and
-included via \texttt{paper\_tables.tex}).
+models of \cref{sec:lpm} are reported in \cref{app:lpm-s1,app:lpm-s2}.
 
-\section*{Reproducibility}
-All results regenerate from the upstream repository
-(\url{https://github.com/paluigi/fuel-private-price-cap}, branch
-\texttt{feat/cap-adoption-drivers}); the \texttt{adoption/README.md}
-there documents the full pipeline --- from the MongoDB price cache and
-ISTAT downloads through the station-day panel, covariates, distances,
-R econometrics, maps, and the final \LaTeX{} build --- step by step.
-Data: MIMIT open data (IODL 2.0), ISTAT 2021 census grid and 2026
-administrative boundaries.
+\input{paper_appendix_lpm}
 
-\printbibliography
+\section{Model diagnostics}
+\label{app:diag}
+
+This appendix reports diagnostics for the Cox models of
+\cref{tab:cox-samples} and the LPMs of \cref{tab:lpm-core}.
+
+\paragraph{Collinearity.} The continuous covariates are close to
+orthogonal: all pairwise correlations are below 0.62, the largest VIF is
+1.6 (nearest-station distance), and the condition number of the
+covariate correlation matrix is 4.5--5.7 across samples --- far below
+conventional concern thresholds (VIF $> 10$, condition number $> 30$).
+Pre-cap gap and the distance measures thus carry independent variation;
+coefficients are not fragile to the inclusion of the others.
+
+\paragraph{Proportional hazards (Cox).} Scaled Schoenfeld-residual
+tests (\texttt{cox.zph}, KM transform) reject global PH in all samples,
+driven by \emph{chain size} and, in the universe sample, the
+\emph{pre-cap gap} (their coefficients attenuate as weaker,
+further-from-cap stations adopt over the window). The qualitative
+ranking of covariates is unaffected; the reported coefficients should
+be read as window-averaged effects.
+
+\paragraph{Functional form (Cox).} Martingale-residual correlations
+with each continuous covariate are $\le |0.08|$ in all samples ---
+no evidence of misspecified linearity for the distance, density and
+gap variables at this scale.
+
+\paragraph{LPM specification.} Pearson residuals have mean zero by
+construction and are calibrated in the aggregate (mean predicted
+adoption equals the observed share to four decimals in every sample).
+The Ramsey RESET rejects exact linearity in the universe and
+excl.-Agip/Q8 samples ($p < 0.001$), which is expected: the true
+response surface is a probability bounded in $[0,1]$, and the LPM is
+used for its readable coefficients, not for out-of-range extrapolation.
+Heteroskedasticity inherent to binary outcomes is handled by the
+gestore-clustered (Huber--White) standard errors reported throughout.
 
 \end{document}
