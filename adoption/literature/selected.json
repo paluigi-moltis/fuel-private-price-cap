@@ -1,0 +1,872 @@
+{
+ "bettendorf2003": {
+  "id": "W2117292583",
+  "doi": "10.1016/s0140-9883(03)00035-5",
+  "title": "Price asymmetry in the Dutch retail gasoline market",
+  "year": 2003,
+  "venue": "Energy Economics",
+  "authors": [
+   "Leon J. H. Bettendorf",
+   "St\u00e9phanie A. van der Geest",
+   "Marco Varkevisser"
+  ],
+  "cited_by": 132,
+  "type": "article",
+  "biblio": {
+   "volume": "25",
+   "issue": "6",
+   "page": "669-689"
+  },
+  "abstract": null
+ },
+ "atil2013": {
+  "id": "W2061839614",
+  "doi": "10.1016/j.enpol.2013.09.064",
+  "title": "Asymmetric and nonlinear pass-through of crude oil prices to gasoline and natural gas prices",
+  "year": 2013,
+  "venue": "Energy Policy",
+  "authors": [
+   "Ahmed Atil",
+   "Amine Lahiani",
+   "Duc Khuong Nguyen"
+  ],
+  "cited_by": 265,
+  "type": "article",
+  "biblio": {
+   "volume": "63",
+   "page": "1367-1376"
+  },
+  "abstract": null
+ },
+ "dehaas2024": {
+  "id": "W2943707595",
+  "doi": "10.17192/es2024.0608",
+  "title": "Do pump prices really follow Edgeworth cycles? Evidence from the German retail fuel market",
+  "year": 2024,
+  "venue": "RePEc: Research Papers in Economics",
+  "authors": [
+   "Samuel de Haas"
+  ],
+  "cited_by": 1,
+  "type": "preprint",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": null,
+   "last_page": null
+  },
+  "abstract": "Most of the literature on retail fuel markets find high-frequency and asymmetric price cycles. This is typically explained by the model of Edgeworth price cycles. A key element of this model is that prices fall to marginal costs during a cycle. It seems challenging to address this assumption empirically. However, I use a natural experiment in the German fuel market to analyze the effects of an external cost shock. I find strong evidence that prices do not fall to marginal costs. This is not in line with Edgeworth cycles and thus, should be taken into account when analyzing fuel markets."
+ },
+ "sen2011": {
+  "id": "W2072328642",
+  "doi": "10.1093/aler/ahr008",
+  "title": "Retail Gasoline Price Ceilings and Regulatory Capture: Evidence from Canada",
+  "year": 2011,
+  "venue": "American Law and Economics Review",
+  "authors": [
+   "Anindya Sen",
+   "A. Clemente",
+   "L. Jonker"
+  ],
+  "cited_by": 27,
+  "type": "article",
+  "biblio": {
+   "volume": "13",
+   "issue": "2",
+   "page": "522-547"
+  },
+  "abstract": "We evaluate the efficacy of price ceiling legislation by employing weekly data on retail gasoline prices for eight cities in Eastern Canada between 1999 and 2007. The use of these data allows us to pool \u201ctreatment\u201d cities in the Atlantic provinces with \u201ccontrol\u201d cities in Ontario and Quebec. Ordinary least squares and instrumental variables estimates demonstrate that the enactment of such regulation is significantly correlated with higher prices. A potential explanation for these results is that price ceilings act as \u201cfocal points\u201d enabling firms to set higher prices, thus suggesting the possibility of regulatory capture."
+ },
+ "contin1999": {
+  "id": "W2047423282",
+  "doi": "10.5547/issn0195-6574-ej-vol20-no4-1",
+  "title": "The Spanish Gasoline Market: From Ceiling Regulation to Open Market Pricing",
+  "year": 1999,
+  "venue": "The Energy Journal",
+  "authors": [
+   "Ignacio Cont\u00edn\u2010Pilart",
+   "Aad F. Correlje",
+   "Emilio Huerta Arribas"
+  ],
+  "cited_by": 26,
+  "type": "article",
+  "biblio": {
+   "volume": "20",
+   "issue": "4",
+   "first_page": "1",
+   "last_page": "14"
+  },
+  "abstract": "This paper examines the evolution of the Spanish gasoline market from the abolition of the state oil monopoly (January 1993) to \"complete\" liberalisation (October 1998). With the restructuring of the Spanish oil sector during the 1980s and early 1990s, a highly concentrated oligopoly emerged in the automotive fuels market. A system of price ceilings replaced the state administered prices in July 1990. Since then, new domestic and foreign operators have entered the market, particularly along the coast, near import terminals. Prices went up and then declined. These developments can be explained by an interplay of factors such as: the gradual decline in co-operation among the Spanish firms; the loss of market share of the largest of these, Repsol; the entry of independent operators and supermarkets; and the impact of the ceiling price system. By mid-1998 this system was abolished as the government considered it an \"impediment\" to further market liberalisation. However, some crucial barriers to the entry of new suppliers remain."
+ },
+ "zhang2020": {
+  "id": "W3084580347",
+  "doi": "10.1016/j.eneco.2020.104950",
+  "title": "Price ceilings as focal points to reach price uniformity: Evidence from a Chinese gasoline market",
+  "year": 2020,
+  "venue": "Energy Economics",
+  "authors": [
+   "Xiao-Bing Zhang",
+   "Yinxin Fei",
+   "Ying Zheng",
+   "Lei Zhang"
+  ],
+  "cited_by": 18,
+  "type": "article",
+  "biblio": {
+   "volume": "92",
+   "page": "104950"
+  },
+  "abstract": null
+ },
+ "gatsios2026": {
+  "id": null,
+  "doi": "10.2139/ssrn.6438081",
+  "title": "The Impact of Price Ceiling Regulation: Evidence from the Retail Gasoline Market",
+  "year": 2026,
+  "venue": null,
+  "authors": [
+   "Georgios Gatsios",
+   "Christos Genakos",
+   "Stella Papadokonstantaki"
+  ],
+  "cited_by": null,
+  "type": "posted-content",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "page": null
+  },
+  "abstract": null
+ },
+ "quiguanas2025": {
+  "id": "W4409143629",
+  "doi": "10.1007/s40812-025-00348-1",
+  "title": "Price dispersion and price ceiling in a price regulated industry: gasoline retailing in Colombia",
+  "year": 2025,
+  "venue": "Journal of Industrial and Business Economics",
+  "authors": [
+   "Blademir Quiguanas",
+   "D. Perez Cabrera",
+   "Jaime Carabal\u00ed",
+   "Alex P\u00e9rez"
+  ],
+  "cited_by": 0,
+  "type": "article",
+  "biblio": {
+   "volume": "52",
+   "issue": "4",
+   "first_page": "1035",
+   "last_page": "1050"
+  },
+  "abstract": null
+ },
+ "cabral1991": {
+  "id": null,
+  "doi": "10.1007/978-1-4615-3976-6_8",
+  "title": "Incentives for Cost Reduction under Price Cap Regulation",
+  "year": 1991,
+  "venue": "Price Caps and Incentive Regulation in Telecommunications",
+  "authors": [
+   "Luis M. B. Cabral",
+   "Michael H. Riordan"
+  ],
+  "cited_by": null,
+  "type": "book-chapter",
+  "biblio": {
+   "publisher": "Springer",
+   "page": "147-166"
+  },
+  "abstract": null
+ },
+ "braeutigam1993": {
+  "id": null,
+  "doi": "10.2307/2118420",
+  "title": "Credibility of Policies Versus Credibility of Policymakers",
+  "year": 1993,
+  "venue": "American Economic Review",
+  "authors": [
+   "A. Drazen",
+   "P. R. Masson"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "83",
+   "issue": "2",
+   "page": "163-168"
+  },
+  "abstract": null
+ },
+ "bergantino2020": {
+  "id": "W3043678447",
+  "doi": "10.1016/j.eneco.2020.104876",
+  "title": "Empirical investigation of retail fuel pricing: The impact of spatial interaction, competition and territorial factors",
+  "year": 2020,
+  "venue": "Energy Economics",
+  "authors": [
+   "Angela Stefania Bergantino",
+   "Claudia Capozza",
+   "Mario Intini"
+  ],
+  "cited_by": 20,
+  "type": "article",
+  "biblio": {
+   "volume": "90",
+   "issue": null,
+   "first_page": "104876",
+   "last_page": "104876"
+  },
+  "abstract": null
+ },
+ "cardoso2021": {
+  "id": "W3211936143",
+  "doi": "10.1111/pirs.12645",
+  "title": "Price effects of spatial competition in retail fuel markets: the impact of a new rival nearby",
+  "year": 2021,
+  "venue": "Papers of the Regional Science Association",
+  "authors": [
+   "Leonardo Chaves Borges Cardoso",
+   "Carlos Frederico Azeredo Uch\u00f4a",
+   "Williams Huamani",
+   "David R. Just",
+   "Ra\u00fal V. Gomez"
+  ],
+  "cited_by": 6,
+  "type": "article",
+  "biblio": {
+   "volume": "101",
+   "issue": "1",
+   "first_page": "81",
+   "last_page": "106"
+  },
+  "abstract": "Our main goal in this paper is to understand the fuel market's spatial price competition. While most of the literature uses the density of gas stations and proximity to rivals as proxies for spatial competition, we measured the marginal increase in spatial competition by the entrance of a new rival nearby. The empirical results indicate that a new firm's entrance reduces prices, and the reduction is more significant the closer the new rival is. A new rival less than 100 meters away is related to a reduction of 2.6% on the typical incumbent firm price. When the new rival is located farther than 250 meters, the incumbent response is lower than 1%. For even greater distances, the effects were significant only when incumbents are unbranded. The extent of spatial competition matters for the outcome; while firms that already faced intense spatial competition are not impacted by having an entrant seller nearby, those facing low spatial competition had a significant price reduction. The pattern, entry of rivals closer matters more, remains when investigating the gasoline price, the ethanol price, and the gasoline wholesale-retail margins in Brazil."
+ },
+ "carranza2015": {
+  "id": "W1600561997",
+  "doi": "10.1111/joie.12071",
+  "title": "Price Controls and Market Structure: Evidence from Gasoline Retail Markets",
+  "year": 2015,
+  "venue": "Journal of Industrial Economics",
+  "authors": [
+   "Juan Esteban Carranza",
+   "Robert Clark",
+   "Jean\u2010Fran\u00e7ois Houde"
+  ],
+  "cited_by": 55,
+  "type": "article",
+  "biblio": {
+   "volume": "83",
+   "issue": "1",
+   "page": "46-63"
+  },
+  "abstract": "In this paper we study the effect of price floor regulations on the organization and performance of markets. The standard interpretation of the effects of these policies is concerned with short\u2010run market distortions associated with excess supply. Since price controls prevent markets from clearing, they lead to higher prices. While this analysis may be correct in the short\u2010run, it does not consider the dynamic equilibrium consequences of price controls. We demonstrate that price floor regulations can have important long\u2010run effects on the the structure of markets by crowding them and creating endogenous barriers to entry for low\u2010cost retailers. Moreover, we show that these factors can indirectly lower productivity and possibly even prices. We test this in the context of an actual regulation imposed in the retail gasoline market in the Canadian province of Qu\u00e9bec and show that the policy led to more competition between smaller/less efficient stations. This resulted in lowered sales, and, despite the reduction in efficiency, did not increase prices."
+ },
+ "deltas2008": {
+  "id": "W1840704802",
+  "doi": "10.1111/j.1467-6451.2008.00350.x",
+  "title": "RETAIL GASOLINE PRICE DYNAMICS AND LOCAL MARKET POWER*",
+  "year": 2008,
+  "venue": "Journal of Industrial Economics",
+  "authors": [
+   "George Deltas"
+  ],
+  "cited_by": 192,
+  "type": "article",
+  "biblio": {
+   "volume": "46",
+   "issue": "3",
+   "page": "310-327"
+  },
+  "abstract": "Using monthly data from the 48 contiguous states (except Nevada) for the 1988\u20132002 period, it is shown that retail gasoline prices respond faster to wholesale price increases than to equivalent wholesale price decreases. Moreover, markets with high average retail\u2010wholesale margins experience a slower adjustment and a more asymmetric response. Since gasoline is the only variable input, average margins in a state likely reflect the degree of retail market power. This suggests that sticky prices and response asymmetries in the gasoline market are, at least partially, a consequence of retail market power."
+ },
+ "amir2007": {
+  "id": null,
+  "doi": "10.2139/ssrn.967639",
+  "title": "Second-Mover Advantage and Price Leadership in Bertrand Oligopoly",
+  "year": 2008,
+  "venue": "International Journal of Industrial Organization",
+  "authors": [
+   "Rabah Amir",
+   "Anna Stepanova"
+  ],
+  "cited_by": null,
+  "type": "posted-content",
+  "biblio": {
+   "volume": "26",
+   "issue": "3",
+   "page": "579-594"
+  },
+  "abstract": null
+ },
+ "kim2019": {
+  "id": "W3121944979",
+  "doi": "10.1093/oep/gpz066",
+  "title": "Identifying price-leadership structures in oligopoly",
+  "year": 2019,
+  "venue": "Oxford Economic Papers",
+  "authors": [
+   "Sang\u2010Hyun Kim",
+   "Hao Lan",
+   "Paul Dobson"
+  ],
+  "cited_by": 13,
+  "type": "article",
+  "biblio": {
+   "volume": "71",
+   "issue": "4",
+   "page": "1010-1036"
+  },
+  "abstract": "Abstract Oligopoly can give rise to complex patterns of price interaction and adjustment. While oligopolistic firms may divide into price leaders and price followers, it is conceivable that some may take on dual roles, being a leader to one group but a follower to a different group in a hierarchical structure. The contribution of this article is to show how such dual relationships are possible in theory along with providing an empirical method to help identify price-leadership structures in n-firm oligopoly. As an illustration, we apply the method to British supermarkets and find a three-tier leader\u2013follower structure."
+ },
+ "guren2018": {
+  "id": "W2414000966",
+  "doi": "10.1086/697207",
+  "title": "House Price Momentum and Strategic Complementarity",
+  "year": 2018,
+  "venue": "Journal of Political Economy",
+  "authors": [
+   "Adam Guren"
+  ],
+  "cited_by": 177,
+  "type": "article",
+  "biblio": {
+   "volume": "126",
+   "issue": "6",
+   "page": "2238-2318"
+  },
+  "abstract": "House prices exhibit substantially more momentum, positive autocorrelation in price changes, than existing theories can explain. I introduce an amplification mechanism to reconcile this discrepancy. Sellers do not set a unilaterally high or low list price because they face a concave demand curve: increasing the price of an above-average-priced house rapidly reduces its sale probability, but cutting the price of a below-average-priced house only slightly improves its sale probability. The resulting strategic complementarity amplifies frictions because sellers gradually adjust their price to stay near average. I provide empirical evidence for concave demand using a quantitative search model that amplifies momentum two- to threefold."
+ },
+ "manzano2011": {
+  "id": "W3126007269",
+  "doi": "10.1016/j.jmateco.2010.12.011",
+  "title": "Public and private learning from prices, strategic substitutability and complementarity, and equilibrium multiplicity",
+  "year": 2011,
+  "venue": "Journal of Mathematical Economics",
+  "authors": [
+   "Carolina Manzano",
+   "Xavier Vives"
+  ],
+  "cited_by": 91,
+  "type": "article",
+  "biblio": {
+   "volume": "48",
+   "issue": "6-7",
+   "page": "1272-1295"
+  },
+  "abstract": null
+ },
+ "amiti2016": {
+  "id": null,
+  "doi": "10.1257/mac.20180523",
+  "title": "International Shocks and Domestic Prices: How Large Are Strategic Complementarities?",
+  "year": 2020,
+  "venue": "American Economic Journal: Macroeconomics",
+  "authors": [
+   "Mary Amiti",
+   "Oleg Itskhoki",
+   "Jozef Konings"
+  ],
+  "cited_by": null,
+  "type": "report",
+  "biblio": {
+   "volume": "12",
+   "issue": "3",
+   "page": "322-353"
+  },
+  "abstract": null
+ },
+ "maskin1988": {
+  "id": "W2026309037",
+  "doi": "10.2307/1911701",
+  "title": "A Theory of Dynamic Oligopoly, II: Price Competition, Kinked Demand Curves, and Edgeworth Cycles",
+  "year": 1988,
+  "venue": "Econometrica",
+  "authors": [
+   "Eric S. Maskin",
+   "Jean Tirole"
+  ],
+  "cited_by": 758,
+  "type": "article",
+  "biblio": {
+   "volume": "56",
+   "issue": "3",
+   "page": "571-599"
+  },
+  "abstract": "The authors provide game theoretic foundations for the classic kinke d demand curve and Edgeworth cycle. In their alternating-move model, there are multiple Markov perfect equilibria of both the kinked deman d curve and Edgeworth cycle variety. In any Markov perfect equilibria , profit is bounded away from the Bertrand equilibria level. A kinked demand curve at the monopoly price is the unique symmetric \"renegot iation proof\" equilibrium when there is little discounting. The auth ors then endogenize the timing by allowing firms to move at any time. They find that firms end up alternating, thus vindicating the fixed timing assumption of the simpler model. Copyright 1988 by The Econometric Society."
+ },
+ "rossi2015": {
+  "id": "W2240022608",
+  "doi": "10.1509/jmr.14.0411",
+  "title": "Price Transparency and Retail Prices: Evidence from Fuel Price Signs in the Italian Highway System",
+  "year": 2015,
+  "venue": "Journal of Marketing Research",
+  "authors": [
+   "Federico Rossi",
+   "Pradeep K. Chintagunta"
+  ],
+  "cited_by": 74,
+  "type": "article",
+  "biblio": {
+   "volume": "52",
+   "issue": "5",
+   "page": "669-684"
+  },
+  "abstract": "Price transparency initiatives are typically undertaken by third parties to ensure that consumers can compare the prices of competing offers in markets in which obtaining such information is costly. Such practices have recently become widespread, yet it is unclear whether the increased price competition due to lower search costs overcomes the potential for collusion between competitors due to lower price coordination costs. Motivated by this question, the authors investigate the effect of mandatory price posting (on large electronic signs) on the pricing behavior of competing gas stations in the Italian highway system. The authors find that when prices are posted, the average price of gasoline decreases by 1 euro cent per liter, which represents about 20% of stations\u2019 margins. About half the price decrease can be attributed to the introduction of a sign posting a station's own price and those of its nearest neighbors, with the other half due to the introduction of other signs posting the prices of other stations on the same road. Despite the price reduction, however, the introduction of signs seems to have little impact on price dispersion, suggesting that price uncertainty persists even after the policy is implemented. Analysis of customer transaction data confirms this finding, showing that less than 10% of consumers use the posted price information effectively."
+ },
+ "alderighi2015": {
+  "id": "W2289437728",
+  "doi": "10.1016/j.eneco.2015.04.017",
+  "title": "The pricing behavior of Italian gas stations: Some evidence from the Cuneo retail fuel market",
+  "year": 2015,
+  "venue": "Energy Economics",
+  "authors": [
+   "Marco Alderighi",
+   "Marco Baudino"
+  ],
+  "cited_by": 14,
+  "type": "article",
+  "biblio": {
+   "volume": "50",
+   "issue": null,
+   "first_page": "33",
+   "last_page": "46"
+  },
+  "abstract": null
+ },
+ "albulescu2021": {
+  "id": "W3135648648",
+  "doi": "10.1016/j.energy.2021.120236",
+  "title": "Fuel price co-movements among France, Germany and Italy: A time-frequency investigation",
+  "year": 2021,
+  "venue": "Energy",
+  "authors": [
+   "Claudiu Tiberiu Albulescu",
+   "Mihai Ioan Mutascu"
+  ],
+  "cited_by": 11,
+  "type": "article",
+  "biblio": {
+   "volume": "225",
+   "issue": null,
+   "first_page": "120236",
+   "last_page": "120236"
+  },
+  "abstract": null
+ },
+ "mattioli2023": {
+  "id": "W4385859555",
+  "doi": "10.1007/978-3-031-35684-1_5",
+  "title": "Vulnerability to Motor Fuel Price Increases: Socio-Spatial Patterns in Italy",
+  "year": 2023,
+  "venue": "Studies in energy, resource and environmental economics",
+  "authors": [
+   "Giulio Mattioli",
+   "Marco Dugato",
+   "Ian Philips"
+  ],
+  "cited_by": 4,
+  "type": "book-chapter",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "89",
+   "last_page": "115"
+  },
+  "abstract": "Abstract Environmental taxes and oil market fluctuations can increase road fuel prices significantly and are likely to play a big role in the future. This raises social justice issues, as some low-income households rely on cars for access to services and opportunities but struggle to afford related expenses. The impacts of fuel price increases are unevenly spatially distributed, as shown by transport, planning and urban research. We investigate spatial patterns of vulnerability to fuel price increases in Italy, a country where the problem is particularly pronounced due to high motorisation rate relative to income, and high fuel prices. We define vulnerability as the combination of high exposure (high car use), high sensitivity (low income) and low adaptive capacity (high car dependence). Based on municipality-level data on motorisation and the journey to work from the 2011 Italian Census and official income tax revenue data for 2012 (as a proxy for income) we derive a composite indicator of vulnerability. The results show: i) a co-location of low-income and high car use on the periphery of many Italian city regions; ii) stark interregional differences, with lower income levels in the South driving high levels of vulnerability, despite lower levels of car ownership and use."
+ },
+ "noel2018": {
+  "id": "W2923427834",
+  "doi": "10.1111/joie.12179",
+  "title": "Gasoline Price Dispersion and Consumer Search: Evidence from a Natural Experiment",
+  "year": 2018,
+  "venue": "Journal of Industrial Economics",
+  "authors": [
+   "Michael D. Noel"
+  ],
+  "cited_by": 18,
+  "type": "article",
+  "biblio": {
+   "volume": "56",
+   "issue": "3",
+   "page": "686-706"
+  },
+  "abstract": "The vast majority of empirical studies examining the link between consumer search and price dispersion focus on how changes in consumer search impact price dispersion. This article does the reverse\u2014it examines how a shock to price dispersion impacts consumer search. A direct measure of search is used and an exogenous shock to price dispersion is found in a refinery fire that caused decades\u2010old retail gasoline price cycles, and the nonlinear high\u2010frequency price dispersion pattern generated by them, to stop. Identifying effects from this shock, the results show a substantial response of consumer search to changes in price dispersion."
+ },
+ "haucap2015": {
+  "id": "W2277600856",
+  "doi": null,
+  "title": "Price dispersion and station heterogeneity on German retail gasoline markets",
+  "year": 2015,
+  "venue": "DICE Discussion Paper No. 165, Heinrich-Heine-Universit\u00e4t D\u00fcsseldorf",
+  "authors": [
+   "Justus Haucap",
+   "Ulrich Heimeshoff",
+   "Manuel Siekmann"
+  ],
+  "cited_by": 42,
+  "type": "preprint",
+  "biblio": {},
+  "abstract": "Price levels and movements on gasoline and diesel markets are heavily debated among consumers, policy-makers, and competition authorities alike. In this paper, we empirically investigate how and why price levels differ across gasoline stations in Germany, using eight months of data from a novel panel data set including price quotes from virtually all German stations. Our analysis specifically explores the role of station heterogeneity in explaining price differences across gasoline stations. Key determinants of price levels across fuel types are found to be ex-refinery prices as key input costs, a station's location on roads or highway service areas, and brand recognition. A lower number of station-specific services implies lower fuel price levels, so does a more heterogeneous local competitive environment."
+ },
+ "yilmazkuday2016": {
+  "id": "W3123074256",
+  "doi": "10.1007/s00168-016-0775-4",
+  "title": "Understanding gasoline price dispersion",
+  "year": 2016,
+  "venue": "The Annals of Regional Science",
+  "authors": [
+   "Demet Yilmazkuday",
+   "Hakan Yilmazkuday"
+  ],
+  "cited_by": 28,
+  "type": "article",
+  "biblio": {
+   "volume": "57",
+   "issue": "1",
+   "first_page": "223",
+   "last_page": "252"
+  },
+  "abstract": null
+ },
+ "burton2003": {
+  "id": "W2105971859",
+  "doi": "10.1111/1467-8489.00202",
+  "title": "Modelling the adoption of organic horticultural technology in the UK using Duration Analysis",
+  "year": 2003,
+  "venue": "Australian Journal of Agricultural and Resource Economics",
+  "authors": [
+   "Michael P. Burton",
+   "Dan Rigby",
+   "Trevor Young"
+  ],
+  "cited_by": 212,
+  "type": "article",
+  "biblio": {
+   "volume": "47",
+   "issue": "2",
+   "page": "258-274"
+  },
+  "abstract": "Duration Analysis, which allows the timing of an event to be explored in a dynamic framework, is used to model the adoption of organic horticultural technology in the UK. The influence of a range of economic and non\u2010economic determinants is explored using discrete time models. The empirical results highlight the importance of gender, attitudes to the environment and information networks, as well as systematic effects that influence the adoption decision over the lifetime of the producer and over the survey period."
+ },
+ "jones2005": {
+  "id": "W2325840652",
+  "doi": "10.1177/153244000500500406",
+  "title": "Beyond Logit and Probit: Cox Duration Models of Single, Repeating, and Competing Events for State Policy Adoption",
+  "year": 2005,
+  "venue": "State Politics & Policy Quarterly",
+  "authors": [
+   "Bradford Jones",
+   "Regina P. Branton"
+  ],
+  "cited_by": 175,
+  "type": "article",
+  "biblio": {
+   "volume": "6",
+   "issue": "4",
+   "page": "419-430"
+  },
+  "abstract": "Abstract Since 1990, the standard statistical approach for studying state policy adoption has been an event history analysis using binary link models, such as logit or probit. In this article, we evaluate this logit-probit approach and consider some alternative strategies for state policy adoption research. In particular, we discuss the Cox model, which avoids the need to parameterize the baseline hazard function and, therefore, is often preferable to the logit-probit approach. Furthermore, we demonstrate how the Cox model can be modified to deal effectively with repeatable and competing events, events that the logit-probit approach cannot be used to model."
+ },
+ "sjoquist2007": {
+  "id": "W2055315300",
+  "doi": "10.1111/j.1540-5850.2007.00867.x",
+  "title": "An Analysis of the Time to Adoption of Local Sales Taxes: A Duration Model Approach",
+  "year": 2007,
+  "venue": "Public Budgeting &amp Finance",
+  "authors": [
+   "David L. Sjoquist",
+   "William J. Smith",
+   "Mary Beth Walker",
+   "Sally Wallace"
+  ],
+  "cited_by": 58,
+  "type": "article",
+  "biblio": {
+   "volume": "27",
+   "issue": "2",
+   "page": "225-245"
+  },
+  "abstract": "The timing of the decision of local governments to adopt a local sales tax is explored in a duration model with time\u2010varying covariates. Our framework suggests a set of factors associated with the decision to adopt a local sales tax and we find empirical support for these factors. We also consider whether the adoption by one jurisdiction depends on the adoption by neighboring jurisdictions and find empirical support for interdependency of behavior."
+ },
+ "noel2007a": {
+  "id": "W2570104920",
+  "doi": "10.1162/rest.89.2.324",
+  "title": "Edgeworth Price Cycles, Cost-Based Pricing, and Sticky Pricing in Retail Gasoline Markets",
+  "year": 2007,
+  "venue": "The Review of Economics and Statistics",
+  "authors": [
+   "Michael D. Noel"
+  ],
+  "cited_by": 214,
+  "type": "article",
+  "biblio": {
+   "volume": "89",
+   "issue": "2",
+   "page": "324-334"
+  },
+  "abstract": "This paper examines dynamic pricing behavior in Canadian retail gasoline markets. I find three distinct pricing patterns: cost-based pricing, sticky pricing, and sharp asymmetric retail price cycles that resemble the Edgeworth cycles of Maskin and Tirole (1988). I use a Markov-switching regression to estimate the prevalence of the regimes and the structural characteristics of the cycles themselves. I find cycles are more prevalent when there are more small firms and are accelerated and amplified with very many small firms. In markets with few small firms, sticky pricing dominates. The findings are consistent with the theory of Edgeworth cycles."
+ },
+ "reinganum1979": {
+  "id": "W1983015749",
+  "doi": "10.1086/260796",
+  "title": "A Simple Model of Equilibrium Price Dispersion",
+  "year": 1979,
+  "venue": "Journal of Political Economy",
+  "authors": [
+   "Jennifer F. Reinganum"
+  ],
+  "cited_by": 446,
+  "type": "article",
+  "biblio": {
+   "volume": "87",
+   "issue": "5",
+   "page": "979-1002"
+  },
+  "abstract": "This paper demonstrates that price dispersion can exist even within the context of a very simple model. Identical buyers with elastic demand curves sample sequentially from a known price distribution, at a fixed cost per observation. Firms are assumed to be perfectly informed of buyers' reservation prices and demand functions. Given the firms' distribution of marginal costs, firms' behavior as monopolistic competitors results in their offering a distribution of prices which is consistent with expected utility maximization by buyers and with expected profit maximization by sellers."
+ },
+ "stiglitz1982": {
+  "id": "W1480368940",
+  "doi": "10.7916/d8p84nw1",
+  "title": "The Theory of Sales: A Simple Model of Equilibrium Price Dispersion with Identical Agents",
+  "year": 1982,
+  "venue": "American Economic Review",
+  "authors": [
+   "Joseph E. Stiglitz",
+   "Steven C. Salop"
+  ],
+  "cited_by": 282,
+  "type": "article",
+  "biblio": {
+   "volume": "72",
+   "issue": "2",
+   "page": "317-321"
+  },
+  "abstract": "The article examines equilibrium in a competitive market in which the mythical auctioneer is absent and information is costly to gather. As a result, individuals may not be perfectly informed about prices or qualities of what is being sold. According to the author, equilibrium in such markets may differ markedly from the one conventionally studied by neoclassical theory. In particular, the only market equilibrium may be characterized by price dispersion for a homogeneous commodity, the law of the single price does not obtain. The article illustrates this with a model in which all individuals are identical and in which there is no exogenous source of noise, no external disturbances to the market, which have to be equilibrated. In the model, although all individuals have identical preferences and incomes and all firms have identical technologies, some firm charge high prices and others charge low prices. High-price stores earn a larger profit per sale, but make fewer sales. Equilibrium entails equal profits for two kinds of stores, that is, the lower volume of high-price stores exactly compensates for the higher profit per sale. The model that is developed by authors is of interest not only for the insight that it provides into the nature of price dispersion in the economy, but also because it provides at least a partial explanation of some aspects of retailing which otherwise would be difficult to explain."
+ },
+ "pellegrino2025": {
+  "id": null,
+  "doi": "10.1257/aer.20201425",
+  "title": "Product Differentiation and Oligopoly: A Network Approach",
+  "year": 2025,
+  "venue": "American Economic Review",
+  "authors": [
+   "Bruno Pellegrino"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "115",
+   "issue": "4",
+   "page": "1170-1225"
+  },
+  "abstract": null
+ },
+ "tappata2009": {
+  "id": null,
+  "doi": "10.1111/j.1756-2171.2009.00084.x",
+  "title": "Rockets and feathers: Understanding asymmetric pricing",
+  "year": 2009,
+  "venue": "The RAND Journal of Economics",
+  "authors": [
+   "Mariano Tappata"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "40",
+   "issue": "3",
+   "page": "468-495"
+  },
+  "abstract": null
+ },
+ "hastings2005": {
+  "id": null,
+  "doi": "10.1111/j.1467-6451.2005.00266.x",
+  "title": "MARKET POWER, VERTICAL INTEGRATION AND THE WHOLESALE PRICE OF GASOLINE*",
+  "year": 2005,
+  "venue": "Journal of Industrial Economics",
+  "authors": [
+   "JUSTINE S. HASTINGS",
+   "RICHARD J. GILBERT"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "46",
+   "issue": "4",
+   "page": "545-561"
+  },
+  "abstract": null
+ },
+ "borenstein2002": {
+  "id": null,
+  "doi": "10.2307/2696378",
+  "title": "Sticky Prices, Inventories, and Market Power in Wholesale Gasoline Markets",
+  "year": 2002,
+  "venue": "The RAND Journal of Economics",
+  "authors": [
+   "Severin Borenstein",
+   "Andrea Shepard"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "33",
+   "issue": "2",
+   "page": "315-337"
+  },
+  "abstract": null
+ },
+ "atkinson2008": {
+  "id": null,
+  "doi": "10.1111/j.1465-7295.2008.00149.x",
+  "title": "PRICE MATCHING AND THE DOMINO EFFECT IN A RETAIL GASOLINE MARKET",
+  "year": 2009,
+  "venue": "Economic Inquiry",
+  "authors": [
+   "BENJAMIN ATKINSON",
+   "ANDREW ECKERT",
+   "DOUGLAS S. WEST"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "47",
+   "issue": "4",
+   "page": "669-685"
+  },
+  "abstract": null
+ },
+ "noel2012": {
+  "id": null,
+  "doi": "10.1016/j.eneco.2011.05.004",
+  "title": "Edgeworth Price Cycles and intertemporal price discrimination",
+  "year": 2012,
+  "venue": "Energy Economics",
+  "authors": [
+   "Michael D. Noel"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "34",
+   "issue": "3",
+   "page": "824-833"
+  },
+  "abstract": null
+ },
+ "pennerstorfer2020": {
+  "id": null,
+  "doi": "10.1111/iere.12443",
+  "title": "INFORMATION AND PRICE DISPERSION: THEORY AND EVIDENCE",
+  "year": 2020,
+  "venue": "International Economic Review",
+  "authors": [
+   "Dieter Pennerstorfer",
+   "Philipp Schmidt\u2010Dengler",
+   "Nicolas Schutz",
+   "Christoph Weiss",
+   "Biliana Yontcheva"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "61",
+   "issue": "2",
+   "page": "437-468"
+  },
+  "abstract": null
+ },
+ "chandra2011": {
+  "id": null,
+  "doi": "10.1111/j.1756-2171.2011.00150.x",
+  "title": "Consumer search and dynamic price dispersion: an application to gasoline markets",
+  "year": 2011,
+  "venue": "The RAND Journal of Economics",
+  "authors": [
+   "Ambarish Chandra",
+   "Mariano E. Tappata"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "42",
+   "issue": "1",
+   "page": "116-140"
+  },
+  "abstract": null
+ },
+ "eckert2004": {
+  "id": null,
+  "doi": "10.1086/380474",
+  "title": "Retail Gasoline Price Cycles across Spatially Dispersed Gasoline Stations",
+  "year": 2004,
+  "venue": "The Journal of Law and Economics",
+  "authors": [
+   "Andrew Eckert",
+   "Douglas S. West"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "47",
+   "issue": "1",
+   "page": "245-275"
+  },
+  "abstract": null
+ },
+ "lewis2011": {
+  "id": null,
+  "doi": "10.1111/j.1530-9134.2011.00293.x",
+  "title": "Asymmetric Price Adjustment and Consumer Search: An Examination of the Retail Gasoline Market",
+  "year": 2011,
+  "venue": "Journal of Economics & Management Strategy",
+  "authors": [
+   "Matthew Lewis"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "20",
+   "issue": "4",
+   "page": "1109-1133"
+  },
+  "abstract": null
+ },
+ "noel2007b": {
+  "id": null,
+  "doi": "10.1111/j.1467-6451.2007.00303.x",
+  "title": "EDGEWORTH PRICE CYCLES: EVIDENCE FROM THE TORONTO RETAIL GASOLINE MARKET<sup>*</sup>",
+  "year": 2007,
+  "venue": "The Journal of Industrial Economics",
+  "authors": [
+   "MICHAEL D. NOEL"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "55",
+   "issue": "1",
+   "page": "69-92"
+  },
+  "abstract": null
+ },
+ "verlinda2008": {
+  "id": null,
+  "doi": "10.1111/j.1467-6451.2008.00351.x",
+  "title": "DO ROCKETS RISE FASTER AND FEATHERS FALL SLOWER IN AN ATMOSPHERE OF LOCAL MARKET POWER? EVIDENCE FROM THE RETAIL GASOLINE MARKET<sup>*</sup>",
+  "year": 2008,
+  "venue": "The Journal of Industrial Economics",
+  "authors": [
+   "JEREMY A. VERLINDA"
+  ],
+  "cited_by": null,
+  "type": "journal-article",
+  "biblio": {
+   "volume": "56",
+   "issue": "3",
+   "page": "581-612"
+  },
+  "abstract": null
+ }
+}

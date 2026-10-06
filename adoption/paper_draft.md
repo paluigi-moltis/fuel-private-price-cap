@@ -49,22 +49,47 @@ provincial market.
 
 ## 2. Institutional background and related literature
 
+*Full per-paper review with relevance notes: `literature/literature_review.md`;
+BibTeX database: `literature/references.bib`.*
+
 - *Institutional setting*: MIMIT price-communication obligation
   (dtComu semantics; daily extracts; the 8am cutoff and its biases —
-  documented in the repo's skill notes and in §3.2).
-- *Fuel price cycles and asymmetry*: Eckert (2013) survey; Lewis &
-  Noel (2011) on Edgewater-style retail oligopolies.
-- *Monopoly/oligopoly pricing under price ceilings*:_introductory_
-  theory predicts ceiling-induced price uniformity at the cap when
-  demand is inelastic and the binding cap sits below the collusive
-  level; our data show partial uniformity plus a non-adopter tail.
-- *Spatial price linkages in retail fuel*: German-Pfaff (RRB literature),
-  Pennerstorfer et al. (2019) on spatial competition and market structure.
-- *Diffusion of pricing decisions*: entry/exit and strategic complementarity
-  literature; cap adoption as a discrete strategic choice with local
-  spillovers — the survival framework connects to duration models in IO.
-- *Italian fuel-market studies*: ABF/AGCM enforcement reports; the
-  "speculator" debate of 2026 (news coverage to be cited).
+  documented in §3.2). The cap is *voluntary*: announced by the market
+  leader and unenforced, which cleanly separates focal-point effects
+  from enforcement effects (contrast Sen et al. 2011 on legislated
+  Canadian ceilings).
+- *Price ceilings as focal points*: theory predicts ceiling-induced
+  uniformity at the cap; the best evidence is Zhang, Fei & Zheng (2020)
+  on Chinese gasoline, where administered ceilings produce uniformity.
+  Our setting differs in that compliance is a firm choice — we observe
+  the diffusion path itself, and find uniformity is *partial* (53.5%)
+  with a persistent non-adopter tail (cf. Quiguanas et al. 2025 on
+  Colombia; Gatsios et al. 2026 on Greece).
+- *Retail fuel dynamics*: the literature on rockets-and-feathers and
+  asymmetric pass-through (Tappata 2009; Deltas 2008; Verlinda 2008;
+  Lewis 2011; Bettendorf et al. 2003) establishes that retail fuel
+  prices are strategic complements with locally heterogeneous
+  adjustment — the mechanism our adoption-hazard estimates quantify.
+- *Edgeworth cycles*: Maskin & Tirole (1988) provide the theory; Noel
+  (2007a,b) and Eckert & West (2004) the empirics; de Haas (2024) shows
+  sticky pricing dominates in Germany. Our post-cap data show
+  stickiness at the cap rather than cycling.
+- *Search and dispersion*: equilibrium dispersion with identical
+  agents (Reinganum 1979; Stiglitz & Salop 1982) is the null our
+  bimodal result speaks to; Chandra & Tappata (2011) and Noel (2018)
+  give the gasoline evidence; Pennerstorfer et al. (2020) link
+  information environments to dispersion.
+- *Strategic complementarities and leadership*: domino-style sequential
+  pricing (Atkinson, Eckert & West 2009), second-mover advantage
+  (Amir & Stepanova 2008), and direct complementarity estimates (Amiti,
+  Itskhoki & Konings 2020; Guren 2018) motivate the survival framework:
+  adoption as a discrete strategic choice with local spillovers
+  (duration methods per Cox 1972; Jones & Branton 2005).
+- *Italian fuel market*: price-transparency shocks on the autostrada
+  cut prices where visible (Rossi & Chintagunta 2015); spatial
+  interaction and territorial factors shape Italian retail fuel prices
+  (Bergantino, Capozza & Intini 2020; Alderighi & Baudino 2015);
+  non-adoption has distributional stakes (Mattioli et al. 2023).
 
 **Contribution**: first station-level, communication-based measurement of
 a self-imposed cap's diffusion; evidence that a unilateral cap triggers
@@ -195,3 +220,21 @@ Rscript adoption/R/analysis_survival.R
 Rscript adoption/R/analysis_panel.R
 ```
 Data: MIMIT open data (IODL 2.0), ISTAT census grid & 2026 borders.
+
+## References
+
+Full BibTeX database: `literature/references.bib` (46 entries, OpenAlex
++ Crossref verified). Key citations (author-year keys match the .bib):
+Maskin & Tirole 1988; Reinganum 1979; Stiglitz & Salop 1982; Cox 1972;
+Borenstein & Shepard 2002; Bettendorf et al. 2003; Hastings & Gilbert
+2005; Noel 2007a,b, 2012, 2018; Atkinson et al. 2009; Tappata 2009;
+Chandra & Tappata 2011; Lewis 2011; Sen et al. 2011; Cabral & Riordan
+1991; Braeutigam & Panzar 1993; Contín-Pilart et al. 1999; Eckert & West
+2004; Deltas 2008; Verlinda 2008; Atil et al. 2013; Haucap et al. 2015;
+Rossi & Chintagunta 2015; Alderighi & Baudino 2015; Carranza et al.
+2015; Jones & Branton 2005; Sjoquist et al. 2007; Burton et al. 2003;
+Yilmazkuday & Yilmazkuday 2016; Zhang et al. 2020; Bergantino et al.
+2020; Pennerstorfer et al. 2020; Amir & Stepanova 2008; Kim et al. 2019;
+Amiti et al. 2020; Guren 2018; Manzano & Vives 2011; Cardoso et al.
+2021; Albulescu & Mutascu 2021; Mattioli et al. 2023; de Haas 2024;
+Quiguanas et al. 2025; Pellegrino 2025; Gatsios et al. 2026.
