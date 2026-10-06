@@ -253,103 +253,120 @@ stations kept with missing province).
 \section{Descriptive evidence}
 \label{sec:descriptive}
 
-Adoption was fast and front-loaded. On the cap day itself 19.3\% of
-stations (station fixed-effect estimates, \cref{sec:panel}) priced at or
-below the threshold; by day 7 the share was 51.2\%. Aggregate adoption
-jumped at days 3--4, coinciding with the Q8/Tamoil/Api-Ip communication
-wave (Q8 alone: 1{,}902 stations cutting petrol by 16.4~c/l in a single
-morning on 1 October).
+Adoption was fast and front-loaded. \Cref{fig:rawshares} plots the exact
+daily share of station--fuel units priced at or below the cap. On the cap
+day itself 19\% priced at or below the threshold; by day 7 the share was
+51\%. Aggregate adoption jumped at days 3--4, coinciding with the
+Q8/Tamoil/Api-Ip communication wave (Q8 alone: 1{,}902 stations cutting
+petrol by 16.4~c/l in a single morning on 1 October).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{output/figures/fig1_raw_adoption_share.png}
+\caption{Share of stations priced at or below the cap, by days since the
+cap (28 September 2026 = day 0). Exact daily shares from the
+dtComu-effective panel; no model, no uncertainty bands.}
+\label{fig:rawshares}
+\end{figure}
 
 Brand gradients are stark. By 5 October, the share of stations at or
 below the cap was: Agip Eni 98.4\% (petrol), Q8 87.2\%, Tamoil 62.4\%,
 Api-Ip 42.8\%, Pompe Bianche (independents) 25.2\%, Esso 24.2\%, Shell
 11.6\%. Mean prices order identically: the market split into a
-cap-following tier and an above-cap tier.
+cap-following tier and an above-cap tier. Geographically, adoption was
+highest around Rome and the central-northern coastal corridors and
+lowest in the Po-valley fringes and parts of the South
+(\cref{fig:mapall}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{output/figures/map_adoption_share.png}
+\caption{Share of stations adopting the cap by province (all stations;
+station--fuel units, any day 28 Sep -- 5 Oct 2026).}
+\label{fig:mapall}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{output/figures/map_pb_adoption_share.png}
+\caption{Share of Pompe Bianche (independent) stations adopting the cap,
+by province.}
+\label{fig:mappb}
+\end{figure}
+
+The independents' map is strikingly different (\cref{fig:mappb}):
+independent adoption rates are low almost everywhere (national mean
+23\%) with pockets of convergence in Lazio, Umbria and the Adriatic
+coast --- independents followed where the leader's network and its early
+followers were dense, and ignored the cap where they faced little local
+pressure.
 
 \section{Who adopts? Survival analysis}
 \label{sec:survival}
 
 We estimate Cox proportional-hazards models \parencite{cox1972regression}
-of time to adoption over the 39{,}418 station--fuel units, with
-gestore-clustered robustness and region-stratified baselines as
-robustness. Duration is days from 28 September to first at-cap day;
-never-adopters are right-censored at 5 October.
+of time to adoption. Duration is days from 28 September to first at-cap
+day; never-adopters are right-censored at 5 October. Because brand
+differences are so stark in the raw data --- and because the leader's own
+stations adopted almost mechanically by construction --- we estimate the
+model on three samples: the \emph{universe} of station--fuel units; the
+market \emph{excluding} Agip Eni and Q8 (the two brands that announced
+at-cap prices in the first wave); and \emph{Pompe Bianche only}
+(independent stations). Standard errors are clustered by Gestore
+(operator). Chain size counts stations nationwide under the same Gestore.
 
-\begin{table}[htbp]
-\centering
-\caption{Cox proportional-hazards estimates of time-to-adoption}
-\label{tab:cox}
-\begin{tabular}{lcc}
-\toprule
- & \multicolumn{1}{c}{(1) Baseline} & \multicolumn{1}{c}{(2) + Brand} \\
-\midrule
-Nearest station (km)        & $0.912^{***}$ & $0.963^{***}$ \\
-Nearest adopter, day 0 (km) & $0.983^{***}$ & $0.974^{***}$ \\
-Population per cell         & $1.00001^{***}$ & $1.00000$ \\
-Pre-cap gap (\euro/l)       & $0.015^{***}$ & $0.015^{***}$ \\
-Chain size (stations)       & $1.001^{***}$ & $1.000^{***}$ \\
-Gasolio                     & $0.984$ & $1.008$ \\
-Brand dummies (34)          & --- & Yes \\
-\midrule
-N                           & 39{,}338 & 39{,}338 \\
-Events                      & 21{,}044 & 21{,}044 \\
-LR $\chi^2$                 & 4{,}932 & 32{,}293 \\
-\bottomrule
-\multicolumn{3}{l}{\footnotesize Hazard ratios; $^{***}p<0.001$.}
-\end{tabular}
-\end{table}
+\input{paper_tables}
 
-Three results stand out. First, the \textbf{pre-cap gap dominates}: each
-\euro/l of pre-cap excess over the threshold multiplies the adoption
-hazard by $1.5\times10^{-2}$ (\cref{tab:cox}). Stations already pricing
-within 10--20~c/l of the cap adopted almost mechanically; stations 30~c/l
-above required a brand-level decision. Second, \textbf{spatial
-spillovers are real but modest}: each kilometre from the nearest priced
-station lowers the hazard by 4--9\%, and each kilometre from the nearest
-day-0 adopter lowers it by 2--3\%. Local proximity to adopters matters,
-conditional on brand. Third, \textbf{brand is dominant}: brand dummies
-raise the likelihood ratio statistic from 4{,}932 to 32{,}293, and their
-inclusion absorbs the population-density effect. Adoption was primarily
-a \emph{firm-level} decision, secondarily a \emph{local} one.
+\Cref{tab:cox-samples} reports coefficients (hazard ratios are
+$e^{\hat\beta}$). Three results are robust across samples. First, the
+\textbf{pre-cap gap dominates}: its coefficient grows (in magnitude) from
+$-4.2$ in the universe to $-6.6$ excluding the leader brands and
+$-5.4$ for independents --- stations already pricing near the cap adopted
+almost mechanically, and this remains the single strongest predictor
+once leader stations are removed. Second, \textbf{spatial spillovers
+strengthen when the leader brands are removed}: the nearest-adopter
+distance coefficient triples from $-0.017$ (universe) to $-0.057$
+(excl.\ Agip Eni/Q8) and $-0.074$ (Pompe Bianche). This is exactly the
+pattern strategic-complementarity models predict: leader-brand rows
+absorbed the spatial variation, and once they are excluded, the
+neighbourhood diffusion effect emerges clearly. Independents respond to
+what nearby stations do, not to the cap announcement itself. Third,
+\textbf{chain size matters most for independents} ($0.008$ versus
+$0.001$): small local chains (gestori) coordinated their response,
+while brand-level headquarters decided for the organised brands.
 
-Robustness. A Weibull AFT model gives the same signs and significance;
-gestore-clustered standard errors leave all conclusions unchanged; the
-PH assumption is satisfied for the continuous specification. Model files:
-\texttt{output/survival\_results.txt}.
+Robustness. A Weibull AFT model gives the same signs and significance
+per sample; gestore-clustered standard errors leave all conclusions
+unchanged; the PH assumption is satisfied for the continuous
+specification.
 
-\section{Market dynamics: daily panel and event study}
+\section{Market dynamics: panel event study and adoption probabilities}
 \label{sec:panel}
 
-We estimate station and day fixed-effects models of the daily at-cap
-indicator over the event window $[-7, +7]$ around the cap, in the
-tradition of event-study designs:
+\subsection{Event study}
+
+We estimate station fixed-effects models of the daily at-cap indicator
+over the event window $[-7, +7]$ around the cap:
 \begin{equation}
 \text{at\_cap}_{it} = \sum_{k \ne -1} \beta_k \,
 \mathbf{1}[t - T_0 = k] + \alpha_i + \varepsilon_{it},
 \label{eq:es}
 \end{equation}
-with day $-1$ as reference, gestore-clustered errors, and
-$39{,}338 \times$ fuel units. \Cref{fig:eventstudy} plots $\hat\beta_k$.
+with day $-1$ as reference and gestore-clustered errors. Because
+\cref{fig:rawshares} already shows the raw adoption path --- the data are
+exhaustive, so the shares themselves carry no sampling uncertainty ---
+the event study serves only as a robustness check that the pattern is
+not an artefact of composition. Its coefficients are reported in
+\cref{app:es} and mirror \cref{fig:rawshares}: no pre-cap movement, a
+jump at day 0, and a plateau from day 5.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.85\textwidth]{output/figures/event_study_adoption.png}
-\caption{Adoption-rate event study around the cap date (station fixed
-effects; reference: day $-1$). Points are $\hat\beta_k$ from
-\cref{eq:es}.}
-\label{fig:eventstudy}
-\end{figure}
-
-The adoption rate rises from 19\% on day 0 to 51\% on day 7, with no
-movement before the cap (estimates at $k<0$ are small and insignificant
---- consistent with the announcement coming without warning). To trace
-diffusion, we split stations by the distance to the nearest day-0
-adopter (terciles) and interact:
-by day 4, adoption reaches 58\% in the near tercile versus 35\% in the
-far tercile (\cref{fig:capdist}). The gradient is present on every post
-day and widens over the first week --- adoption diffused outward from
-early adopters, consistent with local strategic complementarities rather
-than purely national, brand-level rollouts.
+To trace diffusion, we split stations by the distance to the nearest
+day-0 adopter (terciles) and interact: by day 4, adoption reaches 58\%
+in the near tercile versus 35\% in the far tercile
+(\cref{fig:capdist}). The gradient is present on every post day and
+widens over the first week --- adoption diffused outward from early
+adopters, consistent with local strategic complementarities rather than
+purely national, brand-level rollouts.
 
 \begin{figure}[htbp]
 \centering
@@ -357,6 +374,42 @@ than purely national, brand-level rollouts.
 \caption{Adoption by distance to nearest day-0 adopter (terciles).}
 \label{fig:capdist}
 \end{figure}
+
+\subsection{Who adopts? Adoption probabilities}
+\label{sec:lpm}
+
+The survival analysis of \cref{sec:survival} conditions on time;
+here we ask the complementary question: given the full covariate set of
+\cref{sec:variables}, \emph{which} stations ended up adopting at all?
+We estimate linear probability models (OLS with gestore-clustered
+standard errors)
+\begin{equation}
+\text{adopted}_i = \mathbf{x}_i'\gamma + \mu_{b(i)} + \delta_{r(i)}
++ u_i,
+\label{eq:lpm}
+\end{equation}
+where $\mathbf{x}_i$ collects the continuous and fuel covariates,
+$\mu_b$ are brand fixed effects (within-sample \(\ge\)100-observation
+rule) and $\delta_r$ region fixed effects. \Cref{tab:lpm-core} reports
+the core coefficients for the same three samples as
+\cref{tab:cox-samples}; the full brand and region coefficients appear in
+\cref{app:lpm-s1,app:lpm-s2}.
+
+The LPM confirms and sharpens the survival results. The pre-cap gap is
+by far the strongest predictor in every sample: $-1.24$ probability
+points per cent/litre of pre-cap excess in the universe sample, $-1.56$
+excluding the leader brands, $-1.18$ for independents. Distance to the
+nearest day-0 adopter retains a significant negative coefficient in all
+three samples ($-0.008$ to $-0.011$ per km), while distance to the
+nearest station (competitor) is small and insignificant outside the
+universe sample --- it is proximity to \emph{adopters}, not to
+competitors, that predicts adoption. Chain size is positive and
+significant in every sample and roughly ten times larger for Pompe
+Bianche, echoing the gestore-coordination reading of
+\cref{sec:survival}. Population and employment densities are
+economically negligible once brand and region are controlled. Fit is
+moderate ($R^2 = 0.23$--$0.46$), as expected for individual adoption
+decisions.
 
 \section{Dispersion and competitiveness}
 \label{sec:dispersion}
@@ -375,14 +428,14 @@ stiglitz1982}.
 
 \paragraph{Non-adopters' competitiveness.}
 For each station we compute the pre- and post-cap average gap between
-its price and the provincial mean of the same fuel and day
-(\texttt{nonadopter\_competitiveness.csv}). Non-adopters (18{,}328
-units) moved from $+1.1$~c/l above the provincial mean before the cap to
-$+5.9$~c/l after --- a $+4.8$~c/l deterioration. Adopters had priced
-$-1.0$~c/l below their provincial mean already before the cap. The
-relative price of non-adopters thus worsened mechanically with every
-neighbour adopting, and their competitive position deteriorated through
-no action of their own --- a term-of-trade shock within local markets.
+its price and the provincial mean of the same fuel and day.
+Non-adopters (18{,}328 units) moved from $+1.1$~c/l above the provincial
+mean before the cap to $+5.9$~c/l after --- a $+4.8$~c/l deterioration.
+Adopters had priced $-1.0$~c/l below their provincial mean already
+before the cap. The relative price of non-adopters thus worsened
+mechanically with every neighbour adopting, and their competitive
+position deteriorated through no action of their own --- a term-of-trade
+shock within local markets.
 
 The consumer reading is correspondingly uneven: where adoption was high,
 prices fell to the cap for most of the market; where the non-adopter
@@ -396,12 +449,16 @@ car-dependent rural areas \parencite{mattioli2023}.
 
 A voluntary, temporary price cap announced by the Italian market leader
 achieved partial market-wide matching within days. Adoption was
-primarily a firm decision (brand effects dominate), amplified by local
-spillovers (proximity to adopters raises the hazard) and by pre-cap
-price position (stations already near the threshold adopt instantly).
+primarily a firm decision --- but not only: once the leader brands are
+excluded, local spillovers emerge as a first-order driver, with the
+adoption hazard falling 5--7\% per kilometre from the nearest adopter
+and independent stations following in dense, organised corridors while
+ignoring the cap elsewhere. Pre-cap price position dominates everywhere:
+stations already pricing near the threshold adopted almost mechanically.
 The cap polarised rather than compressed the market: dispersion widened
-everywhere, and non-adopters became relatively more expensive. Consumer
-gains are therefore real but geographically uneven.
+in every province, and non-adopters became relatively more expensive.
+Consumer gains are therefore real but geographically uneven --- visible
+in the north-south and brand gradients of the adoption maps.
 
 Three caveats. First, our window is eight post-cap days; the two-month
 cap horizon may produce further convergence or reversal around expiry
@@ -416,14 +473,30 @@ entire communication wave in October 2026, overstating reference-day
 averages by 3.5--4.1~c/l. Communication-time reconstruction, as
 implemented here, is the robust alternative.
 
+\appendix
+
+\section{Event-study coefficients}
+\label{app:es}
+
+\input{paper_appendix_es}
+
+\section{Full LPM coefficient tables}
+\label{app:lpm-full}
+
+Brand and region fixed-effect estimates for the linear probability
+models of \cref{sec:lpm} are reported in
+\cref{app:lpm-s1,app:lpm-s2} (tables generated with the main results and
+included via \texttt{paper\_tables.tex}).
+
 \section*{Reproducibility}
-All results regenerate from the repository:
-\texttt{build\_station\_day.py} (communication-effective panel),
-\texttt{build\_station\_covariates.py} (geography/population),
-\texttt{build\_distances.py} (daily distances), \texttt{build\_panel.py}
-(analysis tables), \texttt{R/analysis\_survival.R} (Panel~A),
-\texttt{R/analysis\_panel.R} (Panel~B). Data: MIMIT open data (IODL 2.0),
-ISTAT 2021 census grid and 2026 administrative boundaries.
+All results regenerate from the upstream repository
+(\url{https://github.com/paluigi/fuel-private-price-cap}, branch
+\texttt{feat/cap-adoption-drivers}); the \texttt{adoption/README.md}
+there documents the full pipeline --- from the MongoDB price cache and
+ISTAT downloads through the station-day panel, covariates, distances,
+R econometrics, maps, and the final \LaTeX{} build --- step by step.
+Data: MIMIT open data (IODL 2.0), ISTAT 2021 census grid and 2026
+administrative boundaries.
 
 \printbibliography
 
