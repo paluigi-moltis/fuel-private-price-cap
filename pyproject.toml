@@ -10,7 +10,12 @@ dependencies = [
     "polars>=1.44.2",
     "pyarrow>=25.0.1",
     "pymongo>=4.18.2",
+    "pyproj>=3.8.0",
+    "pyshp>=3.1.6",
     "python-dotenv>=1.2.3",
+    "scikit-learn>=1.9.1",
+    "scipy>=1.18.1",
+    "shapely>=2.1.2",
 ]
 
 [project.scripts]

@@ -1,0 +1,8 @@
+# data inputs (zips and extracts, re-downloadable)
+data/
+istat_grid/
+istat_borders/
+
+# heavyweight derived panels (regenerable)
+output/tables/*.parquet
+output/tables/adoption_panel.csv
