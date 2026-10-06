@@ -41,8 +41,8 @@ adopter ($-3\%$ per km); brand identity dominates all spatial covariates.
 A station--fixed-effects event study confirms a diffusion gradient:
 by day~4 adoption reaches 58\% in the tercile closest to day-0 adopters
 versus 35\% in the farthest tercile, with no anticipation before the cap.
-The cap polarised the market: province-level within-day dispersion (IQR)
-widened in all 222 province--fuel cells (about $+12$~c/l), and
+The cap polarised the market: province-level within-day dispersion (SD)
+roughly doubled in 217 of 220 province--fuel cells, and
 non-adopters' price gap to the provincial mean deteriorated from
 $+1.1$ to $+5.9$~c/l. We also document a measurement hazard for official
 statistics: because daily price extracts close at 8am, a communication
@@ -280,20 +280,18 @@ lowest in the Po-valley fringes and parts of the South
 
 \begin{figure}[htbp]
 \centering
-\begin{minipage}[t]{0.49\textwidth}
-\centering
-\includegraphics[width=\textwidth]{output/figures/map_adoption_share.png}
+\includegraphics[width=0.88\textwidth]{output/figures/map_adoption_share.png}
 \caption{Share of stations adopting the cap by province (all stations;
 station--fuel units, any day 28 Sep -- 5 Oct 2026).}
 \label{fig:mapall}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.49\textwidth}
+\end{figure}
+
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{output/figures/map_pb_adoption_share.png}
+\includegraphics[width=0.88\textwidth]{output/figures/map_pb_adoption_share.png}
 \caption{Share of Pompe Bianche (independent) stations adopting the cap,
 by province.}
 \label{fig:mappb}
-\end{minipage}
 \end{figure}
 
 The overall map (\cref{fig:mapall}) shows a clear geography: adoption
@@ -437,15 +435,17 @@ diagnostics are in \cref{app:diag}.
 \paragraph{Province-level dispersion.}
 We compute, for each province $\times$ fuel $\times$ phase (pre:
 21--27 September; post: 28 September -- 5 October), the daily
-within-province standard deviation and interquartile range of effective
-prices, and compare phases. The IQR widened in \textbf{100\% of the 222
-province--fuel cells}: on average $+12.7$~c/l for petrol and $+12.1$~c/l
-for diesel. \Cref{fig:disp} makes the universality of the shift
-visible: every one of the 222 points lies well above the 45-degree
-line, with post-cap IQRs of 100--270~c/l against pre-cap values of
-30--100~c/l --- roughly a tripling, not a marginal increase. There is
-no fuel asymmetry (petrol and diesel interleave) and no province
-escape: nowhere did dispersion stay flat. The cap did not compress the
+within-province standard deviation of effective prices, and compare
+phases. The SD rose in \textbf{217 of the 220 province--fuel cells}
+(98.6\%): on average from 50 to 92~c/l for petrol and from 65 to
+102~c/l for diesel --- a doubling. \Cref{fig:sdpre,fig:sdpost} show the
+geography of the shift. Pre-cap, the SD map is dark almost everywhere
+(typical values 28--150~c/l) with mild peaks in a few north-western and
+central provinces; post-cap, the map lights up along the Alps and the
+Apennines --- the provinces where dispersion widened most are those
+where the adopter share was intermediate, mixing cap-priced with
+above-cap stations. Provincial SDs after the cap run 75--235~c/l, and
+no province returns to its pre-cap level. The cap did not compress the
 distribution --- it split it. A mass of adopters sits exactly at the
 threshold while a non-adopter tail holds prices above it, producing a
 bimodal distribution unlike the smooth equilibrium-dispersion benchmarks
@@ -453,35 +453,49 @@ bimodal distribution unlike the smooth equilibrium-dispersion benchmarks
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{output/figures/dispersion_scatter.png}
-\caption{Province--fuel IQR of effective prices, post-cap vs pre-cap.
-Each point is one province--fuel cell (222 cells); the dashed line is
-the 45-degree line. All points lie above it.}
-\label{fig:disp}
+\includegraphics[width=0.88\textwidth]{output/figures/map_sd_pre.png}
+\caption{Within-province standard deviation of effective prices (c/l),
+pre-cap (21--27 September); mean across the two fuels.}
+\label{fig:sdpre}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.88\textwidth]{output/figures/map_sd_post.png}
+\caption{Within-province standard deviation of effective prices (c/l),
+post-cap (28 September -- 5 October); mean across the two fuels.}
+\label{fig:sdpost}
 \end{figure}
 
 \paragraph{Non-adopters' competitiveness.}
 For each station we compute the pre- and post-cap average gap between
 its price and the provincial mean of the same fuel and day.
-\Cref{fig:comp} plots the two unit-level gap distributions before and
-after the cap, separately for eventual adopters and non-adopters. The
-two groups swap places. Before the cap the distributions overlap
-heavily around zero --- both mass points sit near the provincial mean
-(adoption itself is priced in, weakly: adopters averaged $-9.7$~c/l,
-non-adopters $+11.2$~c/l). After the cap the distributions separate
-completely: adopters mass at $-50$~c/l (the cap itself, below a mean
-inflated by non-adopters) and non-adopters at $+59$~c/l. The overlap
-that existed pre-cap vanishes; the bimodality of \cref{fig:disp} is
-this figure seen province by province. Non-adopters' relative position
-worsened through no action of their own --- a term-of-trade shock
-within local markets.
+\Cref{fig:gappre,fig:gappost} map the non-adopter gap across provinces. Before
+the cap the map is dominated by small positive gaps --- non-adopters
+priced within a few c/l of the provincial mean everywhere (darker only
+in a few Alpine and island provinces, up to $+127$~c/l in the extreme).
+After the cap the geography flips: every province turns dark green-to-
+blue ($+34$ to $+166$~c/l), with the largest wedges in exactly the
+provinces where adoption was highest --- there, the provincial mean is
+pulled down by cap-priced stations, and the non-adopters who remain
+above it sit far from the mean. The two maps make the mechanism
+transparent: non-adopters' competitive position deteriorated everywhere
+at once, and most strongly where the cap succeeded.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\textwidth]{output/figures/competitiveness_gap.png}
-\caption{Distribution of the station-level gap to the provincial daily
-mean (c/l), pre- vs post-cap, for adopters and non-adopters.}
-\label{fig:comp}
+\includegraphics[width=0.88\textwidth]{output/figures/map_gap_pre.png}
+\caption{Non-adopters' mean gap to the provincial daily mean (c/l),
+pre-cap.}
+\label{fig:gappre}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.88\textwidth]{output/figures/map_gap_post.png}
+\caption{Non-adopters' mean gap to the provincial daily mean (c/l),
+post-cap.}
+\label{fig:gappost}
 \end{figure}
 
 The consumer reading is correspondingly uneven: where adoption was high,
