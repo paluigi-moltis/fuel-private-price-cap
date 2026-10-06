@@ -56,7 +56,7 @@ def esc(s):
 def entry(key, w):
     title = esc(w["title"].rstrip("*").strip())
     authors = " and ".join(w["authors"])
-    venue = w["venue"] or "Working paper"
+    venue = (w["venue"] or "Working paper").replace(" & ", " \\& ")
     year = w["year"]
     bib = w["biblio"] or {}
     t = "article"

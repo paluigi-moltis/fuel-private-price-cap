@@ -1,0 +1,430 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{eurosym}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+\usepackage{cleveref}
+\usepackage[backend=biber, style=authoryear, sorting=nyt, maxcitenames=2]{biblatex}
+\addbibresource{literature/references.bib}
+
+\title{Who Adopts a Voluntary Price Cap? \\
+\large Diffusion of Agip Eni's Self-Imposed Cap across Italian Fuel Retailers}
+\author{Working paper --- draft \today}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+On 28 September 2026 Agip Eni, the Italian market leader, unilaterally
+capped its motor-fuel prices at 2.00~\euro/l (petrol) and 2.20~\euro/l
+(diesel) for two months, inviting competitors to follow. We reconstruct
+the daily effective price of every Italian motorway-free (\emph{stradale})
+fuel station from the official price-communication registry and study who
+adopted the cap, when, and why. Within eight days, 53.5\% of
+39{,}418 station--fuel units priced at or below the cap (median adoption:
+day~4). Cox duration models show adoption is faster for stations with a
+smaller pre-cap gap to the threshold (hazard ratio $1.5\times 10^{-2}$ per
+\euro/l), higher local population density, larger chains, and smaller
+distances to the nearest competitor ($-4\%$ per km) and to the nearest
+adopter ($-3\%$ per km); brand identity dominates all spatial covariates.
+A station--fixed-effects event study confirms a diffusion gradient:
+by day~4 adoption reaches 58\% in the tercile closest to day-0 adopters
+versus 35\% in the farthest tercile, with no anticipation before the cap.
+The cap polarised the market: province-level within-day dispersion (IQR)
+widened in all 222 province--fuel cells (about $+12$~c/l), and
+non-adopters' price gap to the provincial mean deteriorated from
+$+1.1$ to $+5.9$~c/l. We also document a measurement hazard for official
+statistics: because daily price extracts close at 8am, a communication
+wave crossing a sampling reference day biases recorded averages by up to
+4~c/l, and communication-time reconstruction is needed to correct it.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Price caps are among the bluntest instruments of price regulation, and
+their effects are notoriously hard to measure: where a cap binds, prices
+cluster at the ceiling and observed dispersion collapses, confounding
+changes in conduct with censoring. On 28 September 2026, Italy offered an
+unusual natural experiment. Agip Eni, the market leader, announced a
+\emph{voluntary} two-month cap on its retail motor-fuel prices
+(2.00~\euro/l for petrol, 2.20~\euro/l for diesel, self-service), framed
+as a measure against speculation. No law mandated it; competitors were
+simply invited to match. Within days, the largest synchronised price-
+communication wave in the market's recorded history followed: on
+1 October alone, 9{,}192 stations communicated new petrol prices, led by
+rival chains cutting 10--17~c/l overnight.
+
+This paper asks three questions. First, \emph{who} adopted the cap: which
+station and firm characteristics predict pricing at or below the
+threshold? Second, \emph{how did adoption diffuse} across the network of
+stations: does adoption of neighbouring stations raise a station's own
+adoption hazard, as strategic-complementarity models would predict?
+Third, \emph{what happened to prices}: did the cap compress or polarise
+the price distribution, and how did the competitive position of
+non-adopters evolve?
+
+We answer these questions with a station-level panel reconstructed from
+the MIMIT price-communication registry. The registry records every price
+communication (\texttt{dtComu}) with date and time, which lets us build
+the \emph{effective} daily price path of each station --- the last
+communicated price as of each day --- rather than the daily snapshot
+published each morning. This distinction is not academic: the daily
+extracts stop at 8am, so a station communicating a lower price at 7am is
+only recorded the following day. On ISTAT price-reference days (the 1st,
+11th, and 21st of each month) this biases the recorded national average:
+for 1 October 2026 we measure an overstatement of 3.5--4.1~c/l
+(\cref{sec:data}).
+
+Our setting has two attractive features. Because the cap was
+\emph{voluntary}, adoption is a firm decision, and we can measure the
+diffusion of a coordinated price cut --- not just the mechanical effect of
+a legal ceiling. And because we observe the communication time, adoption
+dates are exact to the day rather than contaminated by reporting lag.
+
+We find that adoption was fast but far from universal: 53.5\% of
+station--fuel units ever priced at or below the cap in the first eight
+days (median: day 4), and adoption clustered along urban, organised-firm
+corridors. Hazard models (\cref{sec:survival}) show the pre-cap gap to
+the threshold dominates all other covariates; distance to the nearest
+adopter, population density and chain size all raise the adoption hazard
+significantly. The event study (\cref{sec:panel}) shows no anticipation
+and a clean diffusion gradient across day-0 adopter-distance terciles.
+Finally (\cref{sec:dispersion}), the cap \emph{polarised} the market:
+within-province dispersion widened in every one of 222 province--fuel
+cells, and non-adopters became systematically more expensive relative to
+their provincial market. The consumer gains from the cap are therefore
+large but geographically uneven.
+
+The paper proceeds as follows.
+\Cref{sec:related} positions the paper in the literature.
+\Cref{sec:data} describes the data and the communication-based price
+reconstruction. \Cref{sec:descriptive} presents descriptive evidence.
+\Cref{sec:survival,sec:panel} analyse adoption (survival and panel
+designs). \Cref{sec:dispersion} studies dispersion and competitiveness.
+\Cref{sec:conclusion} concludes.
+
+\section{Related literature}
+\label{sec:related}
+
+\paragraph{Price ceilings as focal points.}
+Theory predicts that a binding ceiling can coordinate oligopolists on the
+administered price when demand is inelastic. The best empirical evidence
+comes from China's administered gasoline ceilings, which act as focal
+points producing price uniformity \parencite{zhang2020}. Legislated
+gasoline price ceilings have been studied in Canada
+\parencite{sen2011}, Greece \parencite{gatsios2026} and Colombia
+\parencite{quiguanas2025}, generally finding modest price effects and
+concerns about capture; Spain's transition from ceiling to liberalised
+pricing is documented by \textcite{contin1999}. Our setting differs
+decisively: the cap is \emph{voluntary} and unenforced, so adoption is a
+firm choice. We observe the diffusion path itself, and we find uniformity
+is partial --- a persistent non-adopter tail coexists with a mass of
+followers, in line with the dispersion persistence found in regulated
+Colombian retailing \parencite{quiguanas2025}.
+
+\paragraph{Retail fuel price dynamics.}
+A large literature documents asymmetric pass-through --- ``rockets and
+feathers'' --- in retail gasoline \parencite{tappata2009}, driven by
+consumer search \parencite{lewis2011} and stronger where local market
+power is high \parencite{deltas2008, verlinda2008}; see also
+\textcite{bettendorf2003} for the Dutch market and
+\textcite{atil2013} for nonlinearities. This literature establishes that
+retail fuel prices are strategic complements with locally heterogeneous
+adjustment --- the mechanism our hazard estimates quantify. Sticky rather
+than cycling pricing is the norm in several markets
+\parencite{noel2007a,noel2007b,dehaas2024}, consistent with what we
+observe at the cap.
+
+\paragraph{Consumer search and price dispersion.}
+Equilibrium dispersion arises even with identical agents
+\parencite{reinganum1979, stiglitz1982}; gasoline applications include
+\textcite{chandra2011} and \textcite{noel2018}. \textcite{
+pennerstorfer2020} show dispersion is non-monotone in information. Our
+bimodal post-cap distribution --- a mass at the cap plus a non-adopter
+tail --- is a stark departure from these smooth-dispersion benchmarks.
+
+\paragraph{Strategic complementarities and leadership.}
+Sequential ``domino'' pricing is documented in gasoline markets by
+\textcite{atkinson2008}. Second-mover advantage is generic in Bertrand
+settings \parencite{amir2007}; direct estimates of price-setting
+complementarities are provided by \textcite{amiti2016} and, in housing,
+\textcite{guren2018} --- momentum arising from complementarities is
+precisely the adoption pattern we measure. Network oligopoly structure
+shapes markups \parencite{pellegrino2025} and vertical integration
+affects rivals' costs \parencite{hastings2005, borenstein2002}.
+
+\paragraph{The Italian fuel market.}
+Price-transparency shocks on Italian motorways cut nearby prices by about
+3\% \parencite{rossi2015}; spatial interaction and territorial factors
+shape Italian retail fuel pricing \parencite{bergantino2020,
+alderighi2015}; and non-adoption of price cuts has distributional stakes
+\parencite{mattioli2023}. Price-cap incentive theory originates in the
+utility-regulation literature \parencite{braeutigam1993, cabral1991}.
+
+\paragraph{Contribution.}
+We provide the first station-level, communication-based measurement of a
+\emph{voluntary} cap's diffusion, showing that a unilateral cap triggers
+competitor matching along a spatial gradient; we quantify the roles of
+pre-cap price position, brand, chain size and local spillovers in the
+adoption decision; and we document a reference-day sampling bias of
+3.5--4.1~c/l for official statistics when a communication wave crosses a
+measurement date.
+
+\section{Data}
+\label{sec:data}
+
+\subsection{Sources}
+
+We combine four datasets:
+\begin{itemize}
+\item \textbf{MIMIT price communications} (daily extracts in our MongoDB
+cache): every price communication by every Italian fuel station, with
+station identifier, fuel, price, and communication timestamp
+(\texttt{dtComu}).
+\item \textbf{MIMIT station registry} (\emph{anagrafica}): Gestore
+(operator), Bandiera (brand), type, municipality and coordinates.
+\item \textbf{ISTAT 2021 census population grid}: resident population in
+$1\,\mathrm{km}^2$ cells (EPSG:3035).
+\item \textbf{ISTAT administrative boundaries} (2026): province and
+region polygons.
+\end{itemize}
+Our window runs from 1 July to 5 October 2026 and covers
+\emph{stradale} stations only (motorway stations are a separate market).
+The analysis panel has 39{,}418 station--fuel units (19{,}744 petrol,
+19{,}674 diesel) and 3.8 million station-day observations.
+
+\subsection{From communications to effective prices}
+\label{sec:dtcomu}
+
+Daily extracts snapshot the market before each day's communication wave
+(extracts close at 8am; the bulk of communications arrives between 6:20
+and 8:00). A station's ``price on day $D$'' read off the extract may
+therefore reflect a communication made days earlier. We instead define
+the effective price on day $D$ as the last communication with
+$\texttt{dtComu} \le D$, propagated forward. A communication made on day
+$D$ prices day $D$.
+
+Two consequences. First, adoption dates are exact: a station counts as
+adopted on the first post-cap day its effective price is at or below the
+cap. Second, we can measure the extract's \emph{snapshot bias}. On
+1 October 2026 --- an ISTAT reference day --- zero same-day
+communications appear in the day's extract: the recorded national average
+overstates the true day-1 average by 3.47~c/l for petrol and 4.06~c/l for
+diesel (9{,}192 and 9{,}221 stations communicated that day, nearly all
+after the cutoff). Official statistics reading prices off extracts on
+reference days are subject to this bias whenever a wave crosses a
+sampling date.
+
+\subsection{Variables}
+\label{sec:variables}
+
+\begin{itemize}
+\item \emph{Adoption}: effective price $\le$ cap (2.00/2.20~\euro/l) on
+day $t \ge$ 2026-09-28. Time to adoption $T_i$ measured in days from
+28 September; stations never adopting are censored at 5 October.
+\item \emph{Distance to nearest station} (\texttt{nn\_dist\_km}) and
+\emph{nearest at-cap station} (\texttt{cap\_dist\_km}): great-circle
+distances in EPSG:3035 computed daily over all priced stations of the
+same fuel (KD-tree).
+\item \emph{Local population}: 2021 census population of the station's
+containing 1-km cell (\texttt{pop\_density\_cell}).
+\item \emph{Chain size}: number of stations nationwide under the same
+Gestore (\texttt{n\_stations\_gestore}).
+\item \emph{Pre-cap gap}: mean effective price 21--27 September minus
+the fuel-specific cap (\texttt{pre\_gap\_vs\_cap}).
+\item \emph{Brand} (\texttt{bandiera}) and \emph{region} fixed effects.
+\end{itemize}
+Coordinates are harmonised to WGS84; 99.8\% of stations are assigned to
+a province (2 broken-coordinate stations dropped; 53 unassigned
+stations kept with missing province).
+
+\section{Descriptive evidence}
+\label{sec:descriptive}
+
+Adoption was fast and front-loaded. On the cap day itself 19.3\% of
+stations (station fixed-effect estimates, \cref{sec:panel}) priced at or
+below the threshold; by day 7 the share was 51.2\%. Aggregate adoption
+jumped at days 3--4, coinciding with the Q8/Tamoil/Api-Ip communication
+wave (Q8 alone: 1{,}902 stations cutting petrol by 16.4~c/l in a single
+morning on 1 October).
+
+Brand gradients are stark. By 5 October, the share of stations at or
+below the cap was: Agip Eni 98.4\% (petrol), Q8 87.2\%, Tamoil 62.4\%,
+Api-Ip 42.8\%, Pompe Bianche (independents) 25.2\%, Esso 24.2\%, Shell
+11.6\%. Mean prices order identically: the market split into a
+cap-following tier and an above-cap tier.
+
+\section{Who adopts? Survival analysis}
+\label{sec:survival}
+
+We estimate Cox proportional-hazards models \parencite{cox1972regression}
+of time to adoption over the 39{,}418 station--fuel units, with
+gestore-clustered robustness and region-stratified baselines as
+robustness. Duration is days from 28 September to first at-cap day;
+never-adopters are right-censored at 5 October.
+
+\begin{table}[htbp]
+\centering
+\caption{Cox proportional-hazards estimates of time-to-adoption}
+\label{tab:cox}
+\begin{tabular}{lcc}
+\toprule
+ & \multicolumn{1}{c}{(1) Baseline} & \multicolumn{1}{c}{(2) + Brand} \\
+\midrule
+Nearest station (km)        & $0.912^{***}$ & $0.963^{***}$ \\
+Nearest adopter, day 0 (km) & $0.983^{***}$ & $0.974^{***}$ \\
+Population per cell         & $1.00001^{***}$ & $1.00000$ \\
+Pre-cap gap (\euro/l)       & $0.015^{***}$ & $0.015^{***}$ \\
+Chain size (stations)       & $1.001^{***}$ & $1.000^{***}$ \\
+Gasolio                     & $0.984$ & $1.008$ \\
+Brand dummies (34)          & --- & Yes \\
+\midrule
+N                           & 39{,}338 & 39{,}338 \\
+Events                      & 21{,}044 & 21{,}044 \\
+LR $\chi^2$                 & 4{,}932 & 32{,}293 \\
+\bottomrule
+\multicolumn{3}{l}{\footnotesize Hazard ratios; $^{***}p<0.001$.}
+\end{tabular}
+\end{table}
+
+Three results stand out. First, the \textbf{pre-cap gap dominates}: each
+\euro/l of pre-cap excess over the threshold multiplies the adoption
+hazard by $1.5\times10^{-2}$ (\cref{tab:cox}). Stations already pricing
+within 10--20~c/l of the cap adopted almost mechanically; stations 30~c/l
+above required a brand-level decision. Second, \textbf{spatial
+spillovers are real but modest}: each kilometre from the nearest priced
+station lowers the hazard by 4--9\%, and each kilometre from the nearest
+day-0 adopter lowers it by 2--3\%. Local proximity to adopters matters,
+conditional on brand. Third, \textbf{brand is dominant}: brand dummies
+raise the likelihood ratio statistic from 4{,}932 to 32{,}293, and their
+inclusion absorbs the population-density effect. Adoption was primarily
+a \emph{firm-level} decision, secondarily a \emph{local} one.
+
+Robustness. A Weibull AFT model gives the same signs and significance;
+gestore-clustered standard errors leave all conclusions unchanged; the
+PH assumption is satisfied for the continuous specification. Model files:
+\texttt{output/survival\_results.txt}.
+
+\section{Market dynamics: daily panel and event study}
+\label{sec:panel}
+
+We estimate station and day fixed-effects models of the daily at-cap
+indicator over the event window $[-7, +7]$ around the cap, in the
+tradition of event-study designs:
+\begin{equation}
+\text{at\_cap}_{it} = \sum_{k \ne -1} \beta_k \,
+\mathbf{1}[t - T_0 = k] + \alpha_i + \varepsilon_{it},
+\label{eq:es}
+\end{equation}
+with day $-1$ as reference, gestore-clustered errors, and
+$39{,}338 \times$ fuel units. \Cref{fig:eventstudy} plots $\hat\beta_k$.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{output/figures/event_study_adoption.png}
+\caption{Adoption-rate event study around the cap date (station fixed
+effects; reference: day $-1$). Points are $\hat\beta_k$ from
+\cref{eq:es}.}
+\label{fig:eventstudy}
+\end{figure}
+
+The adoption rate rises from 19\% on day 0 to 51\% on day 7, with no
+movement before the cap (estimates at $k<0$ are small and insignificant
+--- consistent with the announcement coming without warning). To trace
+diffusion, we split stations by the distance to the nearest day-0
+adopter (terciles) and interact:
+by day 4, adoption reaches 58\% in the near tercile versus 35\% in the
+far tercile (\cref{fig:capdist}). The gradient is present on every post
+day and widens over the first week --- adoption diffused outward from
+early adopters, consistent with local strategic complementarities rather
+than purely national, brand-level rollouts.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{output/figures/event_study_by_capdist.png}
+\caption{Adoption by distance to nearest day-0 adopter (terciles).}
+\label{fig:capdist}
+\end{figure}
+
+\section{Dispersion and competitiveness}
+\label{sec:dispersion}
+
+\paragraph{Province-level dispersion.}
+We compute, for each province $\times$ fuel $\times$ phase (pre:
+21--27 September; post: 28 September -- 5 October), the daily
+within-province standard deviation and interquartile range of effective
+prices, and compare phases. The IQR widened in \textbf{100\% of the 222
+province--fuel cells}: on average $+12.7$~c/l for petrol and $+12.1$~c/l
+for diesel. The cap did not compress the distribution --- it split it. A
+mass of adopters sits exactly at the threshold while a non-adopter tail
+holds prices above it, producing a bimodal distribution unlike the smooth
+equilibrium-dispersion benchmarks \parencite{reinganum1979,
+stiglitz1982}.
+
+\paragraph{Non-adopters' competitiveness.}
+For each station we compute the pre- and post-cap average gap between
+its price and the provincial mean of the same fuel and day
+(\texttt{nonadopter\_competitiveness.csv}). Non-adopters (18{,}328
+units) moved from $+1.1$~c/l above the provincial mean before the cap to
+$+5.9$~c/l after --- a $+4.8$~c/l deterioration. Adopters had priced
+$-1.0$~c/l below their provincial mean already before the cap. The
+relative price of non-adopters thus worsened mechanically with every
+neighbour adopting, and their competitive position deteriorated through
+no action of their own --- a term-of-trade shock within local markets.
+
+The consumer reading is correspondingly uneven: where adoption was high,
+prices fell to the cap for most of the market; where the non-adopter
+tail dominated, prices barely moved. Given that adoption tracked
+population density and chain presence, the gains concentrate in urban,
+organised-firm corridors --- with distributional implications for
+car-dependent rural areas \parencite{mattioli2023}.
+
+\section{Conclusions}
+\label{sec:conclusion}
+
+A voluntary, temporary price cap announced by the Italian market leader
+achieved partial market-wide matching within days. Adoption was
+primarily a firm decision (brand effects dominate), amplified by local
+spillovers (proximity to adopters raises the hazard) and by pre-cap
+price position (stations already near the threshold adopt instantly).
+The cap polarised rather than compressed the market: dispersion widened
+everywhere, and non-adopters became relatively more expensive. Consumer
+gains are therefore real but geographically uneven.
+
+Three caveats. First, our window is eight post-cap days; the two-month
+cap horizon may produce further convergence or reversal around expiry
+--- strategic pricing near sunset dates is unobservable here. Second,
+adoption is measured from communications; enforcement (actual pump
+prices versus communicated ones) is outside our data. Third, coordinates
+and brand classifications inherit MIMIT data quality.
+
+For measurement, our snapshot-bias result is a caution for official
+statistics: reference-day sampling from 8am-cut extracts mis-dated an
+entire communication wave in October 2026, overstating reference-day
+averages by 3.5--4.1~c/l. Communication-time reconstruction, as
+implemented here, is the robust alternative.
+
+\section*{Reproducibility}
+All results regenerate from the repository:
+\texttt{build\_station\_day.py} (communication-effective panel),
+\texttt{build\_station\_covariates.py} (geography/population),
+\texttt{build\_distances.py} (daily distances), \texttt{build\_panel.py}
+(analysis tables), \texttt{R/analysis\_survival.R} (Panel~A),
+\texttt{R/analysis\_panel.R} (Panel~B). Data: MIMIT open data (IODL 2.0),
+ISTAT 2021 census grid and 2026 administrative boundaries.
+
+\printbibliography
+
+\end{document}
