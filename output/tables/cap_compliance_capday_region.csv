@@ -1,79 +1,79 @@
 regione,fuel,tipo_impianto,n_obs,n_at_or_below,pct_at_or_below
-Basilicata,Benzina,Autostradale,14,0,0.0
-Puglia,Benzina,Autostradale,126,28,22.22222222222222
-Friuli-Venezia Giulia,Benzina,Autostradale,62,17,27.419354838709676
-Trentino-Alto Adige/Südtirol,Benzina,Autostradale,97,34,35.051546391752574
-Abruzzo,Benzina,Autostradale,132,48,36.36363636363637
-Sicilia,Benzina,Autostradale,126,47,37.301587301587304
-Campania,Benzina,Autostradale,258,105,40.69767441860465
-Piemonte,Benzina,Autostradale,389,165,42.41645244215938
-Liguria,Benzina,Autostradale,210,90,42.857142857142854
-Molise,Benzina,Autostradale,21,9,42.857142857142854
-Lombardia,Benzina,Autostradale,396,175,44.19191919191919
-Veneto,Benzina,Autostradale,231,116,50.21645021645021
-Toscana,Benzina,Autostradale,213,111,52.112676056338024
-Calabria,Benzina,Autostradale,105,55,52.38095238095239
-Emilia-Romagna,Benzina,Autostradale,280,147,52.5
-Marche,Benzina,Autostradale,84,51,60.71428571428571
-Lazio,Benzina,Autostradale,280,172,61.42857142857143
-Umbria,Benzina,Autostradale,28,18,64.28571428571429
-Valle d'Aosta,Benzina,Autostradale,28,18,64.28571428571429
-Molise,Benzina,Stradale,965,260,26.94300518134715
-Campania,Benzina,Stradale,11204,3215,28.69510888968226
-Lombardia,Benzina,Stradale,18275,5504,30.117647058823525
-Emilia-Romagna,Benzina,Stradale,11189,3378,30.190365537581553
-Basilicata,Benzina,Stradale,1530,469,30.65359477124183
-Sicilia,Benzina,Stradale,10800,3415,31.62037037037037
-Piemonte,Benzina,Stradale,10837,3433,31.678508812401958
-Trentino-Alto Adige/Südtirol,Benzina,Stradale,2394,763,31.871345029239766
-Umbria,Benzina,Stradale,2817,902,32.019879304224354
-Calabria,Benzina,Stradale,4753,1539,32.379549758047546
-Sardegna,Benzina,Stradale,4145,1357,32.73823884197829
-Puglia,Benzina,Stradale,9507,3119,32.80740506994846
-Toscana,Benzina,Stradale,9702,3190,32.87981859410431
-Veneto,Benzina,Stradale,11831,3955,33.42912687008706
-Valle d'Aosta,Benzina,Stradale,441,151,34.24036281179138
-Marche,Benzina,Stradale,4657,1663,35.709684346145586
-Friuli-Venezia Giulia,Benzina,Stradale,2765,1024,37.034358047016276
-Abruzzo,Benzina,Stradale,3842,1441,37.5065070275898
-Lazio,Benzina,Stradale,13018,5195,39.90628360731295
-Liguria,Benzina,Stradale,3050,1244,40.78688524590164
-Basilicata,Gasolio,Autostradale,28,0,0.0
-Puglia,Gasolio,Autostradale,231,44,19.047619047619047
-Friuli-Venezia Giulia,Gasolio,Autostradale,102,26,25.49019607843137
-Abruzzo,Gasolio,Autostradale,182,50,27.472527472527474
-Sicilia,Gasolio,Autostradale,161,54,33.54037267080746
-Piemonte,Gasolio,Autostradale,469,176,37.52665245202559
-Trentino-Alto Adige/Südtirol,Gasolio,Autostradale,111,42,37.83783783783784
-Campania,Gasolio,Autostradale,307,122,39.73941368078176
-Liguria,Gasolio,Autostradale,231,94,40.692640692640694
-Lombardia,Gasolio,Autostradale,424,177,41.74528301886792
-Toscana,Gasolio,Autostradale,247,113,45.74898785425101
-Veneto,Gasolio,Autostradale,252,116,46.03174603174603
-Emilia-Romagna,Gasolio,Autostradale,308,146,47.4025974025974
-Molise,Gasolio,Autostradale,35,17,48.57142857142857
-Calabria,Gasolio,Autostradale,105,54,51.42857142857142
-Marche,Gasolio,Autostradale,98,55,56.12244897959183
-Lazio,Gasolio,Autostradale,294,174,59.183673469387756
-Umbria,Gasolio,Autostradale,28,18,64.28571428571429
-Valle d'Aosta,Gasolio,Autostradale,28,18,64.28571428571429
-Molise,Gasolio,Stradale,961,250,26.014568158168572
-Campania,Gasolio,Stradale,11195,3334,29.78115230013399
-Lombardia,Gasolio,Stradale,18119,5475,30.21689938738341
-Emilia-Romagna,Gasolio,Stradale,11135,3423,30.740907049842836
-Sicilia,Gasolio,Stradale,10812,3408,31.520532741398444
-Basilicata,Gasolio,Stradale,1521,484,31.821170282708742
-Trentino-Alto Adige/Südtirol,Gasolio,Stradale,2387,761,31.88102220360285
-Piemonte,Gasolio,Stradale,10827,3462,31.975616514269884
-Calabria,Gasolio,Stradale,4759,1541,32.38075225887791
-Sardegna,Gasolio,Stradale,4136,1359,32.857833655705996
-Toscana,Gasolio,Stradale,9701,3190,32.883207916709615
-Puglia,Gasolio,Stradale,9493,3235,34.07774149373222
-Valle d'Aosta,Gasolio,Stradale,441,151,34.24036281179138
-Veneto,Gasolio,Stradale,11662,4004,34.33373349339736
-Umbria,Gasolio,Stradale,2806,973,34.675694939415536
-Marche,Gasolio,Stradale,4630,1682,36.328293736501074
-Friuli-Venezia Giulia,Gasolio,Stradale,2758,1022,37.055837563451774
-Abruzzo,Gasolio,Stradale,3836,1452,37.851929092805
-Liguria,Gasolio,Stradale,3038,1233,40.585911784068465
-Lazio,Gasolio,Stradale,12989,5327,41.011625221341134
+Basilicata,Benzina,Autostradale,16,0,0.0
+Puglia,Benzina,Autostradale,144,37,25.694444444444443
+Friuli-Venezia Giulia,Benzina,Autostradale,71,21,29.577464788732392
+Trentino-Alto Adige/Südtirol,Benzina,Autostradale,111,41,36.93693693693694
+Abruzzo,Benzina,Autostradale,150,58,38.666666666666664
+Sicilia,Benzina,Autostradale,144,56,38.88888888888889
+Campania,Benzina,Autostradale,295,129,43.728813559322035
+Liguria,Benzina,Autostradale,240,108,45.0
+Piemonte,Benzina,Autostradale,445,202,45.39325842696629
+Molise,Benzina,Autostradale,24,11,45.83333333333333
+Lombardia,Benzina,Autostradale,453,214,47.24061810154526
+Veneto,Benzina,Autostradale,264,136,51.515151515151516
+Calabria,Benzina,Autostradale,120,65,54.166666666666664
+Toscana,Benzina,Autostradale,244,134,54.91803278688525
+Emilia-Romagna,Benzina,Autostradale,320,177,55.3125
+Lazio,Benzina,Autostradale,319,206,64.57680250783699
+Marche,Benzina,Autostradale,96,62,64.58333333333334
+Valle d'Aosta,Benzina,Autostradale,32,21,65.625
+Umbria,Benzina,Autostradale,32,21,65.625
+Molise,Benzina,Stradale,1104,312,28.26086956521739
+Campania,Benzina,Stradale,12802,4041,31.565380409311043
+Emilia-Romagna,Benzina,Stradale,12794,4134,32.312021259965604
+Lombardia,Benzina,Stradale,20894,6801,32.55001435818895
+Basilicata,Benzina,Stradale,1748,575,32.89473684210527
+Sicilia,Benzina,Stradale,12347,4201,34.02445938284603
+Trentino-Alto Adige/Südtirol,Benzina,Stradale,2736,933,34.10087719298245
+Piemonte,Benzina,Stradale,12385,4264,34.42874444893016
+Umbria,Benzina,Stradale,3224,1111,34.460297766749385
+Toscana,Benzina,Stradale,11087,3906,35.230450076666365
+Sardegna,Benzina,Stradale,4737,1670,35.2543804095419
+Calabria,Benzina,Stradale,5436,1918,35.283296541574686
+Puglia,Benzina,Stradale,10866,3835,35.29357629302411
+Veneto,Benzina,Stradale,13523,4825,35.6799526732234
+Valle d'Aosta,Benzina,Stradale,504,187,37.10317460317461
+Marche,Benzina,Stradale,5323,1994,37.460078902874315
+Friuli-Venezia Giulia,Benzina,Stradale,3160,1226,38.79746835443038
+Abruzzo,Benzina,Stradale,4391,1731,39.421544067410615
+Lazio,Benzina,Stradale,14888,6405,43.02122514777002
+Liguria,Benzina,Stradale,3486,1528,43.8324727481354
+Basilicata,Gasolio,Autostradale,32,0,0.0
+Puglia,Gasolio,Autostradale,264,59,22.348484848484848
+Friuli-Venezia Giulia,Gasolio,Autostradale,115,32,27.82608695652174
+Abruzzo,Gasolio,Autostradale,208,61,29.326923076923077
+Sicilia,Gasolio,Autostradale,184,64,34.78260869565217
+Trentino-Alto Adige/Südtirol,Gasolio,Autostradale,127,51,40.15748031496063
+Piemonte,Gasolio,Autostradale,535,217,40.560747663551396
+Campania,Gasolio,Autostradale,351,149,42.45014245014245
+Liguria,Gasolio,Autostradale,264,113,42.803030303030305
+Lombardia,Gasolio,Autostradale,485,217,44.74226804123712
+Veneto,Gasolio,Autostradale,288,135,46.875
+Toscana,Gasolio,Autostradale,283,137,48.409893992932865
+Emilia-Romagna,Gasolio,Autostradale,352,179,50.85227272727273
+Calabria,Gasolio,Autostradale,120,63,52.5
+Molise,Gasolio,Autostradale,40,21,52.5
+Marche,Gasolio,Autostradale,112,68,60.71428571428571
+Lazio,Gasolio,Autostradale,335,209,62.38805970149254
+Umbria,Gasolio,Autostradale,32,21,65.625
+Valle d'Aosta,Gasolio,Autostradale,32,21,65.625
+Molise,Gasolio,Stradale,1099,300,27.2975432211101
+Lombardia,Gasolio,Stradale,20715,6747,32.57060101375814
+Campania,Gasolio,Stradale,12794,4199,32.820071908707206
+Emilia-Romagna,Gasolio,Stradale,12732,4184,32.86207979893182
+Sicilia,Gasolio,Stradale,12360,4189,33.8915857605178
+Trentino-Alto Adige/Südtirol,Gasolio,Stradale,2728,929,34.05425219941349
+Basilicata,Gasolio,Stradale,1737,595,34.254461715601614
+Piemonte,Gasolio,Stradale,12377,4295,34.701462389916784
+Toscana,Gasolio,Stradale,11084,3906,35.23998556477806
+Calabria,Gasolio,Stradale,5443,1922,35.311409149366156
+Sardegna,Gasolio,Stradale,4727,1672,35.37127141950497
+Veneto,Gasolio,Stradale,13329,4867,36.51436716933003
+Puglia,Gasolio,Stradale,10848,3988,36.76253687315634
+Valle d'Aosta,Gasolio,Stradale,504,187,37.10317460317461
+Umbria,Gasolio,Stradale,3210,1203,37.47663551401869
+Marche,Gasolio,Stradale,5290,2018,38.147448015122876
+Friuli-Venezia Giulia,Gasolio,Stradale,3152,1221,38.73730964467005
+Abruzzo,Gasolio,Stradale,4385,1744,39.77194982896237
+Liguria,Gasolio,Stradale,3473,1514,43.5934350705442
+Lazio,Gasolio,Stradale,14850,6552,44.121212121212125
