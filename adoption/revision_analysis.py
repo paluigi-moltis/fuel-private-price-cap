@@ -27,7 +27,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 TAB = os.path.join(ROOT, "output", "tables")
 FIG = os.path.join(ROOT, "output", "figures")
 CAP_DATE = pl.date(2026, 9, 28)
-END_DATE = pl.date(2026, 10, 5)
+END_DATE = pl.date(2026, 10, 6)
 
 p = pl.read_parquet(os.path.join(TAB, "adoption_panel.parquet"))
 post = p.filter((pl.col("date") >= CAP_DATE) & (pl.col("date") <= END_DATE))
@@ -50,11 +50,15 @@ for fuel in ["Benzina", "Gasolio"]:
             line=dict(color=colors[fuel], width=2.5), marker=dict(size=8),
         )
     )
+fig.add_vline(
+    x=8, line_dash="dot", line_color="#444",
+    annotation_text="Gasolio excise +5 c/l<br>(cap +6.1 c/l)", annotation_position="top left",
+)
 fig.update_layout(
     title=(
         "Share of stations priced at or below the cap, by days since the cap "
         "(28 Sep 2026 = day 0).<br>Exact daily shares from the dtComu-effective "
-        "panel — no model, no uncertainty bands."
+        "panel — no model, no uncertainty bands. Gasolio cap tax-adjusted from 6 Oct."
     ),
     xaxis_title="Days since cap (0 = 28 Sep 2026)",
     yaxis_title="Stations at or below cap (%)",

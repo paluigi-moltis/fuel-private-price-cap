@@ -25,9 +25,15 @@ def build() -> None:
     cov = pl.read_parquet(config.STATION_STATIC)
     dist = pl.read_parquet(config.DISTANCES)
 
-    thr = pl.col("fuel").replace_strict(config.THRESHOLDS, return_dtype=pl.Float64)
+    # time-varying cap (gasolio rises with the excise on 2026-10-06)
     panel = panel.with_columns(
-        at_cap=(pl.col("prezzo") <= thr),
+        cap_threshold=pl.struct("date", "fuel").map_elements(
+            lambda s: config.cap_threshold(s["fuel"], s["date"]),
+            return_dtype=pl.Float64,
+        )
+    )
+    panel = panel.with_columns(
+        at_cap=(pl.col("prezzo") <= pl.col("cap_threshold")),
         post=pl.col("date") >= config.CAP_DATE,
     )
     df = panel.join(cov, on="id_impianto", how="inner").join(
@@ -110,6 +116,8 @@ def build() -> None:
             .then(pl.col("days_to_adopt"))
             .otherwise(pl.col("post_days_seen") - 1),
             event=pl.col("adopted").cast(pl.Int8),
+            # pre-cap gap vs the nominal announced cap (gasolio pre-window is
+            # entirely before the Oct-6 threshold change)
             pre_gap_vs_cap=pl.col("pre_mean")
             - pl.col("fuel").replace_strict(config.THRESHOLDS, return_dtype=pl.Float64),
             pop_density_cell=pl.col("pop_cell"),  # pop per 1 km2

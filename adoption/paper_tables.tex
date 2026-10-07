@@ -1,5 +1,6 @@
 % Auto-generated: do not edit by hand.
 % Source: R/revision_samples.R -> output/revision_{cox,lpm}.txt
+% Panel window: 2026-09-28 .. 2026-10-06, gasolio cap tax-adjusted (+6.1 c/l from 2026-10-06).
 
 \begin{table}[htbp]
 \centering
@@ -9,20 +10,21 @@
 \toprule
  & (1) Universe & (2) Excl.\ Agip Eni + Q8 & (3) Pompe Bianche \\
 \midrule
-Nearest station (km) & -0.092$^{***}$ & -0.044$^{*}$ & -0.106$^{*}$ \\
-Nearest day-0 adopter (km) & -0.017$^{*}$ & -0.057$^{***}$ & -0.074$^{***}$ \\
+Nearest station (km) & -0.102$^{***}$ & -0.078$^{***}$ & -0.133$^{***}$ \\
+Nearest day-0 adopter (km) & -0.021$^{***}$ & -0.050$^{***}$ & -0.064$^{***}$ \\
 Population per 1-km cell & 0.000$^{**}$ & 0.000$^{**}$ & 0.000 \\
-Pre-cap gap (\euro/l) & -4.178$^{***}$ & -6.581$^{***}$ & -5.414$^{***}$ \\
+Pre-cap gap (\euro/l) & -4.205$^{***}$ & -6.424$^{***}$ & -5.311$^{***}$ \\
 Chain size (Gestore, stations) & 0.001$^{***}$ & 0.001$^{***}$ & 0.008$^{***}$ \\
-Gasolio & -0.016 & -0.048$^{*}$ & 0.022 \\
+Gasolio & 0.242$^{***}$ & 0.467$^{***}$ & 0.585$^{***}$ \\
 \midrule
 N & 39\,338 & 26\,662 & 5\,180 \\
-Events & 21\,044 & 9\,106 & 1\,223 \\
+Events & 24\,881 & 12\,727 & 1\,744 \\
 \bottomrule
 \end{tabular}
 
 \medskip
 \footnotesize Gestore-clustered robust standard errors. All models
-include a Gasolio dummy. Sample (1) drops 80 units with missing
-covariates.
+include a Gasolio dummy. The gasolio cap threshold is adjusted for the
+excise change of 6 October 2026 (see \cref{sec:data}). Sample (1) drops
+80 units with missing covariates.
 \end{table}

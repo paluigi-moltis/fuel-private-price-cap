@@ -103,8 +103,21 @@ def build_station_day() -> pl.DataFrame:
 
     # days is now unused at frame level; keep for clarity of the range
     panel = panel.with_columns(
+        cap_threshold=pl.struct("date", "fuel").map_elements(
+            lambda s: config.cap_threshold(s["fuel"], s["date"]),
+            return_dtype=pl.Float64,
+        )
+    )
+    panel = panel.with_columns(
         compliance_at_cap=pl.when(pl.col("date") >= config.CAP_DATE)
-        .then(pl.col("prezzo") <= pl.col("fuel").replace_strict(config.THRESHOLDS))
+        .then(pl.col("prezzo") <= pl.col("cap_threshold"))
         .otherwise(None)
     )
     return panel
+
+
+if __name__ == "__main__":
+    panel = build_station_day()
+    panel.write_parquet(config.STATION_DAY)
+    print(f"wrote {config.STATION_DAY}: {panel.height} rows, "
+          f"days {panel['date'].min()} .. {panel['date'].max()}")
