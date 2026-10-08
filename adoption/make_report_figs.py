@@ -116,6 +116,7 @@ def group_price_chart_en(fuel: str, show_excise_line: bool, stem: str) -> Path:
     y_min = min(y_lo, threshold, config.GASOLIO_CAP_AFTER) if fuel == "Gasolio" else min(y_lo, threshold)
     y_max = max(y_hi, threshold, config.GASOLIO_CAP_AFTER) if fuel == "Gasolio" else y_hi
     pad = (y_max - y_min) * 0.06
+    pad_hi = (y_max - y_min) * 0.12  # headroom: some series still got clipped
     pad_lo = pad * 2.5  # room for the hline label under the cap line
     fig.update_layout(
         font=dict(size=FONT),
@@ -133,7 +134,7 @@ def group_price_chart_en(fuel: str, show_excise_line: bool, stem: str) -> Path:
         range=[CUT, overall["date"].max() + dt.timedelta(days=1)],
     )
     fig.update_yaxes(
-        tickformat=".2f", range=[y_min - pad_lo, y_max + pad],
+        tickformat=".2f", range=[y_min - pad_lo, y_max + pad_hi],
         title=dict(text="EUR/l", font=dict(size=FONT)),
     )
     out = FIG / f"{stem}.png"
