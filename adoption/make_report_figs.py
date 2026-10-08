@@ -111,7 +111,12 @@ def group_price_chart_en(fuel: str, show_excise_line: bool, stem: str) -> Path:
 
     y_lo = overall["mean_prezzo"].min()
     y_hi = overall["mean_prezzo"].max()
-    pad = (y_hi - y_lo) * 0.05
+    # include the cap hline(s) and their labels in the y range; extra headroom
+    # below for the "cap ... from 28 Sep" label
+    y_min = min(y_lo, threshold, config.GASOLIO_CAP_AFTER) if fuel == "Gasolio" else min(y_lo, threshold)
+    y_max = max(y_hi, threshold, config.GASOLIO_CAP_AFTER) if fuel == "Gasolio" else y_hi
+    pad = (y_max - y_min) * 0.06
+    pad_lo = pad * 2.5  # room for the hline label under the cap line
     fig.update_layout(
         font=dict(size=FONT),
         margin=dict(l=10, r=30, t=15, b=10),
@@ -124,10 +129,13 @@ def group_price_chart_en(fuel: str, show_excise_line: bool, stem: str) -> Path:
     )
     fig.update_xaxes(
         tickformat="%d %b", tickangle=0,
-        dtick=7 * 86400000,  # weekly ticks (was ~biweekly -> doubled)
+        dtick=3 * 86400000,  # every 3 days
         range=[CUT, overall["date"].max() + dt.timedelta(days=1)],
     )
-    fig.update_yaxes(tickformat=".2f", range=[y_lo - pad, y_hi + pad])
+    fig.update_yaxes(
+        tickformat=".2f", range=[y_min - pad_lo, y_max + pad],
+        title=dict(text="EUR/l", font=dict(size=FONT)),
+    )
     out = FIG / f"{stem}.png"
     fig.write_image(out, scale=2)
     return out
@@ -150,7 +158,6 @@ def fig3_adoption_share() -> Path:
     colors = {"Benzina": "#1f77b4", "Gasolio": "#d62728"}
     for r, fuel in enumerate(["Benzina", "Gasolio"], start=1):
         sub = d.filter(pl.col("fuel") == fuel)
-        thr = 2.00 if fuel == "Benzina" else 2.20
         fig.add_trace(
             go.Scatter(
                 x=sub["date"], y=sub["share"] * 100, mode="lines+markers",
@@ -159,26 +166,13 @@ def fig3_adoption_share() -> Path:
             ),
             row=r, col=1,
         )
-        fig.add_hline(
-            y=thr, line_dash="dot", line_color="firebrick",
-            annotation_text=f"cap {thr:.2f} EUR/l",
-            annotation_position="right",
-            annotation_font=dict(size=FONT, color="firebrick"),
-            row=r, col=1,
-        )
-    fig.add_vline(
-        x=CAP_DATE.isoformat(), line_dash="dash", line_color="black",
-        annotation_text="28 Sep", annotation_position="top left",
-        annotation_font=dict(size=FONT),
-        row=1, col=1,
-    )
+    # cap / cap-change vlines, no in-panel text labels
+    fig.add_vline(x=CAP_DATE.isoformat(), line_dash="dash", line_color="black",
+                  row=1, col=1)
+    fig.add_vline(x=CAP_DATE.isoformat(), line_dash="dash", line_color="black",
+                  row=2, col=1)
     fig.add_vline(x=EXCISE_STEP.isoformat(), line_dash="dash", line_color="black",
                   row=2, col=1)
-    fig.add_annotation(
-        xref="x domain", yref="y2 domain", x=0.925, y=0.06, xanchor="right",
-        yanchor="bottom", showarrow=False, text="cap 2.261 EUR/l",
-        font=dict(size=FONT, color="black"),
-    )
     fig.update_xaxes(
         tickformat="%d %b", tickangle=0, dtick=2 * 86400000,
         tickfont=dict(size=FONT),
@@ -186,6 +180,10 @@ def fig3_adoption_share() -> Path:
     )
     fig.update_yaxes(ticksuffix="%", tickfont=dict(size=FONT),
                      range=[-2, 80])
+    fig.update_yaxes(title=dict(text="Cap adoption rate", font=dict(size=FONT)),
+                     row=1, col=1)
+    fig.update_yaxes(title=dict(text="Cap adoption rate", font=dict(size=FONT)),
+                     row=2, col=1)
     fig.update_layout(
         font=dict(size=FONT), margin=dict(l=10, r=170, t=30, b=10),
         template="plotly_white", width=1500, height=900, showlegend=False,
