@@ -17,7 +17,7 @@ uv run fuel-price-cap
 # 1. ISTAT inputs: 2026 admin boundaries + 2021 1-km population grid
 uv run python adoption/download_istat.py
 
-# 2. Station-day effective-price panel from dtComu (2026-07-01 → 10-05)
+# 2. Station-day effective-price panel from dtComu (2026-07-01 → 10-07)
 uv run python adoption/build_station_day.py
 
 # 3. Covariates: province/region (2026 borders), population, chain size
@@ -35,8 +35,12 @@ Rscript adoption/R/analysis_panel.R        # station-FE event study
 Rscript adoption/R/revision_samples.R      # 3-sample Cox + LPM (paper tables)
 
 # 7. Figures for the paper
-uv run python adoption/revision_analysis.py    # Fig 1 (raw shares) + ES coefs
-uv run python adoption/make_maps.py            # province choropleths
+uv run python adoption/revision_analysis.py    # event-study coefs + tercile fig
+uv run python adoption/make_fig1_v2.py         # Fig 1 (fuel panels, tax line)
+uv run python adoption/make_figs_update.py     # brand price fig + tercile fig
+uv run python adoption/make_hist.py            # §7 dispersion histograms
+uv run python adoption/make_maps.py            # province choropleths (blue-red)
+uv run python adoption/make_tables.py          # LaTeX tables from R outputs
 
 # 8. Paper PDF (pdflatex + biber)
 cd adoption && pdflatex paper && biber paper && pdflatex paper && pdflatex paper
@@ -67,15 +71,25 @@ figures are regenerable and mostly not committed.
 - `R/analysis_panel.R` — daily event study (fixest).
 - `R/revision_samples.R` — Cox + LPM on 3 samples (universe / excl.
   Agip Eni+Q8 / Pompe Bianche) → `output/revision_{cox,lpm}.txt`.
-- `revision_analysis.py` — Fig 1 raw adoption shares + event-study
-  coefficient table.
-- `make_maps.py` — province choropleths (all stations, Pompe Bianche).
+- `revision_analysis.py` — event-study coefficients + tercile figure.
+- `make_fig1_v2.py` — Fig 1 (per-fuel panels; gasolio carries the
+  6 Oct excise line, petrol none).
+- `make_figs_update.py` — brand daily-price figure + tercile figure.
+- `make_hist.py` — §7 dispersion/gap histograms.
+- `make_tables.py` — regenerates the LaTeX tables from the R outputs.
+- `make_maps.py` — province choropleths, blue→red scale (all stations,
+  Pompe Bianche, and the by-fuel appendix series).
 - `literature/` — reference pool, curated selection, `references.bib`.
 - `paper.tex` / `paper.pdf` / `paper_tables.tex` — the paper.
 
-## Key numbers (window 2026-07-01 → 2026-10-05)
+## Key numbers (window 2026-07-01 → 2026-10-07; gasolio cap 2.261 from 10-06)
 
-- 39,418 station×fuel units; 53.5% adopted within 8 days (median day 4).
+- 39,418 station×fuel units; 69.5% priced at or below the (tax-adjusted)
+  cap on at least one day; final-day shares 58% petrol / 69% gasolio
+  (median adoption: day 4). The 6 Oct excise change lifts gasolio
+  compliance by ~11 pp overnight — verified as genuine repricing (fresh
+  dtComu on 6 Oct, +5–7 c/l moves into the new band), not a threshold
+  artifact.
 - Adoption hazard falls with distance to competitors/adopters, rises
   with population density and chain size; pre-cap gap dominates
   (Cox; holds in all three samples, strongest for Pompe Bianche).

@@ -34,9 +34,7 @@ class ComuFreshness:
         recent_from = config.CAP_DATE - dt.timedelta(days=config.COMU_RECENT_DAYS)
         keys = [c for c in frame.columns if c in dims]
         flagged = frame.with_columns(
-            threshold=pl.col("fuel").replace_strict(
-                config.THRESHOLDS, return_dtype=pl.Float64
-            )
+            threshold=config.threshold_expr()
         )
         return flagged.group_by(keys).agg(
             n_obs=pl.len(),
@@ -61,9 +59,7 @@ class ComuFreshness:
         """Flag compliance and the dtComu recency bucket on cap-day rows."""
         recent_from = config.CAP_DATE - dt.timedelta(days=config.COMU_RECENT_DAYS)
         return frame.with_columns(
-            threshold=pl.col("fuel").replace_strict(
-                config.THRESHOLDS, return_dtype=pl.Float64
-            )
+            threshold=config.threshold_expr()
         ).with_columns(
             compliant=pl.col("prezzo") <= pl.col("threshold"),
             comu_bucket=pl.when(pl.col("comu_date") == config.CAP_DATE)
@@ -209,6 +205,8 @@ class BrandPriceBreak:
         post = daily.filter(pl.col("date") == config.CAP_DATE).select(
             "fuel", "canonical_name", pl.col("mean_price").alias("mean_price_capday")
         )
+        # cap-day join: the reference date is CAP_DATE itself, which predates
+        # the gasolio excise step, so the base threshold mapping is correct.
         threshold = pl.col("fuel").replace_strict(
             config.THRESHOLDS, return_dtype=pl.Float64
         )

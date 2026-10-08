@@ -5,6 +5,8 @@ from __future__ import annotations
 import datetime as dt
 from pathlib import Path
 
+import polars as pl
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = PROJECT_ROOT / "data"
 TABLES_DIR = PROJECT_ROOT / "output" / "tables"
@@ -34,6 +36,30 @@ FUELS: tuple[str, ...] = ("Benzina", "Gasolio")
 # --- Price rules -----------------------------------------------------------
 VAT_RATE = 0.22  # prezzo = (net + excise) * (1 + VAT)
 THRESHOLDS: dict[str, float] = {"Benzina": 2.0, "Gasolio": 2.2}  # gross EUR/l
+
+# Gasolio cap tracks the excise calendar: D.L. 162/2026 removed the remaining
+# 5 c/l discount on 2026-10-06 (622.90 -> 672.90 EUR/1000 l), so the cap rises
+# by 5 * 1.22 = 6.1 c/l incl. VAT (2.200 -> 2.261). Benzina is unaffected.
+GASOLIO_EXCISE_STEP = dt.date(2026, 10, 6)
+GASOLIO_CAP_AFTER = 2.261  # gross EUR/l from GASOLIO_EXCISE_STEP (included)
+
+
+def cap_threshold(fuel: str, day: dt.date) -> float:
+    """Gross EUR/l cap for `fuel` effective on `day` (excise-aware)."""
+    if fuel == "Gasolio" and day >= GASOLIO_EXCISE_STEP:
+        return GASOLIO_CAP_AFTER
+    return THRESHOLDS[fuel]
+
+
+def threshold_expr(date_col: str = "date") -> pl.Expr:
+    """Polars expression: per-row cap threshold keyed on fuel and date."""
+    thr = pl.col("fuel").replace_strict(THRESHOLDS, return_dtype=pl.Float64)
+    return (
+        pl.when((pl.col("fuel") == "Gasolio") & (pl.col(date_col) >= GASOLIO_EXCISE_STEP))
+        .then(pl.lit(GASOLIO_CAP_AFTER))
+        .otherwise(thr)
+    )
+
 
 # --- Outlier rule: one pass, per (date x fuel) cell -------------------------
 SD_CUTOFF = 4.0

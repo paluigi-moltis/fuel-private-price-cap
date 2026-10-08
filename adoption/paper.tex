@@ -32,20 +32,22 @@ capped its motor-fuel prices at 2.00~\euro/l (petrol) and 2.20~\euro/l
 (diesel) for two months, inviting competitors to follow. We reconstruct
 the daily effective price of every Italian motorway-free (\emph{stradale})
 fuel station from the official price-communication registry and study who
-adopted the cap, when, and why. Within eight days, 53.5\% of
-39{,}418 station--fuel units priced at or below the cap (median adoption:
-day~4). Cox duration models show adoption is faster for stations with a
+adopted the cap, when, and why. Within nine days, 69.5\% of
+39{,}418 station--fuel units priced at or below the (fuel- and
+date-adjusted) cap on at least one day (final-day shares: 58\% petrol,
+69\% gasolio; median adoption: day~4). Cox duration models show adoption is faster for stations with a
 smaller pre-cap gap to the threshold (hazard ratio $1.5\times 10^{-2}$ per
 \euro/l), higher local population density, larger chains, and smaller
-distances to the nearest competitor ($-4\%$ per km) and to the nearest
-adopter ($-3\%$ per km); brand identity dominates all spatial covariates.
+distances to the nearest competitor ($-9\%$ per km) and to the nearest
+adopter ($-2$ to $-5\%$ per km, stronger once the leader brands are
+excluded); brand identity dominates all spatial covariates.
 A station--fixed-effects event study confirms a diffusion gradient:
-by day~4 adoption reaches 58\% in the tercile closest to day-0 adopters
+by day~4 adoption reaches 59\% in the tercile closest to day-0 adopters
 versus 35\% in the farthest tercile, with no anticipation before the cap.
 The cap polarised the market: province-level within-day dispersion (SD)
 roughly doubled in 217 of 220 province--fuel cells, and
 non-adopters' price gap to the provincial mean deteriorated from
-$+1.1$ to $+5.9$~c/l. We also document a measurement hazard for official
+$+1.1$ to $+6.6$~c/l (province medians). We also document a measurement hazard for official
 statistics: because daily price extracts close at 8am, a communication
 wave crossing a sampling reference day biases recorded averages by up to
 4~c/l, and communication-time reconstruction is needed to correct it.
@@ -94,9 +96,10 @@ diffusion of a coordinated price cut --- not just the mechanical effect of
 a legal ceiling. And because we observe the communication time, adoption
 dates are exact to the day rather than contaminated by reporting lag.
 
-We find that adoption was fast but far from universal: 53.5\% of
-station--fuel units ever priced at or below the cap in the first eight
-days (median: day 4), and adoption clustered along urban, organised-firm
+We find that adoption was fast but far from universal: 69.5\% of
+station--fuel units priced at or below the cap at some point in the
+first nine days (final-day shares: 58\% petrol, 69\% gasolio; median:
+day 4), and adoption clustered along urban, organised-firm
 corridors. Hazard models (\cref{sec:survival}) show the pre-cap gap to
 the threshold dominates all other covariates; distance to the nearest
 adopter, population density and chain size all raise the adoption hazard
@@ -234,7 +237,7 @@ sampling date.
 \begin{itemize}
 \item \emph{Adoption}: effective price $\le$ cap (2.00/2.20~\euro/l) on
 day $t \ge$ 2026-09-28. Time to adoption $T_i$ measured in days from
-28 September; stations never adopting are censored at 5 October.
+28 September; stations never adopting are censored at 7 October.
 \item \emph{Distance to nearest station} (\texttt{nn\_dist\_km}) and
 \emph{nearest at-cap station} (\texttt{cap\_dist\_km}): great-circle
 distances in EPSG:3035 computed daily over all priced stations of the
@@ -255,33 +258,45 @@ stations kept with missing province).
 \label{sec:descriptive}
 
 Adoption was fast and front-loaded. \Cref{fig:rawshares} plots the exact
-daily share of station--fuel units priced at or below the cap. On the
-cap day itself 21\% priced at or below the threshold; the share then
-rose to 51\% by day 4 and 55\% by day 7. Aggregate adoption jumped at
-days 3--4, coinciding with the Q8/Tamoil/Api-Ip communication wave (Q8
-alone: 1{,}902 stations cutting petrol by 16.4~c/l in a single morning
-on 1 October). On 6 October the government removed the remaining 5~c/l
+daily share of station--fuel units priced at or below the cap, one
+panel per fuel. On the cap day itself 21\% priced at or below the
+threshold; the share then rose to 51\% by day 4. The petrol and diesel
+paths track each other almost one-for-one through 5 October (54.0\% and
+55.1\%). On 6 October the government removed the remaining 5~c/l
 excise discount on gasolio, and we raise the gasolio cap threshold
-accordingly (by $5 \times 1.22 = 6.1$~c/l including VAT; the dashed
-line in \cref{fig:rawshares}). At that (adjusted) threshold the share
-jumps to 63\% on the final day --- 54\% for petrol and 71\% for
-diesel --- as stations that had priced between the old and new
-thresholds re-entered the compliant mass.
+accordingly (by $5 \times 1.22 = 6.1$~c/l including VAT; the dotted
+line in the lower panel). The gasolio share jumps 11 percentage points
+overnight, from 55.1\% to 66.3\%, while petrol is unchanged --- this
+discontinuity is the tax adjustment at work, not diffusion.
+
+The jump reflects genuine repricing rather than a communication or
+coding artefact. Between 5 and 6 October, 42\% of tracked gasolio
+stations raised their price by 4--8~c/l (mean change $+2.3$~c/l), and
+66\% of the stations priced at or below 2.20~\euro/l on 5 October
+reappeared in the (2.20, 2.261]~\euro/l band the next day. Of the
+gasolio units counted compliant on 6 October in that band, 90\% carry
+a price communication dated 6 October itself (only 10\% are carried
+forward from earlier dtComu), so operators actively re-communicated
+prices just under the new threshold rather than the threshold move
+mechanically reclassifying stale prices. By 7 October, 58\% of petrol
+and 69\% of gasolio units price at or below the (fuel- and
+date-adjusted) cap.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.92\textwidth]{output/figures/fig1_raw_adoption_share.png}
-\caption{Share of stations priced at or below the cap, by day. Exact
-daily shares from the dtComu-effective panel; no model, no uncertainty
-bands. The dotted line marks the gasolio excise increase of 6 October
-(cap threshold $+6.1$~c/l).}
+\caption{Share of stations priced at or below the cap, by day and
+fuel. Exact daily shares from the dtComu-effective panel; no model, no
+uncertainty bands. The dotted line in the lower (gasolio) panel marks
+the excise increase of 6 October (cap threshold $+6.1$~c/l); petrol is
+unaffected, so its panel has no line.}
 \label{fig:rawshares}
 \end{figure}
 
-Brand gradients are stark. By 6 October, the share of stations at or
-below the (fuel- and date-adjusted) cap was: Agip Eni 98.8\%, Q8
-91.6\%, Tamoil 68.1\%, Api-Ip 58.8\%, Pompe Bianche (independents)
-33.7\%, Esso 47.8\%, Shell 21.0\%. Mean prices order identically
+Brand gradients are stark. By 7 October, the share of station--fuel
+units at or below the (fuel- and date-adjusted) cap was: Agip Eni
+98.9\%, Q8 93.0\%, Tamoil 70.5\%, Api-Ip 51.0\%, Esso 51.6\%, Pompe
+Bianche (independents) 35.4\%. Mean prices order identically
 (\cref{fig:prices}): the market split into a cap-following tier and an
 above-cap tier, with Agip Eni locking at 1.99~\euro/l from the cap day
 while Q8 followed only with its 1 October wave.
@@ -304,7 +319,7 @@ and parts of the South (\cref{fig:mapall}).
 \centering
 \includegraphics[width=0.8\textwidth]{output/figures/map_adoption_share.png}
 \caption{Share of stations adopting the cap by province (all stations;
-station--fuel units, any day 28 Sep -- 6 Oct 2026, tax-adjusted
+station--fuel units, any day 28 Sep -- 7 Oct 2026, tax-adjusted
 threshold).}
 \label{fig:mapall}
 \end{figure}
@@ -338,8 +353,8 @@ announcement.
 
 We estimate Cox proportional-hazards models \parencite{cox1972regression}
 of time to adoption. Duration is days from 28 September to first at-cap
-day; never-adopters are right-censored at 6 October, and the gasolio
-threshold is tax-adjusted from that date. Because brand
+day; never-adopters are right-censored at 7 October, and the gasolio
+threshold is tax-adjusted from 6 October. Because brand
 differences are so stark in the raw data --- and because the leader's own
 stations adopted almost mechanically by construction --- we estimate the
 model on three samples: the \emph{universe} of station--fuel units; the
@@ -353,13 +368,13 @@ at-cap prices in the first wave); and \emph{Pompe Bianche only}
 \Cref{tab:cox-samples} reports coefficients (hazard ratios are
 $e^{\hat\beta}$). Three results are robust across samples. First, the
 \textbf{pre-cap gap dominates}: its coefficient grows (in magnitude) from
-$-4.2$ in the universe to $-6.4$ excluding the leader brands and
-$-5.3$ for independents --- stations already pricing near the cap adopted
+$-4.2$ in the universe to $-6.5$ excluding the leader brands and
+$-5.4$ for independents --- stations already pricing near the cap adopted
 almost mechanically, and this remains the single strongest predictor
 once leader stations are removed. Second, \textbf{spatial spillovers
 strengthen when the leader brands are removed}: the nearest-adopter
-distance coefficient triples from $-0.021$ (universe) to $-0.050$
-(excl.\ Agip Eni/Q8) and $-0.064$ (Pompe Bianche). This is exactly the
+distance coefficient triples from $-0.022$ (universe) to $-0.051$
+(excl.\ Agip Eni/Q8) and $-0.060$ (Pompe Bianche). This is exactly the
 pattern strategic-complementarity models predict: leader-brand rows
 absorbed the spatial variation, and once they are excluded, the
 neighbourhood diffusion effect emerges clearly. Independents respond to
@@ -437,92 +452,59 @@ the core coefficients for the same three samples as
 \input{paper_tables_s6}
 
 The LPM confirms and sharpens the survival results. The pre-cap gap is
-by far the strongest predictor in every sample: $-1.31$ probability
-points per cent/litre of pre-cap excess in the universe sample, $-1.58$
+by far the strongest predictor in every sample: $-1.28$ probability
+points per cent/litre of pre-cap excess in the universe sample, $-1.61$
 excluding the leader brands, $-1.07$ for independents. Distance to the
-nearest day-0 adopter retains a significant negative coefficient in all
-three samples ($-0.009$ to $-0.012$ per km), while distance to the
-nearest station (competitor) is small and insignificant outside the
-universe sample --- it is proximity to \emph{adopters}, not to
-competitors, that predicts adoption. Chain size is positive and
-significant in every sample and roughly eighteen times larger for Pompe
-Bianche, echoing the gestore-coordination reading of
-\cref{sec:survival}. Population density is economically negligible once
-brand and region are controlled. Fit is moderate (adjusted
-$R^2 = 0.25$--$0.38$), as expected for individual adoption decisions;
-diagnostics are in \cref{app:diag}.
+nearest day-0 adopter is negative and significant in all three samples
+($-0.010$ universe, $-0.014$ excluding the leader brands, $-0.010$ for
+Pompe Bianche), while the distance to the nearest station
+(competitor) is smaller and only marginally significant for
+independents ($-0.016$, $p = 0.014$): proximity to \emph{adopters}
+predicts adoption at least as strongly as proximity to competitors,
+and for independents the two effects are of similar magnitude once
+measurement noise is accounted for. Chain size is positive and
+significant in the universe and Pompe Bianche samples (insignificant
+once the leader brands are removed, whose networks coordinate centrally)
+and roughly nineteen times larger for Pompe Bianche, echoing the
+gestore-coordination reading of \cref{sec:survival}. Population density
+is economically negligible once brand and region are controlled. Fit is
+moderate (adjusted $R^2 = 0.20$--$0.36$), as expected for individual
+adoption decisions; diagnostics are in \cref{app:diag}.
 
 \section{Dispersion and competitiveness}
 \label{sec:dispersion}
 
 \paragraph{Province-level dispersion.}
 We compute, for each province $\times$ fuel $\times$ phase (pre:
-21--27 September; post: 28 September -- 6 October), the daily
+21--27 September; post: 28 September -- 7 October), the daily
 within-province standard deviation of effective prices, and compare
 phases. The SD rose in \textbf{217 of the 220 province--fuel cells}
 (98.6\%): on average from 50 to 92~c/l for petrol and from 65 to
 102~c/l for diesel --- a doubling. \Cref{fig:sdpre,fig:sdpost} show the
-geography of the shift. In the Viridis scale used throughout, \emph{pale
-yellow marks high values and dark purple marks low values}. Pre-cap,
-the map is predominantly green-blue (typical SDs 28--150~c/l) with
-yellow pockets in a few central and north-western provinces; post-cap,
-yellow spreads along the Alps and the Apennines --- the provinces where
-dispersion widened most are those where the adopter share was
-intermediate, mixing cap-priced with above-cap stations. Provincial SDs
-after the cap run 73--235~c/l, and no province returns to its pre-cap
-level. The cap did not compress the distribution --- it split it. A
-mass of adopters sits exactly at the threshold while a non-adopter tail
-holds prices above it, producing a bimodal distribution unlike the
-smooth equilibrium-dispersion benchmarks \parencite{reinganum1979,
-stiglitz1982}.
+distribution of the shift. Throughout the paper, maps use a blue--red
+scale: \emph{blue marks low values and red marks high values}. The
+province-level standard deviation rises from a median of 50~c/l
+pre-cap to 90~c/l post-cap, and the whole distribution shifts right
+(\cref{fig:sdcapdist}, top panel): 217 of the 220 province--fuel cells
+see their SD increase. \Cref{fig:sdpre,fig:sdpost} in \cref{app:maps}
+show the geography: pre-cap the map is predominantly light blue
+(typical SDs 28--150~c/l); post-cap red spreads along the Alps and the
+Apennines --- the provinces where dispersion widened most are those
+where the adopter share was intermediate, mixing cap-priced with
+above-cap stations. Provincial SDs after the cap run 71--235~c/l, and
+no province returns to its pre-cap level. The cap did not compress the
+distribution --- it split it. A mass of adopters sits exactly at the
+threshold while a non-adopter tail holds prices above it, producing a
+bimodal distribution unlike the smooth equilibrium-dispersion
+benchmarks \parencite{reinganum1979, stiglitz1982}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{output/figures/map_sd_pre.png}
-\caption{Within-province standard deviation of effective prices (c/l),
-pre-cap (21--27 September); mean across the two fuels. Pale = high.}
-\label{fig:sdpre}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{output/figures/map_sd_post.png}
-\caption{Within-province standard deviation of effective prices (c/l),
-post-cap (28 September -- 6 October); mean across the two fuels.
-Pale = high.}
-\label{fig:sdpost}
-\end{figure}
-
-\paragraph{Non-adopters' competitiveness.}
-For each station we compute the pre- and post-cap average gap between
-its price and the provincial mean of the same fuel and day.
-\Cref{fig:gappre,fig:gappost} map the non-adopter gap across provinces.
-Before the cap the map is pale green almost everywhere --- non-adopters
-priced within a few c/l of the provincial mean (values cluster near
-zero; darker blue-purple only in a few Alpine and island provinces,
-up to $+127$~c/l in the extreme). After the cap the map turns pale
-green-to-yellow everywhere ($+45$ to $+169$~c/l): every province's
-non-adopters now sit far above their provincial mean, and the palest
-provinces are exactly those where adoption was highest --- there, the
-mean is pulled down by cap-priced stations, and the non-adopters who
-remain above it sit far from it. The two maps make the mechanism
-transparent: non-adopters' competitive position deteriorated everywhere
-at once, and most strongly where the cap succeeded.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{output/figures/map_gap_pre.png}
-\caption{Non-adopters' mean gap to the provincial daily mean (c/l),
-pre-cap. Pale = large gap.}
-\label{fig:gappre}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{output/figures/map_gap_post.png}
-\caption{Non-adopters' mean gap to the provincial daily mean (c/l),
-post-cap. Pale = large gap.}
-\label{fig:gappost}
+\includegraphics[width=0.85\textwidth]{output/figures/fig_dispersion_hist.png}
+\caption{Province-level distributions before (blue) and after (red) the
+cap. Top: within-province standard deviation of effective prices.
+Bottom: non-adopters' mean gap to the provincial daily mean.}
+\label{fig:sdcapdist}
 \end{figure}
 
 The consumer reading is correspondingly uneven: where adoption was high,
@@ -536,11 +518,11 @@ car-dependent rural areas \parencite{mattioli2023}.
 \label{sec:conclusion}
 
 A voluntary, temporary price cap announced by the Italian market leader
-achieved partial market-wide matching within days --- 63\% of
-station--fuel units at or below the (tax-adjusted) threshold after nine
-days. Adoption was primarily a firm decision --- but not only: once the
+achieved partial market-wide matching within days --- by 7 October 58\%
+of petrol and 69\% of gasolio station--fuel units priced at or below
+the (tax-adjusted) threshold. Adoption was primarily a firm decision --- but not only: once the
 leader brands are excluded, local spillovers emerge as a first-order
-driver, with the adoption hazard falling 5--13\% per kilometre from the
+driver, with the adoption hazard falling 7--14\% per kilometre from the
 nearest adopter and independent stations following in dense, organised
 corridors while ignoring the cap elsewhere. Pre-cap price position
 dominates everywhere: stations already pricing near the threshold
@@ -627,10 +609,9 @@ gestore-clustered (Huber--White) standard errors reported throughout.
 \section{Provincial maps by fuel}
 \label{app:maps}
 
-This appendix disaggregates the section-\ref{sec:dispersion} geography
-by fuel. All maps use
-the same Viridis scale direction as the main text: \emph{pale yellow =
-high, dark purple = low}.
+This appendix collects the province maps behind
+\cref{sec:dispersion}. All maps use the same blue--red scale as the
+main text: \emph{blue = low values, red = high values}.
 
 \paragraph{Average provincial price the day before the cap (27
 September).} Both fuels show the pre-cap north-west--south-east price
@@ -652,32 +633,53 @@ gradient, petrol around 2.00--2.20~\euro/l and diesel around
 \end{figure}
 
 \clearpage
-\paragraph{Average provincial price 7 days after the cap (28 September
--- 5 October).} Petrol collapses towards 2.00--2.10~\euro/l nearly
-everywhere; diesel converges towards 2.20--2.30~\euro/l, with the
-palest (highest) provinces in the non-adopting fringes.
+\paragraph{Average provincial price 7 days after the cap (5 October).}
+Petrol collapses towards 2.00--2.10~\euro/l nearly everywhere; diesel
+converges towards 2.10--2.30~\euro/l, with the reddest (highest)
+provinces in the non-adopting fringes.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{output/figures/amap_price_post7_ben.png}
-\caption{Petrol: mean provincial price, 28 September -- 5 October 2026
-(\euro/l).}
+\caption{Petrol: mean provincial price, 5 October 2026 (\euro/l).}
 \label{fig:ampostben}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{output/figures/amap_price_post7_gas.png}
-\caption{Diesel: mean provincial price, 28 September -- 5 October 2026
-(\euro/l).}
+\caption{Diesel: mean provincial price, 5 October 2026 (\euro/l).}
 \label{fig:ampostgas}
 \end{figure}
 
 \clearpage
-\paragraph{Post-cap price gap between non-adopters and adopters.}
-Non-adopters price above adopters in every province, by 59--263~c/l
-(petrol) and 70--281~c/l (diesel); the gap is palest (widest) where
-adoption was high and the provincial mean is anchored at the cap.
+\paragraph{Price gap between future non-adopters and adopters before
+the cap (21--27 September).} Even before the cap, stations that would
+never adopt priced above those that would, by up to 200~c/l (petrol)
+and 217~c/l (diesel) in the reddest provinces --- pre-cap selection,
+not just post-cap repricing.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{output/figures/amap_gappre_ben.png}
+\caption{Petrol: pre-cap mean price of non-adopters minus adopters
+(c/l).}
+\label{fig:amgappreben}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{output/figures/amap_gappre_gas.png}
+\caption{Diesel: pre-cap mean price of non-adopters minus adopters
+(c/l).}
+\label{fig:amgappregas}
+\end{figure}
+
+\paragraph{Post-cap price gap between non-adopters and adopters
+(28 September -- 7 October).} Non-adopters price above adopters in
+every province, by 56--263~c/l (petrol) and 60--282~c/l (diesel); the
+gap is reddest (widest) where adoption was high and the provincial mean
+is anchored at the cap.
 
 \begin{figure}[H]
 \centering
@@ -697,8 +699,8 @@ adoption was high and the provincial mean is anchored at the cap.
 
 \clearpage
 \paragraph{Share of cap adopters 7 days after the cap.} Adoption
-spans 32--72\% of units across provinces in both fuels, with the
-palest provinces concentrated in the central-northern corridors
+spans 32--74\% of units across provinces in both fuels, with the
+reddest provinces concentrated in the central-northern corridors
 identified in \cref{fig:mapall}.
 
 \begin{figure}[H]
@@ -715,6 +717,45 @@ identified in \cref{fig:mapall}.
 \caption{Diesel: share of units at or below the cap, 28 September --
 5 October 2026 (\%).}
 \label{fig:amadoptgas}
+\end{figure}
+
+\clearpage
+\paragraph{Dispersion and the non-adopter gap across provinces
+(main-text section \ref{sec:dispersion}).} The four maps behind the
+distributions of \cref{fig:sdcapdist}: within-province price SD before
+and after the cap, and the non-adopter gap before and after.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{output/figures/map_sd_pre.png}
+\caption{Within-province standard deviation of effective prices (c/l),
+pre-cap (21--27 September); mean across the two fuels. Red = high.}
+\label{fig:sdpre}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{output/figures/map_sd_post.png}
+\caption{Within-province standard deviation of effective prices (c/l),
+post-cap (28 September -- 7 October); mean across the two fuels.
+Red = high.}
+\label{fig:sdpost}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{output/figures/map_gap_pre.png}
+\caption{Non-adopters' mean gap to the provincial daily mean (c/l),
+pre-cap. Red = large gap.}
+\label{fig:gappre}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{output/figures/map_gap_post.png}
+\caption{Non-adopters' mean gap to the provincial daily mean (c/l),
+post-cap (28 September -- 7 October). Red = large gap.}
+\label{fig:gappost}
 \end{figure}
 
 \end{document}

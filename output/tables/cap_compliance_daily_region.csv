@@ -3871,3 +3871,971 @@ date,fuel,regione,group,tipo_impianto,n_obs,n_below,pct_below
 2026-10-05,Gasolio,Tutte,Tutte,Autostradale,518,321,61.969111969111964
 2026-10-05,Gasolio,Tutte,Tutte,Stradale,19598,10443,53.28604959689764
 2026-10-05,Gasolio,Tutte,Tutte,Tutte,20116,10764,53.50964406442633
+2026-10-06,Benzina,Abruzzo,Large,Autostradale,4,0,0.0
+2026-10-06,Benzina,Abruzzo,Large,Stradale,65,20,30.76923076923077
+2026-10-06,Benzina,Abruzzo,Large,Tutte,69,20,28.985507246376812
+2026-10-06,Benzina,Abruzzo,Majors,Autostradale,12,8,66.66666666666666
+2026-10-06,Benzina,Abruzzo,Majors,Stradale,292,198,67.8082191780822
+2026-10-06,Benzina,Abruzzo,Majors,Tutte,304,206,67.76315789473685
+2026-10-06,Benzina,Abruzzo,Pompe Bianche,Autostradale,3,2,66.66666666666666
+2026-10-06,Benzina,Abruzzo,Pompe Bianche,Stradale,190,81,42.63157894736842
+2026-10-06,Benzina,Abruzzo,Pompe Bianche,Tutte,193,83,43.005181347150256
+2026-10-06,Benzina,Abruzzo,Tutte,Autostradale,19,10,52.63157894736842
+2026-10-06,Benzina,Abruzzo,Tutte,Stradale,547,299,54.6617915904936
+2026-10-06,Benzina,Abruzzo,Tutte,Tutte,566,309,54.59363957597173
+2026-10-06,Benzina,Basilicata,Large,Stradale,32,19,59.375
+2026-10-06,Benzina,Basilicata,Large,Tutte,32,19,59.375
+2026-10-06,Benzina,Basilicata,Majors,Autostradale,2,1,50.0
+2026-10-06,Benzina,Basilicata,Majors,Stradale,101,76,75.24752475247524
+2026-10-06,Benzina,Basilicata,Majors,Tutte,103,77,74.75728155339806
+2026-10-06,Benzina,Basilicata,Pompe Bianche,Stradale,84,9,10.714285714285714
+2026-10-06,Benzina,Basilicata,Pompe Bianche,Tutte,84,9,10.714285714285714
+2026-10-06,Benzina,Basilicata,Tutte,Autostradale,2,1,50.0
+2026-10-06,Benzina,Basilicata,Tutte,Stradale,217,104,47.926267281105986
+2026-10-06,Benzina,Basilicata,Tutte,Tutte,219,105,47.94520547945205
+2026-10-06,Benzina,Calabria,Large,Autostradale,2,0,0.0
+2026-10-06,Benzina,Calabria,Large,Stradale,187,83,44.38502673796791
+2026-10-06,Benzina,Calabria,Large,Tutte,189,83,43.91534391534391
+2026-10-06,Benzina,Calabria,Majors,Autostradale,10,10,100.0
+2026-10-06,Benzina,Calabria,Majors,Stradale,326,258,79.14110429447852
+2026-10-06,Benzina,Calabria,Majors,Tutte,336,268,79.76190476190477
+2026-10-06,Benzina,Calabria,Pompe Bianche,Autostradale,3,0,0.0
+2026-10-06,Benzina,Calabria,Pompe Bianche,Stradale,167,39,23.353293413173652
+2026-10-06,Benzina,Calabria,Pompe Bianche,Tutte,170,39,22.941176470588236
+2026-10-06,Benzina,Calabria,Tutte,Autostradale,15,10,66.66666666666666
+2026-10-06,Benzina,Calabria,Tutte,Stradale,680,380,55.88235294117647
+2026-10-06,Benzina,Calabria,Tutte,Tutte,695,390,56.11510791366906
+2026-10-06,Benzina,Campania,Large,Autostradale,12,1,8.333333333333332
+2026-10-06,Benzina,Campania,Large,Stradale,239,164,68.6192468619247
+2026-10-06,Benzina,Campania,Large,Tutte,251,165,65.73705179282868
+2026-10-06,Benzina,Campania,Majors,Autostradale,20,19,95.0
+2026-10-06,Benzina,Campania,Majors,Stradale,618,448,72.49190938511327
+2026-10-06,Benzina,Campania,Majors,Tutte,638,467,73.1974921630094
+2026-10-06,Benzina,Campania,Pompe Bianche,Autostradale,5,4,80.0
+2026-10-06,Benzina,Campania,Pompe Bianche,Stradale,736,217,29.483695652173914
+2026-10-06,Benzina,Campania,Pompe Bianche,Tutte,741,221,29.82456140350877
+2026-10-06,Benzina,Campania,Tutte,Autostradale,37,24,64.86486486486487
+2026-10-06,Benzina,Campania,Tutte,Stradale,1593,829,52.04017576898933
+2026-10-06,Benzina,Campania,Tutte,Tutte,1630,853,52.33128834355828
+2026-10-06,Benzina,Emilia-Romagna,Large,Autostradale,7,0,0.0
+2026-10-06,Benzina,Emilia-Romagna,Large,Stradale,241,89,36.92946058091287
+2026-10-06,Benzina,Emilia-Romagna,Large,Tutte,248,89,35.88709677419355
+2026-10-06,Benzina,Emilia-Romagna,Majors,Autostradale,27,26,96.29629629629629
+2026-10-06,Benzina,Emilia-Romagna,Majors,Stradale,779,580,74.45442875481386
+2026-10-06,Benzina,Emilia-Romagna,Majors,Tutte,806,606,75.18610421836229
+2026-10-06,Benzina,Emilia-Romagna,Pompe Bianche,Autostradale,5,3,60.0
+2026-10-06,Benzina,Emilia-Romagna,Pompe Bianche,Stradale,579,130,22.452504317789295
+2026-10-06,Benzina,Emilia-Romagna,Pompe Bianche,Tutte,584,133,22.773972602739725
+2026-10-06,Benzina,Emilia-Romagna,Tutte,Autostradale,39,29,74.35897435897436
+2026-10-06,Benzina,Emilia-Romagna,Tutte,Stradale,1599,799,49.96873045653533
+2026-10-06,Benzina,Emilia-Romagna,Tutte,Tutte,1638,828,50.54945054945055
+2026-10-06,Benzina,Friuli-Venezia Giulia,Large,Autostradale,3,0,0.0
+2026-10-06,Benzina,Friuli-Venezia Giulia,Large,Stradale,69,8,11.594202898550725
+2026-10-06,Benzina,Friuli-Venezia Giulia,Large,Tutte,72,8,11.11111111111111
+2026-10-06,Benzina,Friuli-Venezia Giulia,Majors,Autostradale,2,2,100.0
+2026-10-06,Benzina,Friuli-Venezia Giulia,Majors,Stradale,242,182,75.20661157024794
+2026-10-06,Benzina,Friuli-Venezia Giulia,Majors,Tutte,244,184,75.40983606557377
+2026-10-06,Benzina,Friuli-Venezia Giulia,Pompe Bianche,Autostradale,4,2,50.0
+2026-10-06,Benzina,Friuli-Venezia Giulia,Pompe Bianche,Stradale,84,15,17.857142857142858
+2026-10-06,Benzina,Friuli-Venezia Giulia,Pompe Bianche,Tutte,88,17,19.318181818181817
+2026-10-06,Benzina,Friuli-Venezia Giulia,Tutte,Autostradale,9,4,44.44444444444444
+2026-10-06,Benzina,Friuli-Venezia Giulia,Tutte,Stradale,395,205,51.89873417721519
+2026-10-06,Benzina,Friuli-Venezia Giulia,Tutte,Tutte,404,209,51.73267326732673
+2026-10-06,Benzina,Lazio,Large,Autostradale,5,1,20.0
+2026-10-06,Benzina,Lazio,Large,Stradale,236,154,65.2542372881356
+2026-10-06,Benzina,Lazio,Large,Tutte,241,155,64.31535269709543
+2026-10-06,Benzina,Lazio,Majors,Autostradale,34,33,97.05882352941177
+2026-10-06,Benzina,Lazio,Majors,Stradale,1044,800,76.62835249042146
+2026-10-06,Benzina,Lazio,Majors,Tutte,1078,833,77.27272727272727
+2026-10-06,Benzina,Lazio,Pompe Bianche,Autostradale,1,1,100.0
+2026-10-06,Benzina,Lazio,Pompe Bianche,Stradale,584,273,46.74657534246575
+2026-10-06,Benzina,Lazio,Pompe Bianche,Tutte,585,274,46.837606837606835
+2026-10-06,Benzina,Lazio,Tutte,Autostradale,40,35,87.5
+2026-10-06,Benzina,Lazio,Tutte,Stradale,1864,1227,65.82618025751073
+2026-10-06,Benzina,Lazio,Tutte,Tutte,1904,1262,66.28151260504201
+2026-10-06,Benzina,Liguria,Large,Autostradale,12,0,0.0
+2026-10-06,Benzina,Liguria,Large,Stradale,68,27,39.705882352941174
+2026-10-06,Benzina,Liguria,Large,Tutte,80,27,33.75
+2026-10-06,Benzina,Liguria,Majors,Autostradale,16,16,100.0
+2026-10-06,Benzina,Liguria,Majors,Stradale,265,212,80.0
+2026-10-06,Benzina,Liguria,Majors,Tutte,281,228,81.13879003558719
+2026-10-06,Benzina,Liguria,Pompe Bianche,Autostradale,2,2,100.0
+2026-10-06,Benzina,Liguria,Pompe Bianche,Stradale,103,50,48.54368932038835
+2026-10-06,Benzina,Liguria,Pompe Bianche,Tutte,105,52,49.523809523809526
+2026-10-06,Benzina,Liguria,Tutte,Autostradale,30,18,60.0
+2026-10-06,Benzina,Liguria,Tutte,Stradale,436,289,66.28440366972477
+2026-10-06,Benzina,Liguria,Tutte,Tutte,466,307,65.87982832618026
+2026-10-06,Benzina,Lombardia,Large,Autostradale,12,0,0.0
+2026-10-06,Benzina,Lombardia,Large,Stradale,619,292,47.172859450726975
+2026-10-06,Benzina,Lombardia,Large,Tutte,631,292,46.275752773375594
+2026-10-06,Benzina,Lombardia,Majors,Autostradale,42,39,92.85714285714286
+2026-10-06,Benzina,Lombardia,Majors,Stradale,1329,957,72.00902934537245
+2026-10-06,Benzina,Lombardia,Majors,Tutte,1371,996,72.64770240700219
+2026-10-06,Benzina,Lombardia,Pompe Bianche,Autostradale,2,1,50.0
+2026-10-06,Benzina,Lombardia,Pompe Bianche,Stradale,656,96,14.634146341463413
+2026-10-06,Benzina,Lombardia,Pompe Bianche,Tutte,658,97,14.74164133738602
+2026-10-06,Benzina,Lombardia,Tutte,Autostradale,56,40,71.42857142857143
+2026-10-06,Benzina,Lombardia,Tutte,Stradale,2604,1345,51.651305683563756
+2026-10-06,Benzina,Lombardia,Tutte,Tutte,2660,1385,52.06766917293233
+2026-10-06,Benzina,Marche,Large,Stradale,152,36,23.684210526315788
+2026-10-06,Benzina,Marche,Large,Tutte,152,36,23.684210526315788
+2026-10-06,Benzina,Marche,Majors,Autostradale,10,9,90.0
+2026-10-06,Benzina,Marche,Majors,Stradale,310,215,69.35483870967742
+2026-10-06,Benzina,Marche,Majors,Tutte,320,224,70.0
+2026-10-06,Benzina,Marche,Pompe Bianche,Autostradale,2,2,100.0
+2026-10-06,Benzina,Marche,Pompe Bianche,Stradale,203,92,45.320197044334975
+2026-10-06,Benzina,Marche,Pompe Bianche,Tutte,205,94,45.85365853658537
+2026-10-06,Benzina,Marche,Tutte,Autostradale,12,11,91.66666666666666
+2026-10-06,Benzina,Marche,Tutte,Stradale,665,343,51.578947368421055
+2026-10-06,Benzina,Marche,Tutte,Tutte,677,354,52.28951255539144
+2026-10-06,Benzina,Molise,Large,Autostradale,2,1,50.0
+2026-10-06,Benzina,Molise,Large,Stradale,32,3,9.375
+2026-10-06,Benzina,Molise,Large,Tutte,34,4,11.76470588235294
+2026-10-06,Benzina,Molise,Majors,Autostradale,1,1,100.0
+2026-10-06,Benzina,Molise,Majors,Stradale,54,37,68.51851851851852
+2026-10-06,Benzina,Molise,Majors,Tutte,55,38,69.0909090909091
+2026-10-06,Benzina,Molise,Pompe Bianche,Stradale,53,14,26.41509433962264
+2026-10-06,Benzina,Molise,Pompe Bianche,Tutte,53,14,26.41509433962264
+2026-10-06,Benzina,Molise,Tutte,Autostradale,3,2,66.66666666666666
+2026-10-06,Benzina,Molise,Tutte,Stradale,139,54,38.84892086330935
+2026-10-06,Benzina,Molise,Tutte,Tutte,142,56,39.436619718309856
+2026-10-06,Benzina,Piemonte,Large,Autostradale,13,1,7.6923076923076925
+2026-10-06,Benzina,Piemonte,Large,Stradale,321,153,47.66355140186916
+2026-10-06,Benzina,Piemonte,Large,Tutte,334,154,46.10778443113773
+2026-10-06,Benzina,Piemonte,Majors,Autostradale,33,32,96.96969696969697
+2026-10-06,Benzina,Piemonte,Majors,Stradale,792,548,69.1919191919192
+2026-10-06,Benzina,Piemonte,Majors,Tutte,825,580,70.3030303030303
+2026-10-06,Benzina,Piemonte,Pompe Bianche,Autostradale,10,5,50.0
+2026-10-06,Benzina,Piemonte,Pompe Bianche,Stradale,431,168,38.97911832946635
+2026-10-06,Benzina,Piemonte,Pompe Bianche,Tutte,441,173,39.229024943310655
+2026-10-06,Benzina,Piemonte,Tutte,Autostradale,56,38,67.85714285714286
+2026-10-06,Benzina,Piemonte,Tutte,Stradale,1544,869,56.28238341968912
+2026-10-06,Benzina,Piemonte,Tutte,Tutte,1600,907,56.6875
+2026-10-06,Benzina,Puglia,Large,Autostradale,6,3,50.0
+2026-10-06,Benzina,Puglia,Large,Stradale,127,73,57.48031496062992
+2026-10-06,Benzina,Puglia,Large,Tutte,133,76,57.14285714285714
+2026-10-06,Benzina,Puglia,Majors,Autostradale,5,5,100.0
+2026-10-06,Benzina,Puglia,Majors,Stradale,739,558,75.50744248985114
+2026-10-06,Benzina,Puglia,Majors,Tutte,744,563,75.67204301075269
+2026-10-06,Benzina,Puglia,Pompe Bianche,Autostradale,7,2,28.57142857142857
+2026-10-06,Benzina,Puglia,Pompe Bianche,Stradale,491,110,22.403258655804482
+2026-10-06,Benzina,Puglia,Pompe Bianche,Tutte,498,112,22.48995983935743
+2026-10-06,Benzina,Puglia,Tutte,Autostradale,18,10,55.55555555555556
+2026-10-06,Benzina,Puglia,Tutte,Stradale,1357,741,54.60574797347088
+2026-10-06,Benzina,Puglia,Tutte,Tutte,1375,751,54.618181818181824
+2026-10-06,Benzina,Sardegna,Large,Stradale,170,46,27.058823529411764
+2026-10-06,Benzina,Sardegna,Large,Tutte,170,46,27.058823529411764
+2026-10-06,Benzina,Sardegna,Majors,Stradale,307,262,85.34201954397395
+2026-10-06,Benzina,Sardegna,Majors,Tutte,307,262,85.34201954397395
+2026-10-06,Benzina,Sardegna,Pompe Bianche,Stradale,115,8,6.956521739130435
+2026-10-06,Benzina,Sardegna,Pompe Bianche,Tutte,115,8,6.956521739130435
+2026-10-06,Benzina,Sardegna,Tutte,Stradale,592,316,53.37837837837838
+2026-10-06,Benzina,Sardegna,Tutte,Tutte,592,316,53.37837837837838
+2026-10-06,Benzina,Sicilia,Large,Autostradale,4,0,0.0
+2026-10-06,Benzina,Sicilia,Large,Stradale,241,75,31.12033195020747
+2026-10-06,Benzina,Sicilia,Large,Tutte,245,75,30.612244897959183
+2026-10-06,Benzina,Sicilia,Majors,Autostradale,13,11,84.61538461538461
+2026-10-06,Benzina,Sicilia,Majors,Stradale,683,589,86.23718887262079
+2026-10-06,Benzina,Sicilia,Majors,Tutte,696,600,86.20689655172413
+2026-10-06,Benzina,Sicilia,Pompe Bianche,Autostradale,1,0,0.0
+2026-10-06,Benzina,Sicilia,Pompe Bianche,Stradale,618,142,22.97734627831715
+2026-10-06,Benzina,Sicilia,Pompe Bianche,Tutte,619,142,22.940226171243943
+2026-10-06,Benzina,Sicilia,Tutte,Autostradale,18,11,61.111111111111114
+2026-10-06,Benzina,Sicilia,Tutte,Stradale,1542,806,52.2697795071336
+2026-10-06,Benzina,Sicilia,Tutte,Tutte,1560,817,52.371794871794876
+2026-10-06,Benzina,Toscana,Large,Autostradale,4,0,0.0
+2026-10-06,Benzina,Toscana,Large,Stradale,245,83,33.87755102040816
+2026-10-06,Benzina,Toscana,Large,Tutte,249,83,33.33333333333333
+2026-10-06,Benzina,Toscana,Majors,Autostradale,23,23,100.0
+2026-10-06,Benzina,Toscana,Majors,Stradale,723,582,80.49792531120332
+2026-10-06,Benzina,Toscana,Majors,Tutte,746,605,81.09919571045576
+2026-10-06,Benzina,Toscana,Pompe Bianche,Autostradale,4,1,25.0
+2026-10-06,Benzina,Toscana,Pompe Bianche,Stradale,417,69,16.546762589928058
+2026-10-06,Benzina,Toscana,Pompe Bianche,Tutte,421,70,16.6270783847981
+2026-10-06,Benzina,Toscana,Tutte,Autostradale,31,24,77.41935483870968
+2026-10-06,Benzina,Toscana,Tutte,Stradale,1385,734,52.99638989169675
+2026-10-06,Benzina,Toscana,Tutte,Tutte,1416,758,53.53107344632768
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Large,Autostradale,6,1,16.666666666666664
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Large,Stradale,69,22,31.88405797101449
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Large,Tutte,75,23,30.666666666666664
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Majors,Autostradale,6,6,100.0
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Majors,Stradale,189,142,75.13227513227513
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Majors,Tutte,195,148,75.8974358974359
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Autostradale,2,1,50.0
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Stradale,84,2,2.380952380952381
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Tutte,86,3,3.488372093023256
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Tutte,Autostradale,14,8,57.14285714285714
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Tutte,Stradale,342,166,48.53801169590643
+2026-10-06,Benzina,Trentino-Alto Adige/Südtirol,Tutte,Tutte,356,174,48.87640449438202
+2026-10-06,Benzina,Umbria,Large,Autostradale,1,0,0.0
+2026-10-06,Benzina,Umbria,Large,Stradale,67,33,49.25373134328358
+2026-10-06,Benzina,Umbria,Large,Tutte,68,33,48.529411764705884
+2026-10-06,Benzina,Umbria,Majors,Autostradale,3,3,100.0
+2026-10-06,Benzina,Umbria,Majors,Stradale,222,136,61.261261261261254
+2026-10-06,Benzina,Umbria,Majors,Tutte,225,139,61.77777777777778
+2026-10-06,Benzina,Umbria,Pompe Bianche,Stradale,115,36,31.30434782608696
+2026-10-06,Benzina,Umbria,Pompe Bianche,Tutte,115,36,31.30434782608696
+2026-10-06,Benzina,Umbria,Tutte,Autostradale,4,3,75.0
+2026-10-06,Benzina,Umbria,Tutte,Stradale,404,205,50.742574257425744
+2026-10-06,Benzina,Umbria,Tutte,Tutte,408,208,50.98039215686274
+2026-10-06,Benzina,Valle d'Aosta,Large,Stradale,14,6,42.857142857142854
+2026-10-06,Benzina,Valle d'Aosta,Large,Tutte,14,6,42.857142857142854
+2026-10-06,Benzina,Valle d'Aosta,Majors,Autostradale,3,3,100.0
+2026-10-06,Benzina,Valle d'Aosta,Majors,Stradale,23,21,91.30434782608695
+2026-10-06,Benzina,Valle d'Aosta,Majors,Tutte,26,24,92.3076923076923
+2026-10-06,Benzina,Valle d'Aosta,Pompe Bianche,Autostradale,1,0,0.0
+2026-10-06,Benzina,Valle d'Aosta,Pompe Bianche,Stradale,25,12,48.0
+2026-10-06,Benzina,Valle d'Aosta,Pompe Bianche,Tutte,26,12,46.15384615384615
+2026-10-06,Benzina,Valle d'Aosta,Tutte,Autostradale,4,3,75.0
+2026-10-06,Benzina,Valle d'Aosta,Tutte,Stradale,62,39,62.903225806451616
+2026-10-06,Benzina,Valle d'Aosta,Tutte,Tutte,66,42,63.63636363636363
+2026-10-06,Benzina,Veneto,Large,Autostradale,9,2,22.22222222222222
+2026-10-06,Benzina,Veneto,Large,Stradale,266,136,51.127819548872175
+2026-10-06,Benzina,Veneto,Large,Tutte,275,138,50.18181818181818
+2026-10-06,Benzina,Veneto,Majors,Autostradale,20,18,90.0
+2026-10-06,Benzina,Veneto,Majors,Stradale,671,588,87.63040238450075
+2026-10-06,Benzina,Veneto,Majors,Tutte,691,606,87.69898697539797
+2026-10-06,Benzina,Veneto,Pompe Bianche,Autostradale,4,0,0.0
+2026-10-06,Benzina,Veneto,Pompe Bianche,Stradale,753,211,28.021248339973436
+2026-10-06,Benzina,Veneto,Pompe Bianche,Tutte,757,211,27.873183619550858
+2026-10-06,Benzina,Veneto,Tutte,Autostradale,33,20,60.60606060606061
+2026-10-06,Benzina,Veneto,Tutte,Stradale,1690,935,55.325443786982255
+2026-10-06,Benzina,Veneto,Tutte,Tutte,1723,955,55.42658154381892
+2026-10-06,Benzina,Tutte,Large,Autostradale,102,10,9.803921568627452
+2026-10-06,Benzina,Tutte,Large,Stradale,3460,1522,43.98843930635838
+2026-10-06,Benzina,Tutte,Large,Tutte,3562,1532,43.00954519932622
+2026-10-06,Benzina,Tutte,Majors,Autostradale,282,265,93.97163120567376
+2026-10-06,Benzina,Tutte,Majors,Stradale,9709,7389,76.10464517458028
+2026-10-06,Benzina,Tutte,Majors,Tutte,9991,7654,76.60894805324793
+2026-10-06,Benzina,Tutte,Pompe Bianche,Autostradale,56,26,46.42857142857143
+2026-10-06,Benzina,Tutte,Pompe Bianche,Stradale,6488,1774,27.342786683107274
+2026-10-06,Benzina,Tutte,Pompe Bianche,Tutte,6544,1800,27.506112469437653
+2026-10-06,Benzina,Tutte,Tutte,Autostradale,440,301,68.4090909090909
+2026-10-06,Benzina,Tutte,Tutte,Stradale,19657,10685,54.35722643333164
+2026-10-06,Benzina,Tutte,Tutte,Tutte,20097,10986,54.66487535453053
+2026-10-06,Gasolio,Abruzzo,Large,Autostradale,4,0,0.0
+2026-10-06,Gasolio,Abruzzo,Large,Stradale,65,42,64.61538461538461
+2026-10-06,Gasolio,Abruzzo,Large,Tutte,69,42,60.86956521739131
+2026-10-06,Gasolio,Abruzzo,Majors,Autostradale,16,8,50.0
+2026-10-06,Gasolio,Abruzzo,Majors,Stradale,290,234,80.6896551724138
+2026-10-06,Gasolio,Abruzzo,Majors,Tutte,306,242,79.08496732026144
+2026-10-06,Gasolio,Abruzzo,Pompe Bianche,Autostradale,6,3,50.0
+2026-10-06,Gasolio,Abruzzo,Pompe Bianche,Stradale,190,102,53.68421052631579
+2026-10-06,Gasolio,Abruzzo,Pompe Bianche,Tutte,196,105,53.57142857142857
+2026-10-06,Gasolio,Abruzzo,Tutte,Autostradale,26,11,42.30769230769231
+2026-10-06,Gasolio,Abruzzo,Tutte,Stradale,545,378,69.35779816513762
+2026-10-06,Gasolio,Abruzzo,Tutte,Tutte,571,389,68.1260945709282
+2026-10-06,Gasolio,Basilicata,Large,Stradale,32,24,75.0
+2026-10-06,Gasolio,Basilicata,Large,Tutte,32,24,75.0
+2026-10-06,Gasolio,Basilicata,Majors,Autostradale,4,2,50.0
+2026-10-06,Gasolio,Basilicata,Majors,Stradale,98,92,93.87755102040816
+2026-10-06,Gasolio,Basilicata,Majors,Tutte,102,94,92.15686274509804
+2026-10-06,Gasolio,Basilicata,Pompe Bianche,Stradale,84,22,26.190476190476193
+2026-10-06,Gasolio,Basilicata,Pompe Bianche,Tutte,84,22,26.190476190476193
+2026-10-06,Gasolio,Basilicata,Tutte,Autostradale,4,2,50.0
+2026-10-06,Gasolio,Basilicata,Tutte,Stradale,214,138,64.48598130841121
+2026-10-06,Gasolio,Basilicata,Tutte,Tutte,218,140,64.22018348623854
+2026-10-06,Gasolio,Calabria,Large,Autostradale,2,0,0.0
+2026-10-06,Gasolio,Calabria,Large,Stradale,187,105,56.14973262032086
+2026-10-06,Gasolio,Calabria,Large,Tutte,189,105,55.55555555555556
+2026-10-06,Gasolio,Calabria,Majors,Autostradale,10,10,100.0
+2026-10-06,Gasolio,Calabria,Majors,Stradale,327,292,89.29663608562691
+2026-10-06,Gasolio,Calabria,Majors,Tutte,337,302,89.61424332344214
+2026-10-06,Gasolio,Calabria,Pompe Bianche,Autostradale,3,0,0.0
+2026-10-06,Gasolio,Calabria,Pompe Bianche,Stradale,167,56,33.532934131736525
+2026-10-06,Gasolio,Calabria,Pompe Bianche,Tutte,170,56,32.94117647058823
+2026-10-06,Gasolio,Calabria,Tutte,Autostradale,15,10,66.66666666666666
+2026-10-06,Gasolio,Calabria,Tutte,Stradale,681,453,66.51982378854625
+2026-10-06,Gasolio,Calabria,Tutte,Tutte,696,463,66.52298850574712
+2026-10-06,Gasolio,Campania,Large,Autostradale,14,2,14.285714285714285
+2026-10-06,Gasolio,Campania,Large,Stradale,239,194,81.17154811715481
+2026-10-06,Gasolio,Campania,Large,Tutte,253,196,77.4703557312253
+2026-10-06,Gasolio,Campania,Majors,Autostradale,21,20,95.23809523809523
+2026-10-06,Gasolio,Campania,Majors,Stradale,614,529,86.15635179153095
+2026-10-06,Gasolio,Campania,Majors,Tutte,635,549,86.45669291338582
+2026-10-06,Gasolio,Campania,Pompe Bianche,Autostradale,9,6,66.66666666666666
+2026-10-06,Gasolio,Campania,Pompe Bianche,Stradale,740,422,57.027027027027025
+2026-10-06,Gasolio,Campania,Pompe Bianche,Tutte,749,428,57.14285714285714
+2026-10-06,Gasolio,Campania,Tutte,Autostradale,44,28,63.63636363636363
+2026-10-06,Gasolio,Campania,Tutte,Stradale,1593,1145,71.87696170747017
+2026-10-06,Gasolio,Campania,Tutte,Tutte,1637,1173,71.65546731826512
+2026-10-06,Gasolio,Emilia-Romagna,Large,Autostradale,7,0,0.0
+2026-10-06,Gasolio,Emilia-Romagna,Large,Stradale,238,150,63.02521008403361
+2026-10-06,Gasolio,Emilia-Romagna,Large,Tutte,245,150,61.224489795918366
+2026-10-06,Gasolio,Emilia-Romagna,Majors,Autostradale,27,27,100.0
+2026-10-06,Gasolio,Emilia-Romagna,Majors,Stradale,773,677,87.58085381630013
+2026-10-06,Gasolio,Emilia-Romagna,Majors,Tutte,800,704,88.0
+2026-10-06,Gasolio,Emilia-Romagna,Pompe Bianche,Autostradale,9,5,55.55555555555556
+2026-10-06,Gasolio,Emilia-Romagna,Pompe Bianche,Stradale,576,253,43.92361111111111
+2026-10-06,Gasolio,Emilia-Romagna,Pompe Bianche,Tutte,585,258,44.1025641025641
+2026-10-06,Gasolio,Emilia-Romagna,Tutte,Autostradale,43,32,74.4186046511628
+2026-10-06,Gasolio,Emilia-Romagna,Tutte,Stradale,1587,1080,68.05293005671076
+2026-10-06,Gasolio,Emilia-Romagna,Tutte,Tutte,1630,1112,68.22085889570552
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Large,Autostradale,4,0,0.0
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Large,Stradale,68,44,64.70588235294117
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Large,Tutte,72,44,61.111111111111114
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Majors,Autostradale,3,3,100.0
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Majors,Stradale,242,204,84.29752066115702
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Majors,Tutte,245,207,84.48979591836735
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Autostradale,6,3,50.0
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Stradale,84,37,44.047619047619044
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Tutte,90,40,44.44444444444444
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Tutte,Autostradale,13,6,46.15384615384615
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Tutte,Stradale,394,285,72.33502538071066
+2026-10-06,Gasolio,Friuli-Venezia Giulia,Tutte,Tutte,407,291,71.49877149877149
+2026-10-06,Gasolio,Lazio,Large,Autostradale,6,1,16.666666666666664
+2026-10-06,Gasolio,Lazio,Large,Stradale,231,166,71.86147186147186
+2026-10-06,Gasolio,Lazio,Large,Tutte,237,167,70.46413502109705
+2026-10-06,Gasolio,Lazio,Majors,Autostradale,34,33,97.05882352941177
+2026-10-06,Gasolio,Lazio,Majors,Stradale,1038,900,86.70520231213872
+2026-10-06,Gasolio,Lazio,Majors,Tutte,1072,933,87.03358208955224
+2026-10-06,Gasolio,Lazio,Pompe Bianche,Autostradale,2,2,100.0
+2026-10-06,Gasolio,Lazio,Pompe Bianche,Stradale,581,345,59.380378657487086
+2026-10-06,Gasolio,Lazio,Pompe Bianche,Tutte,583,347,59.51972555746141
+2026-10-06,Gasolio,Lazio,Tutte,Autostradale,42,36,85.71428571428571
+2026-10-06,Gasolio,Lazio,Tutte,Stradale,1850,1411,76.27027027027027
+2026-10-06,Gasolio,Lazio,Tutte,Tutte,1892,1447,76.4799154334038
+2026-10-06,Gasolio,Liguria,Large,Autostradale,13,0,0.0
+2026-10-06,Gasolio,Liguria,Large,Stradale,68,49,72.05882352941177
+2026-10-06,Gasolio,Liguria,Large,Tutte,81,49,60.49382716049383
+2026-10-06,Gasolio,Liguria,Majors,Autostradale,17,17,100.0
+2026-10-06,Gasolio,Liguria,Majors,Stradale,265,240,90.56603773584906
+2026-10-06,Gasolio,Liguria,Majors,Tutte,282,257,91.13475177304964
+2026-10-06,Gasolio,Liguria,Pompe Bianche,Autostradale,3,3,100.0
+2026-10-06,Gasolio,Liguria,Pompe Bianche,Stradale,101,54,53.46534653465347
+2026-10-06,Gasolio,Liguria,Pompe Bianche,Tutte,104,57,54.807692307692314
+2026-10-06,Gasolio,Liguria,Tutte,Autostradale,33,20,60.60606060606061
+2026-10-06,Gasolio,Liguria,Tutte,Stradale,434,343,79.03225806451613
+2026-10-06,Gasolio,Liguria,Tutte,Tutte,467,363,77.73019271948608
+2026-10-06,Gasolio,Lombardia,Large,Autostradale,13,0,0.0
+2026-10-06,Gasolio,Lombardia,Large,Stradale,605,413,68.26446280991736
+2026-10-06,Gasolio,Lombardia,Large,Tutte,618,413,66.8284789644013
+2026-10-06,Gasolio,Lombardia,Majors,Autostradale,44,39,88.63636363636364
+2026-10-06,Gasolio,Lombardia,Majors,Stradale,1323,1200,90.702947845805
+2026-10-06,Gasolio,Lombardia,Majors,Tutte,1367,1239,90.63643013899049
+2026-10-06,Gasolio,Lombardia,Pompe Bianche,Autostradale,3,2,66.66666666666666
+2026-10-06,Gasolio,Lombardia,Pompe Bianche,Stradale,654,228,34.862385321100916
+2026-10-06,Gasolio,Lombardia,Pompe Bianche,Tutte,657,230,35.0076103500761
+2026-10-06,Gasolio,Lombardia,Tutte,Autostradale,60,41,68.33333333333333
+2026-10-06,Gasolio,Lombardia,Tutte,Stradale,2582,1841,71.30131680867544
+2026-10-06,Gasolio,Lombardia,Tutte,Tutte,2642,1882,71.2339137017411
+2026-10-06,Gasolio,Marche,Large,Stradale,151,76,50.331125827814574
+2026-10-06,Gasolio,Marche,Large,Tutte,151,76,50.331125827814574
+2026-10-06,Gasolio,Marche,Majors,Autostradale,10,9,90.0
+2026-10-06,Gasolio,Marche,Majors,Stradale,309,247,79.93527508090615
+2026-10-06,Gasolio,Marche,Majors,Tutte,319,256,80.25078369905955
+2026-10-06,Gasolio,Marche,Pompe Bianche,Autostradale,4,4,100.0
+2026-10-06,Gasolio,Marche,Pompe Bianche,Stradale,200,124,62.0
+2026-10-06,Gasolio,Marche,Pompe Bianche,Tutte,204,128,62.745098039215684
+2026-10-06,Gasolio,Marche,Tutte,Autostradale,14,13,92.85714285714286
+2026-10-06,Gasolio,Marche,Tutte,Stradale,660,447,67.72727272727272
+2026-10-06,Gasolio,Marche,Tutte,Tutte,674,460,68.24925816023739
+2026-10-06,Gasolio,Molise,Large,Autostradale,3,2,66.66666666666666
+2026-10-06,Gasolio,Molise,Large,Stradale,32,14,43.75
+2026-10-06,Gasolio,Molise,Large,Tutte,35,16,45.714285714285715
+2026-10-06,Gasolio,Molise,Majors,Autostradale,2,2,100.0
+2026-10-06,Gasolio,Molise,Majors,Stradale,54,45,83.33333333333334
+2026-10-06,Gasolio,Molise,Majors,Tutte,56,47,83.92857142857143
+2026-10-06,Gasolio,Molise,Pompe Bianche,Stradale,52,21,40.38461538461539
+2026-10-06,Gasolio,Molise,Pompe Bianche,Tutte,52,21,40.38461538461539
+2026-10-06,Gasolio,Molise,Tutte,Autostradale,5,4,80.0
+2026-10-06,Gasolio,Molise,Tutte,Stradale,138,80,57.971014492753625
+2026-10-06,Gasolio,Molise,Tutte,Tutte,143,84,58.74125874125874
+2026-10-06,Gasolio,Piemonte,Large,Autostradale,15,2,13.333333333333334
+2026-10-06,Gasolio,Piemonte,Large,Stradale,322,227,70.4968944099379
+2026-10-06,Gasolio,Piemonte,Large,Tutte,337,229,67.95252225519289
+2026-10-06,Gasolio,Piemonte,Majors,Autostradale,34,33,97.05882352941177
+2026-10-06,Gasolio,Piemonte,Majors,Stradale,793,652,82.21941992433796
+2026-10-06,Gasolio,Piemonte,Majors,Tutte,827,685,82.82950423216445
+2026-10-06,Gasolio,Piemonte,Pompe Bianche,Autostradale,17,8,47.05882352941176
+2026-10-06,Gasolio,Piemonte,Pompe Bianche,Stradale,429,270,62.93706293706294
+2026-10-06,Gasolio,Piemonte,Pompe Bianche,Tutte,446,278,62.33183856502242
+2026-10-06,Gasolio,Piemonte,Tutte,Autostradale,66,43,65.15151515151516
+2026-10-06,Gasolio,Piemonte,Tutte,Stradale,1544,1149,74.41709844559585
+2026-10-06,Gasolio,Piemonte,Tutte,Tutte,1610,1192,74.03726708074534
+2026-10-06,Gasolio,Puglia,Large,Autostradale,12,6,50.0
+2026-10-06,Gasolio,Puglia,Large,Stradale,127,96,75.59055118110236
+2026-10-06,Gasolio,Puglia,Large,Tutte,139,102,73.38129496402878
+2026-10-06,Gasolio,Puglia,Majors,Autostradale,7,7,100.0
+2026-10-06,Gasolio,Puglia,Majors,Stradale,735,674,91.70068027210885
+2026-10-06,Gasolio,Puglia,Majors,Tutte,742,681,91.77897574123989
+2026-10-06,Gasolio,Puglia,Pompe Bianche,Autostradale,14,5,35.714285714285715
+2026-10-06,Gasolio,Puglia,Pompe Bianche,Stradale,491,223,45.41751527494908
+2026-10-06,Gasolio,Puglia,Pompe Bianche,Tutte,505,228,45.14851485148515
+2026-10-06,Gasolio,Puglia,Tutte,Autostradale,33,18,54.54545454545454
+2026-10-06,Gasolio,Puglia,Tutte,Stradale,1353,993,73.39246119733924
+2026-10-06,Gasolio,Puglia,Tutte,Tutte,1386,1011,72.94372294372295
+2026-10-06,Gasolio,Sardegna,Large,Stradale,170,98,57.647058823529406
+2026-10-06,Gasolio,Sardegna,Large,Tutte,170,98,57.647058823529406
+2026-10-06,Gasolio,Sardegna,Majors,Stradale,302,268,88.74172185430463
+2026-10-06,Gasolio,Sardegna,Majors,Tutte,302,268,88.74172185430463
+2026-10-06,Gasolio,Sardegna,Pompe Bianche,Stradale,116,21,18.103448275862068
+2026-10-06,Gasolio,Sardegna,Pompe Bianche,Tutte,116,21,18.103448275862068
+2026-10-06,Gasolio,Sardegna,Tutte,Stradale,588,387,65.81632653061224
+2026-10-06,Gasolio,Sardegna,Tutte,Tutte,588,387,65.81632653061224
+2026-10-06,Gasolio,Sicilia,Large,Autostradale,5,1,20.0
+2026-10-06,Gasolio,Sicilia,Large,Stradale,241,119,49.37759336099585
+2026-10-06,Gasolio,Sicilia,Large,Tutte,246,120,48.78048780487805
+2026-10-06,Gasolio,Sicilia,Majors,Autostradale,16,14,87.5
+2026-10-06,Gasolio,Sicilia,Majors,Stradale,678,608,89.67551622418878
+2026-10-06,Gasolio,Sicilia,Majors,Tutte,694,622,89.62536023054754
+2026-10-06,Gasolio,Sicilia,Pompe Bianche,Autostradale,2,0,0.0
+2026-10-06,Gasolio,Sicilia,Pompe Bianche,Stradale,616,264,42.857142857142854
+2026-10-06,Gasolio,Sicilia,Pompe Bianche,Tutte,618,264,42.71844660194174
+2026-10-06,Gasolio,Sicilia,Tutte,Autostradale,23,15,65.21739130434783
+2026-10-06,Gasolio,Sicilia,Tutte,Stradale,1535,991,64.56026058631922
+2026-10-06,Gasolio,Sicilia,Tutte,Tutte,1558,1006,64.56996148908858
+2026-10-06,Gasolio,Toscana,Large,Autostradale,4,0,0.0
+2026-10-06,Gasolio,Toscana,Large,Stradale,245,131,53.46938775510204
+2026-10-06,Gasolio,Toscana,Large,Tutte,249,131,52.610441767068274
+2026-10-06,Gasolio,Toscana,Majors,Autostradale,24,24,100.0
+2026-10-06,Gasolio,Toscana,Majors,Stradale,715,662,92.58741258741259
+2026-10-06,Gasolio,Toscana,Majors,Tutte,739,686,92.82814614343707
+2026-10-06,Gasolio,Toscana,Pompe Bianche,Autostradale,8,2,25.0
+2026-10-06,Gasolio,Toscana,Pompe Bianche,Stradale,416,127,30.528846153846157
+2026-10-06,Gasolio,Toscana,Pompe Bianche,Tutte,424,129,30.424528301886795
+2026-10-06,Gasolio,Toscana,Tutte,Autostradale,36,26,72.22222222222221
+2026-10-06,Gasolio,Toscana,Tutte,Stradale,1376,920,66.86046511627907
+2026-10-06,Gasolio,Toscana,Tutte,Tutte,1412,946,66.9971671388102
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Large,Autostradale,6,0,0.0
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Large,Stradale,68,31,45.588235294117645
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Large,Tutte,74,31,41.891891891891895
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Majors,Autostradale,7,7,100.0
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Majors,Stradale,189,160,84.65608465608466
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Majors,Tutte,196,167,85.20408163265306
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Autostradale,3,0,0.0
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Stradale,84,9,10.714285714285714
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Tutte,87,9,10.344827586206897
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Autostradale,16,7,43.75
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Stradale,341,200,58.65102639296188
+2026-10-06,Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Tutte,357,207,57.98319327731093
+2026-10-06,Gasolio,Umbria,Large,Autostradale,1,0,0.0
+2026-10-06,Gasolio,Umbria,Large,Stradale,67,46,68.65671641791045
+2026-10-06,Gasolio,Umbria,Large,Tutte,68,46,67.64705882352942
+2026-10-06,Gasolio,Umbria,Majors,Autostradale,3,3,100.0
+2026-10-06,Gasolio,Umbria,Majors,Stradale,221,195,88.23529411764706
+2026-10-06,Gasolio,Umbria,Majors,Tutte,224,198,88.39285714285714
+2026-10-06,Gasolio,Umbria,Pompe Bianche,Stradale,113,57,50.442477876106196
+2026-10-06,Gasolio,Umbria,Pompe Bianche,Tutte,113,57,50.442477876106196
+2026-10-06,Gasolio,Umbria,Tutte,Autostradale,4,3,75.0
+2026-10-06,Gasolio,Umbria,Tutte,Stradale,401,298,74.3142144638404
+2026-10-06,Gasolio,Umbria,Tutte,Tutte,405,301,74.32098765432099
+2026-10-06,Gasolio,Valle d'Aosta,Large,Stradale,14,10,71.42857142857143
+2026-10-06,Gasolio,Valle d'Aosta,Large,Tutte,14,10,71.42857142857143
+2026-10-06,Gasolio,Valle d'Aosta,Majors,Autostradale,3,3,100.0
+2026-10-06,Gasolio,Valle d'Aosta,Majors,Stradale,23,23,100.0
+2026-10-06,Gasolio,Valle d'Aosta,Majors,Tutte,26,26,100.0
+2026-10-06,Gasolio,Valle d'Aosta,Pompe Bianche,Autostradale,1,0,0.0
+2026-10-06,Gasolio,Valle d'Aosta,Pompe Bianche,Stradale,25,14,56.00000000000001
+2026-10-06,Gasolio,Valle d'Aosta,Pompe Bianche,Tutte,26,14,53.84615384615385
+2026-10-06,Gasolio,Valle d'Aosta,Tutte,Autostradale,4,3,75.0
+2026-10-06,Gasolio,Valle d'Aosta,Tutte,Stradale,62,47,75.80645161290323
+2026-10-06,Gasolio,Valle d'Aosta,Tutte,Tutte,66,50,75.75757575757575
+2026-10-06,Gasolio,Veneto,Large,Autostradale,9,0,0.0
+2026-10-06,Gasolio,Veneto,Large,Stradale,257,183,71.20622568093385
+2026-10-06,Gasolio,Veneto,Large,Tutte,266,183,68.796992481203
+2026-10-06,Gasolio,Veneto,Majors,Autostradale,21,20,95.23809523809523
+2026-10-06,Gasolio,Veneto,Majors,Stradale,669,640,95.66517189835575
+2026-10-06,Gasolio,Veneto,Majors,Tutte,690,660,95.65217391304348
+2026-10-06,Gasolio,Veneto,Pompe Bianche,Autostradale,6,0,0.0
+2026-10-06,Gasolio,Veneto,Pompe Bianche,Stradale,739,363,49.12043301759134
+2026-10-06,Gasolio,Veneto,Pompe Bianche,Tutte,745,363,48.7248322147651
+2026-10-06,Gasolio,Veneto,Tutte,Autostradale,36,20,55.55555555555556
+2026-10-06,Gasolio,Veneto,Tutte,Stradale,1665,1186,71.23123123123123
+2026-10-06,Gasolio,Veneto,Tutte,Tutte,1701,1206,70.8994708994709
+2026-10-06,Gasolio,Tutte,Large,Autostradale,118,14,11.864406779661017
+2026-10-06,Gasolio,Tutte,Large,Stradale,3427,2218,64.72133060986286
+2026-10-06,Gasolio,Tutte,Large,Tutte,3545,2232,62.96191819464034
+2026-10-06,Gasolio,Tutte,Majors,Autostradale,303,281,92.73927392739274
+2026-10-06,Gasolio,Tutte,Majors,Stradale,9658,8542,88.44481259059846
+2026-10-06,Gasolio,Tutte,Majors,Tutte,9961,8823,88.57544423250677
+2026-10-06,Gasolio,Tutte,Pompe Bianche,Autostradale,96,43,44.79166666666667
+2026-10-06,Gasolio,Tutte,Pompe Bianche,Stradale,6458,3012,46.63982657169402
+2026-10-06,Gasolio,Tutte,Pompe Bianche,Tutte,6554,3055,46.6127555691181
+2026-10-06,Gasolio,Tutte,Tutte,Autostradale,517,338,65.37717601547389
+2026-10-06,Gasolio,Tutte,Tutte,Stradale,19543,13772,70.47024510054752
+2026-10-06,Gasolio,Tutte,Tutte,Tutte,20060,14110,70.33898305084746
+2026-10-07,Benzina,Abruzzo,Large,Autostradale,4,0,0.0
+2026-10-07,Benzina,Abruzzo,Large,Stradale,66,23,34.84848484848485
+2026-10-07,Benzina,Abruzzo,Large,Tutte,70,23,32.857142857142854
+2026-10-07,Benzina,Abruzzo,Majors,Autostradale,12,8,66.66666666666666
+2026-10-07,Benzina,Abruzzo,Majors,Stradale,292,198,67.8082191780822
+2026-10-07,Benzina,Abruzzo,Majors,Tutte,304,206,67.76315789473685
+2026-10-07,Benzina,Abruzzo,Pompe Bianche,Autostradale,3,2,66.66666666666666
+2026-10-07,Benzina,Abruzzo,Pompe Bianche,Stradale,190,77,40.526315789473685
+2026-10-07,Benzina,Abruzzo,Pompe Bianche,Tutte,193,79,40.932642487046635
+2026-10-07,Benzina,Abruzzo,Tutte,Autostradale,19,10,52.63157894736842
+2026-10-07,Benzina,Abruzzo,Tutte,Stradale,548,298,54.379562043795616
+2026-10-07,Benzina,Abruzzo,Tutte,Tutte,567,308,54.32098765432099
+2026-10-07,Benzina,Basilicata,Large,Stradale,32,12,37.5
+2026-10-07,Benzina,Basilicata,Large,Tutte,32,12,37.5
+2026-10-07,Benzina,Basilicata,Majors,Autostradale,2,1,50.0
+2026-10-07,Benzina,Basilicata,Majors,Stradale,101,78,77.22772277227723
+2026-10-07,Benzina,Basilicata,Majors,Tutte,103,79,76.69902912621359
+2026-10-07,Benzina,Basilicata,Pompe Bianche,Stradale,84,3,3.571428571428571
+2026-10-07,Benzina,Basilicata,Pompe Bianche,Tutte,84,3,3.571428571428571
+2026-10-07,Benzina,Basilicata,Tutte,Autostradale,2,1,50.0
+2026-10-07,Benzina,Basilicata,Tutte,Stradale,217,93,42.857142857142854
+2026-10-07,Benzina,Basilicata,Tutte,Tutte,219,94,42.922374429223744
+2026-10-07,Benzina,Calabria,Large,Autostradale,2,0,0.0
+2026-10-07,Benzina,Calabria,Large,Stradale,187,83,44.38502673796791
+2026-10-07,Benzina,Calabria,Large,Tutte,189,83,43.91534391534391
+2026-10-07,Benzina,Calabria,Majors,Autostradale,10,10,100.0
+2026-10-07,Benzina,Calabria,Majors,Stradale,324,251,77.46913580246914
+2026-10-07,Benzina,Calabria,Majors,Tutte,334,261,78.1437125748503
+2026-10-07,Benzina,Calabria,Pompe Bianche,Autostradale,3,0,0.0
+2026-10-07,Benzina,Calabria,Pompe Bianche,Stradale,166,35,21.084337349397593
+2026-10-07,Benzina,Calabria,Pompe Bianche,Tutte,169,35,20.710059171597635
+2026-10-07,Benzina,Calabria,Tutte,Autostradale,15,10,66.66666666666666
+2026-10-07,Benzina,Calabria,Tutte,Stradale,677,369,54.505169867060566
+2026-10-07,Benzina,Calabria,Tutte,Tutte,692,379,54.76878612716764
+2026-10-07,Benzina,Campania,Large,Autostradale,12,1,8.333333333333332
+2026-10-07,Benzina,Campania,Large,Stradale,239,109,45.60669456066946
+2026-10-07,Benzina,Campania,Large,Tutte,251,110,43.82470119521912
+2026-10-07,Benzina,Campania,Majors,Autostradale,20,20,100.0
+2026-10-07,Benzina,Campania,Majors,Stradale,618,438,70.87378640776699
+2026-10-07,Benzina,Campania,Majors,Tutte,638,458,71.78683385579937
+2026-10-07,Benzina,Campania,Pompe Bianche,Autostradale,5,4,80.0
+2026-10-07,Benzina,Campania,Pompe Bianche,Stradale,738,197,26.693766937669377
+2026-10-07,Benzina,Campania,Pompe Bianche,Tutte,743,201,27.052489905787347
+2026-10-07,Benzina,Campania,Tutte,Autostradale,37,25,67.56756756756756
+2026-10-07,Benzina,Campania,Tutte,Stradale,1595,744,46.64576802507837
+2026-10-07,Benzina,Campania,Tutte,Tutte,1632,769,47.120098039215684
+2026-10-07,Benzina,Emilia-Romagna,Large,Autostradale,7,0,0.0
+2026-10-07,Benzina,Emilia-Romagna,Large,Stradale,240,94,39.166666666666664
+2026-10-07,Benzina,Emilia-Romagna,Large,Tutte,247,94,38.05668016194332
+2026-10-07,Benzina,Emilia-Romagna,Majors,Autostradale,28,27,96.42857142857143
+2026-10-07,Benzina,Emilia-Romagna,Majors,Stradale,776,583,75.12886597938144
+2026-10-07,Benzina,Emilia-Romagna,Majors,Tutte,804,610,75.87064676616916
+2026-10-07,Benzina,Emilia-Romagna,Pompe Bianche,Autostradale,5,3,60.0
+2026-10-07,Benzina,Emilia-Romagna,Pompe Bianche,Stradale,578,130,22.491349480968857
+2026-10-07,Benzina,Emilia-Romagna,Pompe Bianche,Tutte,583,133,22.81303602058319
+2026-10-07,Benzina,Emilia-Romagna,Tutte,Autostradale,40,30,75.0
+2026-10-07,Benzina,Emilia-Romagna,Tutte,Stradale,1594,807,50.62735257214555
+2026-10-07,Benzina,Emilia-Romagna,Tutte,Tutte,1634,837,51.22399020807834
+2026-10-07,Benzina,Friuli-Venezia Giulia,Large,Autostradale,3,0,0.0
+2026-10-07,Benzina,Friuli-Venezia Giulia,Large,Stradale,68,8,11.76470588235294
+2026-10-07,Benzina,Friuli-Venezia Giulia,Large,Tutte,71,8,11.267605633802818
+2026-10-07,Benzina,Friuli-Venezia Giulia,Majors,Autostradale,2,2,100.0
+2026-10-07,Benzina,Friuli-Venezia Giulia,Majors,Stradale,242,185,76.44628099173553
+2026-10-07,Benzina,Friuli-Venezia Giulia,Majors,Tutte,244,187,76.63934426229508
+2026-10-07,Benzina,Friuli-Venezia Giulia,Pompe Bianche,Autostradale,4,1,25.0
+2026-10-07,Benzina,Friuli-Venezia Giulia,Pompe Bianche,Stradale,84,15,17.857142857142858
+2026-10-07,Benzina,Friuli-Venezia Giulia,Pompe Bianche,Tutte,88,16,18.181818181818183
+2026-10-07,Benzina,Friuli-Venezia Giulia,Tutte,Autostradale,9,3,33.33333333333333
+2026-10-07,Benzina,Friuli-Venezia Giulia,Tutte,Stradale,394,208,52.79187817258884
+2026-10-07,Benzina,Friuli-Venezia Giulia,Tutte,Tutte,403,211,52.357320099255574
+2026-10-07,Benzina,Lazio,Large,Autostradale,5,1,20.0
+2026-10-07,Benzina,Lazio,Large,Stradale,234,156,66.66666666666666
+2026-10-07,Benzina,Lazio,Large,Tutte,239,157,65.69037656903765
+2026-10-07,Benzina,Lazio,Majors,Autostradale,34,34,100.0
+2026-10-07,Benzina,Lazio,Majors,Stradale,1043,805,77.18120805369128
+2026-10-07,Benzina,Lazio,Majors,Tutte,1077,839,77.90157845868151
+2026-10-07,Benzina,Lazio,Pompe Bianche,Autostradale,1,1,100.0
+2026-10-07,Benzina,Lazio,Pompe Bianche,Stradale,584,266,45.54794520547945
+2026-10-07,Benzina,Lazio,Pompe Bianche,Tutte,585,267,45.64102564102564
+2026-10-07,Benzina,Lazio,Tutte,Autostradale,40,36,90.0
+2026-10-07,Benzina,Lazio,Tutte,Stradale,1861,1227,65.93229446534122
+2026-10-07,Benzina,Lazio,Tutte,Tutte,1901,1263,66.43871646501842
+2026-10-07,Benzina,Liguria,Large,Autostradale,12,0,0.0
+2026-10-07,Benzina,Liguria,Large,Stradale,68,31,45.588235294117645
+2026-10-07,Benzina,Liguria,Large,Tutte,80,31,38.75
+2026-10-07,Benzina,Liguria,Majors,Autostradale,16,16,100.0
+2026-10-07,Benzina,Liguria,Majors,Stradale,264,212,80.3030303030303
+2026-10-07,Benzina,Liguria,Majors,Tutte,280,228,81.42857142857143
+2026-10-07,Benzina,Liguria,Pompe Bianche,Autostradale,2,2,100.0
+2026-10-07,Benzina,Liguria,Pompe Bianche,Stradale,103,16,15.53398058252427
+2026-10-07,Benzina,Liguria,Pompe Bianche,Tutte,105,18,17.142857142857142
+2026-10-07,Benzina,Liguria,Tutte,Autostradale,30,18,60.0
+2026-10-07,Benzina,Liguria,Tutte,Stradale,435,259,59.54022988505747
+2026-10-07,Benzina,Liguria,Tutte,Tutte,465,277,59.56989247311828
+2026-10-07,Benzina,Lombardia,Large,Autostradale,13,0,0.0
+2026-10-07,Benzina,Lombardia,Large,Stradale,619,316,51.050080775444265
+2026-10-07,Benzina,Lombardia,Large,Tutte,632,316,50.0
+2026-10-07,Benzina,Lombardia,Majors,Autostradale,42,40,95.23809523809523
+2026-10-07,Benzina,Lombardia,Majors,Stradale,1329,977,73.51392024078255
+2026-10-07,Benzina,Lombardia,Majors,Tutte,1371,1017,74.17943107221006
+2026-10-07,Benzina,Lombardia,Pompe Bianche,Autostradale,2,1,50.0
+2026-10-07,Benzina,Lombardia,Pompe Bianche,Stradale,659,129,19.575113808801213
+2026-10-07,Benzina,Lombardia,Pompe Bianche,Tutte,661,130,19.667170953101362
+2026-10-07,Benzina,Lombardia,Tutte,Autostradale,57,41,71.9298245614035
+2026-10-07,Benzina,Lombardia,Tutte,Stradale,2607,1422,54.54545454545454
+2026-10-07,Benzina,Lombardia,Tutte,Tutte,2664,1463,54.91741741741741
+2026-10-07,Benzina,Marche,Large,Stradale,152,46,30.263157894736842
+2026-10-07,Benzina,Marche,Large,Tutte,152,46,30.263157894736842
+2026-10-07,Benzina,Marche,Majors,Autostradale,10,9,90.0
+2026-10-07,Benzina,Marche,Majors,Stradale,309,219,70.87378640776699
+2026-10-07,Benzina,Marche,Majors,Tutte,319,228,71.47335423197492
+2026-10-07,Benzina,Marche,Pompe Bianche,Autostradale,2,2,100.0
+2026-10-07,Benzina,Marche,Pompe Bianche,Stradale,203,93,45.812807881773395
+2026-10-07,Benzina,Marche,Pompe Bianche,Tutte,205,95,46.34146341463415
+2026-10-07,Benzina,Marche,Tutte,Autostradale,12,11,91.66666666666666
+2026-10-07,Benzina,Marche,Tutte,Stradale,664,358,53.915662650602414
+2026-10-07,Benzina,Marche,Tutte,Tutte,676,369,54.585798816568044
+2026-10-07,Benzina,Molise,Large,Autostradale,2,1,50.0
+2026-10-07,Benzina,Molise,Large,Stradale,32,7,21.875
+2026-10-07,Benzina,Molise,Large,Tutte,34,8,23.52941176470588
+2026-10-07,Benzina,Molise,Majors,Autostradale,1,1,100.0
+2026-10-07,Benzina,Molise,Majors,Stradale,54,37,68.51851851851852
+2026-10-07,Benzina,Molise,Majors,Tutte,55,38,69.0909090909091
+2026-10-07,Benzina,Molise,Pompe Bianche,Stradale,53,15,28.30188679245283
+2026-10-07,Benzina,Molise,Pompe Bianche,Tutte,53,15,28.30188679245283
+2026-10-07,Benzina,Molise,Tutte,Autostradale,3,2,66.66666666666666
+2026-10-07,Benzina,Molise,Tutte,Stradale,139,59,42.44604316546763
+2026-10-07,Benzina,Molise,Tutte,Tutte,142,61,42.95774647887324
+2026-10-07,Benzina,Piemonte,Large,Autostradale,13,1,7.6923076923076925
+2026-10-07,Benzina,Piemonte,Large,Stradale,320,176,55.00000000000001
+2026-10-07,Benzina,Piemonte,Large,Tutte,333,177,53.153153153153156
+2026-10-07,Benzina,Piemonte,Majors,Autostradale,33,32,96.96969696969697
+2026-10-07,Benzina,Piemonte,Majors,Stradale,790,554,70.12658227848101
+2026-10-07,Benzina,Piemonte,Majors,Tutte,823,586,71.20291616038882
+2026-10-07,Benzina,Piemonte,Pompe Bianche,Autostradale,9,5,55.55555555555556
+2026-10-07,Benzina,Piemonte,Pompe Bianche,Stradale,430,127,29.53488372093023
+2026-10-07,Benzina,Piemonte,Pompe Bianche,Tutte,439,132,30.068337129840543
+2026-10-07,Benzina,Piemonte,Tutte,Autostradale,55,38,69.0909090909091
+2026-10-07,Benzina,Piemonte,Tutte,Stradale,1540,857,55.64935064935065
+2026-10-07,Benzina,Piemonte,Tutte,Tutte,1595,895,56.112852664576806
+2026-10-07,Benzina,Puglia,Large,Autostradale,6,3,50.0
+2026-10-07,Benzina,Puglia,Large,Stradale,127,76,59.84251968503938
+2026-10-07,Benzina,Puglia,Large,Tutte,133,79,59.3984962406015
+2026-10-07,Benzina,Puglia,Majors,Autostradale,5,5,100.0
+2026-10-07,Benzina,Puglia,Majors,Stradale,739,567,76.72530446549392
+2026-10-07,Benzina,Puglia,Majors,Tutte,744,572,76.88172043010752
+2026-10-07,Benzina,Puglia,Pompe Bianche,Autostradale,7,2,28.57142857142857
+2026-10-07,Benzina,Puglia,Pompe Bianche,Stradale,490,134,27.346938775510203
+2026-10-07,Benzina,Puglia,Pompe Bianche,Tutte,497,136,27.364185110663986
+2026-10-07,Benzina,Puglia,Tutte,Autostradale,18,10,55.55555555555556
+2026-10-07,Benzina,Puglia,Tutte,Stradale,1356,777,57.30088495575221
+2026-10-07,Benzina,Puglia,Tutte,Tutte,1374,787,57.278020378457065
+2026-10-07,Benzina,Sardegna,Large,Stradale,170,52,30.58823529411765
+2026-10-07,Benzina,Sardegna,Large,Tutte,170,52,30.58823529411765
+2026-10-07,Benzina,Sardegna,Majors,Stradale,304,261,85.85526315789474
+2026-10-07,Benzina,Sardegna,Majors,Tutte,304,261,85.85526315789474
+2026-10-07,Benzina,Sardegna,Pompe Bianche,Stradale,115,9,7.82608695652174
+2026-10-07,Benzina,Sardegna,Pompe Bianche,Tutte,115,9,7.82608695652174
+2026-10-07,Benzina,Sardegna,Tutte,Stradale,589,322,54.66893039049236
+2026-10-07,Benzina,Sardegna,Tutte,Tutte,589,322,54.66893039049236
+2026-10-07,Benzina,Sicilia,Large,Autostradale,4,0,0.0
+2026-10-07,Benzina,Sicilia,Large,Stradale,241,97,40.24896265560166
+2026-10-07,Benzina,Sicilia,Large,Tutte,245,97,39.59183673469388
+2026-10-07,Benzina,Sicilia,Majors,Autostradale,13,11,84.61538461538461
+2026-10-07,Benzina,Sicilia,Majors,Stradale,683,596,87.26207906295754
+2026-10-07,Benzina,Sicilia,Majors,Tutte,696,607,87.21264367816092
+2026-10-07,Benzina,Sicilia,Pompe Bianche,Autostradale,1,0,0.0
+2026-10-07,Benzina,Sicilia,Pompe Bianche,Stradale,618,201,32.5242718446602
+2026-10-07,Benzina,Sicilia,Pompe Bianche,Tutte,619,201,32.47172859450727
+2026-10-07,Benzina,Sicilia,Tutte,Autostradale,18,11,61.111111111111114
+2026-10-07,Benzina,Sicilia,Tutte,Stradale,1542,894,57.97665369649806
+2026-10-07,Benzina,Sicilia,Tutte,Tutte,1560,905,58.01282051282052
+2026-10-07,Benzina,Toscana,Large,Autostradale,4,0,0.0
+2026-10-07,Benzina,Toscana,Large,Stradale,245,92,37.55102040816327
+2026-10-07,Benzina,Toscana,Large,Tutte,249,92,36.94779116465863
+2026-10-07,Benzina,Toscana,Majors,Autostradale,22,22,100.0
+2026-10-07,Benzina,Toscana,Majors,Stradale,723,584,80.77455048409405
+2026-10-07,Benzina,Toscana,Majors,Tutte,745,606,81.34228187919463
+2026-10-07,Benzina,Toscana,Pompe Bianche,Autostradale,4,1,25.0
+2026-10-07,Benzina,Toscana,Pompe Bianche,Stradale,416,74,17.78846153846154
+2026-10-07,Benzina,Toscana,Pompe Bianche,Tutte,420,75,17.857142857142858
+2026-10-07,Benzina,Toscana,Tutte,Autostradale,30,23,76.66666666666667
+2026-10-07,Benzina,Toscana,Tutte,Stradale,1384,750,54.190751445086704
+2026-10-07,Benzina,Toscana,Tutte,Tutte,1414,773,54.66760961810466
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Large,Autostradale,6,1,16.666666666666664
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Large,Stradale,69,21,30.434782608695656
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Large,Tutte,75,22,29.333333333333332
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Majors,Autostradale,6,6,100.0
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Majors,Stradale,189,143,75.66137566137566
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Majors,Tutte,195,149,76.41025641025641
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Autostradale,2,1,50.0
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Stradale,84,3,3.571428571428571
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Pompe Bianche,Tutte,86,4,4.651162790697675
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Tutte,Autostradale,14,8,57.14285714285714
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Tutte,Stradale,342,167,48.83040935672515
+2026-10-07,Benzina,Trentino-Alto Adige/Südtirol,Tutte,Tutte,356,175,49.157303370786515
+2026-10-07,Benzina,Umbria,Large,Autostradale,1,0,0.0
+2026-10-07,Benzina,Umbria,Large,Stradale,67,32,47.76119402985074
+2026-10-07,Benzina,Umbria,Large,Tutte,68,32,47.05882352941176
+2026-10-07,Benzina,Umbria,Majors,Autostradale,3,3,100.0
+2026-10-07,Benzina,Umbria,Majors,Stradale,220,138,62.727272727272734
+2026-10-07,Benzina,Umbria,Majors,Tutte,223,141,63.22869955156951
+2026-10-07,Benzina,Umbria,Pompe Bianche,Stradale,115,36,31.30434782608696
+2026-10-07,Benzina,Umbria,Pompe Bianche,Tutte,115,36,31.30434782608696
+2026-10-07,Benzina,Umbria,Tutte,Autostradale,4,3,75.0
+2026-10-07,Benzina,Umbria,Tutte,Stradale,402,206,51.243781094527364
+2026-10-07,Benzina,Umbria,Tutte,Tutte,406,209,51.47783251231527
+2026-10-07,Benzina,Valle d'Aosta,Large,Stradale,14,7,50.0
+2026-10-07,Benzina,Valle d'Aosta,Large,Tutte,14,7,50.0
+2026-10-07,Benzina,Valle d'Aosta,Majors,Autostradale,3,3,100.0
+2026-10-07,Benzina,Valle d'Aosta,Majors,Stradale,23,20,86.95652173913044
+2026-10-07,Benzina,Valle d'Aosta,Majors,Tutte,26,23,88.46153846153845
+2026-10-07,Benzina,Valle d'Aosta,Pompe Bianche,Autostradale,1,0,0.0
+2026-10-07,Benzina,Valle d'Aosta,Pompe Bianche,Stradale,26,5,19.230769230769234
+2026-10-07,Benzina,Valle d'Aosta,Pompe Bianche,Tutte,27,5,18.51851851851852
+2026-10-07,Benzina,Valle d'Aosta,Tutte,Autostradale,4,3,75.0
+2026-10-07,Benzina,Valle d'Aosta,Tutte,Stradale,63,32,50.79365079365079
+2026-10-07,Benzina,Valle d'Aosta,Tutte,Tutte,67,35,52.23880597014925
+2026-10-07,Benzina,Veneto,Large,Autostradale,9,2,22.22222222222222
+2026-10-07,Benzina,Veneto,Large,Stradale,265,141,53.20754716981132
+2026-10-07,Benzina,Veneto,Large,Tutte,274,143,52.18978102189781
+2026-10-07,Benzina,Veneto,Majors,Autostradale,20,18,90.0
+2026-10-07,Benzina,Veneto,Majors,Stradale,671,592,88.22652757078987
+2026-10-07,Benzina,Veneto,Majors,Tutte,691,610,88.27785817655571
+2026-10-07,Benzina,Veneto,Pompe Bianche,Autostradale,4,0,0.0
+2026-10-07,Benzina,Veneto,Pompe Bianche,Stradale,752,213,28.324468085106385
+2026-10-07,Benzina,Veneto,Pompe Bianche,Tutte,756,213,28.174603174603174
+2026-10-07,Benzina,Veneto,Tutte,Autostradale,33,20,60.60606060606061
+2026-10-07,Benzina,Veneto,Tutte,Stradale,1688,946,56.042654028436026
+2026-10-07,Benzina,Veneto,Tutte,Tutte,1721,966,56.13015688553167
+2026-10-07,Benzina,Tutte,Large,Autostradale,103,10,9.70873786407767
+2026-10-07,Benzina,Tutte,Large,Stradale,3455,1579,45.70188133140377
+2026-10-07,Benzina,Tutte,Large,Tutte,3558,1589,44.65992130410343
+2026-10-07,Benzina,Tutte,Majors,Autostradale,282,268,95.0354609929078
+2026-10-07,Benzina,Tutte,Majors,Stradale,9694,7438,76.72787291107902
+2026-10-07,Benzina,Tutte,Majors,Tutte,9976,7706,77.24538893344027
+2026-10-07,Benzina,Tutte,Pompe Bianche,Autostradale,55,25,45.45454545454545
+2026-10-07,Benzina,Tutte,Pompe Bianche,Stradale,6488,1778,27.404438964241677
+2026-10-07,Benzina,Tutte,Pompe Bianche,Tutte,6543,1803,27.556166895919304
+2026-10-07,Benzina,Tutte,Tutte,Autostradale,440,303,68.86363636363636
+2026-10-07,Benzina,Tutte,Tutte,Stradale,19637,10795,54.97275551255283
+2026-10-07,Benzina,Tutte,Tutte,Tutte,20077,11098,55.27718284604274
+2026-10-07,Gasolio,Abruzzo,Large,Autostradale,4,0,0.0
+2026-10-07,Gasolio,Abruzzo,Large,Stradale,66,39,59.09090909090909
+2026-10-07,Gasolio,Abruzzo,Large,Tutte,70,39,55.714285714285715
+2026-10-07,Gasolio,Abruzzo,Majors,Autostradale,16,8,50.0
+2026-10-07,Gasolio,Abruzzo,Majors,Stradale,292,232,79.45205479452055
+2026-10-07,Gasolio,Abruzzo,Majors,Tutte,308,240,77.92207792207793
+2026-10-07,Gasolio,Abruzzo,Pompe Bianche,Autostradale,6,3,50.0
+2026-10-07,Gasolio,Abruzzo,Pompe Bianche,Stradale,190,99,52.10526315789473
+2026-10-07,Gasolio,Abruzzo,Pompe Bianche,Tutte,196,102,52.04081632653062
+2026-10-07,Gasolio,Abruzzo,Tutte,Autostradale,26,11,42.30769230769231
+2026-10-07,Gasolio,Abruzzo,Tutte,Stradale,548,370,67.51824817518248
+2026-10-07,Gasolio,Abruzzo,Tutte,Tutte,574,381,66.37630662020906
+2026-10-07,Gasolio,Basilicata,Large,Stradale,32,15,46.875
+2026-10-07,Gasolio,Basilicata,Large,Tutte,32,15,46.875
+2026-10-07,Gasolio,Basilicata,Majors,Autostradale,4,2,50.0
+2026-10-07,Gasolio,Basilicata,Majors,Stradale,100,87,87.0
+2026-10-07,Gasolio,Basilicata,Majors,Tutte,104,89,85.57692307692307
+2026-10-07,Gasolio,Basilicata,Pompe Bianche,Stradale,84,18,21.428571428571427
+2026-10-07,Gasolio,Basilicata,Pompe Bianche,Tutte,84,18,21.428571428571427
+2026-10-07,Gasolio,Basilicata,Tutte,Autostradale,4,2,50.0
+2026-10-07,Gasolio,Basilicata,Tutte,Stradale,216,120,55.55555555555556
+2026-10-07,Gasolio,Basilicata,Tutte,Tutte,220,122,55.45454545454545
+2026-10-07,Gasolio,Calabria,Large,Autostradale,2,0,0.0
+2026-10-07,Gasolio,Calabria,Large,Stradale,187,110,58.82352941176471
+2026-10-07,Gasolio,Calabria,Large,Tutte,189,110,58.201058201058196
+2026-10-07,Gasolio,Calabria,Majors,Autostradale,10,9,90.0
+2026-10-07,Gasolio,Calabria,Majors,Stradale,325,263,80.92307692307692
+2026-10-07,Gasolio,Calabria,Majors,Tutte,335,272,81.19402985074626
+2026-10-07,Gasolio,Calabria,Pompe Bianche,Autostradale,3,0,0.0
+2026-10-07,Gasolio,Calabria,Pompe Bianche,Stradale,167,54,32.33532934131736
+2026-10-07,Gasolio,Calabria,Pompe Bianche,Tutte,170,54,31.76470588235294
+2026-10-07,Gasolio,Calabria,Tutte,Autostradale,15,9,60.0
+2026-10-07,Gasolio,Calabria,Tutte,Stradale,679,427,62.88659793814433
+2026-10-07,Gasolio,Calabria,Tutte,Tutte,694,436,62.824207492795395
+2026-10-07,Gasolio,Campania,Large,Autostradale,14,2,14.285714285714285
+2026-10-07,Gasolio,Campania,Large,Stradale,239,138,57.74058577405857
+2026-10-07,Gasolio,Campania,Large,Tutte,253,140,55.33596837944664
+2026-10-07,Gasolio,Campania,Majors,Autostradale,21,21,100.0
+2026-10-07,Gasolio,Campania,Majors,Stradale,610,471,77.21311475409836
+2026-10-07,Gasolio,Campania,Majors,Tutte,631,492,77.97147385103011
+2026-10-07,Gasolio,Campania,Pompe Bianche,Autostradale,9,6,66.66666666666666
+2026-10-07,Gasolio,Campania,Pompe Bianche,Stradale,739,397,53.72124492557511
+2026-10-07,Gasolio,Campania,Pompe Bianche,Tutte,748,403,53.87700534759359
+2026-10-07,Gasolio,Campania,Tutte,Autostradale,44,29,65.9090909090909
+2026-10-07,Gasolio,Campania,Tutte,Stradale,1588,1006,63.35012594458438
+2026-10-07,Gasolio,Campania,Tutte,Tutte,1632,1035,63.41911764705882
+2026-10-07,Gasolio,Emilia-Romagna,Large,Autostradale,7,0,0.0
+2026-10-07,Gasolio,Emilia-Romagna,Large,Stradale,238,120,50.42016806722689
+2026-10-07,Gasolio,Emilia-Romagna,Large,Tutte,245,120,48.97959183673469
+2026-10-07,Gasolio,Emilia-Romagna,Majors,Autostradale,28,28,100.0
+2026-10-07,Gasolio,Emilia-Romagna,Majors,Stradale,773,627,81.11254851228978
+2026-10-07,Gasolio,Emilia-Romagna,Majors,Tutte,801,655,81.77278401997503
+2026-10-07,Gasolio,Emilia-Romagna,Pompe Bianche,Autostradale,9,5,55.55555555555556
+2026-10-07,Gasolio,Emilia-Romagna,Pompe Bianche,Stradale,576,242,42.01388888888889
+2026-10-07,Gasolio,Emilia-Romagna,Pompe Bianche,Tutte,585,247,42.22222222222222
+2026-10-07,Gasolio,Emilia-Romagna,Tutte,Autostradale,44,33,75.0
+2026-10-07,Gasolio,Emilia-Romagna,Tutte,Stradale,1587,989,62.31884057971014
+2026-10-07,Gasolio,Emilia-Romagna,Tutte,Tutte,1631,1022,62.66094420600859
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Large,Autostradale,4,0,0.0
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Large,Stradale,68,17,25.0
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Large,Tutte,72,17,23.61111111111111
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Majors,Autostradale,3,3,100.0
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Majors,Stradale,242,186,76.85950413223141
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Majors,Tutte,245,189,77.14285714285715
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Autostradale,6,2,33.33333333333333
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Stradale,84,39,46.42857142857143
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Pompe Bianche,Tutte,90,41,45.55555555555556
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Tutte,Autostradale,13,5,38.46153846153847
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Tutte,Stradale,394,242,61.42131979695431
+2026-10-07,Gasolio,Friuli-Venezia Giulia,Tutte,Tutte,407,247,60.68796068796068
+2026-10-07,Gasolio,Lazio,Large,Autostradale,6,1,16.666666666666664
+2026-10-07,Gasolio,Lazio,Large,Stradale,230,167,72.60869565217392
+2026-10-07,Gasolio,Lazio,Large,Tutte,236,168,71.1864406779661
+2026-10-07,Gasolio,Lazio,Majors,Autostradale,34,34,100.0
+2026-10-07,Gasolio,Lazio,Majors,Stradale,1041,839,80.59558117195004
+2026-10-07,Gasolio,Lazio,Majors,Tutte,1075,873,81.2093023255814
+2026-10-07,Gasolio,Lazio,Pompe Bianche,Autostradale,2,2,100.0
+2026-10-07,Gasolio,Lazio,Pompe Bianche,Stradale,580,330,56.896551724137936
+2026-10-07,Gasolio,Lazio,Pompe Bianche,Tutte,582,332,57.0446735395189
+2026-10-07,Gasolio,Lazio,Tutte,Autostradale,42,37,88.09523809523809
+2026-10-07,Gasolio,Lazio,Tutte,Stradale,1851,1336,72.17720151269585
+2026-10-07,Gasolio,Lazio,Tutte,Tutte,1893,1373,72.53037506603275
+2026-10-07,Gasolio,Liguria,Large,Autostradale,13,0,0.0
+2026-10-07,Gasolio,Liguria,Large,Stradale,68,43,63.23529411764706
+2026-10-07,Gasolio,Liguria,Large,Tutte,81,43,53.086419753086425
+2026-10-07,Gasolio,Liguria,Majors,Autostradale,17,17,100.0
+2026-10-07,Gasolio,Liguria,Majors,Stradale,263,223,84.79087452471484
+2026-10-07,Gasolio,Liguria,Majors,Tutte,280,240,85.71428571428571
+2026-10-07,Gasolio,Liguria,Pompe Bianche,Autostradale,3,3,100.0
+2026-10-07,Gasolio,Liguria,Pompe Bianche,Stradale,101,23,22.772277227722775
+2026-10-07,Gasolio,Liguria,Pompe Bianche,Tutte,104,26,25.0
+2026-10-07,Gasolio,Liguria,Tutte,Autostradale,33,20,60.60606060606061
+2026-10-07,Gasolio,Liguria,Tutte,Stradale,432,289,66.89814814814815
+2026-10-07,Gasolio,Liguria,Tutte,Tutte,465,309,66.45161290322581
+2026-10-07,Gasolio,Lombardia,Large,Autostradale,14,1,7.142857142857142
+2026-10-07,Gasolio,Lombardia,Large,Stradale,605,389,64.29752066115702
+2026-10-07,Gasolio,Lombardia,Large,Tutte,619,390,63.004846526655896
+2026-10-07,Gasolio,Lombardia,Majors,Autostradale,44,41,93.18181818181817
+2026-10-07,Gasolio,Lombardia,Majors,Stradale,1322,1046,79.12254160363086
+2026-10-07,Gasolio,Lombardia,Majors,Tutte,1366,1087,79.57540263543191
+2026-10-07,Gasolio,Lombardia,Pompe Bianche,Autostradale,3,2,66.66666666666666
+2026-10-07,Gasolio,Lombardia,Pompe Bianche,Stradale,657,266,40.48706240487062
+2026-10-07,Gasolio,Lombardia,Pompe Bianche,Tutte,660,268,40.60606060606061
+2026-10-07,Gasolio,Lombardia,Tutte,Autostradale,61,44,72.1311475409836
+2026-10-07,Gasolio,Lombardia,Tutte,Stradale,2584,1701,65.828173374613
+2026-10-07,Gasolio,Lombardia,Tutte,Tutte,2645,1745,65.97353497164461
+2026-10-07,Gasolio,Marche,Large,Stradale,152,68,44.73684210526316
+2026-10-07,Gasolio,Marche,Large,Tutte,152,68,44.73684210526316
+2026-10-07,Gasolio,Marche,Majors,Autostradale,10,9,90.0
+2026-10-07,Gasolio,Marche,Majors,Stradale,308,229,74.35064935064936
+2026-10-07,Gasolio,Marche,Majors,Tutte,318,238,74.84276729559748
+2026-10-07,Gasolio,Marche,Pompe Bianche,Autostradale,4,4,100.0
+2026-10-07,Gasolio,Marche,Pompe Bianche,Stradale,200,130,65.0
+2026-10-07,Gasolio,Marche,Pompe Bianche,Tutte,204,134,65.68627450980392
+2026-10-07,Gasolio,Marche,Tutte,Autostradale,14,13,92.85714285714286
+2026-10-07,Gasolio,Marche,Tutte,Stradale,660,427,64.6969696969697
+2026-10-07,Gasolio,Marche,Tutte,Tutte,674,440,65.28189910979229
+2026-10-07,Gasolio,Molise,Large,Autostradale,3,2,66.66666666666666
+2026-10-07,Gasolio,Molise,Large,Stradale,32,13,40.625
+2026-10-07,Gasolio,Molise,Large,Tutte,35,15,42.857142857142854
+2026-10-07,Gasolio,Molise,Majors,Autostradale,2,2,100.0
+2026-10-07,Gasolio,Molise,Majors,Stradale,54,40,74.07407407407408
+2026-10-07,Gasolio,Molise,Majors,Tutte,56,42,75.0
+2026-10-07,Gasolio,Molise,Pompe Bianche,Stradale,52,24,46.15384615384615
+2026-10-07,Gasolio,Molise,Pompe Bianche,Tutte,52,24,46.15384615384615
+2026-10-07,Gasolio,Molise,Tutte,Autostradale,5,4,80.0
+2026-10-07,Gasolio,Molise,Tutte,Stradale,138,77,55.79710144927537
+2026-10-07,Gasolio,Molise,Tutte,Tutte,143,81,56.64335664335665
+2026-10-07,Gasolio,Piemonte,Large,Autostradale,15,2,13.333333333333334
+2026-10-07,Gasolio,Piemonte,Large,Stradale,321,228,71.02803738317756
+2026-10-07,Gasolio,Piemonte,Large,Tutte,336,230,68.45238095238095
+2026-10-07,Gasolio,Piemonte,Majors,Autostradale,34,33,97.05882352941177
+2026-10-07,Gasolio,Piemonte,Majors,Stradale,794,578,72.79596977329975
+2026-10-07,Gasolio,Piemonte,Majors,Tutte,828,611,73.79227053140096
+2026-10-07,Gasolio,Piemonte,Pompe Bianche,Autostradale,17,6,35.294117647058826
+2026-10-07,Gasolio,Piemonte,Pompe Bianche,Stradale,428,220,51.4018691588785
+2026-10-07,Gasolio,Piemonte,Pompe Bianche,Tutte,445,226,50.78651685393258
+2026-10-07,Gasolio,Piemonte,Tutte,Autostradale,66,41,62.121212121212125
+2026-10-07,Gasolio,Piemonte,Tutte,Stradale,1543,1026,66.49384316267012
+2026-10-07,Gasolio,Piemonte,Tutte,Tutte,1609,1067,66.31448104412678
+2026-10-07,Gasolio,Puglia,Large,Autostradale,12,6,50.0
+2026-10-07,Gasolio,Puglia,Large,Stradale,127,98,77.16535433070865
+2026-10-07,Gasolio,Puglia,Large,Tutte,139,104,74.82014388489209
+2026-10-07,Gasolio,Puglia,Majors,Autostradale,7,7,100.0
+2026-10-07,Gasolio,Puglia,Majors,Stradale,735,605,82.31292517006803
+2026-10-07,Gasolio,Puglia,Majors,Tutte,742,612,82.47978436657682
+2026-10-07,Gasolio,Puglia,Pompe Bianche,Autostradale,14,5,35.714285714285715
+2026-10-07,Gasolio,Puglia,Pompe Bianche,Stradale,490,239,48.775510204081634
+2026-10-07,Gasolio,Puglia,Pompe Bianche,Tutte,504,244,48.41269841269841
+2026-10-07,Gasolio,Puglia,Tutte,Autostradale,33,18,54.54545454545454
+2026-10-07,Gasolio,Puglia,Tutte,Stradale,1352,942,69.67455621301775
+2026-10-07,Gasolio,Puglia,Tutte,Tutte,1385,960,69.31407942238266
+2026-10-07,Gasolio,Sardegna,Large,Stradale,170,84,49.411764705882355
+2026-10-07,Gasolio,Sardegna,Large,Tutte,170,84,49.411764705882355
+2026-10-07,Gasolio,Sardegna,Majors,Stradale,305,262,85.90163934426229
+2026-10-07,Gasolio,Sardegna,Majors,Tutte,305,262,85.90163934426229
+2026-10-07,Gasolio,Sardegna,Pompe Bianche,Stradale,116,17,14.655172413793101
+2026-10-07,Gasolio,Sardegna,Pompe Bianche,Tutte,116,17,14.655172413793101
+2026-10-07,Gasolio,Sardegna,Tutte,Stradale,591,363,61.42131979695431
+2026-10-07,Gasolio,Sardegna,Tutte,Tutte,591,363,61.42131979695431
+2026-10-07,Gasolio,Sicilia,Large,Autostradale,5,0,0.0
+2026-10-07,Gasolio,Sicilia,Large,Stradale,241,113,46.88796680497925
+2026-10-07,Gasolio,Sicilia,Large,Tutte,246,113,45.9349593495935
+2026-10-07,Gasolio,Sicilia,Majors,Autostradale,16,14,87.5
+2026-10-07,Gasolio,Sicilia,Majors,Stradale,680,603,88.67647058823529
+2026-10-07,Gasolio,Sicilia,Majors,Tutte,696,617,88.64942528735632
+2026-10-07,Gasolio,Sicilia,Pompe Bianche,Autostradale,2,0,0.0
+2026-10-07,Gasolio,Sicilia,Pompe Bianche,Stradale,616,303,49.188311688311686
+2026-10-07,Gasolio,Sicilia,Pompe Bianche,Tutte,618,303,49.029126213592235
+2026-10-07,Gasolio,Sicilia,Tutte,Autostradale,23,14,60.86956521739131
+2026-10-07,Gasolio,Sicilia,Tutte,Stradale,1537,1019,66.29798308392974
+2026-10-07,Gasolio,Sicilia,Tutte,Tutte,1560,1033,66.21794871794872
+2026-10-07,Gasolio,Toscana,Large,Autostradale,4,0,0.0
+2026-10-07,Gasolio,Toscana,Large,Stradale,245,119,48.57142857142857
+2026-10-07,Gasolio,Toscana,Large,Tutte,249,119,47.791164658634536
+2026-10-07,Gasolio,Toscana,Majors,Autostradale,23,23,100.0
+2026-10-07,Gasolio,Toscana,Majors,Stradale,721,590,81.83079056865465
+2026-10-07,Gasolio,Toscana,Majors,Tutte,744,613,82.39247311827957
+2026-10-07,Gasolio,Toscana,Pompe Bianche,Autostradale,8,2,25.0
+2026-10-07,Gasolio,Toscana,Pompe Bianche,Stradale,416,132,31.73076923076923
+2026-10-07,Gasolio,Toscana,Pompe Bianche,Tutte,424,134,31.60377358490566
+2026-10-07,Gasolio,Toscana,Tutte,Autostradale,35,25,71.42857142857143
+2026-10-07,Gasolio,Toscana,Tutte,Stradale,1382,841,60.85383502170767
+2026-10-07,Gasolio,Toscana,Tutte,Tutte,1417,866,61.115031757233595
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Large,Autostradale,6,0,0.0
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Large,Stradale,68,30,44.11764705882353
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Large,Tutte,74,30,40.54054054054054
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Majors,Autostradale,7,7,100.0
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Majors,Stradale,189,148,78.3068783068783
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Majors,Tutte,196,155,79.08163265306123
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Autostradale,3,0,0.0
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Stradale,84,11,13.095238095238097
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Pompe Bianche,Tutte,87,11,12.643678160919542
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Autostradale,16,7,43.75
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Stradale,341,189,55.42521994134897
+2026-10-07,Gasolio,Trentino-Alto Adige/Südtirol,Tutte,Tutte,357,196,54.90196078431373
+2026-10-07,Gasolio,Umbria,Large,Autostradale,1,0,0.0
+2026-10-07,Gasolio,Umbria,Large,Stradale,67,47,70.1492537313433
+2026-10-07,Gasolio,Umbria,Large,Tutte,68,47,69.11764705882352
+2026-10-07,Gasolio,Umbria,Majors,Autostradale,3,3,100.0
+2026-10-07,Gasolio,Umbria,Majors,Stradale,221,173,78.28054298642535
+2026-10-07,Gasolio,Umbria,Majors,Tutte,224,176,78.57142857142857
+2026-10-07,Gasolio,Umbria,Pompe Bianche,Stradale,113,59,52.21238938053098
+2026-10-07,Gasolio,Umbria,Pompe Bianche,Tutte,113,59,52.21238938053098
+2026-10-07,Gasolio,Umbria,Tutte,Autostradale,4,3,75.0
+2026-10-07,Gasolio,Umbria,Tutte,Stradale,401,279,69.57605985037407
+2026-10-07,Gasolio,Umbria,Tutte,Tutte,405,282,69.62962962962963
+2026-10-07,Gasolio,Valle d'Aosta,Large,Stradale,14,12,85.71428571428571
+2026-10-07,Gasolio,Valle d'Aosta,Large,Tutte,14,12,85.71428571428571
+2026-10-07,Gasolio,Valle d'Aosta,Majors,Autostradale,3,3,100.0
+2026-10-07,Gasolio,Valle d'Aosta,Majors,Stradale,22,19,86.36363636363636
+2026-10-07,Gasolio,Valle d'Aosta,Majors,Tutte,25,22,88.0
+2026-10-07,Gasolio,Valle d'Aosta,Pompe Bianche,Autostradale,1,0,0.0
+2026-10-07,Gasolio,Valle d'Aosta,Pompe Bianche,Stradale,26,6,23.076923076923077
+2026-10-07,Gasolio,Valle d'Aosta,Pompe Bianche,Tutte,27,6,22.22222222222222
+2026-10-07,Gasolio,Valle d'Aosta,Tutte,Autostradale,4,3,75.0
+2026-10-07,Gasolio,Valle d'Aosta,Tutte,Stradale,62,37,59.67741935483871
+2026-10-07,Gasolio,Valle d'Aosta,Tutte,Tutte,66,40,60.60606060606061
+2026-10-07,Gasolio,Veneto,Large,Autostradale,9,0,0.0
+2026-10-07,Gasolio,Veneto,Large,Stradale,256,164,64.0625
+2026-10-07,Gasolio,Veneto,Large,Tutte,265,164,61.886792452830186
+2026-10-07,Gasolio,Veneto,Majors,Autostradale,21,19,90.47619047619048
+2026-10-07,Gasolio,Veneto,Majors,Stradale,669,602,89.98505231689087
+2026-10-07,Gasolio,Veneto,Majors,Tutte,690,621,90.0
+2026-10-07,Gasolio,Veneto,Pompe Bianche,Autostradale,6,0,0.0
+2026-10-07,Gasolio,Veneto,Pompe Bianche,Stradale,737,386,52.37449118046133
+2026-10-07,Gasolio,Veneto,Pompe Bianche,Tutte,743,386,51.95154777927322
+2026-10-07,Gasolio,Veneto,Tutte,Autostradale,36,19,52.77777777777778
+2026-10-07,Gasolio,Veneto,Tutte,Stradale,1662,1152,69.31407942238266
+2026-10-07,Gasolio,Veneto,Tutte,Tutte,1698,1171,68.96348645465254
+2026-10-07,Gasolio,Tutte,Large,Autostradale,119,14,11.76470588235294
+2026-10-07,Gasolio,Tutte,Large,Stradale,3426,2014,58.78575598365441
+2026-10-07,Gasolio,Tutte,Large,Tutte,3545,2028,57.207334273624824
+2026-10-07,Gasolio,Tutte,Majors,Autostradale,303,283,93.3993399339934
+2026-10-07,Gasolio,Tutte,Majors,Stradale,9666,7823,80.93316780467619
+2026-10-07,Gasolio,Tutte,Majors,Tutte,9969,8106,81.3120674089678
+2026-10-07,Gasolio,Tutte,Pompe Bianche,Autostradale,96,40,41.66666666666667
+2026-10-07,Gasolio,Tutte,Pompe Bianche,Stradale,6456,2995,46.3909541511772
+2026-10-07,Gasolio,Tutte,Pompe Bianche,Tutte,6552,3035,46.32173382173382
+2026-10-07,Gasolio,Tutte,Tutte,Autostradale,518,337,65.05791505791507
+2026-10-07,Gasolio,Tutte,Tutte,Stradale,19548,12832,65.64354409658277
+2026-10-07,Gasolio,Tutte,Tutte,Tutte,20066,13169,65.62842619356125

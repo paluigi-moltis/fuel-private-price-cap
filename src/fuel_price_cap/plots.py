@@ -152,9 +152,20 @@ class PriceChartBuilder:
                 y=threshold,
                 line_dash="dot",
                 line_color="firebrick",
-                annotation_text=f"threshold {threshold:.1f} EUR/l",
+                annotation_text=f"cap {threshold:.2f} EUR/l",
                 annotation_position="bottom left",
             )
+            if fuel == "Gasolio" and last_date >= config.GASOLIO_EXCISE_STEP:
+                fig.add_hline(
+                    y=config.GASOLIO_CAP_AFTER,
+                    line_dash="dot",
+                    line_color="firebrick",
+                    annotation_text=(
+                        f"cap {config.GASOLIO_CAP_AFTER:.3f} EUR/l "
+                        f"from {config.GASOLIO_EXCISE_STEP.isoformat()}"
+                    ),
+                    annotation_position="bottom right",
+                )
 
         stem = f"{_value_prefix(value_col)}_{fuel.lower()}_{tipo.lower()}"
         if zoom:
@@ -229,10 +240,13 @@ class PriceChartBuilder:
 
         window_label = f" — zoom from {config.ZOOM_FROM.isoformat()}" if zoom else ""
         threshold = config.THRESHOLDS[fuel]
+        cap_label = f"{threshold:.2f}"
+        if fuel == "Gasolio":
+            cap_label += f" ({config.GASOLIO_CAP_AFTER:.3f} from {config.GASOLIO_EXCISE_STEP.isoformat()})"
         fig.update_layout(
             title=(
                 f"{fuel}: daily share of stations priced at or below the "
-                f"{threshold:.2f} EUR/l cap, by Bandiera{window_label}"
+                f"{cap_label} EUR/l cap, by Bandiera{window_label}"
             ),
             yaxis_title="% of stations at or below the cap",
             template="plotly_white",
@@ -328,6 +342,17 @@ class PriceChartBuilder:
             annotation_text=f"cap {threshold:.2f} EUR/l",
             annotation_position="bottom left",
         )
+        if fuel == "Gasolio" and daily["date"].max() >= config.GASOLIO_EXCISE_STEP:
+            fig.add_hline(
+                y=config.GASOLIO_CAP_AFTER,
+                line_dash="dot",
+                line_color="firebrick",
+                annotation_text=(
+                    f"cap {config.GASOLIO_CAP_AFTER:.3f} EUR/l "
+                    f"from {config.GASOLIO_EXCISE_STEP.isoformat()}"
+                ),
+                annotation_position="bottom right",
+            )
         stem = f"brand_mean_price_{fuel.lower()}"
         if zoom:
             stem = f"{stem}_zoom"

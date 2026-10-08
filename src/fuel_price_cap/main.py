@@ -344,10 +344,7 @@ class Pipeline:
             .agg(
                 n_obs=pl.len(),
                 n_at_or_below=(
-                    pl.col("prezzo")
-                    <= pl.col("fuel").replace_strict(
-                        config.THRESHOLDS, return_dtype=pl.Float64
-                    )
+                    pl.col("prezzo") <= config.threshold_expr()
                 ).sum(),
             )
             .with_columns(
@@ -422,9 +419,7 @@ class Pipeline:
         if n_post_days > 1:
             latest = post_cap["date"].max()
             latest_rows = post_cap.filter(pl.col("date") == latest)
-            thr = pl.col("fuel").replace_strict(
-                config.THRESHOLDS, return_dtype=pl.Float64
-            )
+            thr = config.threshold_expr()
             latest_flags = latest_rows.with_columns(
                 compliant=pl.col("prezzo") <= thr,
                 comu_28=pl.col("comu_date") == config.CAP_DATE,

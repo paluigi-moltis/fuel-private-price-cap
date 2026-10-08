@@ -14,7 +14,7 @@ suppressPackageStartupMessages({
   library(fixest)
 })
 
-d <- fread("adoption/output/tables/adoption_panel.csv")
+d <- fread("output/tables/adoption_panel.csv")
 d <- d[days_since_cap >= -7 & days_since_cap <= 7]  # event-study window
 # (pre-cap days up to -7 included so the pre-cap level is identified;
 #  -1 is the reference period)
@@ -32,7 +32,7 @@ m1 <- feols(
 )
 print(summary(m1))
 iplot(m1, main = "Adoption rate event study", xlab = "days since cap")
-png("adoption/output/figures/event_study_adoption.png", width = 1400, height = 900, res = 150)
+png("output/figures/event_study_adoption.png", width = 1400, height = 900, res = 150)
 iplot(m1, main = "Adoption rate event study", xlab = "days since cap")
 dev.off()
 
@@ -52,7 +52,7 @@ m2 <- feols(
   data = d, cluster = ~gestore
 )
 print(summary(m2))
-png("adoption/output/figures/event_study_by_capdist.png", width = 1400, height = 900, res = 150)
+png("output/figures/event_study_by_capdist.png", width = 1400, height = 900, res = 150)
 iplot(m2, main = "Adoption by distance to nearest adopter (day-0)", xlab = "days since cap")
 dev.off()
 
@@ -65,7 +65,7 @@ m3 <- feols(
   gap ~ i(ev, ref = -1) * adopted | id_fuel,
   data = d, cluster = ~gestore
 )
-png("adoption/output/figures/event_study_gap.png", width = 1400, height = 900, res = 150)
+png("output/figures/event_study_gap.png", width = 1400, height = 900, res = 150)
 iplot(m3, main = "Gap to cap: adopters vs non-adopters", xlab = "days since cap")
 dev.off()
 
@@ -84,7 +84,7 @@ print(summary(m4))
 
 # export
 res <- list(m1 = m1, m2 = m2, m4 = m4)
-sink("adoption/output/panel_results.txt")
+sink("output/panel_results.txt")
 for (nm in names(res)) {
   cat("\n=====", nm, "=====\n")
   print(summary(res[[nm]]))

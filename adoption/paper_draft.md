@@ -1,6 +1,6 @@
 # Who Adopts a Price Cap? The Diffusion of Agip Eni's Self-Imposed Cap across Italian Fuel Retailers
 
-*Working paper — draft skeleton with computed results, [date: 2026-10-06]*
+*Working paper — draft skeleton with computed results, [date: 2026-10-08; data through 2026-10-07, gasolio cap tax-adjusted from 10-06]*
 
 ## 1. Introduction
 
@@ -28,8 +28,8 @@ provincial market.
 **Headline findings** (station×fuel units, N = 39,418, window
 2026-07-01 → 2026-10-05):
 
-1. Adoption is fast and massive but incomplete: 53.5% of stations price
-   at or below the cap within 8 days (median adoption: day 4).
+1. Adoption is fast and massive but incomplete: 69.5% (any day; final-day 58% petrol / 69% gasolio) of stations price
+   at or below the cap within 9 days (median adoption: day 4).
 2. Adoption follows a spatial diffusion gradient — the hazard of
    adopting falls ~9% per km of distance to the nearest priced station
    and ~2% per km to the nearest at-cap station on the cap date.
@@ -62,7 +62,7 @@ BibTeX database: `literature/references.bib`.*
   uniformity at the cap; the best evidence is Zhang, Fei & Zheng (2020)
   on Chinese gasoline, where administered ceilings produce uniformity.
   Our setting differs in that compliance is a firm choice — we observe
-  the diffusion path itself, and find uniformity is *partial* (53.5%)
+  the diffusion path itself, and find uniformity is *partial* (69.5% (any day; final-day 58% petrol / 69% gasolio))
   with a persistent non-adopter tail (cf. Quiguanas et al. 2025 on
   Colombia; Gatsios et al. 2026 on Greece).
 - *Retail fuel dynamics*: the literature on rockets-and-feathers and
@@ -129,7 +129,7 @@ communication with comu_day ≤ D. This avoids the extract snapshot bias:
 ### 3.4 Variables
 
 - `adopted` / duration: first post-cap day with effective price ≤ cap
-  (2.00/2.20); censored at last observation (Oct 5).
+  (2.00/2.20); censored at last observation (Oct 7).
 - `nn_dist_km`: distance to nearest other priced station (same fuel), km.
 - `cap_dist_km(d)`: distance to nearest station at-or-below cap on day d.
 - `pop_density_cell`: census population of the containing 1-km cell.
@@ -142,8 +142,8 @@ communication with comu_day ≤ D. This avoids the extract snapshot bias:
 - Adoption share by day: 19.3% (day 0, station-FE event-study estimate)
   rising to 51.2% (day 7); jump on day 3–4 = the Q8/Tamoil/Api-Ip wave.
 - Agip Eni's own compliance: 24.9% on cap day (communication lags) →
-  98.4–98.6% by Oct 5 (their prices sit 0.8–0.9 c/l below the cap).
-- Brands on Oct 5 (Benzina, at-or-below-cap share): Agip Eni 98.4%,
+  98.4–98.6% by Oct 7 (their prices sit 0.8–0.9 c/l below the cap).
+- Brands on Oct 7 (Benzina, at-or-below-cap share): Agip Eni 98.4%,
   Q8 87.2%, Tamoil 62.4%, Api-Ip 42.8%, Pompe Bianche 25.2%, Esso 24.2%,
   Shell 11.6% — mean prices order identically (two-tier market).
 
@@ -170,7 +170,7 @@ significance). PH assumption holds for the continuous spec.
 (TWFE panel, station FE; reference = day −1; figures in
 `output/figures/event_study_*.png`.)
 
-- `at_cap` rises 0.19 → 0.51 over 8 days; no anticipatory movement
+- `at_cap` rises 0.19 → 0.51 over 9 days; no anticipatory movement
   before day 0 (announcement-effect estimated −0.003, n.s.).
 - Diffusion gradient: by day 4, near-adopter tercile adoption 58.4%
   vs 34.8% far tercile — consistent with local strategic

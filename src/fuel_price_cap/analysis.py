@@ -184,9 +184,7 @@ class CapCompliance:
             prices if from_date is None else prices.filter(pl.col("date") >= from_date)
         )
         flagged = base.with_columns(
-            threshold=pl.col("fuel").replace_strict(
-                config.THRESHOLDS, return_dtype=pl.Float64
-            )
+            threshold=config.threshold_expr()
         ).with_columns(is_below=pl.col("prezzo") <= pl.col("threshold"))
         if top1_gestori is not None:
             flagged = self._flag_gestore_top1(flagged, top1_gestori)

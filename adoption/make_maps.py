@@ -67,12 +67,22 @@ print("province shapes:", len(geojson["features"]))
 
 LON0, LON1, LAT0, LAT1 = 6.6, 18.65, 35.4, 47.1  # tight Italy bbox
 
+# Blue (low) -> red (high) continuous scale
+BLUE_RED = [
+    [0.00, "#053061"],
+    [0.20, "#2166ac"],
+    [0.40, "#4393c3"],
+    [0.60, "#f4a582"],
+    [0.80, "#b2182b"],
+    [1.00, "#67001f"],
+]
+
 
 def choropleth(fid, z, zmin, zmax, fname, cb_title, fmt=".1f"):
     """Tight-zoom map, horizontal colorbar underneath (horizontal ticks)."""
     fig = go.Figure(go.Choroplethmap(
         geojson=geojson, locations=fid, z=z, featureidkey="id",
-        colorscale="Viridis", zmin=zmin, zmax=zmax,
+        colorscale=BLUE_RED, zmin=zmin, zmax=zmax,
         marker_line_width=0.4, marker_line_color="white",
         hovertemplate="%{z:" + fmt + "}<extra></extra>",
         colorbar=dict(
@@ -180,9 +190,10 @@ for fuel, tag in [("Benzina", "ben"), ("Gasolio", "gas")]:
     choropleth(m["fid"], m["v"], float(m["v"].min()), float(m["v"].max()),
                f"amap_price_pre_{tag}.png", "EUR/l", ".3f")
 
-    # 2. average provincial price, cap + 7 days (28 Sep - 5 Oct)
+    # 2. average provincial price 7 days after the cap (5 Oct, single day)
     m = attach_fid(
-        d7.filter(pl.col("fuel") == fuel)
+        p.filter((pl.col("fuel") == fuel)
+                 & (pl.col("date") == D7))
         .group_by("provincia_istat")
         .agg(pl.col("prezzo").mean().alias("v"))
         .collect()
@@ -190,7 +201,23 @@ for fuel, tag in [("Benzina", "ben"), ("Gasolio", "gas")]:
     choropleth(m["fid"], m["v"], float(m["v"].min()), float(m["v"].max()),
                f"amap_price_post7_{tag}.png", "EUR/l", ".3f")
 
-    # 3. post-cap average price gap: non-adopters minus adopters
+    # 3a. PRE-cap average price gap: future non-adopters minus adopters
+    gpre = (
+        pre.filter(pl.col("fuel") == fuel)
+        .group_by(["provincia_istat", "adopted"])
+        .agg(pl.col("prezzo").mean().alias("m"))
+        .collect()
+        .pivot(on="adopted", index="provincia_istat", values="m")
+        .drop_nulls(["false", "true"])
+        .with_columns(((pl.col("false") - pl.col("true")) * 1000)
+                      .alias("gap"))
+    )
+    mpre = attach_fid(gpre)
+    choropleth(mpre["fid"], mpre["gap"], float(mpre["gap"].min()),
+               float(mpre["gap"].max()), f"amap_gappre_{tag}.png",
+               "non-adopt − adopt (c/l)")
+
+    # 3b. post-cap average price gap: non-adopters minus adopters
     g = (
         post.filter(pl.col("fuel") == fuel)
         .group_by(["provincia_istat", "adopted"])
