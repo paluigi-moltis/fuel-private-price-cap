@@ -41,6 +41,8 @@ uv run python adoption/make_figs_update.py     # brand price fig + tercile fig
 uv run python adoption/make_hist.py            # §7 dispersion histograms
 uv run python adoption/make_maps.py            # province choropleths (blue-red)
 uv run python adoption/make_tables.py          # LaTeX tables from R outputs
+uv run python adoption/make_report_figs.py     # numbered English report figures
+                                               # (1_benzina..., 7_...) -> output/figures
 
 # 8. Paper PDF (pdflatex + biber)
 cd adoption && pdflatex paper && biber paper && pdflatex paper && pdflatex paper

@@ -36,8 +36,8 @@ d = (
 
 fig = make_subplots(
     rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.08,
-    subplot_titles=("Petrol (Benzina) — cap 2.00 EUR/l",
-                    "Diesel (Gasolio) — cap 2.20, then 2.261 EUR/l from 6 Oct"),
+    subplot_titles=("Petrol — cap 2.00 EUR/l",
+                    "Diesel — cap 2.20, then 2.261 EUR/l from 6 Oct"),
 )
 colors = {"Benzina": "#1f77b4", "Gasolio": "#d62728"}
 for r, fuel in enumerate(["Benzina", "Gasolio"], start=1):
@@ -55,10 +55,11 @@ fig.add_vline(x="2026-10-06", line_dash="dot", line_color="#333", row=2, col=1,
 
 fig.update_yaxes(title_text="At or below cap (%)", range=[15, 75], row=1, col=1)
 fig.update_yaxes(title_text="At or below cap (%)", range=[15, 75], row=2, col=1)
-fig.update_xaxes(title_text="Date", row=2, col=1)
+pass  # no x-axis title (report figure)
 fig.update_layout(template="plotly_white", width=1150, height=820,
                   font=dict(size=15), margin=dict(t=60))
-fig.write_image(os.path.join(FIG, "fig1_raw_adoption_share.png"), scale=2)
+OUT = os.environ.get("FIG1_OUT", os.path.join(FIG, "fig1_raw_adoption_share.png"))
+fig.write_image(OUT, scale=2)
 print("fig1 v2 saved; final-day:",
       d.filter(pl.col("date") == pl.date(2026, 10, 7))
       .select(["fuel", (pl.col("share") * 100).round(1)]).to_dicts())
