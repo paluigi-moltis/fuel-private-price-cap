@@ -17,7 +17,7 @@ uv run fuel-price-cap
 # 1. ISTAT inputs: 2026 admin boundaries + 2021 1-km population grid
 uv run python adoption/download_istat.py
 
-# 2. Station-day effective-price panel from dtComu (2026-07-01 → 10-07)
+# 2. Station-day effective-price panel from dtComu (2026-07-01 → 10-12)
 uv run python adoption/build_station_day.py
 
 # 3. Covariates: province/region (2026 borders), population, chain size
@@ -84,7 +84,7 @@ figures are regenerable and mostly not committed.
 - `literature/` — reference pool, curated selection, `references.bib`.
 - `paper.tex` / `paper.pdf` / `paper_tables.tex` — the paper.
 
-## Key numbers (window 2026-07-01 → 2026-10-07; gasolio cap 2.261 from 10-06)
+## Key numbers (window 2026-07-01 → 2026-10-12; gasolio cap 2.261 from 10-06)
 
 - 39,418 station×fuel units; 69.5% priced at or below the (tax-adjusted)
   cap on at least one day; final-day shares 58% petrol / 69% gasolio

@@ -25,13 +25,13 @@ mean predicted: 0.7024 | actual share: 0.7024
 
 --- Cox (m_a): PH test (scaled Schoenfeld, cox.zph) ---
                      chisq df       p
-nn_dist_km           32.48  1 1.2e-08
-cap_dist_km_d0      112.99  1 < 2e-16
+nn_dist_km           32.47  1 1.2e-08
+cap_dist_km_d0      113.03  1 < 2e-16
 pop_density_cell      3.38  1   0.066
-pre_gap_vs_cap       64.56  1 9.4e-16
-n_stations_gestore 1569.28  1 < 2e-16
-fuel                919.11  1 < 2e-16
-GLOBAL             2504.00  6 < 2e-16
+pre_gap_vs_cap       64.46  1 9.9e-16
+n_stations_gestore 1568.65  1 < 2e-16
+fuel                918.94  1 < 2e-16
+GLOBAL             2503.24  6 < 2e-16
 
 --- Cox (m_a): martingale-residual functional form check ---
 cor(martingale, nn_dist_km) = -0.000
@@ -82,13 +82,13 @@ mean predicted: 0.5730 | actual share: 0.5729
 
 --- Cox (m_a): PH test (scaled Schoenfeld, cox.zph) ---
                     chisq df       p
-nn_dist_km           8.64  1  0.0033
-cap_dist_km_d0       1.50  1  0.2210
-pop_density_cell     4.44  1  0.0352
-pre_gap_vs_cap      49.88  1 1.6e-12
-n_stations_gestore   7.00  1  0.0081
-fuel               915.38  1 < 2e-16
-GLOBAL             990.82  6 < 2e-16
+nn_dist_km           8.62  1  0.0033
+cap_dist_km_d0       1.50  1  0.2209
+pop_density_cell     4.43  1  0.0353
+pre_gap_vs_cap      49.76  1 1.7e-12
+n_stations_gestore   7.07  1  0.0079
+fuel               915.14  1 < 2e-16
+GLOBAL             990.57  6 < 2e-16
 
 --- Cox (m_a): martingale-residual functional form check ---
 cor(martingale, nn_dist_km) = 0.000
@@ -139,13 +139,13 @@ mean predicted: 0.4062 | actual share: 0.4063
 
 --- Cox (m_a): PH test (scaled Schoenfeld, cox.zph) ---
                      chisq df      p
-nn_dist_km           6.226  1  0.013
-cap_dist_km_d0       0.107  1  0.744
-pop_density_cell     2.825  1  0.093
-pre_gap_vs_cap     198.708  1 <2e-16
-n_stations_gestore   1.329  1  0.249
-fuel               229.285  1 <2e-16
-GLOBAL             405.396  6 <2e-16
+nn_dist_km           6.228  1  0.013
+cap_dist_km_d0       0.108  1  0.742
+pop_density_cell     2.823  1  0.093
+pre_gap_vs_cap     198.733  1 <2e-16
+n_stations_gestore   1.274  1  0.259
+fuel               229.364  1 <2e-16
+GLOBAL             405.492  6 <2e-16
 
 --- Cox (m_a): martingale-residual functional form check ---
 cor(martingale, nn_dist_km) = -0.000

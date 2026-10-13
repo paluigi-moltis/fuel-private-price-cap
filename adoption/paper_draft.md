@@ -1,6 +1,6 @@
 # Who Adopts a Price Cap? The Diffusion of Agip Eni's Self-Imposed Cap across Italian Fuel Retailers
 
-*Working paper — draft skeleton with computed results, [date: 2026-10-08; data through 2026-10-07, gasolio cap tax-adjusted from 10-06]*
+*Working paper — draft skeleton with computed results, [date: 2026-10-13; data through 2026-10-12, gasolio cap tax-adjusted from 10-06]*
 
 ## 1. Introduction
 
@@ -129,7 +129,7 @@ communication with comu_day ≤ D. This avoids the extract snapshot bias:
 ### 3.4 Variables
 
 - `adopted` / duration: first post-cap day with effective price ≤ cap
-  (2.00/2.20); censored at last observation (Oct 7).
+  (2.00/2.20); censored at last observation (Oct 12).
 - `nn_dist_km`: distance to nearest other priced station (same fuel), km.
 - `cap_dist_km(d)`: distance to nearest station at-or-below cap on day d.
 - `pop_density_cell`: census population of the containing 1-km cell.
@@ -142,8 +142,8 @@ communication with comu_day ≤ D. This avoids the extract snapshot bias:
 - Adoption share by day: 19.3% (day 0, station-FE event-study estimate)
   rising to 51.2% (day 7); jump on day 3–4 = the Q8/Tamoil/Api-Ip wave.
 - Agip Eni's own compliance: 24.9% on cap day (communication lags) →
-  98.4–98.6% by Oct 7 (their prices sit 0.8–0.9 c/l below the cap).
-- Brands on Oct 7 (Benzina, at-or-below-cap share): Agip Eni 98.4%,
+  98.4–98.6% by Oct 12 (their prices sit 0.8–0.9 c/l below the cap).
+- Brands on Oct 12 (Benzina, at-or-below-cap share): Agip Eni 98.4%,
   Q8 87.2%, Tamoil 62.4%, Api-Ip 42.8%, Pompe Bianche 25.2%, Esso 24.2%,
   Shell 11.6% — mean prices order identically (two-tier market).
 

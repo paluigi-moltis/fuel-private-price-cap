@@ -116,17 +116,21 @@ p = pl.scan_parquet(os.path.join(TAB, "adoption_panel.parquet"))
 
 # ==== (a) adoption maps ===================================================
 def prov_rates(filter_expr, col):
+    """Station-level any-fuel adoption share per province.
+
+    A station counts as adopted if it had at least one price at/below the
+    (fuel- and date-adjusted) cap on any post-cap day. Stations are unique
+    by id_impianto (the same id carries both petrol and diesel quotes), so
+    a dual-fuel station is counted once, not as 0.5+0.5.
+    """
     q = p.filter(pl.col("date") >= CAP)
     if filter_expr is not None:
         q = q.filter(filter_expr)
     return (
-        q.group_by(["provincia_istat", "fuel", "id_impianto"])
-        .agg(pl.col("at_cap").max())
-        .group_by(["provincia_istat", "fuel"])
-        .agg(pl.col("at_cap").mean().alias("share"), pl.len().alias("n"))
+        q.group_by(["provincia_istat", "id_impianto"])
+        .agg(pl.col("at_cap").max().alias("a"))
         .group_by("provincia_istat")
-        .agg(((pl.col("share") * pl.col("n")).sum() / pl.col("n").sum())
-             .alias(col), pl.col("n").sum().alias("n"))
+        .agg(pl.col("a").mean().alias(col), pl.len().alias("n"))
         .collect()
     )
 

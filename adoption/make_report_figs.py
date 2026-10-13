@@ -187,6 +187,90 @@ def fig3_adoption_share() -> Path:
     return out
 
 
+
+
+BRAND_ORDER = ("Eni", "Api-Ip", "Q8", "Esso", "Tamoil", "Shell", "Pompe Bianche")
+BRAND_COLORS = {
+    "Eni": "#D62728", "Api-Ip": "#FF7F0E", "Q8": "#9467BD",
+    "Esso": "#1F77B4", "Tamoil": "#8C564B", "Shell": "#00BCD4",
+    "Pompe Bianche": "#7F7F7F",
+}
+BRAND_EN = {"Pompe Bianche": "Independent"}
+
+
+def brand_price_chart(fuel: str, show_excise_vline: bool, stem: str) -> Path:
+    """Numbered variant of the brand chart: from 1 Sep, aggregate line added,
+    Pompe Bianche renamed Independent, style of figs 1/2 (no title, FONT,
+    thick lines, 3-day ticks, tight y range incl. cap lines)."""
+    daily = pl.read_csv(config.TABLES_DIR / "brand_daily_prices.csv",
+                        try_parse_dates=True)
+    d = daily.filter(pl.col("fuel") == fuel).filter(pl.col("date") >= CUT)
+
+    fig = go.Figure()
+    agg = d.group_by("date").agg(p=pl.col("mean_price").mean()).sort("date")
+    fig.add_trace(
+        go.Scatter(x=agg["date"], y=agg["p"], mode="lines", name=AGG_EN,
+                   line=dict(color=AGG_COLOR, width=LINE_W + 1, dash="dot"))
+    )
+    for brand in BRAND_ORDER:
+        s = d.filter(pl.col("canonical_name") == brand).sort("date")
+        if not s.height:
+            continue
+        fig.add_trace(
+            go.Scatter(x=s["date"], y=s["mean_price"], mode="lines",
+                       name=BRAND_EN.get(brand, brand),
+                       line=dict(color=BRAND_COLORS[brand], width=LINE_W))
+        )
+
+    threshold = config.THRESHOLDS[fuel]
+    caps = [threshold]
+    fig.add_hline(
+        y=threshold, line_dash="dot", line_color="firebrick",
+        annotation_text=f"cap {threshold:.2f} EUR/l from 28 Sep",
+        annotation_position="top left",
+        annotation_font=dict(size=FONT, color="firebrick"),
+    )
+    if fuel == "Gasolio":
+        fig.add_hline(
+            y=config.GASOLIO_CAP_AFTER, line_dash="dot", line_color="firebrick",
+            annotation_text=f"cap {config.GASOLIO_CAP_AFTER:.3f} EUR/l from 6 Oct",
+            annotation_position="top left",
+            annotation_font=dict(size=FONT, color="firebrick"),
+        )
+        caps.append(config.GASOLIO_CAP_AFTER)
+    fig.add_vline(x=CAP_DATE.isoformat(), line_dash="dash", line_color="black")
+    if show_excise_vline:
+        fig.add_vline(x=EXCISE_STEP.isoformat(), line_dash="dash", line_color="black")
+
+    y_min = min(d["mean_price"].min(), *caps)
+    y_max = max(d["mean_price"].max(), *caps)
+    pad = (y_max - y_min) * 0.06
+    pad_hi = (y_max - y_min) * 0.12
+    pad_lo = pad * 2.5
+    fig.update_layout(
+        font=dict(size=FONT),
+        margin=dict(l=10, r=30, t=15, b=10),
+        template="plotly_white",
+        hovermode="x unified",
+        width=1400,
+        height=620,
+        showlegend=True,
+        legend=dict(orientation="h", yanchor="bottom", y=1.0, xanchor="left", x=0),
+    )
+    fig.update_xaxes(
+        tickformat="%d %b", tickangle=0, dtick=3 * 86400000,
+        range=[CUT, d["date"].max() + dt.timedelta(days=1)],
+    )
+    fig.update_yaxes(
+        tickformat=".2f", range=[y_min - pad_lo, y_max + pad_hi],
+        title=dict(text="EUR/l", font=dict(size=FONT)),
+    )
+    out = FIG / f"{stem}.png"
+    fig.write_image(out, scale=2)
+    return out
+
+
+
 def copy_fig(src_name: str, stem: str) -> Path:
     out = FIG / f"{stem}.png"
     shutil.copyfile(ADOPT_FIG / src_name, out)
