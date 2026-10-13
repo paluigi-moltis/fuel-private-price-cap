@@ -204,6 +204,13 @@ def brand_price_chart(fuel: str, show_excise_vline: bool, stem: str) -> Path:
     thick lines, 3-day ticks, tight y range incl. cap lines)."""
     daily = pl.read_csv(config.TABLES_DIR / "brand_daily_prices.csv",
                         try_parse_dates=True)
+    # data value is 'Agip Eni'; display/rebrand as 'Eni'
+    daily = daily.with_columns(
+        pl.when(pl.col("canonical_name") == "Agip Eni")
+        .then(pl.lit("Eni"))
+        .otherwise(pl.col("canonical_name"))
+        .alias("canonical_name")
+    )
     d = daily.filter(pl.col("fuel") == fuel).filter(pl.col("date") >= CUT)
 
     fig = go.Figure()
